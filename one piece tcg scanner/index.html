@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#090d16">
+  <title>One Piece TCG Pocket Dex</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="app-header">
+    <div class="logo">
+      <span class="logo-icon">🏴‍☠️</span>
+      <h1>OP TCG <span>Dex</span></h1>
+    </div>
+    <div class="stats-badge" id="header-stats">0 cartas</div>
+  </header>
+
+  <!-- Contenedor Principal de Vistas -->
+  <div class="app-content">
+
+    <!-- ========================================== -->
+    <!-- VISTA 1: MI ÁLBUM                          -->
+    <!-- ========================================== -->
+    <section id="view-album" class="view-panel active">
+      <!-- Buscador unificado en el Álbum -->
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="album-search-input" placeholder="Buscar por Nombre, Set (ej. OP01, ST01), Color o Código...">
+        <button id="album-search-clear" class="clear-btn">✕</button>
+      </div>
+
+      <!-- Banner inteligente cuando se busca un Starter Deck / Set -->
+      <div id="album-set-banner" class="set-match-banner" style="display: none;">
+        <div class="set-match-info">
+          <span class="set-match-icon">📦</span>
+          <div class="set-match-text">
+            <strong id="album-set-title">Starter Deck ST-01</strong>
+            <span id="album-set-sub">17 cartas oficiales en la base de datos</span>
+          </div>
+        </div>
+        <button id="btn-album-open-set" class="btn-set-action">
+          Ver todas las cartas del ST ➔
+        </button>
+      </div>
+
+      <!-- Barra de Configuración de Vista de Álbum (Modo Lista / Carta y Zoom) -->
+      <div class="album-view-toolbar">
+        <div class="view-mode-toggle">
+          <button id="btn-view-grid" class="view-mode-btn active" title="Modo Cuadrícula / Carta">
+            <span class="icon">🔲</span>
+            <span class="label">Carta</span>
+          </button>
+          <button id="btn-view-list" class="view-mode-btn" title="Modo Lista en Filas">
+            <span class="icon">📋</span>
+            <span class="label">Lista</span>
+          </button>
+        </div>
+
+        <div class="card-size-control">
+          <span class="size-label">Tamaño:</span>
+          <button id="btn-size-decrease" class="size-btn" title="Hacer más pequeñas las cartas">🔍−</button>
+          <button id="btn-size-reset" class="size-btn size-indicator" title="Restablecer tamaño normal">Normal</button>
+          <button id="btn-size-increase" class="size-btn" title="Hacer más grandes las cartas">🔍+</button>
+        </div>
+      </div>
+
+      <!-- Filtros por Color y Tipos populares -->
+      <div class="filter-pills-row">
+        <button class="filter-pill active" data-filter="ALL">Todas</button>
+        <button class="filter-pill" data-filter="Rocks Pirates">🏴‍☠️ Rocks Pirates</button>
+        <button class="filter-pill" data-filter="Straw Hat">👒 Straw Hat</button>
+        <button class="filter-pill" data-filter="Navy">⚓ Navy</button>
+        <button class="filter-pill" data-filter="Four Emperors">👑 Four Emperors</button>
+        <button class="filter-pill" data-filter="Roger Pirates">⚓ Roger Pirates</button>
+        <button class="filter-pill" data-filter="Blue">🔵 Azul</button>
+        <button class="filter-pill" data-filter="Red">🔴 Rojo</button>
+        <button class="filter-pill" data-filter="Green">🟢 Verde</button>
+        <button class="filter-pill" data-filter="Purple">🟣 Morado</button>
+        <button class="filter-pill" data-filter="Black">⚫ Negro</button>
+        <button class="filter-pill" data-filter="Yellow">🟡 Amarillo</button>
+      </div>
+
+      <!-- Cuadrícula / Lista de cartas del álbum -->
+      <div id="cards-grid" class="cards-grid view-mode-grid size-normal"></div>
+
+      <!-- Estado vacío -->
+      <div id="empty-album-msg" class="empty-msg" style="display: none;">
+        <div id="empty-album-icon" style="font-size: 3rem; margin-bottom: 8px;">📬</div>
+        <h3 id="empty-album-title">No se encontraron cartas</h3>
+        <p id="empty-album-desc">Introduce un código o busca un Set (ej. OP17, ST01) para ver todas sus cartas.</p>
+        <button id="btn-empty-search-st" class="btn-primary" style="display: none; margin: 12px auto 0 auto; width: auto; padding: 10px 20px;">
+          📦 Ver Cartas de la Base de Datos
+        </button>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VISTA 2: AÑADIR CARTA POR CÓDIGO (PRINCIPAL) -->
+    <!-- ========================================== -->
+    <section id="view-scanner" class="view-panel">
+      <div class="code-entry-card">
+        
+        <div class="entry-header">
+          <div class="entry-icon">🃏</div>
+          <h2>Buscador de Cartas y Starter Decks</h2>
+          <p class="entry-subtitle">Busca por <strong>Nombre</strong> (ej. Luffy, Zoro, Nami, Shanks), <strong>Starter Deck</strong> (ST01... ST36) o <strong>Código</strong> (OP17-039).</p>
+        </div>
+
+        <!-- Selector desplegable de TODOS los Starter Decks ST01 a ST36 -->
+        <div class="st-selector-wrap">
+          <label for="starter-deck-select" class="quick-set-label">📦 Todos los Starter Decks (ST01 a ST36):</label>
+          <div class="select-dropdown-container">
+            <select id="starter-deck-select" class="st-dropdown">
+              <option value="">-- Elige un Starter Deck para ver todas sus cartas --</option>
+              <option value="ST01">ST01: Straw Hat Crew (17 cartas) - Rojo</option>
+              <option value="ST02">ST02: Worst Generation (17 cartas) - Verde</option>
+              <option value="ST03">ST03: The Seven Warlords of the Sea (17 cartas) - Azul</option>
+              <option value="ST04">ST04: Animal Kingdom Pirates (17 cartas) - Morado</option>
+              <option value="ST05">ST05: ONE PIECE FILM edition (17 cartas) - Morado</option>
+              <option value="ST06">ST06: Absolute Justice (17 cartas) - Negro</option>
+              <option value="ST07">ST07: Big Mom Pirates (17 cartas) - Amarillo</option>
+              <option value="ST08">ST08: Side Monkey.D.Luffy (15 cartas) - Negro</option>
+              <option value="ST09">ST09: Side Yamato (15 cartas) - Amarillo</option>
+              <option value="ST10">ST10: The Three Captains (17 cartas) - Rojo/Morado</option>
+              <option value="ST11">ST11: Uta (5 cartas) - Verde</option>
+              <option value="ST12">ST12: Zoro & Sanji (17 cartas) - Verde/Azul</option>
+              <option value="ST13">ST13: The Three Brothers (19 cartas) - Amarillo</option>
+              <option value="ST14">ST14: 3D2Y (17 cartas) - Negro</option>
+              <option value="ST15">ST15: RED Edward.Newgate (5 cartas) - Rojo</option>
+              <option value="ST16">ST16: GREEN Uta (5 cartas) - Verde</option>
+              <option value="ST17">ST17: BLUE Donquixote Doflamingo (5 cartas) - Azul</option>
+              <option value="ST18">ST18: PURPLE Monkey.D.Luffy (5 cartas) - Morado</option>
+              <option value="ST19">ST19: BLACK Smoker (5 cartas) - Negro</option>
+              <option value="ST20">ST20: YELLOW Charlotte Katakuri (5 cartas) - Amarillo</option>
+              <option value="ST21">ST21: EX Gear 5 (17 cartas) - Rojo</option>
+              <option value="ST22">ST22: Ace & Newgate (17 cartas) - Azul</option>
+              <option value="ST23">ST23: RED Shanks (5 cartas) - Rojo</option>
+              <option value="ST24">ST24: GREEN Jewelry Bonney (5 cartas) - Verde</option>
+              <option value="ST25">ST25: BLUE Buggy (5 cartas) - Azul</option>
+              <option value="ST26">ST26: PURPLE/BLACK Monkey.D.Luffy (5 cartas) - Morado/Negro</option>
+              <option value="ST27">ST27: BLACK Marshall.D.Teach (5 cartas) - Negro</option>
+              <option value="ST28">ST28: GREEN/YELLOW Yamato (5 cartas) - Verde/Amarillo</option>
+              <option value="ST29">ST29: Egghead (17 cartas) - Amarillo</option>
+              <option value="ST30">ST30: EX Luffy & Ace (17 cartas) - Rojo/Verde</option>
+              <option value="ST31">ST31: RED Monkey.D.Luffy (5 cartas) - Rojo</option>
+              <option value="ST32">ST32: GREEN Roronoa Zoro (5 cartas) - Verde</option>
+              <option value="ST33">ST33: BLUE Kuzan (5 cartas) - Azul</option>
+              <option value="ST34">ST34: PURPLE Charlotte Katakuri (5 cartas) - Morado</option>
+              <option value="ST35">ST35: RED/BLACK Sabo (5 cartas) - Rojo/Negro</option>
+              <option value="ST36">ST36: YELLOW Eustass "Captain" Kid (5 cartas) - Amarillo</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Atajos de Colección Rápidos -->
+        <div class="quick-set-bar">
+          <span class="quick-set-label">Atajos directos:</span>
+          <div class="set-chips-scroll">
+            <button class="set-chip active" data-set="OP17-">OP17-</button>
+            <button class="set-chip" data-set="OP09-">OP09-</button>
+            <button class="set-chip" data-set="OP01-">OP01-</button>
+            <button class="set-chip" data-set="ST01">ST01 (Luffy)</button>
+            <button class="set-chip" data-set="ST10">ST10 (Captains)</button>
+            <button class="set-chip" data-set="ST13">ST13 (Brothers)</button>
+            <button class="set-chip" data-set="ST14">ST14 (3D2Y)</button>
+            <button class="set-chip" data-set="ST21">ST21 (Gear 5)</button>
+            <button class="set-chip" data-set="ST29">ST29 (Egghead)</button>
+          </div>
+        </div>
+
+        <!-- Campo Principal de Entrada -->
+        <div class="main-code-input-wrapper">
+          <input 
+            type="text" 
+            id="direct-card-code-input" 
+            class="main-code-field" 
+            value="OP" 
+            placeholder="Buscar por Nombre (Luffy, Zoro), Set (ST01) o Código..." 
+            autocomplete="off" 
+            autocorrect="off" 
+            autocapitalize="characters" 
+            spellcheck="false"
+          >
+          <button id="btn-submit-card-code" class="btn-primary btn-search-code">
+            🔍 Buscar Cartas
+          </button>
+        </div>
+
+        <!-- Ejemplos sugeridos directos -->
+        <div class="examples-tray">
+          <span class="example-title">Prueba buscar:</span>
+          <div class="example-chips">
+            <button class="example-chip" data-code="Luffy">👒 Luffy (75 cartas)</button>
+            <button class="example-chip" data-code="Zoro">⚔️ Zoro</button>
+            <button class="example-chip" data-code="Nami">🍊 Nami</button>
+            <button class="example-chip" data-code="Kaido">🐉 Kaido</button>
+            <button class="example-chip" data-code="OP17-039">OP17-039 (Xebec L)</button>
+            <button class="example-chip" data-code="ST01">📦 ST01 (Straw Hat)</button>
+          </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- RESULTADOS DE BÚSQUEDA Y STARTER DECKS     -->
+        <!-- ========================================== -->
+        <div id="set-results-container" class="set-results-container" style="display: none;">
+          <div class="set-results-header">
+            <div class="set-results-meta">
+              <div class="set-badge-title">
+                <span id="set-results-icon" class="set-icon">🔍</span>
+                <span id="set-results-name">Resultados de Búsqueda</span>
+                <span id="set-results-color-badge" class="color-badge col-Red" style="display: none;">Red</span>
+              </div>
+              <p id="set-results-desc" class="set-sub-text">Cartas encontradas • Toca cualquier carta para seleccionarla</p>
+            </div>
+            <div class="set-results-actions">
+              <button id="btn-add-entire-deck" class="btn-primary btn-deck-add-all" style="display: none;">
+                ➕ Añadir Todo el Deck (+1 copia)
+              </button>
+              <button id="btn-close-set-results" class="btn-close-set" title="Cerrar">✕</button>
+            </div>
+          </div>
+
+          <!-- Barra de Configuración de Vista de Set / Búsqueda (Modo Lista / Carta y Zoom) -->
+          <div class="album-view-toolbar set-view-toolbar">
+            <div class="view-mode-toggle">
+              <button id="btn-set-view-grid" class="view-mode-btn active" title="Modo Cuadrícula / Carta">
+                <span class="icon">🔲</span>
+                <span class="label">Carta</span>
+              </button>
+              <button id="btn-set-view-list" class="view-mode-btn" title="Modo Lista en Filas">
+                <span class="icon">📋</span>
+                <span class="label">Lista</span>
+              </button>
+            </div>
+
+            <div class="card-size-control">
+              <span class="size-label">Tamaño:</span>
+              <button id="btn-set-size-decrease" class="size-btn" title="Hacer más pequeñas las cartas">🔍−</button>
+              <button id="btn-set-size-reset" class="size-btn size-indicator" title="Restablecer tamaño normal">Normal</button>
+              <button id="btn-set-size-increase" class="size-btn" title="Hacer más grandes las cartas">🔍+</button>
+            </div>
+          </div>
+
+          <!-- Cuadrícula / Lista de cartas encontradas -->
+          <div id="set-cards-grid" class="cards-grid set-grid view-mode-grid size-normal"></div>
+
+          <!-- Paginación de resultados (18 cartas por página = 3 filas de 6) -->
+          <div id="set-pagination-controls" class="pagination-toolbar" style="display: none;">
+            <button id="btn-page-prev" class="btn-page-nav" title="Página anterior">◀ Anterior</button>
+            <span id="page-indicator" class="page-indicator-text">Página 1 de 1</span>
+            <button id="btn-page-next" class="btn-page-nav" title="Página siguiente">Siguiente ▶</button>
+          </div>
+        </div>
+
+        <hr class="view-divider">
+
+        <!-- Métodos Secundarios (No disponibles temporalmente) -->
+        <div class="disabled-methods-section">
+          <h3 class="disabled-section-title">Otros Métodos de Escaneo</h3>
+
+          <div class="disabled-card-option">
+            <div class="disabled-info">
+              <span class="disabled-title">📷 Escáner con Cámara en Directo</span>
+              <span class="unavailable-tag">No disponible por el momento</span>
+            </div>
+            <p class="disabled-desc">Reconocimiento OCR en tiempo real a través del sensor de vídeo.</p>
+          </div>
+
+          <div class="disabled-card-option">
+            <div class="disabled-info">
+              <span class="disabled-title">🖼️ Analizar Foto de la Galería</span>
+              <span class="unavailable-tag">No disponible por el momento</span>
+            </div>
+            <p class="disabled-desc">Extracción automática de código desde imágenes estáticas tomadas con el móvil.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VISTA 3: EXPORTAR E IMPORTAR               -->
+    <!-- ========================================== -->
+    <section id="view-export" class="view-panel">
+      <div class="export-box">
+        <h2>📊 Exportar Colección</h2>
+        <p class="export-desc">Exporta todas tus cartas con sus cantidades exactas, colores y expansiones para llevar un control profesional.</p>
+        
+        <div class="export-actions-group">
+          <button id="btn-sheets-copy" class="btn-sheets">
+            📋 Copiar para Google Sheets
+          </button>
+          <button id="btn-excel-csv" class="btn-excel">
+            📥 Descargar Archivo Excel (CSV)
+          </button>
+        </div>
+
+        <div class="sheets-help-tip">
+          💡 <strong>Tip para Google Sheets:</strong> Al pulsar "Copiar", abre tu hoja de cálculo en blanco y pulsa <code>Ctrl + V</code> (o pegar). Todas las columnas se ordenarán automáticamente.
+        </div>
+
+        <hr class="view-divider">
+
+        <h3 class="section-divider-title">📥 Importar a tu Álbum</h3>
+        
+        <div class="import-actions-group">
+          <label class="btn-import-csv" style="text-align: center; display: block; cursor: pointer;">
+            📂 Subir Archivo Excel o CSV
+            <input type="file" id="import-excel-file" accept=".csv, .txt, .tsv" style="display: none;">
+          </label>
+          <button id="btn-paste-sheets" class="btn-outline">
+            📋 Pegar Filas desde Google Sheets / Excel
+          </button>
+        </div>
+
+        <hr class="view-divider">
+
+        <h3 class="section-divider-title">💾 Copia de Seguridad JSON</h3>
+        <div style="display: flex; gap: 8px;">
+          <button id="btn-save-json" class="btn-outline" style="flex: 1;">💾 Exportar JSON</button>
+          <label class="btn-outline" style="flex: 1; text-align: center; cursor: pointer;">
+            📂 Restaurar JSON
+            <input type="file" id="import-json-file" accept=".json" style="display: none;">
+          </label>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Barra de Navegación Inferior -->
+  <nav class="bottom-nav">
+    <button class="nav-button active" data-tab="album">
+      <span class="nav-icon">📖</span>
+      <span class="nav-label">Mi Álbum</span>
+    </button>
+    <button class="nav-button" data-tab="scanner">
+      <span class="nav-icon">🃏</span>
+      <span class="nav-label">Añadir Carta</span>
+    </button>
+    <button class="nav-button" data-tab="export">
+      <span class="nav-icon">📊</span>
+      <span class="nav-label">Exportar</span>
+    </button>
+  </nav>
+
+  <!-- ========================================== -->
+  <!-- MODAL: DETALLES Y CANTIDAD DE CARTA        -->
+  <!-- ========================================== -->
+  <div id="card-modal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Carta Seleccionada</h3>
+        <button id="btn-close-modal" class="close-modal-btn">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-card-preview">
+          <div class="modal-img-wrap" id="modal-img-zoom-btn" title="Toca para ampliar la carta en grande">
+            <img id="modal-card-img" src="" alt="Carta">
+            <div class="modal-zoom-overlay-badge">🔍 Ampliar</div>
+          </div>
+          <div class="modal-card-info">
+            <div class="modal-card-id-row">
+              <span id="modal-card-id">OP01-001</span>
+              <span id="modal-card-color" class="color-badge col-Red">Red</span>
+            </div>
+            <h4 id="modal-card-name" class="modal-card-name">Monkey.D.Luffy</h4>
+            <span id="modal-card-traits" class="modal-card-traits">Straw Hat Crew</span>
+            <span id="modal-card-meta" class="modal-card-meta">Leader • Cost: 5</span>
+            <button id="btn-open-zoom-modal" class="btn-open-zoom" type="button">
+              🔍 Ampliar Imagen
+            </button>
+          </div>
+        </div>
+
+        <div id="modal-existing-msg" class="existing-status-badge" style="display: none;">
+          <!-- Mensaje de estado -->
+        </div>
+
+        <div class="modal-qty-selector">
+          <label>¿Cuántas copias deseas añadir?</label>
+          <div class="qty-preset-group">
+            <button class="qty-btn active" data-q="1">+1</button>
+            <button class="qty-btn" data-q="2">+2</button>
+            <button class="qty-btn" data-q="3">+3</button>
+            <button class="qty-btn" data-q="4">+4</button>
+          </div>
+          <div class="qty-custom-row">
+            <span>Otra cantidad:</span>
+            <input type="number" id="modal-custom-qty" class="qty-input" min="1" max="99" value="1">
+          </div>
+        </div>
+
+        <div id="modal-forecast" class="modal-forecast-banner">
+          Se añadirá 1 copia
+        </div>
+
+        <div class="modal-actions">
+          <button id="btn-save-card-to-album" class="btn-primary btn-save-modal">
+            Guardar en el Álbum
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL LIGHTBOX: VISTA AMPLIADA DE CARTA    -->
+  <!-- ========================================== -->
+  <div id="lightbox-modal" class="modal-backdrop lightbox-backdrop" style="display: none;">
+    <div class="lightbox-card-container">
+      <button id="btn-close-lightbox" class="lightbox-close-btn" title="Cerrar imagen ampliada">✕</button>
+      <div class="lightbox-img-box">
+        <img id="lightbox-card-img" src="" alt="Carta en grande">
+      </div>
+      <div class="lightbox-info-row">
+        <span id="lightbox-card-code" class="lightbox-code">OP01-001</span>
+        <span id="lightbox-card-name" class="lightbox-name">Monkey.D.Luffy</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para Pegar desde Google Sheets / Excel -->
+  <div id="paste-modal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Pegar desde Google Sheets / Excel</h3>
+        <button id="btn-close-paste-modal" class="close-modal-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-card-meta">Copia las celdas de tu hoja de cálculo y pégalas en el siguiente recuadro:</p>
+        <textarea id="paste-textarea" class="paste-textarea" placeholder="Código&#9;Nombre&#9;Cantidad&#10;OP17-039&#9;Rocks.D.Xebec&#9;1&#10;ST01-001&#9;Monkey.D.Luffy&#9;2"></textarea>
+        <div class="modal-actions">
+          <button id="btn-cancel-paste-import" class="btn-outline" style="flex: 1;">Cancelar</button>
+          <button id="btn-confirm-paste-import" class="btn-primary" style="flex: 1; padding: 12px;">Importar Filas</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="cards-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

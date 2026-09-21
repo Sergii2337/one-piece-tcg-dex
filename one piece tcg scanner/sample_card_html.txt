@@ -1,0 +1,10 @@
+
+<section>
+            
+        <div class="card-search-grid">
+                            <a href="/cards/EB01-001"><img  class="card shadow" src="https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/one-piece/EB01/EB01-001_EN.webp"
+                    width=600 height=838></a>
+                            <a href="/cards/EB01-002"><img  class="card shadow" src="https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/one-piece/EB01/EB01-002_EN.webp"
+                    width=600 height=838></a>
+                            <a href="/cards/EB01-003"><img  class="card shadow" src="https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/one-piece/EB01/EB01-003_EN.webp"
+                    width=600 he
