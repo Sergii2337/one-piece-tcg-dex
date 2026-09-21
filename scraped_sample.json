@@ -1,0 +1,122 @@
+[
+  {
+    "id": "ST27-005",
+    "name": "Marshall.D.Teach",
+    "cardType": "Character",
+    "color": "Black",
+    "traits": "The Four Emperors / Blackbeard Pirates",
+    "rarity": "R",
+    "cost": "7 Cost / 8000 Power",
+    "attribute": "Special"
+  },
+  {
+    "id": "ST27-001",
+    "name": "Avalo Pizarro",
+    "cardType": "Character",
+    "color": "Black",
+    "traits": "Blackbeard Pirates",
+    "rarity": "R",
+    "cost": "1 Cost / 1000 Power",
+    "attribute": "Special"
+  },
+  {
+    "id": "ST21-001",
+    "name": "Monkey.D.Luffy",
+    "cardType": "Leader",
+    "color": "Red",
+    "traits": "The Four Emperors / Straw Hat Crew",
+    "rarity": "L",
+    "cost": "5 Life / 5000 Power",
+    "attribute": "Strike"
+  },
+  {
+    "id": "ST22-001",
+    "name": "Ace &amp; Newgate",
+    "cardType": "Leader",
+    "color": "Blue",
+    "traits": "The Four Emperors / Whitebeard Pirates",
+    "rarity": "L",
+    "cost": "5 Life / 5000 Power",
+    "attribute": "Special"
+  },
+  {
+    "id": "ST23-001",
+    "name": "Uta",
+    "cardType": "Character",
+    "color": "Red",
+    "traits": "FILM",
+    "rarity": "R",
+    "cost": "6 Cost / 4000 Power",
+    "attribute": "Special"
+  },
+  {
+    "id": "ST24-001",
+    "name": "Capone&quot;Gang&quot;Bege",
+    "cardType": "Character",
+    "color": "Green",
+    "traits": "Supernovas / Firetank Pirates",
+    "rarity": "R",
+    "cost": "2 Cost / 1000 Power",
+    "attribute": "Ranged"
+  },
+  {
+    "id": "OP17-039",
+    "name": "Rocks.D.Xebec",
+    "cardType": "Leader",
+    "color": "Blue",
+    "traits": "Rocks Pirates",
+    "rarity": "L",
+    "cost": "5 Life / 5000 Power",
+    "attribute": "Slash"
+  },
+  {
+    "id": "OP17-118",
+    "name": "Rocks.D.Xebec",
+    "cardType": "Character",
+    "color": "Blue",
+    "traits": "Rocks Pirates",
+    "rarity": "R",
+    "cost": "10 Cost / 12000 Power",
+    "attribute": "Slash"
+  },
+  {
+    "id": "OP17-001",
+    "name": "Edward.Newgate",
+    "cardType": "Leader",
+    "color": "Red",
+    "traits": "The Four Emperors / Whitebeard Pirates",
+    "rarity": "L",
+    "cost": "5 Life / 5000 Power",
+    "attribute": "Special"
+  },
+  {
+    "id": "OP09-082",
+    "name": "Avalo Pizarro",
+    "cardType": "Character",
+    "color": "Black",
+    "traits": "Blackbeard Pirates",
+    "rarity": "R",
+    "cost": "4 Cost / 6000 Power",
+    "attribute": "Special"
+  },
+  {
+    "id": "OP09-041",
+    "name": "Soul Franky Swing Arm Boxing Solid",
+    "cardType": "Event",
+    "color": "Green",
+    "traits": "ODYSSEY / Straw Hat Crew",
+    "rarity": "R",
+    "cost": "1 Cost",
+    "attribute": ""
+  },
+  {
+    "id": "OP01-001",
+    "name": "Roronoa Zoro",
+    "cardType": "Leader",
+    "color": "Red",
+    "traits": "Supernovas / Straw Hat Crew",
+    "rarity": "L",
+    "cost": "5 Life / 5000 Power",
+    "attribute": "Slash"
+  }
+]

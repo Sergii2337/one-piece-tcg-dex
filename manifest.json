@@ -1,0 +1,17 @@
+{
+  "name": "One Piece TCG Pocket Dex",
+  "short_name": "OP TCG Dex",
+  "description": "Escáner y diccionario de cartas One Piece TCG con recuento de inventario",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0e17",
+  "theme_color": "#0a0e17",
+  "icons": [
+    {
+      "src": "https://en.onepiece-cardgame.com/images/common/logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
