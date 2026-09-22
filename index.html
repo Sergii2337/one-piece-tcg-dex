@@ -15,7 +15,32 @@
       <span class="logo-icon">🏴‍☠️</span>
       <h1>OP-TCG <span>DEX</span></h1>
     </div>
-    <div class="stats-badge" id="header-stats">0 cartas</div>
+
+    <div class="header-right-group">
+      <div class="stats-badge" id="header-stats">0 cartas</div>
+
+      <!-- Google Auth y Perfil -->
+      <div id="auth-container" class="auth-header-wrap">
+        <button id="btn-google-login" class="btn-google-auth" title="Iniciar sesión con Google para sincronizar en la nube">
+          <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span class="auth-btn-label">Iniciar Sesión</span>
+        </button>
+
+        <div id="user-profile-menu" class="user-profile-pill" style="display: none;">
+          <img id="user-avatar" class="user-avatar-img" src="" alt="Avatar">
+          <div class="user-meta-info">
+            <span id="user-name" class="user-name-text">Usuario</span>
+            <span id="cloud-sync-status" class="sync-badge-ok">🟢 Nube</span>
+          </div>
+          <button id="btn-logout" class="btn-logout-mini" title="Cerrar sesión">🚪 Salir</button>
+        </div>
+      </div>
+    </div>
   </header>
 
   <!-- Contenedor Principal de Vistas -->
@@ -26,31 +51,49 @@
     <!-- ========================================== -->
     <section id="view-album" class="view-panel active">
 
-      <!-- Barra de Carpetas Personalizadas del Álbum -->
+      <!-- Barra de Carpetas del Álbum (Sub-pestañas: Mis Carpetas vs Compartidas) -->
       <div class="folders-section-container">
-        <div class="folders-header-row">
-          <span class="folders-section-label">📁 Mis Carpetas y Mazos:</span>
-          <button id="btn-add-folder" class="btn-create-folder" title="Crear nueva carpeta personalizada">
-            ➕ Nueva Carpeta
-          </button>
+        <div class="folder-scope-toggle-row">
+          <div class="folder-scope-tabs">
+            <button id="tab-scope-personal" class="scope-tab active" type="button" title="Tus carpetas privadas">
+              📁 Mis Carpetas
+            </button>
+            <button id="tab-scope-shared" class="scope-tab" type="button" title="Carpetas compartidas con amigos">
+              👥 Compartidas <span id="shared-badge-count" class="scope-badge">0</span>
+            </button>
+          </div>
+
+          <div class="folders-actions-header">
+            <button id="btn-add-folder" class="btn-create-folder" title="Crear nueva carpeta">
+              ➕ Nueva Carpeta
+            </button>
+            <button id="btn-join-shared-folder" class="btn-create-folder btn-join-folder" title="Unirse a una carpeta compartida por enlace">
+              🔗 Unirse
+            </button>
+          </div>
         </div>
+
         <div class="folders-scroll" id="folders-pills-container">
           <!-- Las píldoras de carpetas se generan dinámicamente -->
         </div>
       </div>
 
-      <!-- Banner de Gestión de Carpeta Activa (cuando se selecciona una carpeta específica) -->
+      <!-- Banner de Gestión de Carpeta Activa -->
       <div id="folder-active-banner" class="folder-active-banner" style="display: none;">
         <div class="folder-active-info">
           <span id="folder-active-icon" class="folder-banner-icon">📁</span>
           <div class="folder-active-text">
-            <strong id="folder-active-title">Mazo Personalizado</strong>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <strong id="folder-active-title">Mazo Personalizado</strong>
+              <span id="folder-active-type-badge" class="folder-type-badge">Personal</span>
+            </div>
             <span id="folder-active-count">0 cartas guardadas</span>
           </div>
         </div>
         <div class="folder-active-actions">
+          <button id="btn-share-active-folder" class="btn-folder-action btn-share-folder" style="display: none;" title="Copiar enlace para compartir con amigos">🔗 Compartir</button>
           <button id="btn-edit-active-folder" class="btn-folder-action" title="Editar nombre/icono de la carpeta">✏️ Editar</button>
-          <button id="btn-delete-active-folder" class="btn-folder-action btn-folder-delete" title="Eliminar carpeta">🗑️ Eliminar</button>
+          <button id="btn-delete-active-folder" class="btn-folder-action btn-folder-delete" title="Eliminar carpeta o salir de ella">🗑️ Eliminar</button>
         </div>
       </div>
 
@@ -96,33 +139,26 @@
         </div>
       </div>
 
-      <!-- Filtros por Color y Tipos populares -->
-      <div class="filter-pills-row">
-        <button class="filter-pill active" data-filter="ALL">Todas</button>
-        <button class="filter-pill" data-filter="Rocks Pirates">🏴‍☠️ Rocks Pirates</button>
-        <button class="filter-pill" data-filter="Straw Hat">👒 Straw Hat</button>
-        <button class="filter-pill" data-filter="Navy">⚓ Navy</button>
-        <button class="filter-pill" data-filter="Four Emperors">👑 Four Emperors</button>
-        <button class="filter-pill" data-filter="Roger Pirates">⚓ Roger Pirates</button>
-        <button class="filter-pill" data-filter="Blue">🔵 Azul</button>
-        <button class="filter-pill" data-filter="Red">🔴 Rojo</button>
-        <button class="filter-pill" data-filter="Green">🟢 Verde</button>
-        <button class="filter-pill" data-filter="Purple">🟣 Morado</button>
-        <button class="filter-pill" data-filter="Black">⚫ Negro</button>
-        <button class="filter-pill" data-filter="Yellow">🟡 Amarillo</button>
+      <!-- Filtros Rápidos por Color -->
+      <div class="filter-pills-row" id="color-filters">
+        <button class="filter-pill active" data-color="all">Todos</button>
+        <button class="filter-pill" data-color="Red">Rojo</button>
+        <button class="filter-pill" data-color="Green">Verde</button>
+        <button class="filter-pill" data-color="Blue">Azul</button>
+        <button class="filter-pill" data-color="Purple">Morado</button>
+        <button class="filter-pill" data-color="Black">Negro</button>
+        <button class="filter-pill" data-color="Yellow">Amarillo</button>
       </div>
 
-      <!-- Cuadrícula / Lista de cartas del álbum -->
-      <div id="cards-grid" class="cards-grid view-mode-grid size-normal"></div>
+      <!-- Grid de Cartas del Álbum -->
+      <div id="album-grid" class="cards-grid view-mode-grid size-normal">
+        <!-- Rellenado dinámicamente -->
+      </div>
 
-      <!-- Estado vacío -->
-      <div id="empty-album-msg" class="empty-msg" style="display: none;">
-        <div id="empty-album-icon" style="font-size: 3rem; margin-bottom: 8px;">📬</div>
-        <h3 id="empty-album-title">No se encontraron cartas</h3>
-        <p id="empty-album-desc">Introduce un código o busca un Set (ej. OP17, ST01) para ver todas sus cartas.</p>
-        <button id="btn-empty-search-st" class="btn-primary" style="display: none; margin: 12px auto 0 auto; width: auto; padding: 10px 20px;">
-          📦 Ver Cartas de la Base de Datos
-        </button>
+      <!-- Mensaje Vacío -->
+      <div id="album-empty" class="empty-msg" style="display: none;">
+        <p>No tienes cartas en este filtro o carpeta.</p>
+        <p style="font-size: 0.8rem; margin-top: 6px;">¡Usa la pestaña ➕ Añadir para registrar tus cartas o Starter Decks!</p>
       </div>
     </section>
 
@@ -130,167 +166,161 @@
     <!-- VISTA 2: AÑADIR CARTA POR CÓDIGO (PRINCIPAL) -->
     <!-- ========================================== -->
     <section id="view-scanner" class="view-panel">
+      
       <div class="code-entry-card">
-        
         <div class="entry-header">
           <div class="entry-icon">🃏</div>
-          <h2>Buscador de Cartas Oficiales</h2>
-          <p class="entry-subtitle">
-            Busca por nombre de personaje (ej. <strong>Luffy</strong>, <strong>Zoro</strong>, <strong>Xebec</strong>), Starter Deck (ej. <strong>ST01</strong>) o Código (ej. <strong>OP17-039</strong>).
-          </p>
+          <h2>Añadir Cartas al Álbum</h2>
+          <p class="entry-subtitle">Elige un Starter Deck completo o busca cualquier carta por su código oficial.</p>
         </div>
 
-        <!-- Selector Rápido de Starter Decks Populares -->
+        <!-- Selector rápido de Starter Decks -->
         <div class="st-selector-wrap">
-          <label class="quick-set-label" for="st-quick-select">📦 Explorar Starter Decks Oficiales (ST-01 a ST-20):</label>
-          <select id="st-quick-select" class="st-dropdown">
-            <option value="">-- Elige un Starter Deck para ver su baraja completa --</option>
+          <label class="quick-set-label" for="starter-deck-select">📦 Seleccionar Starter Deck Oficial:</label>
+          <select id="starter-deck-select" class="st-dropdown">
+            <option value="">-- Elige un Starter Deck (ST01 - ST20) --</option>
             <option value="ST01">ST-01: Straw Hat Crew (Luffy)</option>
             <option value="ST02">ST-02: Worst Generation (Eustass Kid)</option>
             <option value="ST03">ST-03: The Seven Warlords of the Sea (Crocodile)</option>
             <option value="ST04">ST-04: Animal Kingdom Pirates (Kaido)</option>
             <option value="ST05">ST-05: ONE PIECE FILM edition (Shanks)</option>
-            <option value="ST06">ST-06: Absolute Justice (Navy - Sakazuki)</option>
+            <option value="ST06">ST-06: Absolute Justice (Sakazuki)</option>
             <option value="ST07">ST-07: Big Mom Pirates (Charlotte Linlin)</option>
-            <option value="ST08">ST-08: Monkey D. Luffy (Side)</option>
-            <option value="ST09">ST-09: Yamato (Side)</option>
-            <option value="ST10">ST-10: Ultimate Deck - The Three Captains</option>
+            <option value="ST08">ST-08: Monkey D. Luffy</option>
+            <option value="ST09">ST-09: Yamato</option>
+            <option value="ST10">ST-10: The Three Captains (Luffy/Law/Kid)</option>
             <option value="ST11">ST-11: Uta</option>
             <option value="ST12">ST-12: Zoro & Sanji</option>
-            <option value="ST13">ST-13: The Three Brothers (Ace, Sabo, Luffy)</option>
-            <option value="ST14">ST-14: 3D2Y (Straw Hat Crew)</option>
-            <option value="ST15">ST-15: Red Edward Newgate</option>
+            <option value="ST13">ST-13: The Three Brothers (Luffy/Ace/Sabo)</option>
+            <option value="ST14">ST-14: 3D2Y</option>
+            <option value="ST15">ST-15: Red Edward.Newgate</option>
             <option value="ST16">ST-16: Green Uta</option>
             <option value="ST17">ST-17: Blue Donquixote Doflamingo</option>
-            <option value="ST18">ST-18: Purple Monkey D. Luffy</option>
+            <option value="ST18">ST-18: Purple Monkey.D.Luffy</option>
             <option value="ST19">ST-19: Black Smoker</option>
             <option value="ST20">ST-20: Yellow Charlotte Katakuri</option>
           </select>
         </div>
 
-        <!-- Barra de Expansiones Populares -->
+        <!-- O bien chips rápidos de Sets Populares (Expansiones) -->
         <div class="quick-set-bar">
-          <span class="quick-set-label">O explora expansiones principales:</span>
+          <span class="quick-set-label">O buscar por Expansión (Booster Sets):</span>
           <div class="set-chips-scroll">
-            <button class="set-chip" data-set="OP17">OP-17 (Rocks)</button>
-            <button class="set-chip" data-set="OP09">OP-09 (Roger)</button>
-            <button class="set-chip" data-set="OP08">OP-08 (Two Legends)</button>
-            <button class="set-chip" data-set="OP07">OP-07 (500 Years)</button>
-            <button class="set-chip" data-set="OP06">OP-06 (Wings)</button>
-            <button class="set-chip" data-set="OP05">OP-05 (Awakening)</button>
-            <button class="set-chip" data-set="OP01">OP-01 (Romance Dawn)</button>
-            <button class="set-chip" data-set="EB01">EB-01 (Memorial)</button>
-          </div>
-        </div>
-
-        <!-- Campo de entrada por texto/código libre -->
-        <div class="main-code-input-wrapper">
-          <input 
-            type="text" 
-            id="direct-card-code-input" 
-            class="main-code-field" 
-            value="OP" 
-            placeholder="Buscar por Nombre (Luffy, Zoro), Set (ST01) o Código..." 
-            autocomplete="off" 
-            autocorrect="off" 
-            autocapitalize="characters" 
-            spellcheck="false"
-          >
-          <button id="btn-submit-card-code" class="btn-primary btn-search-code">
-            🔍 Buscar Cartas
-          </button>
-        </div>
-
-        <!-- Ejemplos sugeridos directos -->
-        <div class="examples-tray">
-          <span class="example-title">Prueba buscar:</span>
-          <div class="example-chips">
-            <button class="example-chip" data-code="Luffy">👒 Luffy (75 cartas)</button>
-            <button class="example-chip" data-code="Zoro">⚔️ Zoro</button>
-            <button class="example-chip" data-code="Nami">🍊 Nami</button>
-            <button class="example-chip" data-code="Kaido">🐉 Kaido</button>
-            <button class="example-chip" data-code="OP17-039">OP17-039 (Xebec L)</button>
-            <button class="example-chip" data-code="ST01">📦 ST01 (Straw Hat)</button>
-          </div>
-        </div>
-
-        <!-- ========================================== -->
-        <!-- RESULTADOS DE BÚSQUEDA Y STARTER DECKS     -->
-        <!-- ========================================== -->
-        <div id="set-results-container" class="set-results-container" style="display: none;">
-          <div class="set-results-header">
-            <div class="set-results-meta">
-              <div class="set-badge-title">
-                <span id="set-results-icon" class="set-icon">🔍</span>
-                <span id="set-results-name">Resultados de Búsqueda</span>
-                <span id="set-results-color-badge" class="color-badge col-Red" style="display: none;">Red</span>
-              </div>
-              <p id="set-results-desc" class="set-sub-text">Cartas encontradas • Toca cualquier carta para seleccionarla</p>
-            </div>
-            <div class="set-results-actions">
-              <button id="btn-add-entire-deck" class="btn-primary btn-deck-add-all" style="display: none;">
-                ➕ Añadir Todo el Deck (+1 copia)
-              </button>
-              <button id="btn-close-set-results" class="btn-close-set" title="Cerrar">✕</button>
-            </div>
-          </div>
-
-          <!-- Barra de Configuración de Vista de Set / Búsqueda (Modo Lista / Carta y Zoom) -->
-          <div class="album-view-toolbar set-view-toolbar">
-            <div class="view-mode-toggle">
-              <button id="btn-set-view-grid" class="view-mode-btn active" title="Modo Cuadrícula / Carta">
-                <span class="icon">🔲</span>
-                <span class="label">Carta</span>
-              </button>
-              <button id="btn-set-view-list" class="view-mode-btn" title="Modo Lista en Filas">
-                <span class="icon">📋</span>
-                <span class="label">Lista</span>
-              </button>
-            </div>
-
-            <div class="card-size-control">
-              <span class="size-label">Tamaño:</span>
-              <button id="btn-set-size-decrease" class="size-btn" title="Hacer más pequeñas las cartas">🔍−</button>
-              <button id="btn-set-size-reset" class="size-btn size-indicator" title="Restablecer tamaño normal">Normal</button>
-              <button id="btn-set-size-increase" class="size-btn" title="Hacer más grandes las cartas">🔍+</button>
-            </div>
-          </div>
-
-          <!-- Cuadrícula / Lista de cartas encontradas -->
-          <div id="set-cards-grid" class="cards-grid set-grid view-mode-grid size-normal"></div>
-
-          <!-- Paginación de resultados (18 cartas por página = 3 filas de 6) -->
-          <div id="set-pagination-controls" class="pagination-toolbar" style="display: none;">
-            <button id="btn-page-prev" class="btn-page-nav" title="Página anterior">◀ Anterior</button>
-            <span id="page-indicator" class="page-indicator-text">Página 1 de 1</span>
-            <button id="btn-page-next" class="btn-page-nav" title="Página siguiente">Siguiente ▶</button>
+            <button class="set-chip" data-set="OP01">OP-01</button>
+            <button class="set-chip" data-set="OP02">OP-02</button>
+            <button class="set-chip" data-set="OP03">OP-03</button>
+            <button class="set-chip" data-set="OP04">OP-04</button>
+            <button class="set-chip" data-set="OP05">OP-05</button>
+            <button class="set-chip" data-set="OP06">OP-06</button>
+            <button class="set-chip" data-set="OP07">OP-07</button>
+            <button class="set-chip" data-set="OP08">OP-08</button>
+            <button class="set-chip" data-set="OP09">OP-09</button>
+            <button class="set-chip" data-set="OP10">OP-10</button>
+            <button class="set-chip" data-set="EB01">EB-01</button>
           </div>
         </div>
 
         <hr class="view-divider">
 
-        <!-- Métodos secundarios deshabilitados temporalmente -->
-        <div class="disabled-methods-section">
-          <span class="disabled-section-title">Otros métodos de entrada:</span>
-          
-          <div class="disabled-card-option">
-            <div class="disabled-info">
-              <span class="disabled-title">📷 Escanear con Cámara en Vivo</span>
-              <span class="unavailable-tag">No disponible por el momento</span>
-            </div>
-            <p class="disabled-desc">Reconocimiento OCR en tiempo real a través del sensor de vídeo.</p>
-          </div>
+        <!-- Campo Principal de Entrada por Código -->
+        <div class="main-code-input-wrapper">
+          <label class="quick-set-label" for="manual-code-input">O teclear código individual:</label>
+          <input 
+            type="text" 
+            id="manual-code-input" 
+            class="main-code-field" 
+            placeholder="Ej. OP01-001 ó ST01-004" 
+            autocomplete="off"
+            autocapitalize="characters"
+          >
+          <button id="btn-manual-search" class="btn-primary btn-search-code">
+            🔍 Buscar Carta
+          </button>
+        </div>
 
-          <div class="disabled-card-option">
-            <div class="disabled-info">
-              <span class="disabled-title">🖼️ Analizar Foto de la Galería</span>
-              <span class="unavailable-tag">No disponible por el momento</span>
+        <!-- Ejemplos rápidos -->
+        <div class="examples-tray">
+          <span class="example-title">Ejemplos rápidos:</span>
+          <div class="example-chips">
+            <button class="example-chip" data-code="ST01-001">ST01-001 (Luffy)</button>
+            <button class="example-chip" data-code="ST01-004">ST01-004 (Zoro)</button>
+            <button class="example-chip" data-code="OP01-001">OP01-001 (Zoro L)</button>
+            <button class="example-chip" data-code="OP05-060">OP05-060 (Luffy L)</button>
+            <button class="example-chip" data-code="OP09-001">OP09-001</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenedor desplegable para Explorar y Añadir Cartas del Set / Starter Deck -->
+      <div id="set-results-container" class="set-results-container" style="display: none;">
+        <div class="set-results-header">
+          <div class="set-header-text">
+            <div class="set-badge-title">
+              <span class="set-icon">📦</span>
+              <span id="set-results-title">Starter Deck ST-01</span>
             </div>
-            <p class="disabled-desc">Extracción automática de código desde imágenes estáticas tomadas con el móvil.</p>
+            <p id="set-results-subtitle" class="set-sub-text">Cargando cartas del mazo...</p>
+          </div>
+          <div class="set-results-actions">
+            <button id="btn-set-add-all-deck" class="btn-primary btn-deck-add-all" title="Añade las cartas completas del Starter Deck">
+              📥 Añadir Mazo Completo
+            </button>
+            <button id="btn-close-set-results" class="btn-close-set" title="Cerrar explorador">✕</button>
           </div>
         </div>
 
+        <!-- Barra de Configuración para la Vista de Set -->
+        <div class="album-view-toolbar" style="margin-bottom: 12px;">
+          <div class="view-mode-toggle">
+            <button id="btn-set-view-grid" class="view-mode-btn active" title="Modo Cuadrícula / Carta">
+              <span class="icon">🔲</span>
+              <span class="label">Carta</span>
+            </button>
+            <button id="btn-set-view-list" class="view-mode-btn" title="Modo Lista en Filas">
+              <span class="icon">📋</span>
+              <span class="label">Lista</span>
+            </button>
+          </div>
+
+          <div class="card-size-control">
+            <span class="size-label">Tamaño:</span>
+            <button id="btn-set-size-decrease" class="size-btn">🔍−</button>
+            <button id="btn-set-size-reset" class="size-btn size-indicator">Normal</button>
+            <button id="btn-set-size-increase" class="size-btn">🔍+</button>
+          </div>
+        </div>
+
+        <!-- Cuadrícula / Lista de Cartas del Set -->
+        <div id="set-cards-grid" class="cards-grid view-mode-grid size-normal">
+          <!-- Rellenado con cartas del set -->
+        </div>
+
+        <!-- Barra de Paginación para Sets Grandes -->
+        <div id="set-pagination-bar" class="pagination-toolbar" style="display: none;">
+          <button id="btn-prev-page" class="btn-page-nav" disabled>
+            ◀ Anterior
+          </button>
+          <span id="set-pagination-info" class="page-indicator-text">
+            Página 1 de 1
+          </span>
+          <button id="btn-next-page" class="btn-page-nav">
+            Siguiente ▶
+          </button>
+        </div>
       </div>
+
+      <!-- Métodos adicionales deshabilitados / futuro -->
+      <div class="disabled-methods-section" style="margin-top: 20px;">
+        <span class="disabled-section-title">Otras formas de captura:</span>
+        <div class="disabled-card-option">
+          <div class="disabled-info">
+            <span class="disabled-title">📷 Escáner OCR en Vivo</span>
+            <span class="unavailable-tag">Próximamente</span>
+          </div>
+          <p class="disabled-desc">Reconocimiento fotográfico con la cámara del móvil para escanear lotes sin teclear.</p>
+        </div>
+      </div>
+
     </section>
 
     <!-- ========================================== -->
@@ -298,80 +328,69 @@
     <!-- ========================================== -->
     <section id="view-export" class="view-panel">
       <div class="export-box">
-        <h2>📊 Exportar Colección</h2>
-        <p class="export-desc">Exporta todas tus cartas con sus cantidades exactas, carpetas, colores y expansiones para llevar un control profesional.</p>
+        <h2>📊 Exportar & Sincronizar Colección</h2>
+        <p class="export-desc">
+          Lleva tu colección y carpetas a hojas de cálculo de Google Sheets o Excel para calcular valores y estadísticas.
+        </p>
         
+        <div class="section-divider-title">Exportar Datos</div>
         <div class="export-actions-group">
-          <button id="btn-sheets-copy" class="btn-sheets">
-            📋 Copiar para Google Sheets
+          <button id="btn-export-sheets" class="btn-sheets">
+            📋 Copiar para Google Sheets (Formato TSV)
           </button>
-          <button id="btn-excel-csv" class="btn-excel">
-            📥 Descargar Archivo Excel (CSV)
+          <button id="btn-export-excel" class="btn-excel">
+            📥 Descargar Archivo Excel / CSV
           </button>
         </div>
 
         <div class="sheets-help-tip">
-          💡 <strong>Tip para Google Sheets:</strong> Al pulsar "Copiar", abre tu hoja de cálculo en blanco y pulsa <code>Ctrl + V</code> (o pegar). Todas las columnas se ordenarán automáticamente.
+          💡 <strong>Tip Google Sheets:</strong> Pulsa "Copiar para Google Sheets", abre tu hoja y presiona <code>Ctrl + V</code> (o <code>Cmd + V</code> en Mac) en la celda A1. Se pegará ordenado en columnas automáticamente.
         </div>
 
-        <hr class="view-divider">
-
-        <h3 class="section-divider-title">📥 Importar a tu Álbum</h3>
-        
+        <div class="section-divider-title" style="margin-top: 10px;">Importar Colección</div>
         <div class="import-actions-group">
-          <label class="btn-import-csv" style="text-align: center; display: block; cursor: pointer;">
-            📂 Subir Archivo Excel o CSV
-            <input type="file" id="import-excel-file" accept=".csv, .txt, .tsv" style="display: none;">
-          </label>
-          <button id="btn-paste-sheets" class="btn-outline">
-            📋 Pegar Filas desde Google Sheets / Excel
+          <button id="btn-paste-sheets" class="btn-import-csv">
+            📋 Pegar directamente desde Google Sheets / Excel
           </button>
-        </div>
-
-        <hr class="view-divider">
-
-        <h3 class="section-divider-title">💾 Copia de Seguridad JSON</h3>
-        <div style="display: flex; gap: 8px;">
-          <button id="btn-save-json" class="btn-outline" style="flex: 1;">💾 Exportar JSON</button>
-          <label class="btn-outline" style="flex: 1; text-align: center; cursor: pointer;">
-            📂 Restaurar JSON
-            <input type="file" id="import-json-file" accept=".json" style="display: none;">
+          <label for="csv-file-input" class="btn-outline" style="text-align: center; cursor: pointer; display: block;">
+            📂 Importar desde archivo CSV / Backup
           </label>
+          <input type="file" id="csv-file-input" accept=".csv" style="display: none;">
         </div>
       </div>
     </section>
 
   </div>
 
-  <!-- Barra de Navegación Inferior -->
+  <!-- Barra de Navegación Inferior Móvil -->
   <nav class="bottom-nav">
-    <button class="nav-button active" data-tab="album">
-      <span class="nav-icon">📖</span>
-      <span class="nav-label">Mi Álbum</span>
+    <button class="nav-button active" data-target="view-album">
+      <span class="nav-icon">📁</span>
+      <span class="nav-label">Álbum</span>
     </button>
-    <button class="nav-button" data-tab="scanner">
-      <span class="nav-icon">🃏</span>
-      <span class="nav-label">Añadir Carta</span>
+    <button class="nav-button" data-target="view-scanner">
+      <span class="nav-icon">➕</span>
+      <span class="nav-label">Añadir</span>
     </button>
-    <button class="nav-button" data-tab="export">
+    <button class="nav-button" data-target="view-export">
       <span class="nav-icon">📊</span>
       <span class="nav-label">Exportar</span>
     </button>
   </nav>
 
   <!-- ========================================== -->
-  <!-- MODAL: DETALLES Y CANTIDAD DE CARTA        -->
+  <!-- MODAL: CONFIRMACIÓN Y DETALLE DE CARTA     -->
   <!-- ========================================== -->
   <div id="card-modal" class="modal-backdrop">
     <div class="modal-card">
       <div class="modal-header">
-        <h3>Carta Seleccionada</h3>
+        <h3 id="modal-title">Detalle de Carta</h3>
         <button id="btn-close-modal" class="close-modal-btn">✕</button>
       </div>
 
       <div class="modal-body">
         <div class="modal-card-preview">
-          <div class="modal-img-wrap" id="modal-img-zoom-btn" title="Toca para ampliar la carta en grande">
+          <div class="modal-img-wrap" id="modal-img-interactive-wrap">
             <img id="modal-card-img" src="" alt="Carta">
             <div class="modal-zoom-overlay-badge">🔍 Ampliar</div>
           </div>
@@ -498,15 +517,43 @@
       </div>
 
       <div class="modal-body">
+        <!-- Selector Tipo de Carpeta (Personal vs Compartida) -->
+        <div class="form-group" id="folder-type-group">
+          <label class="form-label">Tipo de Carpeta:</label>
+          <div class="folder-type-radio-group">
+            <label class="folder-type-option">
+              <input type="radio" name="folder-type-choice" value="personal" checked>
+              <div class="folder-type-card">
+                <span class="type-icon">📁</span>
+                <div>
+                  <strong>Personal</strong>
+                  <p>Solo en tu cuenta</p>
+                </div>
+              </div>
+            </label>
+            <label class="folder-type-option">
+              <input type="radio" name="folder-type-choice" value="shared">
+              <div class="folder-type-card">
+                <span class="type-icon">👥</span>
+                <div>
+                  <strong>Compartida</strong>
+                  <p>Enlace con amigos</p>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+
         <div class="form-group">
           <label class="form-label" for="folder-name-input">Nombre de la carpeta o mazo:</label>
-          <input type="text" id="folder-name-input" class="st-dropdown" placeholder="Ej. Mazo Luffy, Repetidas, Favoritas..." maxlength="30">
+          <input type="text" id="folder-name-input" class="st-dropdown" placeholder="Ej. Mazo Luffy, Repetidas, Liga Pirata..." maxlength="30">
         </div>
 
         <div class="form-group">
           <label class="form-label">Elige un icono / emoji:</label>
           <div class="emoji-picker-grid" id="folder-icon-picker">
             <button type="button" class="emoji-opt-btn active" data-icon="📁">📁</button>
+            <button type="button" class="emoji-opt-btn" data-icon="👥">👥</button>
             <button type="button" class="emoji-opt-btn" data-icon="🗂️">🗂️</button>
             <button type="button" class="emoji-opt-btn" data-icon="⚔️">⚔️</button>
             <button type="button" class="emoji-opt-btn" data-icon="👑">👑</button>
@@ -520,7 +567,6 @@
             <button type="button" class="emoji-opt-btn" data-icon="🐉">🐉</button>
             <button type="button" class="emoji-opt-btn" data-icon="🍖">🍖</button>
             <button type="button" class="emoji-opt-btn" data-icon="⚡">⚡</button>
-            <button type="button" class="emoji-opt-btn" data-icon="👒">👒</button>
             <button type="button" class="emoji-opt-btn" data-icon="🃏">🃏</button>
           </div>
         </div>
@@ -542,6 +588,61 @@
         <div class="modal-actions">
           <button id="btn-cancel-folder" class="btn-outline" style="flex: 1;">Cancelar</button>
           <button id="btn-save-folder" class="btn-primary" style="flex: 1; padding: 12px;">Guardar Carpeta</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: COMPARTIR CARPETA                   -->
+  <!-- ========================================== -->
+  <div id="share-folder-modal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>🔗 Compartir Carpeta</h3>
+        <button id="btn-close-share-folder-modal" class="close-modal-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="share-info-card">
+          <span id="share-folder-icon" class="share-icon-large">👥</span>
+          <div>
+            <h4 id="share-folder-name" class="share-title">Carpeta Compartida</h4>
+            <p class="share-subtitle">Cualquier amigo con este enlace podrá ver y gestionar cartas en tiempo real.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="share-link-input">Enlace directo de invitación:</label>
+          <div class="share-link-row">
+            <input type="text" id="share-link-input" class="st-dropdown" readonly>
+            <button id="btn-copy-share-link" class="btn-primary" style="padding: 10px 16px; white-space:nowrap;">📋 Copiar</button>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button id="btn-done-share-folder" class="btn-outline" style="flex: 1;">Listo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: UNIRSE A CARPETA COMPARTIDA         -->
+  <!-- ========================================== -->
+  <div id="join-folder-modal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>👥 Unirse a Carpeta Compartida</h3>
+        <button id="btn-close-join-folder-modal" class="close-modal-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-card-meta">Pega el enlace o código que te envió tu amigo para acceder a su carpeta:</p>
+        <div class="form-group">
+          <input type="text" id="join-folder-input" class="st-dropdown" placeholder="https://.../?share=sh_... ó sh_123456">
+        </div>
+        <div class="modal-actions">
+          <button id="btn-cancel-join-folder" class="btn-outline" style="flex: 1;">Cancelar</button>
+          <button id="btn-confirm-join-folder" class="btn-primary" style="flex: 1; padding: 12px;">Unirse</button>
         </div>
       </div>
     </div>
@@ -615,7 +716,13 @@
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- Firebase SDKs (Compatibles sin necesidad de build tools) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  
+  <!-- Scripts de la Aplicación -->
   <script src="cards-data.js"></script>
   <script src="app.js"></script>
 </body>
