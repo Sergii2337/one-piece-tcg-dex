@@ -1,322 +1,163 @@
 import json
-import os
 import re
 
 def main():
-    json_path = "full_scraped_cards.json"
-    if not os.path.exists(json_path):
-        json_path = "one piece tcg scanner/full_scraped_cards.json"
-    
-    if not os.path.exists(json_path):
-        print("Scraped file not ready yet")
-        return
+    print("Loading op_cards_database.json...")
+    with open("op_cards_database.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-    with open(json_path, "r", encoding="utf-8") as f:
-        cards_db = json.load(f)
+    cards = data.get("cards", {})
+    starter_decks = data.get("starter_decks", {})
 
-    print(f"Loaded {len(cards_db)} cards from json")
+    print(f"Total cards to export: {len(cards)}")
+    print(f"Total starter decks to export: {len(starter_decks)}")
 
-    # Clean up HTML entities
-    for cid, c in cards_db.items():
-        if "name" in c and c["name"]:
-            c["name"] = c["name"].replace('&amp;', '&').replace('&quot;', '"').replace('&#039;', "'").replace('&lt;', '<').replace('&gt;', '>')
-        if "traits" in c and c["traits"]:
-            c["traits"] = c["traits"].replace('&amp;', '&').replace('&quot;', '"').replace('&#039;', "'").replace('&lt;', '<').replace('&gt;', '>')
+    # We will format cards in a compact JSON format inside JS
+    cards_json = json.dumps(cards, ensure_ascii=False, indent=2)
+    starters_json = json.dumps(starter_decks, ensure_ascii=False, indent=2)
 
-    js_code = f"""// Comprehensive One Piece TCG Cards Database & Fallback Engine
-// Scraped & Verified from Official Bandai / Limitless TCG Database
+    js_code = f"""// One Piece TCG Database & Resolver Engine
+// Auto-generated comprehensive cards database and image URL resolver
 
-const ONE_PIECE_CARDS_DB = {json.dumps(cards_db, ensure_ascii=False, indent=2)};
+const ONE_PIECE_CARDS_DB = {cards_json};
 
-const STARTER_DECKS_META = {{
-  "ST01": {{ code: "ST01", name: "Straw Hat Crew", color: "Red", traits: "Straw Hat Crew" }},
-  "ST02": {{ code: "ST02", name: "Worst Generation", color: "Green", traits: "Supernovas" }},
-  "ST03": {{ code: "ST03", name: "The Seven Warlords of the Sea", color: "Blue", traits: "The Seven Warlords of the Sea" }},
-  "ST04": {{ code: "ST04", name: "Animal Kingdom Pirates", color: "Purple", traits: "Animal Kingdom Pirates" }},
-  "ST05": {{ code: "ST05", name: "ONE PIECE FILM edition", color: "Purple", traits: "FILM" }},
-  "ST06": {{ code: "ST06", name: "Absolute Justice", color: "Black", traits: "Navy" }},
-  "ST07": {{ code: "ST07", name: "Big Mom Pirates", color: "Yellow", traits: "Big Mom Pirates" }},
-  "ST08": {{ code: "ST08", name: "Side Monkey.D.Luffy", color: "Black", traits: "Straw Hat Crew" }},
-  "ST09": {{ code: "ST09", name: "Side Yamato", color: "Yellow", traits: "Land of Wano" }},
-  "ST10": {{ code: "ST10", name: "The Three Captains", color: "Red/Purple", traits: "Supernovas / Straw Hat / Heart / Kid" }},
-  "ST11": {{ code: "ST11", name: "Uta", color: "Green", traits: "FILM / Music" }},
-  "ST12": {{ code: "ST12", name: "Zoro & Sanji", color: "Green/Blue", traits: "Straw Hat Crew" }},
-  "ST13": {{ code: "ST13", name: "The Three Brothers", color: "Yellow", traits: "ASL / Revolutionary Army / Whitebeard" }},
-  "ST14": {{ code: "ST14", name: "3D2Y", color: "Black", traits: "Straw Hat Crew" }},
-  "ST15": {{ code: "ST15", name: "RED Edward.Newgate", color: "Red", traits: "Whitebeard Pirates" }},
-  "ST16": {{ code: "ST16", name: "GREEN Uta", color: "Green", traits: "FILM / Music" }},
-  "ST17": {{ code: "ST17", name: "BLUE Donquixote Doflamingo", color: "Blue", traits: "Donquixote Pirates / The Seven Warlords of the Sea" }},
-  "ST18": {{ code: "ST18", name: "PURPLE Monkey.D.Luffy", color: "Purple", traits: "Straw Hat Crew" }},
-  "ST19": {{ code: "ST19", name: "BLACK Smoker", color: "Black", traits: "Navy" }},
-  "ST20": {{ code: "ST20", name: "YELLOW Charlotte Katakuri", color: "Yellow", traits: "Big Mom Pirates" }},
-  "ST21": {{ code: "ST21", name: "EX Gear 5", color: "Red", traits: "Straw Hat Crew" }},
-  "ST22": {{ code: "ST22", name: "Ace & Newgate", color: "Blue", traits: "Whitebeard Pirates / Spade Pirates" }},
-  "ST23": {{ code: "ST23", name: "RED Shanks", color: "Red", traits: "Red Hair Pirates / FILM" }},
-  "ST24": {{ code: "ST24", name: "GREEN Jewelry Bonney", color: "Green", traits: "Supernovas / Bonney Pirates" }},
-  "ST25": {{ code: "ST25", name: "BLUE Buggy", color: "Blue", traits: "Cross Guild / The Seven Warlords of the Sea" }},
-  "ST26": {{ code: "ST26", name: "PURPLE/BLACK Monkey.D.Luffy", color: "Purple/Black", traits: "Straw Hat Crew" }},
-  "ST27": {{ code: "ST27", name: "BLACK Marshall.D.Teach", color: "Black", traits: "Blackbeard Pirates" }},
-  "ST28": {{ code: "ST28", name: "GREEN/YELLOW Yamato", color: "Green/Yellow", traits: "Land of Wano" }},
-  "ST29": {{ code: "ST29", name: "Egghead", color: "Yellow", traits: "Egghead / Straw Hat Crew" }},
-  "ST30": {{ code: "ST30", name: "EX Luffy & Ace", color: "Red/Green", traits: "Straw Hat Crew / Whitebeard Pirates" }},
-  "ST31": {{ code: "ST31", name: "RED Monkey.D.Luffy", color: "Red", traits: "Straw Hat Crew" }},
-  "ST32": {{ code: "ST32", name: "GREEN Roronoa Zoro", color: "Green", traits: "Straw Hat Crew / Land of Wano" }},
-  "ST33": {{ code: "ST33", name: "BLUE Kuzan", color: "Blue", traits: "Navy / Former Navy" }},
-  "ST34": {{ code: "ST34", name: "PURPLE Charlotte Katakuri", color: "Purple", traits: "Big Mom Pirates" }},
-  "ST35": {{ code: "ST35", name: "RED/BLACK Sabo", color: "Red/Black", traits: "Revolutionary Army / Dressrosa" }},
-  "ST36": {{ code: "ST36", name: "YELLOW Eustass \\"Captain\\" Kid", color: "Yellow", traits: "Supernovas / Kid Pirates" }}
-}};
-
-const STARTER_DECK_COLORS = Object.fromEntries(
-  Object.entries(STARTER_DECKS_META).map(([k, v]) => [k, v.color])
-);
+const STARTER_DECKS_META = {starters_json};
 
 function normalizeSetCode(input) {{
-  if (!input) return null;
-  const clean = input.toUpperCase().trim().replace(/[\\\\s\\\\-_]/g, '');
-  
-  // ST01 to ST99 (e.g. ST29, ST1 -> ST01)
-  const stMatch = clean.match(/^ST0*([1-9][0-9]?)$/);
-  if (stMatch) {{
-    const num = parseInt(stMatch[1], 10);
-    return `ST${{num.toString().padStart(2, '0')}}`;
+  if (!input || typeof input !== 'string') return null;
+  const clean = input.trim().toUpperCase().replace(/[\\s\\-_]/g, '');
+  const m = clean.match(/^(OP|ST|EB|PRB)0*([1-9][0-9]?)$/i);
+  if (m) {{
+    const prefix = m[1].toUpperCase();
+    const num = parseInt(m[2], 10);
+    return prefix + (num < 10 ? '0' + num : num.toString());
   }}
-
-  // OP01 to OP99
-  const opMatch = clean.match(/^OP0*([1-9][0-9]?)$/);
-  if (opMatch) {{
-    const num = parseInt(opMatch[1], 10);
-    return `OP${{num.toString().padStart(2, '0')}}`;
-  }}
-
-  // EB01 to EB99
-  const ebMatch = clean.match(/^EB0*([1-9][0-9]?)$/);
-  if (ebMatch) {{
-    const num = parseInt(ebMatch[1], 10);
-    return `EB${{num.toString().padStart(2, '0')}}`;
-  }}
-
-  // PRB01 to PRB99
-  const prbMatch = clean.match(/^PRB0*([1-9][0-9]?)$/);
-  if (prbMatch) {{
-    const num = parseInt(prbMatch[1], 10);
-    return `PRB${{num.toString().padStart(2, '0')}}`;
-  }}
-
-  // Promo P
-  if (clean === 'P' || clean === 'PROMO') {{
-    return 'P';
-  }}
-
+  if (clean === 'P' || clean === 'PROMO') return 'P';
   return null;
 }}
 
 function getStarterDeckInfo(setCode) {{
-  const normalized = normalizeSetCode(setCode) || setCode;
+  if (!setCode) return null;
+  const normalized = normalizeSetCode(setCode) || setCode.toUpperCase();
   return STARTER_DECKS_META[normalized] || null;
 }}
 
-function getCardsBySet(setCodeQuery) {{
-  const normalized = normalizeSetCode(setCodeQuery) || (setCodeQuery ? setCodeQuery.toUpperCase().trim() : '');
-  if (!normalized) return [];
-
-  const prefix = normalized + '-';
+function getCardsBySet(setCode) {{
+  if (!setCode) return [];
+  const normalized = normalizeSetCode(setCode) || setCode.toUpperCase();
   const results = [];
-
-  for (const [id, card] of Object.entries(ONE_PIECE_CARDS_DB)) {{
-    if (id.startsWith(prefix)) {{
+  const entries = Object.entries(ONE_PIECE_CARDS_DB);
+  
+  for (let i = 0; i < entries.length; i++) {{
+    const [cardId, card] = entries[i];
+    if (cardId.startsWith(normalized + '-')) {{
       results.push({{
         ...card,
         set: card.set || `Set ${{normalized}}`,
-        imageFallbacks: getCardImageURLs(id)
+        imageFallbacks: getCardImageURLs(cardId)
       }});
     }}
   }}
 
+  // Sort naturally by card number (e.g. ST01-001, ST01-002...)
   results.sort((a, b) => {{
-    const numA = parseInt(a.id.split('-')[1], 10) || 0;
-    const numB = parseInt(b.id.split('-')[1], 10) || 0;
-    return numA - numB;
+    const aNum = parseInt((a.id.split('-')[1] || '0').replace(/\\D/g, ''), 10);
+    const bNum = parseInt((b.id.split('-')[1] || '0').replace(/\\D/g, ''), 10);
+    return aNum - bNum;
   }});
 
   return results;
 }}
 
-function determineCardColor(cardId) {{
-  if (!cardId) return 'Red';
-  const clean = cardId.toUpperCase().trim();
+function determineCardColor(cardId, name, traits) {{
+  const prefix = (cardId || '').toUpperCase().split('-')[0];
+  const setColors = {{
+    'ST01': 'Red', 'ST02': 'Green', 'ST03': 'Blue', 'ST04': 'Purple',
+    'ST05': 'Purple', 'ST06': 'Black', 'ST07': 'Yellow', 'ST08': 'Black',
+    'ST09': 'Yellow', 'ST10': 'Red/Purple', 'ST11': 'Green', 'ST12': 'Green/Blue',
+    'ST13': 'Yellow/Black', 'ST14': 'Black', 'ST15': 'Red', 'ST16': 'Green',
+    'ST17': 'Blue', 'ST18': 'Purple', 'ST19': 'Black', 'ST20': 'Yellow',
+    'ST21': 'Green', 'ST22': 'Blue', 'ST23': 'Red', 'ST24': 'Purple',
+    'ST25': 'Black', 'ST26': 'Yellow', 'ST27': 'Green', 'ST28': 'Blue'
+  }};
 
-  if (ONE_PIECE_CARDS_DB[clean] && ONE_PIECE_CARDS_DB[clean].color) {{
-    return ONE_PIECE_CARDS_DB[clean].color;
-  }}
+  if (setColors[prefix]) return setColors[prefix];
 
-  const parts = clean.split('-');
-  if (parts.length < 2) return 'Red';
-
-  const setCode = parts[0];
-  const num = parseInt(parts[1], 10) || 1;
-
-  if (STARTER_DECK_COLORS[setCode]) {{
-    return STARTER_DECK_COLORS[setCode];
-  }}
-
-  if (setCode === 'OP01') {{
-    if (num <= 29) return 'Red';
-    if (num <= 59) return 'Green';
-    if (num <= 90) return 'Blue';
-    return 'Purple';
-  }}
-  if (setCode === 'OP02') {{
-    if (num <= 24) return 'Red';
-    if (num <= 48) return 'Green';
-    if (num <= 70) return 'Blue';
-    if (num <= 92) return 'Purple';
-    return 'Black';
-  }}
-  if (setCode === 'OP03') {{
-    if (num <= 20) return 'Red';
-    if (num <= 39) return 'Green';
-    if (num <= 57) return 'Blue';
-    if (num <= 75) return 'Purple';
-    if (num <= 98) return 'Black';
-    return 'Yellow';
-  }}
-  if (setCode === 'OP04') {{
-    if (num <= 19) return 'Red';
-    if (num <= 38) return 'Green';
-    if (num <= 57) return 'Blue';
-    if (num <= 76) return 'Purple';
-    if (num <= 98) return 'Black';
-    return 'Yellow';
-  }}
-  if (setCode === 'OP05') {{
-    if (num <= 19) return 'Red';
-    if (num <= 39) return 'Green';
-    if (num <= 59) return 'Blue';
-    if (num <= 79) return 'Purple';
-    if (num <= 97) return 'Black';
-    return 'Yellow';
-  }}
-  if (setCode === 'OP06') {{
-    if (num <= 19) return 'Red';
-    if (num <= 40) return 'Green';
-    if (num <= 59) return 'Blue';
-    if (num <= 79) return 'Purple';
-    if (num <= 99) return 'Black';
-    return 'Yellow';
-  }}
-  if (setCode === 'OP07') {{
-    if (num <= 18) return 'Red';
-    if (num <= 37) return 'Green';
-    if (num <= 58) return 'Blue';
-    if (num <= 78) return 'Purple';
-    if (num <= 96) return 'Black';
-    return 'Yellow';
-  }}
-  if (setCode === 'OP08') {{
-    if (num <= 18) return 'Red';
-    if (num <= 37) return 'Green';
-    if (num <= 56) return 'Blue';
-    if (num <= 77) return 'Purple';
-    if (num <= 97) return 'Black';
-    return 'Yellow';
-  }}
-  if (setCode === 'OP09') {{
-    if (num <= 20) return 'Red';
-    if (num <= 40) return 'Green';
-    if (num <= 60) return 'Blue';
-    if (num <= 80) return 'Purple';
-    if (num <= 98) return 'Black';
-    return 'Yellow';
-  }}
-  if (setCode === 'OP10') {{
-    if (num <= 20) return 'Red';
-    if (num <= 40) return 'Green';
-    if (num <= 60) return 'Blue';
-    if (num <= 80) return 'Purple';
-    if (num <= 98) return 'Black';
-    return 'Yellow';
-  }}
-  if (setCode === 'OP17') {{
-    if (num <= 20) return 'Red';
-    if (num <= 38) return 'Green';
-    if (num <= 60) return 'Blue';
-    if (num <= 78) return 'Purple';
-    if (num <= 98) return 'Black';
-    return 'Yellow';
-  }}
-  if (setCode === 'EB01') {{
-    if (num <= 10) return 'Red';
-    if (num <= 20) return 'Green';
-    if (num <= 32) return 'Blue';
-    if (num <= 44) return 'Purple';
-    if (num <= 54) return 'Black';
-    return 'Yellow';
-  }}
+  const t = (traits || '').toLowerCase();
+  const n = (name || '').toLowerCase();
+  if (t.includes('revolutionary') || t.includes('dressrosa')) return 'Red';
+  if (t.includes('straw hat') || n.includes('luffy')) return 'Red';
+  if (t.includes('heart pirates') || n.includes('law')) return 'Green';
+  if (t.includes('wano') || n.includes('zoro')) return 'Green';
+  if (t.includes('seven warlords') || t.includes('baroque') || n.includes('crocodile')) return 'Blue';
+  if (t.includes('animal kingdom') || n.includes('kaido')) return 'Purple';
+  if (t.includes('navy') || t.includes('cp9') || t.includes('world government')) return 'Black';
+  if (t.includes('big mom') || t.includes('land of wano') || t.includes('mink')) return 'Yellow';
 
   return 'Red';
 }}
 
 function getCardImageURLs(cardId) {{
   if (!cardId) return [];
-  const cleanId = cardId.toUpperCase().trim();
-  const setCode = cleanId.split('-')[0];
+  const clean = cardId.trim().toUpperCase().replace(/\\s+/g, '');
+  const parts = clean.split('-');
+  const setPart = parts[0] || 'OP01';
+  const numPart = parts[1] || '001';
 
-  return [
-    `https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/one-piece/${{setCode}}/${{cleanId}}_EN.webp`,
-    `https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/one-piece/${{setCode}}/${{cleanId}}.webp`,
-    `https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/one-piece/${{setCode}}/${{cleanId}}_JP.webp`,
-    `https://en.onepiece-cardgame.com/images/cardlist/card/${{cleanId}}.png`
-  ];
+  const urls = [];
+
+  // Bandai Official CDN Format (WebP)
+  urls.push(`https://en.onepiece-cardgame.com/images/cardlist/card/${{clean}}.png`);
+  urls.push(`https://en.onepiece-cardgame.com/images/cardlist/card/${{clean}}_p1.png`);
+  urls.push(`https://asia-en.onepiece-cardgame.com/images/cardlist/card/${{clean}}.png`);
+  urls.push(`https://onepiece-cardgame.dev/cards/${{clean}}.jpg`);
+  urls.push(`https://limitlesstcg.s3.us-east-2.amazonaws.com/one-piece/${{setPart}}/${{clean}}_EN.webp`);
+  urls.push(`https://images.gutshot.app/cards/one-piece/${{clean}}.webp`);
+  urls.push(`https://raw.githubusercontent.com/limitless-tcg/one-piece-images/main/cards/${{setPart}}/${{clean}}.png`);
+  urls.push(`https://api.onepiece-cardgame.dev/cards/${{clean}}/image`);
+
+  return urls;
 }}
 
 function createGenericCard(cardId) {{
-  const cleanId = cardId.toUpperCase().trim();
-  const color = determineCardColor(cleanId);
-  const parts = cleanId.split('-');
+  const clean = (cardId || '').trim().toUpperCase();
+  const parts = clean.split('-');
   const setCode = parts[0] || 'OP01';
-  const num = parseInt(parts[1], 10) || 1;
-
-  let cardType = 'Character';
-  let rarity = 'R';
-  if (num === 1 && (setCode.startsWith('OP') || setCode.startsWith('ST'))) {{
-    cardType = 'Leader';
-    rarity = 'L';
-  }}
-
-  let traits = 'One Piece Pirates';
-  if (STARTER_DECKS_META[setCode]) {{
-    traits = STARTER_DECKS_META[setCode].traits;
-  }}
+  const num = parts[1] || '001';
+  const color = determineCardColor(clean, '', '');
 
   return {{
-    id: cleanId,
-    name: `Carta ${{cleanId}}`,
-    set: `Set ${{setCode}}`,
-    cardType: cardType,
+    id: clean,
+    name: `Carta ${{clean}}`,
+    cardType: 'Character',
     color: color,
-    traits: traits,
-    rarity: rarity,
-    cost: '4 Cost / 5000 Power',
-    imageFallbacks: getCardImageURLs(cleanId)
+    traits: 'One Piece Pirates',
+    rarity: 'C',
+    cost: '3 Cost / 4000 Power',
+    set: `Set ${{setCode}}`,
+    imageFallbacks: getCardImageURLs(clean)
   }};
 }}
 
-function findOrGenerateCard(query) {{
-  if (!query) return createGenericCard('OP01-001');
-  const clean = query.toUpperCase().trim();
-
+function findOrGenerateCard(cardId) {{
+  if (!cardId) return createGenericCard('OP01-001');
+  const clean = cardId.trim().toUpperCase().replace(/\\s+/g, '');
+  
   if (ONE_PIECE_CARDS_DB[clean]) {{
-    const dbCard = ONE_PIECE_CARDS_DB[clean];
+    const c = ONE_PIECE_CARDS_DB[clean];
     return {{
-      ...dbCard,
-      set: dbCard.set || `Set ${{clean.split('-')[0]}}`,
+      ...c,
+      set: c.set || `Set ${{clean.split('-')[0]}}`,
       imageFallbacks: getCardImageURLs(clean)
     }};
   }}
 
-  for (const [id, c] of Object.entries(ONE_PIECE_CARDS_DB)) {{
-    if (c.name && c.name.toLowerCase() === query.toLowerCase().trim()) {{
+  // Fuzzy prefix lookup (e.g. op01-001 vs OP01-001)
+  const keys = Object.keys(ONE_PIECE_CARDS_DB);
+  for (let i = 0; i < keys.length; i++) {{
+    const id = keys[i];
+    if (id.toUpperCase() === clean) {{
+      const c = ONE_PIECE_CARDS_DB[id];
       return {{
         ...c,
         set: c.set || `Set ${{id.split('-')[0]}}`,
@@ -375,6 +216,147 @@ function generateFallbackCardSVG(card) {{
   return `data:image/svg+xml;utf8,${{encodeURIComponent(svg)}}`;
 }}
 
+const COLOR_SYNONYMS_MAP = {{
+  'red': 'Red', 'rojo': 'Red', 'roja': 'Red', 'rojos': 'Red', 'rojas': 'Red',
+  'green': 'Green', 'verde': 'Green', 'verdes': 'Green',
+  'blue': 'Blue', 'azul': 'Blue', 'azules': 'Blue',
+  'purple': 'Purple', 'morado': 'Purple', 'morada': 'Purple', 'morados': 'Purple', 'moradas': 'Purple', 'purpura': 'Purple', 'púrpura': 'Purple',
+  'black': 'Black', 'negro': 'Black', 'negra': 'Black', 'negros': 'Black', 'negras': 'Black',
+  'yellow': 'Yellow', 'amarillo': 'Yellow', 'amarilla': 'Yellow', 'amarillos': 'Yellow', 'amarillas': 'Yellow'
+}};
+
+function parseSearchQuery(query) {{
+  if (!query || typeof query !== 'string') return {{ set: null, color: null, textTokens: [] }};
+  const cleanQ = query.trim().toLowerCase().replace(/[\\.\\-_,;:\\'\\"\\/]+/g, ' ');
+  const tokens = cleanQ.split(/\\s+/).filter(Boolean);
+
+  let detectedSet = null;
+  let detectedColor = null;
+  const textTokens = [];
+
+  for (let i = 0; i < tokens.length; i++) {{
+    const t = tokens[i];
+    const setCandidate = normalizeSetCode(t);
+    if (setCandidate && !detectedSet) {{
+      detectedSet = setCandidate;
+      continue;
+    }}
+    if (COLOR_SYNONYMS_MAP[t] && !detectedColor) {{
+      detectedColor = COLOR_SYNONYMS_MAP[t];
+      continue;
+    }}
+    textTokens.push(t);
+  }}
+
+  return {{ set: detectedSet, color: detectedColor, textTokens: textTokens }};
+}}
+
+function searchCardsInDB(query) {{
+  if (!query || typeof query !== 'string') return [];
+  const rawQ = query.trim();
+  if (!rawQ) return [];
+
+  const parsed = parseSearchQuery(rawQ);
+  const reqSet = parsed.set;
+  const reqColor = parsed.color;
+  const textTokens = parsed.textTokens;
+
+  const results = [];
+  const entries = Object.entries(ONE_PIECE_CARDS_DB);
+
+  for (let i = 0; i < entries.length; i++) {{
+    const [cardId, card] = entries[i];
+    const cardSetPrefix = (cardId || '').split('-')[0].toUpperCase();
+    const cardColorRaw = (card.color || '');
+    const cardColors = cardColorRaw.toLowerCase().split('/').map(c => c.trim());
+
+    // 1. Filtrado por set estricto si se especificó un set (ej: OP01, OP15, ST01)
+    if (reqSet && cardSetPrefix !== reqSet) {{
+      continue;
+    }}
+
+    // 2. Filtrado por color estricto si se especificó un color (ej: Blue, Red, Green)
+    if (reqColor && !cardColors.includes(reqColor.toLowerCase())) {{
+      continue;
+    }}
+
+    // 3. Filtrado por tokens de texto restantes (nombre, rasgos, id, tipo, rareza)
+    if (textTokens.length > 0) {{
+      const name = card.name || '';
+      const traits = card.traits || '';
+      const cardType = card.cardType || '';
+      const cost = card.cost || '';
+      const rarity = card.rarity || '';
+      const targetStr = `${{cardId}} ${{name}} ${{traits}} ${{cardType}} ${{cost}} ${{rarity}}`.toLowerCase();
+      const cleanTarget = targetStr.replace(/[\\.\\-_,;:\\'\\"\\/]+/g, ' ');
+      const targetWords = cleanTarget.split(/\\s+/).filter(Boolean);
+
+      const matchesAll = textTokens.every(tok => {{
+        return targetWords.some(w => w.startsWith(tok) || w.includes(tok)) || cleanTarget.includes(tok);
+      }});
+      if (!matchesAll) continue;
+    }}
+
+    // Si no hubo filtro de set ni color y tampoco tokens de texto, omitir
+    if (!reqSet && !reqColor && textTokens.length === 0) {{
+      continue;
+    }}
+
+    const set = card.set || `Set ${{cardSetPrefix}}`;
+    results.push({{
+      ...card,
+      set: set,
+      imageFallbacks: getCardImageURLs(cardId)
+    }});
+  }}
+
+  // Si se buscó un término de texto que coincidía con un color o un set pero no arrojó resultados, fallback general
+  if (results.length === 0 && (reqSet || reqColor) && !reqSet) {{
+    const cleanQ = rawQ.toLowerCase().replace(/[\\.\\-_,;:\\'\\"\\/]+/g, ' ');
+    const allWords = cleanQ.split(/\\s+/).filter(Boolean);
+    for (let i = 0; i < entries.length; i++) {{
+      const [cardId, card] = entries[i];
+      const fullTarget = `${{cardId}} ${{card.name || ''}} ${{card.traits || ''}} ${{card.cardType || ''}}`.toLowerCase();
+      if (allWords.every(w => fullTarget.includes(w))) {{
+        results.push({{
+          ...card,
+          set: card.set || `Set ${{cardId.split('-')[0]}}`,
+          imageFallbacks: getCardImageURLs(cardId)
+        }});
+      }}
+    }}
+  }}
+
+  // Ordenación natural por número de carta (OP01-001, OP01-002...)
+  results.sort((a, b) => {{
+    const aId = (a.id || '').toUpperCase();
+    const bId = (b.id || '').toUpperCase();
+    const cleanU = rawQ.toUpperCase();
+    if (aId === cleanU && bId !== cleanU) return -1;
+    if (bId === cleanU && aId !== cleanU) return 1;
+
+    const aParts = aId.split('-');
+    const bParts = bId.split('-');
+    if (aParts[0] === bParts[0] && aParts.length > 1 && bParts.length > 1) {{
+      const aNum = parseInt(aParts[1], 10);
+      const bNum = parseInt(bParts[1], 10);
+      if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;
+    }}
+    return aId.localeCompare(bId);
+  }});
+
+  return results;
+}}
+
+function getOfficialCardImageUrl(cardId) {{
+  const urls = getCardImageURLs(cardId);
+  return (urls && urls.length > 0) ? urls[0] : '';
+}}
+
+function getFallbackCardDataUrl(cardId, name, color) {{
+  return generateFallbackCardSVG({{ id: cardId, name: name, color: color }});
+}}
+
 if (typeof window !== 'undefined') {{
   window.ONE_PIECE_CARDS_DB = ONE_PIECE_CARDS_DB;
   window.STARTER_DECKS_META = STARTER_DECKS_META;
@@ -385,6 +367,11 @@ if (typeof window !== 'undefined') {{
   window.getCardImageURLs = getCardImageURLs;
   window.generateFallbackCardSVG = generateFallbackCardSVG;
   window.determineCardColor = determineCardColor;
+  window.COLOR_SYNONYMS_MAP = COLOR_SYNONYMS_MAP;
+  window.parseSearchQuery = parseSearchQuery;
+  window.searchCardsInDB = searchCardsInDB;
+  window.getOfficialCardImageUrl = getOfficialCardImageUrl;
+  window.getFallbackCardDataUrl = getFallbackCardDataUrl;
 }}
 """
 

@@ -24535,39 +24535,108 @@ function generateFallbackCardSVG(card) {
 }
 
 
+const COLOR_SYNONYMS_MAP = {
+  'red': 'Red', 'rojo': 'Red', 'roja': 'Red', 'rojos': 'Red', 'rojas': 'Red',
+  'green': 'Green', 'verde': 'Green', 'verdes': 'Green',
+  'blue': 'Blue', 'azul': 'Blue', 'azules': 'Blue',
+  'purple': 'Purple', 'morado': 'Purple', 'morada': 'Purple', 'morados': 'Purple', 'moradas': 'Purple', 'purpura': 'Purple', 'púrpura': 'Purple',
+  'black': 'Black', 'negro': 'Black', 'negra': 'Black', 'negros': 'Black', 'negras': 'Black',
+  'yellow': 'Yellow', 'amarillo': 'Yellow', 'amarilla': 'Yellow', 'amarillos': 'Yellow', 'amarillas': 'Yellow'
+};
+
+function parseSearchQuery(query) {
+  if (!query || typeof query !== 'string') return { set: null, color: null, textTokens: [] };
+
+  // Unificar prefijos de set separados por espacio (ej. "op 17" -> "OP17", "st 01" -> "ST01", "eb 01" -> "EB01")
+  const normalizedQuery = query.trim().replace(/\b(op|st|eb|prb)\s*0*([1-9][0-9]?)\b/gi, (match, prefix, num) => {
+    const n = parseInt(num, 10);
+    return `${prefix.toUpperCase()}${n < 10 ? '0' + n : n}`;
+  });
+
+  const cleanQ = normalizedQuery.toLowerCase().replace(/[\.\-_,;:\'\"\/]+/g, ' ');
+  const tokens = cleanQ.split(/\s+/).filter(Boolean);
+
+  let detectedSet = null;
+  let detectedColor = null;
+  const textTokens = [];
+
+  for (let i = 0; i < tokens.length; i++) {
+    const t = tokens[i];
+    const setCandidate = normalizeSetCode(t);
+    if (setCandidate && !detectedSet) {
+      detectedSet = setCandidate;
+      continue;
+    }
+    if (COLOR_SYNONYMS_MAP[t] && !detectedColor) {
+      detectedColor = COLOR_SYNONYMS_MAP[t];
+      continue;
+    }
+    textTokens.push(t);
+  }
+
+  return { set: detectedSet, color: detectedColor, textTokens: textTokens };
+}
+
 function searchCardsInDB(query) {
   if (!query || typeof query !== 'string') return [];
   const rawQ = query.trim();
   if (!rawQ) return [];
 
-  const cleanQ = rawQ.toLowerCase().replace(/[\.\-_,;:\'\"\/]+/g, ' ').trim();
-  const words = cleanQ.split(/\s+/).filter(Boolean);
-  if (words.length === 0) return [];
+  const parsed = parseSearchQuery(rawQ);
+  const reqSet = parsed.set;
+  const reqColor = parsed.color;
+  const textTokens = parsed.textTokens;
 
   const results = [];
   const entries = Object.entries(ONE_PIECE_CARDS_DB);
 
   for (let i = 0; i < entries.length; i++) {
     const [cardId, card] = entries[i];
-    const name = card.name || '';
-    const traits = card.traits || '';
-    const color = card.color || '';
-    const cardType = card.cardType || '';
-    const set = card.set || `Set ${cardId.split('-')[0]}`;
+    const cardSetPrefix = (cardId || '').split('-')[0].toUpperCase();
+    const cardColorRaw = (card.color || '');
+    const cardColors = cardColorRaw.toLowerCase().split('/').map(c => c.trim());
 
-    const fullTarget = `${cardId} ${name} ${traits} ${color} ${cardType} ${set}`;
-    const cleanTarget = fullTarget.toLowerCase().replace(/[\.\-_,;:\'\"\/]+/g, ' ');
-
-    const matchesAll = words.every(w => cleanTarget.includes(w));
-    if (matchesAll) {
-      results.push({
-        ...card,
-        set: set,
-        imageFallbacks: getCardImageURLs(cardId)
-      });
+    // 1. Filtrado por set estricto si se especificó un set (ej: OP01, OP17, ST01)
+    if (reqSet && cardSetPrefix !== reqSet) {
+      continue;
     }
+
+    // 2. Filtrado por color estricto si se especificó un color (ej: Blue, Red, Green)
+    if (reqColor && !cardColors.includes(reqColor.toLowerCase())) {
+      continue;
+    }
+
+    // 3. Filtrado por tokens de texto restantes (nombre, rasgos, id, tipo, rareza)
+    if (textTokens.length > 0) {
+      const name = card.name || '';
+      const traits = card.traits || '';
+      const cardType = card.cardType || '';
+      const cost = card.cost || '';
+      const rarity = card.rarity || '';
+      const targetStr = `${cardId} ${name} ${traits} ${cardType} ${cost} ${rarity}`.toLowerCase();
+      const cleanTarget = targetStr.replace(/[\.\-_,;:\'\"\/]+/g, ' ');
+      const targetWords = cleanTarget.split(/\s+/).filter(Boolean);
+
+      const matchesAll = textTokens.every(tok => {
+        return targetWords.some(w => w.startsWith(tok) || w.includes(tok)) || cleanTarget.includes(tok);
+      });
+      if (!matchesAll) continue;
+    }
+
+    // Si no hubo filtro de set ni color y tampoco tokens de texto, omitir
+    if (!reqSet && !reqColor && textTokens.length === 0) {
+      continue;
+    }
+
+    const set = card.set || `Set ${cardSetPrefix}`;
+    results.push({
+      ...card,
+      set: set,
+      imageFallbacks: getCardImageURLs(cardId)
+    });
   }
 
+  // Ordenación natural por número de carta (OP01-001, OP01-002...)
   results.sort((a, b) => {
     const aId = (a.id || '').toUpperCase();
     const bId = (b.id || '').toUpperCase();
@@ -24575,24 +24644,18 @@ function searchCardsInDB(query) {
     if (aId === cleanU && bId !== cleanU) return -1;
     if (bId === cleanU && aId !== cleanU) return 1;
 
-    const aNameClean = (a.name || '').toLowerCase().replace(/[\.\-_,;:\'\"\/]+/g, ' ').trim();
-    const bNameClean = (b.name || '').toLowerCase().replace(/[\.\-_,;:\'\"\/]+/g, ' ').trim();
-
-    if (aNameClean === cleanQ && bNameClean !== cleanQ) return -1;
-    if (bNameClean === cleanQ && aNameClean !== cleanQ) return 1;
-
-    if (aNameClean.startsWith(cleanQ) && !bNameClean.startsWith(cleanQ)) return -1;
-    if (bNameClean.startsWith(cleanQ) && !aNameClean.startsWith(cleanQ)) return 1;
-
-    if (aNameClean.includes(cleanQ) && !bNameClean.includes(cleanQ)) return -1;
-    if (bNameClean.includes(cleanQ) && !aNameClean.includes(cleanQ)) return 1;
-
+    const aParts = aId.split('-');
+    const bParts = bId.split('-');
+    if (aParts[0] === bParts[0] && aParts.length > 1 && bParts.length > 1) {
+      const aNum = parseInt(aParts[1], 10);
+      const bNum = parseInt(bParts[1], 10);
+      if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;
+    }
     return aId.localeCompare(bId);
   });
 
   return results;
 }
-
 
 function getOfficialCardImageUrl(cardId) {
   const urls = getCardImageURLs(cardId);
@@ -24613,6 +24676,8 @@ if (typeof window !== 'undefined') {
   window.getCardImageURLs = getCardImageURLs;
   window.generateFallbackCardSVG = generateFallbackCardSVG;
   window.determineCardColor = determineCardColor;
+  window.COLOR_SYNONYMS_MAP = COLOR_SYNONYMS_MAP;
+  window.parseSearchQuery = parseSearchQuery;
   window.searchCardsInDB = searchCardsInDB;
   window.getOfficialCardImageUrl = getOfficialCardImageUrl;
   window.getFallbackCardDataUrl = getFallbackCardDataUrl;
