@@ -1515,7 +1515,8 @@ body {
   gap: 4px;
 }
 
-.btn-page-nav:hover:not(:disabled) {\n  background: var(--accent-gold);
+.btn-page-nav:hover:not(:disabled) {
+  background: var(--accent-gold);
   color: #000;
   border-color: var(--accent-gold);
 }
