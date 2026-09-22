@@ -113,6 +113,174 @@ body {
 /* ========================================== */
 /* VISTA 1: ÁLBUM                             */
 /* ========================================== */
+
+/* Sección de Carpetas Personalizadas */
+.folders-section-container {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.folders-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.folders-section-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.btn-create-folder {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-create-folder:hover {
+  background: var(--accent-gold);
+  color: #000;
+}
+
+.btn-create-folder:active {
+  transform: scale(0.96);
+}
+
+.folders-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+.folders-scroll::-webkit-scrollbar { display: none; }
+
+.folder-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.folder-tab:hover {
+  border-color: var(--accent-gold);
+  color: #fff;
+}
+
+.folder-tab.active {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+  border-color: #f59e0b;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.35);
+}
+
+.folder-tab-badge {
+  font-size: 0.72rem;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  color: inherit;
+  font-weight: 800;
+}
+
+.folder-tab.active .folder-tab-badge {
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+}
+
+/* Banner de Gestión de Carpeta Activa */
+.folder-active-banner {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(59, 130, 246, 0.15));
+  border: 1.5px solid var(--border-accent);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.folder-active-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.folder-banner-icon {
+  font-size: 1.5rem;
+}
+
+.folder-active-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.folder-active-text strong {
+  font-size: 0.92rem;
+  color: #fff;
+}
+
+.folder-active-text span {
+  font-size: 0.74rem;
+  color: var(--text-dim);
+}
+
+.folder-active-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-folder-action {
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-folder-action:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.btn-folder-delete:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
+}
+
 .search-box {
   position: relative;
   margin-bottom: 12px;
@@ -541,7 +709,7 @@ body {
   pointer-events: none;
 }
 
-/* Placas superpuestas en la imagen: situadas abajo para no tapar Coste (arriba izq) ni Poder (arriba dcha) */
+/* Placas superpuestas en la imagen */
 .card-badge-count {
   position: absolute;
   bottom: 8px;
@@ -644,6 +812,13 @@ body {
   color: #fff;
 }
 
+.card-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
 .trait-tag {
   font-size: 0.68rem;
   background: rgba(255, 255, 255, 0.08);
@@ -656,6 +831,29 @@ body {
   text-overflow: ellipsis;
   display: inline-block;
   max-width: 100%;
+}
+
+.card-folder-tag {
+  font-size: 0.66rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: var(--accent-gold);
+  padding: 2px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.15s ease;
+}
+
+.card-folder-tag:hover {
+  background: var(--accent-gold);
+  color: #000;
+  border-color: var(--accent-gold);
 }
 
 .card-stepper-row {
@@ -681,7 +879,9 @@ body {
   justify-content: center;
   cursor: pointer;
   border-radius: 6px;
+  transition: background 0.15s ease;
 }
+
 .step-btn:active {
   background: rgba(255, 255, 255, 0.15);
 }
@@ -689,6 +889,43 @@ body {
 .step-count {
   font-weight: 800;
   font-size: 0.95rem;
+}
+
+.step-count.step-count-interactive {
+  cursor: pointer;
+  padding: 3px 8px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.step-count.step-count-interactive:hover {
+  background: rgba(245, 158, 11, 0.25);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: scale(1.05);
+}
+
+.btn-quick-edit-qty {
+  background: transparent;
+  border: none;
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.btn-quick-edit-qty:hover {
+  transform: scale(1.2);
 }
 
 /* ========================================== */
@@ -767,6 +1004,13 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.list-card-sub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .list-card-traits {
@@ -1384,7 +1628,7 @@ body {
 }
 
 /* ========================================== */
-/* MODAL: CARTA RECONOCIDA                    */
+/* MODALES COMUNES                            */
 /* ========================================== */
 .modal-backdrop {
   position: fixed;
@@ -1453,7 +1697,6 @@ body {
   gap: 14px;
 }
 
-
 /* Overlay de Zoom en imagen del Modal */
 .modal-img-wrap {
   width: 120px;
@@ -1520,104 +1763,6 @@ body {
   color: #000;
 }
 
-/* ========================================== */
-/* MODAL LIGHTBOX: VISTA AMPLIADA DE CARTA    */
-/* ========================================== */
-.lightbox-backdrop {
-  z-index: 150;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  background: rgba(0, 0, 0, 0.94);
-}
-
-.lightbox-card-container {
-  position: relative;
-  max-width: 94vw;
-  max-height: 92vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  animation: zoomLightbox 0.2s ease-out;
-}
-
-@keyframes zoomLightbox {
-  from { transform: scale(0.85); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.lightbox-close-btn {
-  position: absolute;
-  top: -12px;
-  right: -12px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #1e293b;
-  border: 2px solid var(--accent-gold);
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 800;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
-  z-index: 10;
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-
-.lightbox-close-btn:hover {
-  transform: scale(1.1);
-  background: var(--accent-gold);
-  color: #000;
-}
-
-.lightbox-img-box {
-  max-height: 76vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.95);
-  border: 2px solid rgba(245, 158, 11, 0.6);
-  background: #000;
-}
-
-.lightbox-img-box img {
-  max-height: 76vh;
-  max-width: 90vw;
-  object-fit: contain;
-  display: block;
-}
-
-.lightbox-info-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid var(--border-accent);
-  padding: 6px 16px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-.lightbox-code {
-  color: var(--accent-gold);
-  font-family: monospace;
-  font-weight: 800;
-  font-size: 0.95rem;
-}
-
-.lightbox-name {
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.95rem;
-}
-
-
 .modal-img-wrap img {
   width: 100%;
   height: 100%;
@@ -1669,6 +1814,16 @@ body {
   font-size: 0.82rem;
   line-height: 1.4;
   color: #cbd5e1;
+}
+
+.modal-folder-selector-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-folder-select {
+  font-size: 0.88rem;
 }
 
 .modal-qty-selector {
@@ -1761,8 +1916,382 @@ body {
 }
 
 /* ========================================== */
-/* MODAL: PEGAR FILAS (GOOGLE SHEETS / EXCEL) */
+/* MODAL: EDITAR Y ELIMINAR CANTIDAD DIRECTA  */
 /* ========================================== */
+.qty-modal-card {
+  max-width: 440px;
+}
+
+.qty-preview-compact {
+  align-items: center;
+  background: var(--bg-card);
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+}
+
+.qty-thumb-wrap {
+  width: 54px !important;
+  aspect-ratio: 5 / 7 !important;
+  border-radius: 6px;
+}
+
+.qty-current-badge {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  margin-top: 4px;
+}
+
+.qty-current-badge strong {
+  color: var(--accent-gold);
+  font-size: 1rem;
+}
+
+.qty-section-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qty-section-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.qty-set-direct-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty-mini-step {
+  width: 38px;
+  height: 38px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.qty-mini-step:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.qty-direct-field {
+  flex: 1;
+  height: 38px;
+  background: #090d16;
+  border: 1.5px solid var(--border-accent);
+  border-radius: 8px;
+  color: var(--accent-gold);
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-align: center;
+  outline: none;
+}
+
+.btn-apply-direct-qty {
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  height: 38px;
+  white-space: nowrap;
+}
+
+.qty-remove-presets-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.btn-remove-chip {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 9px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-remove-chip:hover {
+  background: rgba(239, 68, 68, 0.3);
+  color: #fff;
+  border-color: #ef4444;
+}
+
+.btn-remove-chip:active {
+  transform: scale(0.96);
+}
+
+.qty-custom-remove-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+.btn-danger-action {
+  background: #dc2626;
+  border: none;
+  color: #fff;
+  font-weight: 800;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-danger-action:hover {
+  background: #b91c1c;
+}
+
+.btn-delete-all-copies {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1.5px solid rgba(239, 68, 68, 0.5);
+  color: #f87171;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.btn-delete-all-copies:hover {
+  background: #ef4444;
+  color: #fff;
+  border-color: #ef4444;
+}
+
+/* ========================================== */
+/* FORMULARIOS DE CARPETAS Y SELECCIÓN        */
+/* ========================================== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+
+.emoji-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+}
+
+.emoji-opt-btn {
+  width: 100%;
+  aspect-ratio: 1;
+  font-size: 1.25rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.emoji-opt-btn:hover {
+  border-color: var(--accent-gold);
+}
+
+.emoji-opt-btn.active {
+  border-color: var(--accent-gold);
+  background: rgba(245, 158, 11, 0.25);
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.color-picker-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 4px 0;
+}
+
+.color-opt-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.color-opt-circle:hover {
+  transform: scale(1.15);
+}
+
+.color-opt-circle.active {
+  border-color: #fff;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.folders-selection-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 240px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.folder-select-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.folder-select-item:hover {
+  border-color: var(--accent-gold);
+  background: var(--bg-input);
+}
+
+.folder-select-item.active {
+  border-color: var(--accent-gold);
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-gold);
+}
+
+/* ========================================== */
+/* MODAL LIGHTBOX: VISTA AMPLIADA DE CARTA    */
+/* ========================================== */
+.lightbox-backdrop {
+  z-index: 150;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.94);
+}
+
+.lightbox-card-container {
+  position: relative;
+  max-width: 94vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: zoomLightbox 0.2s ease-out;
+}
+
+@keyframes zoomLightbox {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #1e293b;
+  border: 2px solid var(--accent-gold);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.lightbox-close-btn:hover {
+  transform: scale(1.1);
+  background: var(--accent-gold);
+  color: #000;
+}
+
+.lightbox-img-box {
+  max-height: 76vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.95);
+  border: 2px solid rgba(245, 158, 11, 0.6);
+  background: #000;
+}
+
+.lightbox-img-box img {
+  max-height: 76vh;
+  max-width: 90vw;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--border-accent);
+  padding: 6px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-code {
+  color: var(--accent-gold);
+  font-family: monospace;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.lightbox-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Modal para Pegar desde Google Sheets / Excel */
 .paste-textarea {
   width: 100%;
   height: 180px;

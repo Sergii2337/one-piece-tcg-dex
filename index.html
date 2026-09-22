@@ -3,20 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="theme-color" content="#090d16">
-  <title>One Piece TCG Pocket Dex</title>
-  
-  <link rel="manifest" href="manifest.json">
+  <title>One Piece TCG - Dex & Album</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏴‍☠️</text></svg>">
 </head>
 <body>
 
-  <!-- Encabezado Principal -->
+  <!-- Encabezado Superior -->
   <header class="app-header">
     <div class="logo">
       <span class="logo-icon">🏴‍☠️</span>
-      <h1>OP TCG <span>Dex</span></h1>
+      <h1>OP-TCG <span>DEX</span></h1>
     </div>
     <div class="stats-badge" id="header-stats">0 cartas</div>
   </header>
@@ -28,6 +25,35 @@
     <!-- VISTA 1: MI ÁLBUM                          -->
     <!-- ========================================== -->
     <section id="view-album" class="view-panel active">
+
+      <!-- Barra de Carpetas Personalizadas del Álbum -->
+      <div class="folders-section-container">
+        <div class="folders-header-row">
+          <span class="folders-section-label">📁 Mis Carpetas y Mazos:</span>
+          <button id="btn-add-folder" class="btn-create-folder" title="Crear nueva carpeta personalizada">
+            ➕ Nueva Carpeta
+          </button>
+        </div>
+        <div class="folders-scroll" id="folders-pills-container">
+          <!-- Las píldoras de carpetas se generan dinámicamente -->
+        </div>
+      </div>
+
+      <!-- Banner de Gestión de Carpeta Activa (cuando se selecciona una carpeta específica) -->
+      <div id="folder-active-banner" class="folder-active-banner" style="display: none;">
+        <div class="folder-active-info">
+          <span id="folder-active-icon" class="folder-banner-icon">📁</span>
+          <div class="folder-active-text">
+            <strong id="folder-active-title">Mazo Personalizado</strong>
+            <span id="folder-active-count">0 cartas guardadas</span>
+          </div>
+        </div>
+        <div class="folder-active-actions">
+          <button id="btn-edit-active-folder" class="btn-folder-action" title="Editar nombre/icono de la carpeta">✏️ Editar</button>
+          <button id="btn-delete-active-folder" class="btn-folder-action btn-folder-delete" title="Eliminar carpeta">🗑️ Eliminar</button>
+        </div>
+      </div>
+
       <!-- Buscador unificado en el Álbum -->
       <div class="search-box">
         <span class="search-icon">🔍</span>
@@ -108,73 +134,56 @@
         
         <div class="entry-header">
           <div class="entry-icon">🃏</div>
-          <h2>Buscador de Cartas y Starter Decks</h2>
-          <p class="entry-subtitle">Busca por <strong>Nombre</strong> (ej. Luffy, Zoro, Nami, Shanks), <strong>Starter Deck</strong> (ST01... ST36) o <strong>Código</strong> (OP17-039).</p>
+          <h2>Buscador de Cartas Oficiales</h2>
+          <p class="entry-subtitle">
+            Busca por nombre de personaje (ej. <strong>Luffy</strong>, <strong>Zoro</strong>, <strong>Xebec</strong>), Starter Deck (ej. <strong>ST01</strong>) o Código (ej. <strong>OP17-039</strong>).
+          </p>
         </div>
 
-        <!-- Selector desplegable de TODOS los Starter Decks ST01 a ST36 -->
+        <!-- Selector Rápido de Starter Decks Populares -->
         <div class="st-selector-wrap">
-          <label for="starter-deck-select" class="quick-set-label">📦 Todos los Starter Decks (ST01 a ST36):</label>
-          <div class="select-dropdown-container">
-            <select id="starter-deck-select" class="st-dropdown">
-              <option value="">-- Elige un Starter Deck para ver todas sus cartas --</option>
-              <option value="ST01">ST01: Straw Hat Crew (17 cartas) - Rojo</option>
-              <option value="ST02">ST02: Worst Generation (17 cartas) - Verde</option>
-              <option value="ST03">ST03: The Seven Warlords of the Sea (17 cartas) - Azul</option>
-              <option value="ST04">ST04: Animal Kingdom Pirates (17 cartas) - Morado</option>
-              <option value="ST05">ST05: ONE PIECE FILM edition (17 cartas) - Morado</option>
-              <option value="ST06">ST06: Absolute Justice (17 cartas) - Negro</option>
-              <option value="ST07">ST07: Big Mom Pirates (17 cartas) - Amarillo</option>
-              <option value="ST08">ST08: Side Monkey.D.Luffy (15 cartas) - Negro</option>
-              <option value="ST09">ST09: Side Yamato (15 cartas) - Amarillo</option>
-              <option value="ST10">ST10: The Three Captains (17 cartas) - Rojo/Morado</option>
-              <option value="ST11">ST11: Uta (5 cartas) - Verde</option>
-              <option value="ST12">ST12: Zoro & Sanji (17 cartas) - Verde/Azul</option>
-              <option value="ST13">ST13: The Three Brothers (19 cartas) - Amarillo</option>
-              <option value="ST14">ST14: 3D2Y (17 cartas) - Negro</option>
-              <option value="ST15">ST15: RED Edward.Newgate (5 cartas) - Rojo</option>
-              <option value="ST16">ST16: GREEN Uta (5 cartas) - Verde</option>
-              <option value="ST17">ST17: BLUE Donquixote Doflamingo (5 cartas) - Azul</option>
-              <option value="ST18">ST18: PURPLE Monkey.D.Luffy (5 cartas) - Morado</option>
-              <option value="ST19">ST19: BLACK Smoker (5 cartas) - Negro</option>
-              <option value="ST20">ST20: YELLOW Charlotte Katakuri (5 cartas) - Amarillo</option>
-              <option value="ST21">ST21: EX Gear 5 (17 cartas) - Rojo</option>
-              <option value="ST22">ST22: Ace & Newgate (17 cartas) - Azul</option>
-              <option value="ST23">ST23: RED Shanks (5 cartas) - Rojo</option>
-              <option value="ST24">ST24: GREEN Jewelry Bonney (5 cartas) - Verde</option>
-              <option value="ST25">ST25: BLUE Buggy (5 cartas) - Azul</option>
-              <option value="ST26">ST26: PURPLE/BLACK Monkey.D.Luffy (5 cartas) - Morado/Negro</option>
-              <option value="ST27">ST27: BLACK Marshall.D.Teach (5 cartas) - Negro</option>
-              <option value="ST28">ST28: GREEN/YELLOW Yamato (5 cartas) - Verde/Amarillo</option>
-              <option value="ST29">ST29: Egghead (17 cartas) - Amarillo</option>
-              <option value="ST30">ST30: EX Luffy & Ace (17 cartas) - Rojo/Verde</option>
-              <option value="ST31">ST31: RED Monkey.D.Luffy (5 cartas) - Rojo</option>
-              <option value="ST32">ST32: GREEN Roronoa Zoro (5 cartas) - Verde</option>
-              <option value="ST33">ST33: BLUE Kuzan (5 cartas) - Azul</option>
-              <option value="ST34">ST34: PURPLE Charlotte Katakuri (5 cartas) - Morado</option>
-              <option value="ST35">ST35: RED/BLACK Sabo (5 cartas) - Rojo/Negro</option>
-              <option value="ST36">ST36: YELLOW Eustass "Captain" Kid (5 cartas) - Amarillo</option>
-            </select>
-          </div>
+          <label class="quick-set-label" for="st-quick-select">📦 Explorar Starter Decks Oficiales (ST-01 a ST-20):</label>
+          <select id="st-quick-select" class="st-dropdown">
+            <option value="">-- Elige un Starter Deck para ver su baraja completa --</option>
+            <option value="ST01">ST-01: Straw Hat Crew (Luffy)</option>
+            <option value="ST02">ST-02: Worst Generation (Eustass Kid)</option>
+            <option value="ST03">ST-03: The Seven Warlords of the Sea (Crocodile)</option>
+            <option value="ST04">ST-04: Animal Kingdom Pirates (Kaido)</option>
+            <option value="ST05">ST-05: ONE PIECE FILM edition (Shanks)</option>
+            <option value="ST06">ST-06: Absolute Justice (Navy - Sakazuki)</option>
+            <option value="ST07">ST-07: Big Mom Pirates (Charlotte Linlin)</option>
+            <option value="ST08">ST-08: Monkey D. Luffy (Side)</option>
+            <option value="ST09">ST-09: Yamato (Side)</option>
+            <option value="ST10">ST-10: Ultimate Deck - The Three Captains</option>
+            <option value="ST11">ST-11: Uta</option>
+            <option value="ST12">ST-12: Zoro & Sanji</option>
+            <option value="ST13">ST-13: The Three Brothers (Ace, Sabo, Luffy)</option>
+            <option value="ST14">ST-14: 3D2Y (Straw Hat Crew)</option>
+            <option value="ST15">ST-15: Red Edward Newgate</option>
+            <option value="ST16">ST-16: Green Uta</option>
+            <option value="ST17">ST-17: Blue Donquixote Doflamingo</option>
+            <option value="ST18">ST-18: Purple Monkey D. Luffy</option>
+            <option value="ST19">ST-19: Black Smoker</option>
+            <option value="ST20">ST-20: Yellow Charlotte Katakuri</option>
+          </select>
         </div>
 
-        <!-- Atajos de Colección Rápidos -->
+        <!-- Barra de Expansiones Populares -->
         <div class="quick-set-bar">
-          <span class="quick-set-label">Atajos directos:</span>
+          <span class="quick-set-label">O explora expansiones principales:</span>
           <div class="set-chips-scroll">
-            <button class="set-chip active" data-set="OP17-">OP17-</button>
-            <button class="set-chip" data-set="OP09-">OP09-</button>
-            <button class="set-chip" data-set="OP01-">OP01-</button>
-            <button class="set-chip" data-set="ST01">ST01 (Luffy)</button>
-            <button class="set-chip" data-set="ST10">ST10 (Captains)</button>
-            <button class="set-chip" data-set="ST13">ST13 (Brothers)</button>
-            <button class="set-chip" data-set="ST14">ST14 (3D2Y)</button>
-            <button class="set-chip" data-set="ST21">ST21 (Gear 5)</button>
-            <button class="set-chip" data-set="ST29">ST29 (Egghead)</button>
+            <button class="set-chip" data-set="OP17">OP-17 (Rocks)</button>
+            <button class="set-chip" data-set="OP09">OP-09 (Roger)</button>
+            <button class="set-chip" data-set="OP08">OP-08 (Two Legends)</button>
+            <button class="set-chip" data-set="OP07">OP-07 (500 Years)</button>
+            <button class="set-chip" data-set="OP06">OP-06 (Wings)</button>
+            <button class="set-chip" data-set="OP05">OP-05 (Awakening)</button>
+            <button class="set-chip" data-set="OP01">OP-01 (Romance Dawn)</button>
+            <button class="set-chip" data-set="EB01">EB-01 (Memorial)</button>
           </div>
         </div>
 
-        <!-- Campo Principal de Entrada -->
+        <!-- Campo de entrada por texto/código libre -->
         <div class="main-code-input-wrapper">
           <input 
             type="text" 
@@ -260,13 +269,13 @@
 
         <hr class="view-divider">
 
-        <!-- Métodos Secundarios (No disponibles temporalmente) -->
+        <!-- Métodos secundarios deshabilitados temporalmente -->
         <div class="disabled-methods-section">
-          <h3 class="disabled-section-title">Otros Métodos de Escaneo</h3>
-
+          <span class="disabled-section-title">Otros métodos de entrada:</span>
+          
           <div class="disabled-card-option">
             <div class="disabled-info">
-              <span class="disabled-title">📷 Escáner con Cámara en Directo</span>
+              <span class="disabled-title">📷 Escanear con Cámara en Vivo</span>
               <span class="unavailable-tag">No disponible por el momento</span>
             </div>
             <p class="disabled-desc">Reconocimiento OCR en tiempo real a través del sensor de vídeo.</p>
@@ -290,7 +299,7 @@
     <section id="view-export" class="view-panel">
       <div class="export-box">
         <h2>📊 Exportar Colección</h2>
-        <p class="export-desc">Exporta todas tus cartas con sus cantidades exactas, colores y expansiones para llevar un control profesional.</p>
+        <p class="export-desc">Exporta todas tus cartas con sus cantidades exactas, carpetas, colores y expansiones para llevar un control profesional.</p>
         
         <div class="export-actions-group">
           <button id="btn-sheets-copy" class="btn-sheets">
@@ -384,6 +393,14 @@
           <!-- Mensaje de estado -->
         </div>
 
+        <!-- Selector de Carpeta Destino -->
+        <div class="modal-folder-selector-wrap">
+          <label class="form-label" for="modal-card-folder-select">📁 Guardar en Carpeta / Mazo:</label>
+          <select id="modal-card-folder-select" class="st-dropdown modal-folder-select">
+            <option value="default">📁 Álbum General</option>
+          </select>
+        </div>
+
         <div class="modal-qty-selector">
           <label>¿Cuántas copias deseas añadir?</label>
           <div class="qty-preset-group">
@@ -406,6 +423,159 @@
           <button id="btn-save-card-to-album" class="btn-primary btn-save-modal">
             Guardar en el Álbum
           </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: EDITAR Y ELIMINAR CANTIDAD DIRECTA  -->
+  <!-- ========================================== -->
+  <div id="qty-edit-modal" class="modal-backdrop">
+    <div class="modal-card qty-modal-card">
+      <div class="modal-header">
+        <h3>⚡ Modificar Cantidad</h3>
+        <button id="btn-close-qty-modal" class="close-modal-btn">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-card-preview qty-preview-compact">
+          <div class="modal-img-wrap qty-thumb-wrap">
+            <img id="qty-modal-img" src="" alt="Carta">
+          </div>
+          <div class="modal-card-info">
+            <span id="qty-modal-id" class="card-id-text">OP01-001</span>
+            <h4 id="qty-modal-name" class="modal-card-name">Monkey.D.Luffy</h4>
+            <div class="qty-current-badge">
+              Actualmente tienes: <strong id="qty-modal-current-count">1</strong> copia(s)
+            </div>
+          </div>
+        </div>
+
+        <!-- Opción 1: Establecer cantidad total directamente -->
+        <div class="qty-section-box">
+          <label class="qty-section-title">✏️ Establecer cantidad total exacta:</label>
+          <div class="qty-set-direct-row">
+            <button class="qty-mini-step" id="btn-qty-modal-minus" title="Restar 1">−</button>
+            <input type="number" id="qty-modal-direct-input" class="qty-direct-field" min="0" max="999" value="1">
+            <button class="qty-mini-step" id="btn-qty-modal-plus" title="Sumar 1">+</button>
+            <button id="btn-qty-modal-apply" class="btn-primary btn-apply-direct-qty">Guardar</button>
+          </div>
+        </div>
+
+        <!-- Opción 2: Elegir cuántas copias eliminar de golpe -->
+        <div class="qty-section-box">
+          <label class="qty-section-title">🗑️ Eliminar copias de golpe:</label>
+          <div class="qty-remove-presets-row">
+            <button class="btn-remove-chip" data-remove="1">−1 copia</button>
+            <button class="btn-remove-chip" data-remove="2">−2 copias</button>
+            <button class="btn-remove-chip" data-remove="4">−4 copias</button>
+          </div>
+          <div class="qty-custom-remove-row">
+            <span>Eliminar cantidad específica:</span>
+            <div style="display: flex; gap: 6px; align-items: center;">
+              <input type="number" id="qty-modal-remove-count" class="qty-input" min="1" max="99" value="1">
+              <button id="btn-qty-modal-remove-custom" class="btn-danger-action">Restar</button>
+            </div>
+          </div>
+          <button id="btn-qty-modal-delete-all" class="btn-delete-all-copies">
+            🗑️ Eliminar TODAS las copias de esta carta
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: CREAR / EDITAR CARPETA              -->
+  <!-- ========================================== -->
+  <div id="folder-modal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="folder-modal-title">📁 Nueva Carpeta</h3>
+        <button id="btn-close-folder-modal" class="close-modal-btn">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="folder-name-input">Nombre de la carpeta o mazo:</label>
+          <input type="text" id="folder-name-input" class="st-dropdown" placeholder="Ej. Mazo Luffy, Repetidas, Favoritas..." maxlength="30">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Elige un icono / emoji:</label>
+          <div class="emoji-picker-grid" id="folder-icon-picker">
+            <button type="button" class="emoji-opt-btn active" data-icon="📁">📁</button>
+            <button type="button" class="emoji-opt-btn" data-icon="🗂️">🗂️</button>
+            <button type="button" class="emoji-opt-btn" data-icon="⚔️">⚔️</button>
+            <button type="button" class="emoji-opt-btn" data-icon="👑">👑</button>
+            <button type="button" class="emoji-opt-btn" data-icon="🏴‍☠️">🏴‍☠️</button>
+            <button type="button" class="emoji-opt-btn" data-icon="⭐">⭐</button>
+            <button type="button" class="emoji-opt-btn" data-icon="💎">💎</button>
+            <button type="button" class="emoji-opt-btn" data-icon="🔥">🔥</button>
+            <button type="button" class="emoji-opt-btn" data-icon="🛡️">🛡️</button>
+            <button type="button" class="emoji-opt-btn" data-icon="🎯">🎯</button>
+            <button type="button" class="emoji-opt-btn" data-icon="📦">📦</button>
+            <button type="button" class="emoji-opt-btn" data-icon="🐉">🐉</button>
+            <button type="button" class="emoji-opt-btn" data-icon="🍖">🍖</button>
+            <button type="button" class="emoji-opt-btn" data-icon="⚡">⚡</button>
+            <button type="button" class="emoji-opt-btn" data-icon="👒">👒</button>
+            <button type="button" class="emoji-opt-btn" data-icon="🃏">🃏</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Color de la etiqueta:</label>
+          <div class="color-picker-grid" id="folder-color-picker">
+            <button type="button" class="color-opt-circle active" data-color="#f59e0b" style="background:#f59e0b;"></button>
+            <button type="button" class="color-opt-circle" data-color="#ef4444" style="background:#ef4444;"></button>
+            <button type="button" class="color-opt-circle" data-color="#10b981" style="background:#10b981;"></button>
+            <button type="button" class="color-opt-circle" data-color="#3b82f6" style="background:#3b82f6;"></button>
+            <button type="button" class="color-opt-circle" data-color="#a855f7" style="background:#a855f7;"></button>
+            <button type="button" class="color-opt-circle" data-color="#eab308" style="background:#eab308;"></button>
+            <button type="button" class="color-opt-circle" data-color="#ec4899" style="background:#ec4899;"></button>
+            <button type="button" class="color-opt-circle" data-color="#06b6d4" style="background:#06b6d4;"></button>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button id="btn-cancel-folder" class="btn-outline" style="flex: 1;">Cancelar</button>
+          <button id="btn-save-folder" class="btn-primary" style="flex: 1; padding: 12px;">Guardar Carpeta</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: MOVER CARTA A CARPETA               -->
+  <!-- ========================================== -->
+  <div id="move-folder-modal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>📂 Mover a Carpeta</h3>
+        <button id="btn-close-move-folder-modal" class="close-modal-btn">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-card-preview qty-preview-compact">
+          <div class="modal-img-wrap qty-thumb-wrap">
+            <img id="move-folder-card-img" src="" alt="Carta">
+          </div>
+          <div class="modal-card-info">
+            <span id="move-folder-card-id" class="card-id-text">OP01-001</span>
+            <h4 id="move-folder-card-name" class="modal-card-name">Monkey.D.Luffy</h4>
+            <span id="move-folder-current-badge" class="trait-tag">Carpeta actual: Álbum General</span>
+          </div>
+        </div>
+
+        <label class="form-label">Selecciona la carpeta destino:</label>
+        <div class="folders-selection-list" id="move-folder-options-list">
+          <!-- Opciones de carpetas generadas dinámicamente -->
+        </div>
+
+        <div class="modal-actions">
+          <button id="btn-cancel-move-folder" class="btn-outline" style="flex: 1;">Cancelar</button>
         </div>
       </div>
     </div>
@@ -436,7 +606,7 @@
       </div>
       <div class="modal-body">
         <p class="modal-card-meta">Copia las celdas de tu hoja de cálculo y pégalas en el siguiente recuadro:</p>
-        <textarea id="paste-textarea" class="paste-textarea" placeholder="Código&#9;Nombre&#9;Cantidad&#10;OP17-039&#9;Rocks.D.Xebec&#9;1&#10;ST01-001&#9;Monkey.D.Luffy&#9;2"></textarea>
+        <textarea id="paste-textarea" class="paste-textarea" placeholder="Código	Nombre	Cantidad&#10;OP17-039	Rocks.D.Xebec	1&#10;ST01-001	Monkey.D.Luffy	2"></textarea>
         <div class="modal-actions">
           <button id="btn-cancel-paste-import" class="btn-outline" style="flex: 1;">Cancelar</button>
           <button id="btn-confirm-paste-import" class="btn-primary" style="flex: 1; padding: 12px;">Importar Filas</button>

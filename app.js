@@ -1,14 +1,23 @@
-// One Piece TCG Pocket Dex & Collection Manager - Starter Deck & Card Explorer Engine
+// One Piece TCG Pocket Dex & Collection Manager - Folders & Custom Quantity Engine
 
 class OnePieceApp {
   constructor() {
     this.collection = [];
+    this.folders = [];
+    this.activeFolderId = 'ALL';
     this.activeFilter = 'ALL';
     this.searchQuery = '';
     this.currentTab = 'album';
     this.pendingCard = null;
     this.pendingQty = 1;
     this.currentSetCode = null;
+
+    // Estado para modales de edición
+    this.editingFolderId = null;
+    this.selectedFolderIcon = '📁';
+    this.selectedFolderColor = '#f59e0b';
+    this.movingCardId = null;
+    this.editingQtyCardId = null;
 
     // Resultados de búsqueda y Paginación (18 cartas por página = 3 filas de 6)
     this.searchResults = [];
@@ -28,12 +37,48 @@ class OnePieceApp {
   }
 
   init() {
+    this.loadFolders();
     this.loadCollection();
     this.cacheDOM();
     this.bindEvents();
     this.updateToolbarControls();
+    this.renderFoldersBar();
     this.renderAlbum();
     this.updateHeaderStats();
+  }
+
+  loadFolders() {
+    try {
+      const raw = localStorage.getItem('op_tcg_folders_v1');
+      if (raw) {
+        this.folders = JSON.parse(raw);
+      } else {
+        this.folders = [
+          { id: 'default', name: 'Álbum General', icon: '📁', color: '#f59e0b' }
+        ];
+        this.saveFolders();
+      }
+    } catch (e) {
+      console.error("Error al cargar carpetas:", e);
+      this.folders = [
+        { id: 'default', name: 'Álbum General', icon: '📁', color: '#f59e0b' }
+      ];
+    }
+  }
+
+  saveFolders() {
+    try {
+      localStorage.setItem('op_tcg_folders_v1', JSON.stringify(this.folders));
+    } catch (e) {
+      console.error("Error al guardar carpetas:", e);
+    }
+  }
+
+  getFolder(folderId) {
+    if (!folderId || folderId === 'default') {
+      return this.folders.find(f => f.id === 'default') || { id: 'default', name: 'Álbum General', icon: '📁', color: '#f59e0b' };
+    }
+    return this.folders.find(f => f.id === folderId) || { id: 'default', name: 'Álbum General', icon: '📁', color: '#f59e0b' };
   }
 
   loadCollection() {
@@ -51,15 +96,16 @@ class OnePieceApp {
           c.rarity = fresh.rarity;
           c.cost = fresh.cost;
           c.set = fresh.set;
+          if (!c.folderId) c.folderId = 'default';
         });
       } else {
         this.collection = [
-          { ...findOrGenerateCard("OP17-039"), count: 1, addedAt: new Date().toLocaleDateString() }, // Rocks.D.Xebec Leader (Azul, Rocks Pirates)
-          { ...findOrGenerateCard("OP17-118"), count: 1, addedAt: new Date().toLocaleDateString() }, // Rocks.D.Xebec SEC (Azul, Rocks Pirates)
-          { ...findOrGenerateCard("OP17-001"), count: 1, addedAt: new Date().toLocaleDateString() }, // Gol.D.Roger Leader (Rojo, Roger Pirates)
-          { ...findOrGenerateCard("OP09-082"), count: 1, addedAt: new Date().toLocaleDateString() }, // Avalo Pizarro (Negro, Blackbeard Pirates)
-          { ...findOrGenerateCard("OP09-118"), count: 1, addedAt: new Date().toLocaleDateString() }, // Gol.D.Roger SEC (Amarillo, Roger Pirates)
-          { ...findOrGenerateCard("OP09-021"), count: 2, addedAt: new Date().toLocaleDateString() }  // Edward.Newgate Leader (Verde, Whitebeard Pirates)
+          { ...findOrGenerateCard("OP17-039"), count: 1, folderId: 'default', addedAt: new Date().toLocaleDateString() }, // Rocks.D.Xebec Leader (Azul, Rocks Pirates)
+          { ...findOrGenerateCard("OP17-118"), count: 1, folderId: 'default', addedAt: new Date().toLocaleDateString() }, // Rocks.D.Xebec SEC (Azul, Rocks Pirates)
+          { ...findOrGenerateCard("OP17-001"), count: 1, folderId: 'default', addedAt: new Date().toLocaleDateString() }, // Gol.D.Roger Leader (Rojo, Roger Pirates)
+          { ...findOrGenerateCard("OP09-082"), count: 1, folderId: 'default', addedAt: new Date().toLocaleDateString() }, // Avalo Pizarro (Negro, Blackbeard Pirates)
+          { ...findOrGenerateCard("OP09-118"), count: 1, folderId: 'default', addedAt: new Date().toLocaleDateString() }, // Gol.D.Roger SEC (Amarillo, Roger Pirates)
+          { ...findOrGenerateCard("OP09-021"), count: 2, folderId: 'default', addedAt: new Date().toLocaleDateString() }  // Edward.Newgate Leader (Verde, Whitebeard Pirates)
         ];
         this.saveCollection();
       }
@@ -76,6 +122,7 @@ class OnePieceApp {
       console.error("Error al guardar colección:", e);
     }
     this.updateHeaderStats();
+    this.renderFoldersBar();
   }
 
   cacheDOM() {
@@ -86,6 +133,16 @@ class OnePieceApp {
       viewScanner: document.getElementById('view-scanner'),
       viewExport: document.getElementById('view-export'),
       navButtons: document.querySelectorAll('.nav-button'),
+
+      // Carpetas del Álbum
+      foldersPillsContainer: document.getElementById('folders-pills-container'),
+      btnAddFolder: document.getElementById('btn-add-folder'),
+      folderActiveBanner: document.getElementById('folder-active-banner'),
+      folderActiveIcon: document.getElementById('folder-active-icon'),
+      folderActiveTitle: document.getElementById('folder-active-title'),
+      folderActiveCount: document.getElementById('folder-active-count'),
+      btnEditActiveFolder: document.getElementById('btn-edit-active-folder'),
+      btnDeleteActiveFolder: document.getElementById('btn-delete-active-folder'),
 
       // Álbum Search & Filters
       albumSearchInput: document.getElementById('album-search-input'),
@@ -111,7 +168,7 @@ class OnePieceApp {
       btnEmptySearchSt: document.getElementById('btn-empty-search-st'),
 
       // Vista de Entrada por Código / Starter Decks
-      starterDeckSelect: document.getElementById('starter-deck-select'),
+      stQuickSelect: document.getElementById('st-quick-select'),
       directCardCodeInput: document.getElementById('direct-card-code-input'),
       btnSubmitCardCode: document.getElementById('btn-submit-card-code'),
       setChips: document.querySelectorAll('.set-chip'),
@@ -157,10 +214,47 @@ class OnePieceApp {
       modalCardTraits: document.getElementById('modal-card-traits'),
       modalCardMeta: document.getElementById('modal-card-meta'),
       modalExistingMsg: document.getElementById('modal-existing-msg'),
+      modalCardFolderSelect: document.getElementById('modal-card-folder-select'),
       modalForecast: document.getElementById('modal-forecast'),
       modalCustomQty: document.getElementById('modal-custom-qty'),
       qtyBtns: document.querySelectorAll('.qty-btn'),
       btnSaveCardToAlbum: document.getElementById('btn-save-card-to-album'),
+
+      // Modal de Edición Directa de Cantidad
+      qtyEditModal: document.getElementById('qty-edit-modal'),
+      btnCloseQtyModal: document.getElementById('btn-close-qty-modal'),
+      qtyModalImg: document.getElementById('qty-modal-img'),
+      qtyModalId: document.getElementById('qty-modal-id'),
+      qtyModalName: document.getElementById('qty-modal-name'),
+      qtyModalCurrentCount: document.getElementById('qty-modal-current-count'),
+      btnQtyModalMinus: document.getElementById('btn-qty-modal-minus'),
+      qtyModalDirectInput: document.getElementById('qty-modal-direct-input'),
+      btnQtyModalPlus: document.getElementById('btn-qty-modal-plus'),
+      btnQtyModalApply: document.getElementById('btn-qty-modal-apply'),
+      btnRemoveChips: document.querySelectorAll('.btn-remove-chip'),
+      qtyModalRemoveCount: document.getElementById('qty-modal-remove-count'),
+      btnQtyModalRemoveCustom: document.getElementById('btn-qty-modal-remove-custom'),
+      btnQtyModalDeleteAll: document.getElementById('btn-qty-modal-delete-all'),
+
+      // Modal de Creación / Edición de Carpeta
+      folderModal: document.getElementById('folder-modal'),
+      folderModalTitle: document.getElementById('folder-modal-title'),
+      btnCloseFolderModal: document.getElementById('btn-close-folder-modal'),
+      btnCancelFolder: document.getElementById('btn-cancel-folder'),
+      btnSaveFolder: document.getElementById('btn-save-folder'),
+      folderNameInput: document.getElementById('folder-name-input'),
+      folderIconPicker: document.getElementById('folder-icon-picker'),
+      folderColorPicker: document.getElementById('folder-color-picker'),
+
+      // Modal de Mover Carta a Carpeta
+      moveFolderModal: document.getElementById('move-folder-modal'),
+      btnCloseMoveFolderModal: document.getElementById('btn-close-move-folder-modal'),
+      btnCancelMoveFolder: document.getElementById('btn-cancel-move-folder'),
+      moveFolderCardImg: document.getElementById('move-folder-card-img'),
+      moveFolderCardId: document.getElementById('move-folder-card-id'),
+      moveFolderCardName: document.getElementById('move-folder-card-name'),
+      moveFolderCurrentBadge: document.getElementById('move-folder-current-badge'),
+      moveFolderOptionsList: document.getElementById('move-folder-options-list'),
 
       // Exportar / Importar
       btnSheetsCopy: document.getElementById('btn-sheets-copy'),
@@ -184,6 +278,142 @@ class OnePieceApp {
         this.switchTab(tab);
       });
     });
+
+    // Eventos de Carpetas
+    if (this.dom.btnAddFolder) {
+      this.dom.btnAddFolder.addEventListener('click', () => {
+        this.openFolderModal();
+      });
+    }
+
+    if (this.dom.btnEditActiveFolder) {
+      this.dom.btnEditActiveFolder.addEventListener('click', () => {
+        if (this.activeFolderId && this.activeFolderId !== 'ALL' && this.activeFolderId !== 'default') {
+          this.openFolderModal(this.activeFolderId);
+        }
+      });
+    }
+
+    if (this.dom.btnDeleteActiveFolder) {
+      this.dom.btnDeleteActiveFolder.addEventListener('click', () => {
+        if (this.activeFolderId && this.activeFolderId !== 'ALL' && this.activeFolderId !== 'default') {
+          this.deleteFolder(this.activeFolderId);
+        }
+      });
+    }
+
+    // Modal de Carpetas (Iconos y Colores)
+    if (this.dom.folderIconPicker) {
+      this.dom.folderIconPicker.addEventListener('click', (e) => {
+        const btn = e.target.closest('.emoji-opt-btn');
+        if (btn) {
+          this.dom.folderIconPicker.querySelectorAll('.emoji-opt-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          this.selectedFolderIcon = btn.getAttribute('data-icon') || '📁';
+        }
+      });
+    }
+
+    if (this.dom.folderColorPicker) {
+      this.dom.folderColorPicker.addEventListener('click', (e) => {
+        const btn = e.target.closest('.color-opt-circle');
+        if (btn) {
+          this.dom.folderColorPicker.querySelectorAll('.color-opt-circle').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          this.selectedFolderColor = btn.getAttribute('data-color') || '#f59e0b';
+        }
+      });
+    }
+
+    if (this.dom.btnSaveFolder) {
+      this.dom.btnSaveFolder.addEventListener('click', () => {
+        this.saveFolderModalData();
+      });
+    }
+
+    if (this.dom.btnCloseFolderModal) {
+      this.dom.btnCloseFolderModal.addEventListener('click', () => this.closeFolderModal());
+    }
+    if (this.dom.btnCancelFolder) {
+      this.dom.btnCancelFolder.addEventListener('click', () => this.closeFolderModal());
+    }
+    if (this.dom.folderModal) {
+      this.dom.folderModal.addEventListener('click', (e) => {
+        if (e.target === this.dom.folderModal) this.closeFolderModal();
+      });
+    }
+
+    // Modal de Mover Carta a Carpeta
+    if (this.dom.btnCloseMoveFolderModal) {
+      this.dom.btnCloseMoveFolderModal.addEventListener('click', () => this.closeMoveFolderModal());
+    }
+    if (this.dom.btnCancelMoveFolder) {
+      this.dom.btnCancelMoveFolder.addEventListener('click', () => this.closeMoveFolderModal());
+    }
+    if (this.dom.moveFolderModal) {
+      this.dom.moveFolderModal.addEventListener('click', (e) => {
+        if (e.target === this.dom.moveFolderModal) this.closeMoveFolderModal();
+      });
+    }
+
+    // Modal de Modificación Directa de Cantidad
+    if (this.dom.btnCloseQtyModal) {
+      this.dom.btnCloseQtyModal.addEventListener('click', () => this.closeQtyModal());
+    }
+    if (this.dom.qtyEditModal) {
+      this.dom.qtyEditModal.addEventListener('click', (e) => {
+        if (e.target === this.dom.qtyEditModal) this.closeQtyModal();
+      });
+    }
+
+    if (this.dom.btnQtyModalMinus) {
+      this.dom.btnQtyModalMinus.addEventListener('click', () => {
+        let val = parseInt(this.dom.qtyModalDirectInput.value) || 0;
+        if (val > 0) this.dom.qtyModalDirectInput.value = val - 1;
+      });
+    }
+
+    if (this.dom.btnQtyModalPlus) {
+      this.dom.btnQtyModalPlus.addEventListener('click', () => {
+        let val = parseInt(this.dom.qtyModalDirectInput.value) || 0;
+        this.dom.qtyModalDirectInput.value = val + 1;
+      });
+    }
+
+    if (this.dom.btnQtyModalApply) {
+      this.dom.btnQtyModalApply.addEventListener('click', () => {
+        const val = parseInt(this.dom.qtyModalDirectInput.value);
+        if (!isNaN(val) && this.editingQtyCardId) {
+          this.setCardCountDirect(this.editingQtyCardId, Math.max(0, val));
+        }
+      });
+    }
+
+    this.dom.btnRemoveChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const countToRemove = parseInt(chip.getAttribute('data-remove')) || 1;
+        if (this.editingQtyCardId) {
+          this.removeCardCopiesDirect(this.editingQtyCardId, countToRemove);
+        }
+      });
+    });
+
+    if (this.dom.btnQtyModalRemoveCustom) {
+      this.dom.btnQtyModalRemoveCustom.addEventListener('click', () => {
+        const countToRemove = parseInt(this.dom.qtyModalRemoveCount.value) || 1;
+        if (this.editingQtyCardId) {
+          this.removeCardCopiesDirect(this.editingQtyCardId, countToRemove);
+        }
+      });
+    }
+
+    if (this.dom.btnQtyModalDeleteAll) {
+      this.dom.btnQtyModalDeleteAll.addEventListener('click', () => {
+        if (this.editingQtyCardId) {
+          this.removeAllCardCopies(this.editingQtyCardId);
+        }
+      });
+    }
 
     // Búsqueda en el álbum
     this.dom.albumSearchInput.addEventListener('input', (e) => {
@@ -306,8 +536,8 @@ class OnePieceApp {
     });
 
     // Selector desplegable de Starter Decks
-    if (this.dom.starterDeckSelect) {
-      this.dom.starterDeckSelect.addEventListener('change', (e) => {
+    if (this.dom.stQuickSelect) {
+      this.dom.stQuickSelect.addEventListener('change', (e) => {
         const stCode = e.target.value;
         if (stCode) {
           this.dom.directCardCodeInput.value = stCode;
@@ -417,7 +647,8 @@ class OnePieceApp {
 
     this.dom.btnSaveCardToAlbum.addEventListener('click', () => {
       if (this.pendingCard) {
-        this.addCardToCollection(this.pendingCard, this.pendingQty);
+        const targetFolder = this.dom.modalCardFolderSelect ? this.dom.modalCardFolderSelect.value : 'default';
+        this.addCardToCollection(this.pendingCard, this.pendingQty, targetFolder);
         this.closeModal();
       }
     });
@@ -489,7 +720,310 @@ class OnePieceApp {
     this.dom.importJsonFile.addEventListener('change', (e) => this.importBackupJSON(e));
   }
 
-  // Métodos de Vista del Álbum
+  // =========================================================================
+  // GESTIÓN DE CARPETAS Y MAZOS PERSONALIZADOS
+  // =========================================================================
+
+  renderFoldersBar() {
+    if (!this.dom.foldersPillsContainer) return;
+    this.dom.foldersPillsContainer.innerHTML = '';
+
+    // Total de cartas en el álbum
+    const totalCardsCount = this.collection.reduce((sum, c) => sum + (c.count || 0), 0);
+
+    // 1. Píldora "Todas"
+    const allPill = document.createElement('button');
+    allPill.className = `folder-tab ${this.activeFolderId === 'ALL' ? 'active' : ''}`;
+    allPill.innerHTML = `🗂️ Todas <span class="folder-tab-badge">${totalCardsCount}</span>`;
+    allPill.addEventListener('click', () => {
+      this.setActiveFolder('ALL');
+    });
+    this.dom.foldersPillsContainer.appendChild(allPill);
+
+    // 2. Píldoras de Carpetas existentes
+    this.folders.forEach(folder => {
+      const folderCardsCount = this.collection
+        .filter(c => (folder.id === 'default' ? (!c.folderId || c.folderId === 'default') : c.folderId === folder.id))
+        .reduce((sum, c) => sum + (c.count || 0), 0);
+
+      const pill = document.createElement('button');
+      pill.className = `folder-tab ${this.activeFolderId === folder.id ? 'active' : ''}`;
+      pill.innerHTML = `${folder.icon || '📁'} ${folder.name} <span class="folder-tab-badge">${folderCardsCount}</span>`;
+      pill.addEventListener('click', () => {
+        this.setActiveFolder(folder.id);
+      });
+      this.dom.foldersPillsContainer.appendChild(pill);
+    });
+
+    // Actualizar Banner de Carpeta Activa
+    this.updateActiveFolderBanner();
+  }
+
+  setActiveFolder(folderId) {
+    this.activeFolderId = folderId;
+    this.renderFoldersBar();
+    this.renderAlbum();
+  }
+
+  updateActiveFolderBanner() {
+    if (!this.dom.folderActiveBanner) return;
+
+    if (this.activeFolderId !== 'ALL' && this.activeFolderId !== 'default') {
+      const folder = this.folders.find(f => f.id === this.activeFolderId);
+      if (folder) {
+        const count = this.collection
+          .filter(c => c.folderId === folder.id)
+          .reduce((sum, c) => sum + (c.count || 0), 0);
+
+        this.dom.folderActiveIcon.textContent = folder.icon || '📁';
+        this.dom.folderActiveTitle.textContent = folder.name;
+        this.dom.folderActiveCount.textContent = `${count} carta${count === 1 ? '' : 's'} guardada${count === 1 ? '' : 's'} en esta carpeta`;
+        this.dom.folderActiveBanner.style.display = 'flex';
+        return;
+      }
+    }
+    this.dom.folderActiveBanner.style.display = 'none';
+  }
+
+  openFolderModal(folderIdToEdit = null) {
+    this.editingFolderId = folderIdToEdit;
+    
+    if (folderIdToEdit) {
+      const folder = this.folders.find(f => f.id === folderIdToEdit);
+      if (folder) {
+        this.dom.folderModalTitle.textContent = '✏️ Editar Carpeta';
+        this.dom.folderNameInput.value = folder.name;
+        this.selectedFolderIcon = folder.icon || '📁';
+        this.selectedFolderColor = folder.color || '#f59e0b';
+      }
+    } else {
+      this.dom.folderModalTitle.textContent = '📁 Nueva Carpeta';
+      this.dom.folderNameInput.value = '';
+      this.selectedFolderIcon = '📁';
+      this.selectedFolderColor = '#f59e0b';
+    }
+
+    // Actualizar selección visual de emojis
+    if (this.dom.folderIconPicker) {
+      this.dom.folderIconPicker.querySelectorAll('.emoji-opt-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-icon') === this.selectedFolderIcon);
+      });
+    }
+
+    // Actualizar selección visual de colores
+    if (this.dom.folderColorPicker) {
+      this.dom.folderColorPicker.querySelectorAll('.color-opt-circle').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-color') === this.selectedFolderColor);
+      });
+    }
+
+    this.dom.folderModal.classList.add('active');
+    setTimeout(() => {
+      this.dom.folderNameInput.focus();
+    }, 150);
+  }
+
+  closeFolderModal() {
+    this.dom.folderModal.classList.remove('active');
+    this.editingFolderId = null;
+  }
+
+  saveFolderModalData() {
+    const name = this.dom.folderNameInput.value.trim();
+    if (!name) {
+      this.showToast("⚠️ Introduce un nombre para la carpeta");
+      this.dom.folderNameInput.focus();
+      return;
+    }
+
+    if (this.editingFolderId) {
+      const folder = this.folders.find(f => f.id === this.editingFolderId);
+      if (folder) {
+        folder.name = name;
+        folder.icon = this.selectedFolderIcon;
+        folder.color = this.selectedFolderColor;
+        this.showToast(`✅ Carpeta "${name}" actualizada`);
+      }
+    } else {
+      const newFolder = {
+        id: 'folder_' + Date.now(),
+        name: name,
+        icon: this.selectedFolderIcon,
+        color: this.selectedFolderColor
+      };
+      this.folders.push(newFolder);
+      this.activeFolderId = newFolder.id;
+      this.showToast(`🎉 Carpeta "${name}" creada`);
+    }
+
+    this.saveFolders();
+    this.closeFolderModal();
+    this.renderFoldersBar();
+    this.renderAlbum();
+  }
+
+  deleteFolder(folderId) {
+    const folder = this.folders.find(f => f.id === folderId);
+    if (!folder || folder.id === 'default') return;
+
+    if (confirm(`¿Eliminar la carpeta "${folder.name}"?\nLas cartas guardadas en ella se moverán a tu Álbum General.`)) {
+      // Mover cartas a la carpeta default
+      this.collection.forEach(c => {
+        if (c.folderId === folderId) {
+          c.folderId = 'default';
+        }
+      });
+      this.folders = this.folders.filter(f => f.id !== folderId);
+      this.activeFolderId = 'ALL';
+      this.saveFolders();
+      this.saveCollection();
+      this.renderFoldersBar();
+      this.renderAlbum();
+      this.showToast(`🗑️ Carpeta "${folder.name}" eliminada`);
+    }
+  }
+
+  openMoveFolderModal(cardId) {
+    const card = this.collection.find(c => c.id === cardId);
+    if (!card) return;
+
+    this.movingCardId = cardId;
+    this.dom.moveFolderCardId.textContent = card.id;
+    this.dom.moveFolderCardName.textContent = card.name;
+    this.setupRobustImage(this.dom.moveFolderCardImg, card);
+
+    const currentFolder = this.getFolder(card.folderId);
+    this.dom.moveFolderCurrentBadge.textContent = `Carpeta actual: ${currentFolder.icon} ${currentFolder.name}`;
+
+    // Renderizar opciones de carpeta
+    this.dom.moveFolderOptionsList.innerHTML = '';
+    this.folders.forEach(folder => {
+      const item = document.createElement('div');
+      const isCurrent = (folder.id === (card.folderId || 'default'));
+      item.className = `folder-select-item ${isCurrent ? 'active' : ''}`;
+      item.innerHTML = `
+        <span>${folder.icon} ${folder.name}</span>
+        <span>${isCurrent ? '✓ Actual' : '➔ Mover'}</span>
+      `;
+      item.addEventListener('click', () => {
+        this.moveCardToFolder(cardId, folder.id);
+      });
+      this.dom.moveFolderOptionsList.appendChild(item);
+    });
+
+    this.dom.moveFolderModal.classList.add('active');
+  }
+
+  closeMoveFolderModal() {
+    this.dom.moveFolderModal.classList.remove('active');
+    this.movingCardId = null;
+  }
+
+  moveCardToFolder(cardId, targetFolderId) {
+    const card = this.collection.find(c => c.id === cardId);
+    if (!card) return;
+
+    card.folderId = targetFolderId;
+    const targetFolder = this.getFolder(targetFolderId);
+    this.saveCollection();
+    this.closeMoveFolderModal();
+    this.renderFoldersBar();
+    this.renderAlbum();
+    this.showToast(`📂 ${card.name} movida a "${targetFolder.name}"`);
+  }
+
+  // =========================================================================
+  // MODIFICACIÓN Y ELIMINACIÓN DIRECTA DE CANTIDAD
+  // =========================================================================
+
+  openQtyModal(cardId) {
+    const card = this.collection.find(c => c.id === cardId);
+    if (!card) return;
+
+    this.editingQtyCardId = cardId;
+    this.dom.qtyModalId.textContent = card.id;
+    this.dom.qtyModalName.textContent = card.name;
+    this.dom.qtyModalCurrentCount.textContent = card.count;
+    this.dom.qtyModalDirectInput.value = card.count;
+    this.dom.qtyModalRemoveCount.value = 1;
+    this.setupRobustImage(this.dom.qtyModalImg, card);
+
+    // Ajustar estado de los chips de eliminación rápida
+    this.dom.btnRemoveChips.forEach(chip => {
+      const q = parseInt(chip.getAttribute('data-remove')) || 1;
+      chip.textContent = `−${q} copia${q > 1 ? 's' : ''}`;
+    });
+
+    this.dom.qtyEditModal.classList.add('active');
+    setTimeout(() => {
+      this.dom.qtyModalDirectInput.select();
+    }, 150);
+  }
+
+  closeQtyModal() {
+    this.dom.qtyEditModal.classList.remove('active');
+    this.editingQtyCardId = null;
+  }
+
+  setCardCountDirect(cardId, newCount) {
+    const idx = this.collection.findIndex(c => c.id === cardId);
+    if (idx < 0) return;
+
+    const card = this.collection[idx];
+    if (newCount <= 0) {
+      this.collection.splice(idx, 1);
+      this.showToast(`🗑️ ${card.name} (${card.id}) eliminada del álbum`);
+    } else {
+      card.count = newCount;
+      this.showToast(`✅ Cantidad fijada en x${newCount} copias`);
+    }
+
+    this.saveCollection();
+    this.closeQtyModal();
+    this.renderAlbum();
+    this.updateSetGridCardBadges();
+  }
+
+  removeCardCopiesDirect(cardId, amountToRemove) {
+    const idx = this.collection.findIndex(c => c.id === cardId);
+    if (idx < 0) return;
+
+    const card = this.collection[idx];
+    const newCount = card.count - amountToRemove;
+
+    if (newCount <= 0) {
+      this.collection.splice(idx, 1);
+      this.showToast(`🗑️ Eliminadas todas las copias de ${card.name}`);
+    } else {
+      card.count = newCount;
+      this.showToast(`🗑️ Restadas ${amountToRemove} copias. Quedan: x${newCount}`);
+    }
+
+    this.saveCollection();
+    this.closeQtyModal();
+    this.renderAlbum();
+    this.updateSetGridCardBadges();
+  }
+
+  removeAllCardCopies(cardId) {
+    const idx = this.collection.findIndex(c => c.id === cardId);
+    if (idx < 0) return;
+
+    const card = this.collection[idx];
+    if (confirm(`¿Seguro que deseas eliminar TODAS las copias (${card.count}) de ${card.name} (${card.id})?`)) {
+      this.collection.splice(idx, 1);
+      this.saveCollection();
+      this.closeQtyModal();
+      this.renderAlbum();
+      this.updateSetGridCardBadges();
+      this.showToast(`🗑️ ${card.name} eliminada completamente`);
+    }
+  }
+
+  // =========================================================================
+  // MÉTODOS DE VISTA DEL ÁLBUM
+  // =========================================================================
+
   setAlbumViewMode(mode) {
     this.albumViewMode = mode;
     localStorage.setItem('op_album_view_mode', mode);
@@ -595,14 +1129,14 @@ class OnePieceApp {
       return;
     }
 
-    // 1. ¿Es una búsqueda de Set o Starter Deck completo (ej. OP01, ST01, OP17, ST29)?
+    // 1. ¿Es una búsqueda de Set o Starter Deck completo (ej. OP01, ST01, OP17, ST20)?
     const setCode = normalizeSetCode(raw);
     if (setCode) {
       this.showSetExplorer(setCode);
       return;
     }
 
-    // 2. ¿Es un código de carta individual exacto (ej. OP17-039, ST29-001)?
+    // 2. ¿Es un código de carta individual exacto (ej. OP17-039, ST01-001)?
     const cleanCard = this.cleanCardCode(raw);
     if (cleanCard && window.ONE_PIECE_CARDS_DB && window.ONE_PIECE_CARDS_DB[cleanCard]) {
       this.fetchAndOpenCardModal(cleanCard);
@@ -659,14 +1193,14 @@ class OnePieceApp {
     }
 
     const traitInfo = meta ? ` • ${meta.traits}` : '';
-    this.dom.setResultsDesc.textContent = `${cards.length} cartas oficiales en el set${traitInfo} • Pulsa o clic derecho para ampliar`;
+    this.dom.setResultsDesc.textContent = `${cards.length} cartas oficiales en el set${traitInfo} • Toca para seleccionar o añadir`;
 
     this.updateToolbarControls();
     this.renderSearchResultsPage();
     this.dom.setResultsContainer.style.display = 'block';
 
-    if (this.dom.starterDeckSelect) {
-      this.dom.starterDeckSelect.value = setCode;
+    if (this.dom.stQuickSelect) {
+      this.dom.stQuickSelect.value = setCode;
     }
 
     this.showToast(`📦 Mostrando ${cards.length} cartas de ${setCode}`);
@@ -690,7 +1224,7 @@ class OnePieceApp {
       this.dom.btnAddEntireDeck.style.display = 'none';
     }
 
-    this.dom.setResultsDesc.textContent = `${matches.length} cartas encontradas • 18 cartas por página (3 filas de 6) • Pulsa o clic derecho para ampliar`;
+    this.dom.setResultsDesc.textContent = `${matches.length} cartas encontradas • 18 cartas por página (3 filas de 6)`;
 
     this.updateToolbarControls();
     this.renderSearchResultsPage();
@@ -758,7 +1292,6 @@ class OnePieceApp {
     cards.forEach(card => {
       const existing = this.collection.find(c => c.id === card.id);
       const count = existing ? existing.count : 0;
-      const primaryColor = (card.color || 'Red').split('/')[0];
       const colorClass = (card.color || 'Red').replace('/', '-');
 
       if (this.setViewMode === 'list') {
@@ -768,10 +1301,10 @@ class OnePieceApp {
         rowEl.setAttribute('data-id', card.id);
 
         rowEl.innerHTML = `
-          <div class="list-card-thumb-wrap" title="Toca o clic derecho para ver grande">
+          <div class="list-card-thumb-wrap" title="Toca para ver grande">
             <img class="card-img-element" alt="${card.name}" loading="lazy" />
           </div>
-          <div class="list-card-details" title="Toca o clic derecho para ver detalles">
+          <div class="list-card-details" title="Toca para ver detalles">
             <div class="list-card-header">
               <span class="card-id-text">${card.id}</span>
               <span class="card-badge-color col-${colorClass}">${card.color}</span>
@@ -801,11 +1334,10 @@ class OnePieceApp {
           this.fetchAndOpenCardModal(card.id);
         });
 
-        // Click derecho para ampliar carta
-
         rowEl.querySelector('.btn-add-set-card').addEventListener('click', (e) => {
           e.stopPropagation();
-          this.addCardToCollection(card, 1);
+          const targetFolder = (this.activeFolderId && this.activeFolderId !== 'ALL') ? this.activeFolderId : 'default';
+          this.addCardToCollection(card, 1, targetFolder);
         });
 
         this.dom.setCardsGrid.appendChild(rowEl);
@@ -817,7 +1349,7 @@ class OnePieceApp {
         cardEl.setAttribute('data-id', card.id);
 
         cardEl.innerHTML = `
-          <div class="card-image-wrap" title="Toca o haz clic derecho para ampliar">
+          <div class="card-image-wrap" title="Toca para ver detalles o ampliar">
             <img class="card-img-element" alt="${card.name}" loading="lazy" />
             <span class="card-badge-color col-${colorClass}">${card.color}</span>
             <span class="card-badge-owned ${count > 0 ? 'has-copies' : ''}">
@@ -844,11 +1376,10 @@ class OnePieceApp {
           this.fetchAndOpenCardModal(card.id);
         });
 
-        // Click derecho para ampliar carta
-
         cardEl.querySelector('.btn-add-set-card').addEventListener('click', (e) => {
           e.stopPropagation();
-          this.addCardToCollection(card, 1);
+          const targetFolder = (this.activeFolderId && this.activeFolderId !== 'ALL') ? this.activeFolderId : 'default';
+          this.addCardToCollection(card, 1, targetFolder);
         });
 
         this.dom.setCardsGrid.appendChild(cardEl);
@@ -886,6 +1417,8 @@ class OnePieceApp {
     const cards = getCardsBySet(setCode);
     if (!cards || cards.length === 0) return;
 
+    const targetFolder = (this.activeFolderId && this.activeFolderId !== 'ALL') ? this.activeFolderId : 'default';
+
     let totalAdded = 0;
     cards.forEach(card => {
       const existing = this.collection.find(c => c.id === card.id);
@@ -895,6 +1428,7 @@ class OnePieceApp {
         this.collection.unshift({
           ...card,
           count: 1,
+          folderId: targetFolder,
           addedAt: new Date().toLocaleDateString()
         });
       }
@@ -940,9 +1474,42 @@ class OnePieceApp {
     if (card.set) metaStr += ` • ${card.set}`;
     this.dom.modalCardMeta.textContent = metaStr;
 
+    // Actualizar selector de carpeta en el modal
+    if (this.dom.modalCardFolderSelect) {
+      this.dom.modalCardFolderSelect.innerHTML = '';
+      this.folders.forEach(folder => {
+        const opt = document.createElement('option');
+        opt.value = folder.id;
+        opt.textContent = `${folder.icon} ${folder.name}`;
+        this.dom.modalCardFolderSelect.appendChild(opt);
+      });
+
+      if (existing && existing.folderId) {
+        this.dom.modalCardFolderSelect.value = existing.folderId;
+      } else if (this.activeFolderId && this.activeFolderId !== 'ALL') {
+        this.dom.modalCardFolderSelect.value = this.activeFolderId;
+      } else {
+        this.dom.modalCardFolderSelect.value = 'default';
+      }
+    }
+
     if (currentOwned > 0) {
+      const folderName = this.getFolder(existing.folderId).name;
       this.dom.modalExistingMsg.style.display = 'block';
-      this.dom.modalExistingMsg.innerHTML = `📦 Ya tienes <strong>${currentOwned} copia(s)</strong> de esta carta en tu álbum.`;
+      this.dom.modalExistingMsg.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+          <span>📦 Ya tienes <strong>${currentOwned} copia(s)</strong> en <em>${folderName}</em>.</span>
+          <button id="btn-modal-open-qty-edit" class="btn-folder-action" type="button">⚡ Editar / Eliminar cantidad</button>
+        </div>
+      `;
+
+      const btnEditQty = this.dom.modalExistingMsg.querySelector('#btn-modal-open-qty-edit');
+      if (btnEditQty) {
+        btnEditQty.addEventListener('click', () => {
+          this.closeModal();
+          this.openQtyModal(card.id);
+        });
+      }
     } else {
       this.dom.modalExistingMsg.style.display = 'none';
     }
@@ -1005,7 +1572,6 @@ class OnePieceApp {
     }
   }
 
-
   openLightbox(card) {
     if (!card) return;
     if (this.dom.lightboxCardCode) this.dom.lightboxCardCode.textContent = card.id;
@@ -1029,14 +1595,18 @@ class OnePieceApp {
     this.pendingCard = null;
   }
 
-  addCardToCollection(card, qty) {
+  addCardToCollection(card, qty, folderId = 'default') {
     const existingIndex = this.collection.findIndex(c => c.id === card.id);
     if (existingIndex >= 0) {
       this.collection[existingIndex].count += qty;
+      if (folderId && folderId !== 'default') {
+        this.collection[existingIndex].folderId = folderId;
+      }
     } else {
       this.collection.unshift({
         ...card,
         count: qty,
+        folderId: folderId || 'default',
         addedAt: new Date().toLocaleDateString()
       });
     }
@@ -1101,6 +1671,13 @@ class OnePieceApp {
     }
 
     const filtered = this.collection.filter(card => {
+      // Filtro por Carpeta Activa
+      if (this.activeFolderId !== 'ALL') {
+        const cardFid = card.folderId || 'default';
+        if (cardFid !== this.activeFolderId) return false;
+      }
+
+      // Filtro por Búsqueda de Texto
       if (this.searchQuery) {
         const q = this.searchQuery;
         const matchName = (card.name || '').toLowerCase().includes(q);
@@ -1116,6 +1693,7 @@ class OnePieceApp {
         if (!matchName && !matchCode && !matchTraits && !matchColor && !matchSet && !matchType && !matchSetQuery) return false;
       }
 
+      // Filtro por Color / Rasgo
       if (this.activeFilter === 'ALL') return true;
 
       const matchColor = (card.color || '').toLowerCase().includes(this.activeFilter.toLowerCase());
@@ -1131,15 +1709,16 @@ class OnePieceApp {
 
       if (detectedSet) {
         const setCards = getCardsBySet(detectedSet);
-        this.dom.emptyAlbumTitle.textContent = `No tienes cartas de ${detectedSet} en tu álbum`;
+        this.dom.emptyAlbumTitle.textContent = `No tienes cartas de ${detectedSet} en esta vista`;
         this.dom.emptyAlbumDesc.textContent = `Hay ${setCards.length} cartas oficiales del Set/Deck ${detectedSet} en la base de datos.`;
         if (this.dom.btnEmptySearchSt) {
           this.dom.btnEmptySearchSt.style.display = 'inline-block';
           this.dom.btnEmptySearchSt.textContent = `📦 Explorar y Añadir Cartas de ${detectedSet}`;
         }
       } else {
-        this.dom.emptyAlbumTitle.textContent = 'No se encontraron cartas';
-        this.dom.emptyAlbumDesc.textContent = 'Introduce un código en la pestaña Añadir Carta para buscarla.';
+        const folderName = this.activeFolderId !== 'ALL' ? this.getFolder(this.activeFolderId).name : 'el álbum';
+        this.dom.emptyAlbumTitle.textContent = `No se encontraron cartas en ${folderName}`;
+        this.dom.emptyAlbumDesc.textContent = 'Añade cartas con el buscador o muévelas a esta carpeta.';
         if (this.dom.btnEmptySearchSt) {
           this.dom.btnEmptySearchSt.style.display = 'none';
         }
@@ -1148,8 +1727,8 @@ class OnePieceApp {
       this.dom.emptyAlbumMsg.style.display = 'none';
 
       filtered.forEach(card => {
-        const primaryColor = (card.color || 'Red').split('/')[0];
         const colorClass = (card.color || 'Red').replace('/', '-');
+        const folder = this.getFolder(card.folderId);
 
         if (this.albumViewMode === 'list') {
           // ================= MODO LISTA (FILA CON IMAGEN + INFO + CONTROLES) =================
@@ -1158,22 +1737,28 @@ class OnePieceApp {
           rowEl.setAttribute('data-id', card.id);
 
           rowEl.innerHTML = `
-            <div class="list-card-thumb-wrap" title="Toca o clic derecho para ver la carta grande">
+            <div class="list-card-thumb-wrap" title="Toca para ver detalles o ampliar">
               <img class="card-img-element" alt="${card.name}" loading="lazy" />
             </div>
-            <div class="list-card-details" title="Toca o clic derecho para ver detalles">
+            <div class="list-card-details" title="Toca para ver detalles">
               <div class="list-card-header">
                 <span class="card-id-text">${card.id}</span>
                 <span class="card-badge-color col-${colorClass}">${card.color}</span>
                 <span class="card-type-chip">${card.cardType || 'Card'} • ${card.rarity || 'R'}</span>
               </div>
               <div class="list-card-name">${card.name}</div>
-              <div class="list-card-traits">${card.traits || 'One Piece'}</div>
+              <div class="list-card-sub">
+                <span class="list-card-traits">${card.traits || 'One Piece'}</span>
+                <span class="card-folder-tag" title="Toca para cambiar de carpeta">${folder.icon} ${folder.name}</span>
+              </div>
             </div>
             <div class="list-card-actions">
               <div class="card-stepper-row">
                 <button class="step-btn btn-sub" data-id="${card.id}" title="Restar 1 copia">−</button>
-                <span class="step-count">x${card.count}</span>
+                <span class="step-count step-count-interactive" data-id="${card.id}" title="Toca para editar cantidad o eliminar copias">
+                  x${card.count}
+                  <span class="btn-quick-edit-qty" title="Modificar o eliminar copias">✏️</span>
+                </span>
                 <button class="step-btn btn-add" data-id="${card.id}" title="Sumar 1 copia">+</button>
               </div>
             </div>
@@ -1190,7 +1775,23 @@ class OnePieceApp {
             this.fetchAndOpenCardModal(card.id);
           });
 
-          // Click derecho para ampliar carta
+          // Click en la etiqueta de carpeta para moverla
+          const folderTag = rowEl.querySelector('.card-folder-tag');
+          if (folderTag) {
+            folderTag.addEventListener('click', (e) => {
+              e.stopPropagation();
+              this.openMoveFolderModal(card.id);
+            });
+          }
+
+          // Click en la cantidad para editar directamente / eliminar de golpe
+          const countBadge = rowEl.querySelector('.step-count-interactive');
+          if (countBadge) {
+            countBadge.addEventListener('click', (e) => {
+              e.stopPropagation();
+              this.openQtyModal(card.id);
+            });
+          }
 
           // Steppers
           rowEl.querySelector('.btn-sub').addEventListener('click', (e) => {
@@ -1212,7 +1813,7 @@ class OnePieceApp {
           cardEl.setAttribute('data-id', card.id);
           
           cardEl.innerHTML = `
-            <div class="card-image-wrap" title="Toca o haz clic derecho para ampliar">
+            <div class="card-image-wrap" title="Toca para ver detalles o ampliar">
               <img class="card-img-element" alt="${card.name}" loading="lazy" />
               <span class="card-badge-color col-${colorClass}">${card.color}</span>
               <span class="card-badge-count">x${card.count}</span>
@@ -1223,11 +1824,17 @@ class OnePieceApp {
                 <span class="card-type-chip">${card.cardType || 'Card'} • ${card.rarity || 'R'}</span>
               </div>
               <div class="card-name-text" title="${card.name}">${card.name}</div>
-              <div class="trait-tag" title="${card.traits || 'One Piece'}">${card.traits || 'One Piece'}</div>
+              <div class="card-meta-row">
+                <span class="trait-tag" title="${card.traits || 'One Piece'}">${card.traits || 'One Piece'}</span>
+                <span class="card-folder-tag" title="Toca para cambiar de carpeta">${folder.icon} ${folder.name}</span>
+              </div>
               <div class="card-stepper-row">
-                <button class="step-btn btn-sub" data-id="${card.id}" title="Restar copia">−</button>
-                <span class="step-count">${card.count}</span>
-                <button class="step-btn btn-add" data-id="${card.id}" title="Sumar copia">+</button>
+                <button class="step-btn btn-sub" data-id="${card.id}" title="Restar 1 copia">−</button>
+                <span class="step-count step-count-interactive" data-id="${card.id}" title="Toca para editar cantidad o eliminar copias">
+                  x${card.count}
+                  <span class="btn-quick-edit-qty" title="Modificar o eliminar copias">✏️</span>
+                </span>
+                <button class="step-btn btn-add" data-id="${card.id}" title="Sumar 1 copia">+</button>
               </div>
             </div>
           `;
@@ -1239,7 +1846,23 @@ class OnePieceApp {
             this.fetchAndOpenCardModal(card.id);
           });
 
-          // Click derecho sobre la carta para ampliarla en cualquier punto
+          // Click en la etiqueta de carpeta para moverla
+          const folderTag = cardEl.querySelector('.card-folder-tag');
+          if (folderTag) {
+            folderTag.addEventListener('click', (e) => {
+              e.stopPropagation();
+              this.openMoveFolderModal(card.id);
+            });
+          }
+
+          // Click en la cantidad para editar directamente / eliminar de golpe
+          const countBadge = cardEl.querySelector('.step-count-interactive');
+          if (countBadge) {
+            countBadge.addEventListener('click', (e) => {
+              e.stopPropagation();
+              this.openQtyModal(card.id);
+            });
+          }
 
           cardEl.querySelector('.btn-sub').addEventListener('click', (e) => {
             e.stopPropagation();
@@ -1267,15 +1890,20 @@ class OnePieceApp {
     }
   }
 
+  // =========================================================================
+  // EXPORTACIÓN E IMPORTACIÓN
+  // =========================================================================
+
   async copyToGoogleSheets() {
     if (this.collection.length === 0) {
       this.showToast("No tienes cartas en la colección");
       return;
     }
 
-    let tsv = "Código\tNombre\tCantidad\tColor\tType / Rasgos\tTipo\tRareza\tCoste/Vida\tExpansión\tFecha\n";
+    let tsv = "Código\tNombre\tCantidad\tCarpeta\tColor\tType / Rasgos\tTipo\tRareza\tCoste/Vida\tExpansión\tFecha\n";
     this.collection.forEach(c => {
-      tsv += `${c.id}\t${c.name}\t${c.count}\t${c.color}\t${c.traits || ''}\t${c.cardType || ''}\t${c.rarity || ''}\t${c.cost || ''}\t${c.set || ''}\t${c.addedAt || ''}\n`;
+      const fName = this.getFolder(c.folderId).name;
+      tsv += `${c.id}\t${c.name}\t${c.count}\t${fName}\t${c.color}\t${c.traits || ''}\t${c.cardType || ''}\t${c.rarity || ''}\t${c.cost || ''}\t${c.set || ''}\t${c.addedAt || ''}\n`;
     });
 
     try {
@@ -1298,9 +1926,10 @@ class OnePieceApp {
       return;
     }
 
-    let csv = "\uFEFFCódigo,Nombre,Cantidad,Color,Type / Rasgos,Tipo,Rareza,Coste/Vida,Expansión,Fecha\n";
+    let csv = "\uFEFFCódigo,Nombre,Cantidad,Carpeta,Color,Type / Rasgos,Tipo,Rareza,Coste/Vida,Expansión,Fecha\n";
     this.collection.forEach(c => {
-      csv += `"${c.id}","${(c.name || '').replace(/"/g, '""')}",${c.count},"${c.color}","${(c.traits || '').replace(/"/g, '""')}","${c.cardType || ''}","${c.rarity || ''}","${c.cost || ''}","${(c.set || '').replace(/"/g, '""')}","${c.addedAt || ''}"\n`;
+      const fName = this.getFolder(c.folderId).name;
+      csv += `"${c.id}","${(c.name || '').replace(/"/g, '""')}",${c.count},"${fName}","${c.color}","${(c.traits || '').replace(/"/g, '""')}","${c.cardType || ''}","${c.rarity || ''}","${c.cost || ''}","${(c.set || '').replace(/"/g, '""')}","${c.addedAt || ''}"\n`;
     });
 
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
@@ -1394,6 +2023,7 @@ class OnePieceApp {
         this.collection.unshift({
           ...cardInfo,
           count: qty,
+          folderId: 'default',
           addedAt: new Date().toLocaleDateString()
         });
         newCardsCount++;
@@ -1428,13 +2058,20 @@ class OnePieceApp {
   }
 
   exportBackupJSON() {
-    const blob = new Blob([JSON.stringify(this.collection, null, 2)], { type: 'application/json' });
+    const backupData = {
+      version: 2,
+      exportedAt: new Date().toISOString(),
+      folders: this.folders,
+      cards: this.collection
+    };
+
+    const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
     link.download = `OnePiece_Backup_${new Date().toISOString().slice(0, 10)}.json`;
     link.click();
-    this.showToast("💾 Respaldo JSON descargado");
+    this.showToast("💾 Respaldo JSON descargado (incluye carpetas)");
   }
 
   importBackupJSON(e) {
@@ -1445,17 +2082,40 @@ class OnePieceApp {
     reader.onload = (event) => {
       try {
         const imported = JSON.parse(event.target.result);
+        
+        // Soporte formato v2 (con objeto folders y cards) o formato v1 (array de cards)
+        let cardsToRestore = [];
+        let foldersToRestore = [];
+
         if (Array.isArray(imported)) {
-          if (confirm(`¿Restaurar ${imported.length} cartas a tu álbum?`)) {
-            imported.forEach(card => {
-              this.addCardToCollection(card, card.count || 1);
-            });
-            this.showToast("¡Colección restaurada!");
-            this.switchTab('album');
+          cardsToRestore = imported;
+        } else if (imported && Array.isArray(imported.cards)) {
+          cardsToRestore = imported.cards;
+          if (Array.isArray(imported.folders)) {
+            foldersToRestore = imported.folders;
           }
         }
+
+        if (cardsToRestore.length > 0) {
+          if (confirm(`¿Restaurar ${cardsToRestore.length} cartas a tu álbum?`)) {
+            if (foldersToRestore.length > 0) {
+              this.folders = foldersToRestore;
+              this.saveFolders();
+            }
+
+            cardsToRestore.forEach(card => {
+              this.addCardToCollection(card, card.count || 1, card.folderId || 'default');
+            });
+
+            this.renderFoldersBar();
+            this.showToast("¡Colección y carpetas restauradas!");
+            this.switchTab('album');
+          }
+        } else {
+          this.showToast("No se encontraron cartas en el archivo");
+        }
       } catch (err) {
-        this.showToast("Error al procesar el archivo");
+        this.showToast("Error al procesar el archivo JSON");
       }
     };
     reader.readAsText(file);
