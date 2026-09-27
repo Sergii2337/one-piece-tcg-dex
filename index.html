@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>One Piece TCG - Dex & Album</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2.6">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏴‍☠️</text></svg>">
 </head>
 <body>
@@ -91,6 +91,8 @@
           </div>
         </div>
         <div class="folder-active-actions">
+          <button id="btn-image-active-folder" class="btn-folder-action btn-folder-image" title="Convertir esta carpeta en una imagen visual (PNG)">🖼️ Imagen</button>
+          <button id="btn-export-active-folder" class="btn-folder-action" title="Exportar cartas de esta carpeta">📤 Exportar</button>
           <button id="btn-share-active-folder" class="btn-folder-action btn-share-folder" style="display: none;" title="Copiar enlace para compartir con amigos">🔗 Compartir</button>
           <button id="btn-edit-active-folder" class="btn-folder-action" title="Editar nombre/icono de la carpeta">✏️ Editar</button>
           <button id="btn-delete-active-folder" class="btn-folder-action btn-folder-delete" title="Eliminar carpeta o salir de ella">🗑️ Eliminar</button>
@@ -178,7 +180,7 @@
         <div class="st-selector-wrap">
           <label class="quick-set-label" for="starter-deck-select">📦 Seleccionar Starter Deck Oficial:</label>
           <select id="starter-deck-select" class="st-dropdown">
-            <option value="">-- Elige un Starter Deck (ST01 - ST20) --</option>
+            <option value="">-- Elige un Starter Deck (ST01 - ST36) --</option>
             <option value="ST01">ST-01: Straw Hat Crew (Luffy)</option>
             <option value="ST02">ST-02: Worst Generation (Eustass Kid)</option>
             <option value="ST03">ST-03: The Seven Warlords of the Sea (Crocodile)</option>
@@ -186,8 +188,8 @@
             <option value="ST05">ST-05: ONE PIECE FILM edition (Shanks)</option>
             <option value="ST06">ST-06: Absolute Justice (Sakazuki)</option>
             <option value="ST07">ST-07: Big Mom Pirates (Charlotte Linlin)</option>
-            <option value="ST08">ST-08: Monkey D. Luffy</option>
-            <option value="ST09">ST-09: Yamato</option>
+            <option value="ST08">ST-08: Side Monkey D. Luffy</option>
+            <option value="ST09">ST-09: Side Yamato</option>
             <option value="ST10">ST-10: The Three Captains (Luffy/Law/Kid)</option>
             <option value="ST11">ST-11: Uta</option>
             <option value="ST12">ST-12: Zoro & Sanji</option>
@@ -199,6 +201,22 @@
             <option value="ST18">ST-18: Purple Monkey.D.Luffy</option>
             <option value="ST19">ST-19: Black Smoker</option>
             <option value="ST20">ST-20: Yellow Charlotte Katakuri</option>
+            <option value="ST21">ST-21: EX Gear 5</option>
+            <option value="ST22">ST-22: Ace & Newgate</option>
+            <option value="ST23">ST-23: Red Shanks</option>
+            <option value="ST24">ST-24: Green Jewelry Bonney</option>
+            <option value="ST25">ST-25: Blue Buggy</option>
+            <option value="ST26">ST-26: Purple/Black Monkey.D.Luffy</option>
+            <option value="ST27">ST-27: Black Marshall.D.Teach</option>
+            <option value="ST28">ST-28: Green/Yellow Yamato</option>
+            <option value="ST29">ST-29: Egghead</option>
+            <option value="ST30">ST-30: EX Luffy & Ace</option>
+            <option value="ST31">ST-31: Red Monkey.D.Luffy</option>
+            <option value="ST32">ST-32: Green Roronoa Zoro</option>
+            <option value="ST33">ST-33: Blue Kuzan</option>
+            <option value="ST34">ST-34: Purple Charlotte Katakuri</option>
+            <option value="ST35">ST-35: Red/Black Sabo</option>
+            <option value="ST36">ST-36: Yellow Eustass "Captain" Kid</option>
           </select>
         </div>
 
@@ -330,10 +348,61 @@
       <div class="export-box">
         <h2>📊 Exportar & Sincronizar Colección</h2>
         <p class="export-desc">
-          Lleva tu colección y carpetas a hojas de cálculo de Google Sheets o Excel para calcular valores y estadísticas.
+          Exporta tu colección completa o cualquier carpeta en concreto como <strong>imagen visual (PNG)</strong>, lista de deseos para tiendas, simulador OPTCGSim o copia de seguridad.
         </p>
+
+        <!-- Selector de Carpeta a Exportar -->
+        <div class="form-group export-source-select-group">
+          <div class="export-select-header-row">
+            <label class="form-label" for="export-folder-select">📂 ¿Qué carpeta deseas exportar?:</label>
+            <span id="export-source-stats-badge" class="export-stats-pill">0 cartas</span>
+          </div>
+          <select id="export-folder-select" class="st-dropdown export-folder-select">
+            <option value="all">🌐 Toda la Colección (Todas las carpetas)</option>
+            <option value="personal:default">📁 Álbum General (Personal)</option>
+          </select>
+        </div>
         
-        <div class="section-divider-title">Exportar Datos</div>
+        <!-- SECCIÓN 0: Convertir Carpeta a Imagen -->
+        <div class="section-divider-title">🖼️ Convertir Carpeta a Imagen (Poster / Binder)</div>
+        <div class="export-actions-group">
+          <button id="btn-export-folder-image" class="btn-market btn-image-main-export" title="Convertir la carpeta seleccionada en una imagen PNG de alta resolución">
+            <span class="btn-market-icon">🖼️</span>
+            <div class="btn-market-text">
+              <strong>Convertir Carpeta a Imagen PNG</strong>
+              <small>Genera un póster visual con fotos oficiales de cartas, cantidades y diseño temático</small>
+            </div>
+            <span class="btn-market-badge">Generar PNG</span>
+          </button>
+        </div>
+
+        <!-- SECCIÓN 1: Formato Wishlist Unificado -->
+        <div class="section-divider-title" style="margin-top: 6px;">🛒 Lista de Deseos (Wishlist) & Mazos</div>
+        <div class="export-actions-group">
+          <button id="btn-export-wishlist" class="btn-market btn-cardmarket" title="Copiar lista para Wishlist / Wants List">
+            <span class="btn-market-icon">📋</span>
+            <div class="btn-market-text">
+              <strong>Copiar para Wishlist (Cardmarket / CardTrader)</strong>
+              <small>Formato directo: <code>4x Edward.Newgate OP02-001</code></small>
+            </div>
+            <span class="btn-market-badge">Copiar</span>
+          </button>
+          <button id="btn-export-sim" class="btn-market btn-sim" title="Copiar lista para el simulador OPTCGSim">
+            <span class="btn-market-icon">🎮</span>
+            <div class="btn-market-text">
+              <strong>Copiar para OPTCGSim / Simulador</strong>
+              <small>Formato de mazo: <code>4xOP02-001</code></small>
+            </div>
+            <span class="btn-market-badge">Copiar</span>
+          </button>
+        </div>
+
+        <div class="sheets-help-tip">
+          💡 <strong>Tip Wishlist:</strong> Pulsa el botón para copiar la lista directamente al portapapeles. Luego entra a tu <em>Wants List</em> en Cardmarket (pulsa <em>Add Deck List</em>) o en tu tienda favorita y presiona <code>Ctrl + V</code>.
+        </div>
+
+        <!-- SECCIÓN 2: Hojas de cálculo y backup -->
+        <div class="section-divider-title" style="margin-top: 10px;">📊 Hojas de Cálculo & Copias de Seguridad</div>
         <div class="export-actions-group">
           <button id="btn-export-sheets" class="btn-sheets">
             📋 Copiar para Google Sheets (Formato TSV)
@@ -341,21 +410,25 @@
           <button id="btn-export-excel" class="btn-excel">
             📥 Descargar Archivo Excel / CSV
           </button>
+          <button id="btn-export-json" class="btn-backup-json" title="Descargar copia de seguridad en JSON de la carpeta seleccionada">
+            💾 Descargar Copia de Seguridad JSON
+          </button>
         </div>
 
         <div class="sheets-help-tip">
           💡 <strong>Tip Google Sheets:</strong> Pulsa "Copiar para Google Sheets", abre tu hoja y presiona <code>Ctrl + V</code> (o <code>Cmd + V</code> en Mac) en la celda A1. Se pegará ordenado en columnas automáticamente.
         </div>
 
-        <div class="section-divider-title" style="margin-top: 10px;">Importar Colección</div>
+        <!-- SECCIÓN 3: Importar -->
+        <div class="section-divider-title" style="margin-top: 10px;">📥 Importar a tu Colección</div>
         <div class="import-actions-group">
           <button id="btn-paste-sheets" class="btn-import-csv">
-            📋 Pegar directamente desde Google Sheets / Excel
+            📋 Pegar directamente desde Google Sheets / Excel / Texto
           </button>
           <label for="csv-file-input" class="btn-outline" style="text-align: center; cursor: pointer; display: block;">
-            📂 Importar desde archivo CSV / Backup
+            📂 Importar desde archivo CSV / JSON / Backup
           </label>
-          <input type="file" id="csv-file-input" accept=".csv" style="display: none;">
+          <input type="file" id="csv-file-input" accept=".csv,.tsv,.json,.txt" style="display: none;">
         </div>
       </div>
     </section>
@@ -377,6 +450,48 @@
       <span class="nav-label">Exportar</span>
     </button>
   </nav>
+
+  <!-- ========================================== -->
+  <!-- MODAL: CONVERTIR CARPETA A IMAGEN (PNG)    -->
+  <!-- ========================================== -->
+  <div id="image-export-modal" class="modal-backdrop">
+    <div class="modal-card image-modal-card">
+      <div class="modal-header">
+        <h3 id="image-modal-title">🖼️ Imagen de Carpeta</h3>
+        <button id="btn-close-image-modal" class="close-modal-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="image-export-controls">
+          <div class="image-theme-select">
+            <span class="size-label">Diseño:</span>
+            <button id="btn-img-theme-dark" class="image-theme-chip active" type="button" data-theme="dark">🏴‍☠️ Pirata</button>
+            <button id="btn-img-theme-marine" class="image-theme-chip" type="button" data-theme="marine">⚓ Marina</button>
+            <button id="btn-img-theme-gold" class="image-theme-chip" type="button" data-theme="gold">👑 Oro</button>
+          </div>
+          <div id="image-gen-status" class="image-gen-status" style="display: none;">
+            <span class="image-spinner">⏳</span> Generando imagen en alta calidad...
+          </div>
+        </div>
+
+        <div class="image-preview-container" id="image-preview-container">
+          <canvas id="folder-image-canvas" style="display: none;"></canvas>
+          <img id="folder-image-result" class="folder-image-result" alt="Vista previa de imagen de carpeta">
+        </div>
+
+        <div class="modal-actions image-modal-actions">
+          <button id="btn-download-folder-image" class="btn-primary" style="flex: 2; padding: 12px;">
+            📥 Descargar PNG
+          </button>
+          <button id="btn-copy-folder-image" class="btn-outline" style="flex: 1; padding: 12px;" title="Copiar imagen al portapapeles">
+            📋 Copiar
+          </button>
+          <button id="btn-share-folder-image" class="btn-outline" style="padding: 12px;" title="Compartir imagen con amigos">
+            📤 Compartir
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ========================================== -->
   <!-- MODAL: CONFIRMACIÓN Y DETALLE DE CARTA     -->
@@ -654,7 +769,7 @@
   <div id="move-folder-modal" class="modal-backdrop">
     <div class="modal-card">
       <div class="modal-header">
-        <h3>📂 Mover a Carpeta</h3>
+        <h3>📁 Mover a Carpeta</h3>
         <button id="btn-close-move-folder-modal" class="close-modal-btn">✕</button>
       </div>
 
@@ -698,6 +813,32 @@
     </div>
   </div>
 
+  <!-- ========================================== -->
+  <!-- MODAL: PREVIEW DE TEXTO EXPORTADO (COPIAR) -->
+  <!-- ========================================== -->
+  <div id="export-preview-modal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="export-preview-title">📋 Lista Generada</h3>
+        <button id="btn-close-export-preview" class="close-modal-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <p id="export-preview-subtitle" class="modal-card-meta">
+          Lista de cartas copiada al portapapeles y lista para pegar:
+        </p>
+        <textarea id="export-preview-textarea" class="paste-textarea export-preview-textarea" readonly rows="9"></textarea>
+        <div class="modal-actions">
+          <button id="btn-copy-export-preview" class="btn-primary" style="flex: 2; padding: 12px;">
+            📋 Copiar de Nuevo
+          </button>
+          <button id="btn-done-export-preview" class="btn-outline" style="flex: 1;">
+            Listo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal para Pegar desde Google Sheets / Excel -->
   <div id="paste-modal" class="modal-backdrop">
     <div class="modal-card">
@@ -723,7 +864,7 @@
   <script src="firebase-config.js"></script>
   
   <!-- Scripts de la Aplicación -->
-  <script src="cards-data.js"></script>
-  <script src="app.js"></script>
+  <script src="cards-data.js?v=2.6"></script>
+  <script src="app.js?v=2.6"></script>
 </body>
 </html>

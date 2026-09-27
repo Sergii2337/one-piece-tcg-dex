@@ -45,19 +45,28 @@ class OnePieceApp {
     // Modal de edición rápida de cantidad
     this.activeQtyCard = null;
 
+    // Exportación a Imagen (Poster / Binder)
+    this.currentImageTheme = 'dark';
+    this.currentImageFolderData = null;
+    this.currentImageDataUrl = null;
+    this.currentImageBlob = null;
+
     this.init();
   }
 
   init() {
+    window.opApp = this;
     this.loadFolders();
     this.loadCollection();
     this.cacheDOM();
     this.bindEvents();
+    this.setupAllSharedFolderListeners();
     this.initFirebaseAuth();
     this.checkUrlForSharedFolder();
     this.updateToolbarControls();
     this.renderFolderTabs();
     this.renderAlbum();
+    this.populateExportFolderSelect();
     this.updateHeaderStats();
   }
 
@@ -78,6 +87,14 @@ class OnePieceApp {
       } else {
         this.sharedFolderIds = [];
       }
+
+      const rawSharedCache = localStorage.getItem('op_tcg_shared_folders_cache_v1');
+      if (rawSharedCache) {
+        const cachedObj = JSON.parse(rawSharedCache);
+        Object.keys(cachedObj).forEach(id => {
+          this.sharedFoldersMap.set(id, cachedObj[id]);
+        });
+      }
     } catch (e) {
       console.error("Error al cargar carpetas:", e);
       this.personalFolders = [{ id: 'default', name: 'Álbum General', icon: '📁', color: '#f59e0b', type: 'personal' }];
@@ -85,15 +102,29 @@ class OnePieceApp {
     }
   }
 
+  saveSharedFoldersCache() {
+    try {
+      const obj = {};
+      this.sharedFoldersMap.forEach((val, key) => {
+        obj[key] = val;
+      });
+      localStorage.setItem('op_tcg_shared_folders_cache_v1', JSON.stringify(obj));
+    } catch (e) {
+      console.error("Error guardando cache de carpetas compartidas:", e);
+    }
+  }
+
   saveFolders() {
     try {
       localStorage.setItem('op_tcg_personal_folders_v1', JSON.stringify(this.personalFolders));
       localStorage.setItem('op_tcg_shared_ids_v1', JSON.stringify(this.sharedFolderIds));
+      this.saveSharedFoldersCache();
     } catch (e) {
       console.error("Error al guardar carpetas:", e);
     }
     this.renderFolderTabs();
     this.populateFolderSelects();
+    this.populateExportFolderSelect();
     this.scheduleCloudSync();
   }
 
@@ -101,28 +132,34 @@ class OnePieceApp {
     try {
       const raw = localStorage.getItem('op_tcg_cards_v7');
       if (raw) {
-        this.collection = JSON.parse(raw);
-        this.collection.forEach(c => {
-          const fresh = findOrGenerateCard(c.id);
-          c.name = (c.name && !c.name.startsWith("Carta ")) ? c.name : fresh.name;
-          c.color = fresh.color;
-          c.cardType = fresh.cardType;
-          c.traits = (c.traits && c.traits !== 'One Piece Pirates') ? c.traits : fresh.traits;
-          c.rarity = fresh.rarity;
-          c.cost = fresh.cost;
-          c.set = fresh.set;
-          if (!c.folderId) c.folderId = 'default';
-        });
+        const parsed = JSON.parse(raw);
+        this.collection = Array.isArray(parsed) ? parsed : [];
+        
+        // Limpieza de datos demo residuales antiguos en cuentas vacías
+        const legacyDemoIds = ["OP17-039", "OP17-118", "OP17-001", "OP09-082", "OP09-118", "OP09-021"];
+        const isLegacyDemo = this.collection.length === 6 && 
+          this.collection.every(c => legacyDemoIds.includes(c.id) && (!c.folderId || c.folderId === 'default'));
+        
+        if (isLegacyDemo) {
+          this.collection = [];
+          localStorage.setItem('op_tcg_cards_v7', JSON.stringify([]));
+        } else {
+          this.collection.forEach(c => {
+            const fresh = findOrGenerateCard(c.id);
+            c.name = (c.name && !c.name.startsWith("Carta ")) ? c.name : fresh.name;
+            c.color = fresh.color;
+            c.cardType = fresh.cardType;
+            c.traits = (c.traits && c.traits !== 'One Piece Pirates') ? c.traits : fresh.traits;
+            c.rarity = fresh.rarity;
+            c.cost = fresh.cost;
+            c.set = fresh.set;
+            if (!c.folderId) c.folderId = 'default';
+          });
+        }
       } else {
-        this.collection = [
-          { ...findOrGenerateCard("OP17-039"), count: 1, folderId: 'default', addedAt: new Date().toLocaleDateString() },
-          { ...findOrGenerateCard("OP17-118"), count: 1, folderId: 'default', addedAt: new Date().toLocaleDateString() },
-          { ...findOrGenerateCard("OP17-001"), count: 1, folderId: 'default', addedAt: new Date().toLocaleDateString() },
-          { ...findOrGenerateCard("OP09-082"), count: 1, folderId: 'default', addedAt: new Date().toLocaleDateString() },
-          { ...findOrGenerateCard("OP09-118"), count: 1, folderId: 'default', addedAt: new Date().toLocaleDateString() },
-          { ...findOrGenerateCard("OP09-021"), count: 2, folderId: 'default', addedAt: new Date().toLocaleDateString() }
-        ];
-        this.saveCollection();
+        // Colección vacía por defecto
+        this.collection = [];
+        localStorage.setItem('op_tcg_cards_v7', JSON.stringify([]));
       }
     } catch (e) {
       console.error("Error al cargar colección:", e);
@@ -137,6 +174,7 @@ class OnePieceApp {
       console.error("Error al guardar colección:", e);
     }
     this.updateHeaderStats();
+    this.populateExportFolderSelect();
     this.scheduleCloudSync();
   }
 
@@ -166,6 +204,7 @@ class OnePieceApp {
       btnShareActiveFolder: document.getElementById('btn-share-active-folder'),
       btnEditActiveFolder: document.getElementById('btn-edit-active-folder'),
       btnDeleteActiveFolder: document.getElementById('btn-delete-active-folder'),
+      btnExportActiveFolder: document.getElementById('btn-export-active-folder'),
 
       // Búsqueda y Filtros de Álbum
       albumSearchInput: document.getElementById('album-search-input'),
@@ -287,7 +326,15 @@ class OnePieceApp {
       lightboxCardCode: document.getElementById('lightbox-card-code'),
       lightboxCardName: document.getElementById('lightbox-card-name'),
 
-      // Export / Import
+      // Export Source & Wishlist
+      exportFolderSelect: document.getElementById('export-folder-select'),
+      exportSourceStatsBadge: document.getElementById('export-source-stats-badge'),
+      btnExportWishlist: document.getElementById('btn-export-wishlist') || document.getElementById('btn-export-cardmarket'),
+      btnExportCardmarket: document.getElementById('btn-export-cardmarket'),
+      btnExportCardtrader: document.getElementById('btn-export-cardtrader'),
+      btnExportSim: document.getElementById('btn-export-sim'),
+
+      // Export / Import Spreadsheets
       btnExportSheets: document.getElementById('btn-export-sheets'),
       btnExportExcel: document.getElementById('btn-export-excel'),
       btnPasteSheets: document.getElementById('btn-paste-sheets'),
@@ -297,6 +344,33 @@ class OnePieceApp {
       pasteTextarea: document.getElementById('paste-textarea'),
       btnCancelPasteImport: document.getElementById('btn-cancel-paste-import'),
       btnConfirmPasteImport: document.getElementById('btn-confirm-paste-import'),
+
+      // Export Preview Modal
+      exportPreviewModal: document.getElementById('export-preview-modal'),
+      exportPreviewTitle: document.getElementById('export-preview-title'),
+      exportPreviewSubtitle: document.getElementById('export-preview-subtitle'),
+      exportPreviewTextarea: document.getElementById('export-preview-textarea'),
+      btnCloseExportPreview: document.getElementById('btn-close-export-preview'),
+      btnCopyExportPreview: document.getElementById('btn-copy-export-preview'),
+      btnDoneExportPreview: document.getElementById('btn-done-export-preview'),
+
+      // Exportación a Imagen (Poster / Binder) & Backup
+      btnImageActiveFolder: document.getElementById('btn-image-active-folder'),
+      btnExportFolderImage: document.getElementById('btn-export-folder-image'),
+      btnExportJSON: document.getElementById('btn-export-json'),
+      imageExportModal: document.getElementById('image-export-modal'),
+      imageModalTitle: document.getElementById('image-modal-title'),
+      btnCloseImageModal: document.getElementById('btn-close-image-modal'),
+      btnImgThemeDark: document.getElementById('btn-img-theme-dark'),
+      btnImgThemeMarine: document.getElementById('btn-img-theme-marine'),
+      btnImgThemeGold: document.getElementById('btn-img-theme-gold'),
+      imageThemeChips: document.querySelectorAll('.image-theme-chip'),
+      imageGenStatus: document.getElementById('image-gen-status'),
+      folderImageCanvas: document.getElementById('folder-image-canvas'),
+      folderImageResult: document.getElementById('folder-image-result'),
+      btnDownloadFolderImage: document.getElementById('btn-download-folder-image'),
+      btnCopyFolderImage: document.getElementById('btn-copy-folder-image'),
+      btnShareFolderImage: document.getElementById('btn-share-folder-image'),
 
       // Auth
       btnGoogleLogin: document.getElementById('btn-google-login'),
@@ -363,6 +437,11 @@ class OnePieceApp {
     if (this.dom.btnDeleteActiveFolder) {
       this.dom.btnDeleteActiveFolder.addEventListener('click', () => {
         this.deleteOrLeaveActiveFolder();
+      });
+    }
+    if (this.dom.btnExportActiveFolder) {
+      this.dom.btnExportActiveFolder.addEventListener('click', () => {
+        this.exportActiveFolder();
       });
     }
 
@@ -691,7 +770,36 @@ class OnePieceApp {
       });
     }
 
-    // Exportar / Importar
+    // Exportar - Selector de carpeta origen
+    if (this.dom.exportFolderSelect) {
+      this.dom.exportFolderSelect.addEventListener('change', () => {
+        this.updateExportStatsBadge();
+      });
+    }
+
+    // Exportar - Lista de Deseos (Wishlist)
+    if (this.dom.btnExportWishlist) {
+      this.dom.btnExportWishlist.addEventListener('click', () => {
+        this.exportWishlist();
+      });
+    }
+    if (this.dom.btnExportCardmarket) {
+      this.dom.btnExportCardmarket.addEventListener('click', () => {
+        this.exportWishlist();
+      });
+    }
+    if (this.dom.btnExportCardtrader) {
+      this.dom.btnExportCardtrader.addEventListener('click', () => {
+        this.exportWishlist();
+      });
+    }
+    if (this.dom.btnExportSim) {
+      this.dom.btnExportSim.addEventListener('click', () => {
+        this.exportSimulatorDecklist();
+      });
+    }
+
+    // Exportar / Importar Hojas de Cálculo
     if (this.dom.btnExportSheets) {
       this.dom.btnExportSheets.addEventListener('click', () => this.copyToGoogleSheets());
     }
@@ -724,6 +832,73 @@ class OnePieceApp {
         }
       });
     }
+
+    // Modal Vista Previa de Exportación
+    if (this.dom.btnCloseExportPreview) {
+      this.dom.btnCloseExportPreview.addEventListener('click', () => {
+        if (this.dom.exportPreviewModal) this.dom.exportPreviewModal.classList.remove('active');
+      });
+    }
+    if (this.dom.btnDoneExportPreview) {
+      this.dom.btnDoneExportPreview.addEventListener('click', () => {
+        if (this.dom.exportPreviewModal) this.dom.exportPreviewModal.classList.remove('active');
+      });
+    }
+    if (this.dom.btnCopyExportPreview) {
+      this.dom.btnCopyExportPreview.addEventListener('click', () => {
+        this.copyFromExportPreview();
+      });
+    }
+
+    // Exportación a Imagen y Backup
+    if (this.dom.btnImageActiveFolder) {
+      this.dom.btnImageActiveFolder.addEventListener('click', () => {
+        this.openFolderImageModalForActive();
+      });
+    }
+    if (this.dom.btnExportFolderImage) {
+      this.dom.btnExportFolderImage.addEventListener('click', () => {
+        this.openFolderImageModalForSelected();
+      });
+    }
+    if (this.dom.btnExportJSON) {
+      this.dom.btnExportJSON.addEventListener('click', () => {
+        this.exportFolderJSON();
+      });
+    }
+    if (this.dom.btnCloseImageModal) {
+      this.dom.btnCloseImageModal.addEventListener('click', () => {
+        this.closeFolderImageModal();
+      });
+    }
+    if (this.dom.imageExportModal) {
+      this.dom.imageExportModal.addEventListener('click', (e) => {
+        if (e.target === this.dom.imageExportModal) this.closeFolderImageModal();
+      });
+    }
+    if (this.dom.imageThemeChips) {
+      this.dom.imageThemeChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          const theme = chip.getAttribute('data-theme') || 'dark';
+          this.switchImageTheme(theme);
+        });
+      });
+    }
+    if (this.dom.btnDownloadFolderImage) {
+      this.dom.btnDownloadFolderImage.addEventListener('click', () => {
+        this.downloadFolderImage();
+      });
+    }
+    if (this.dom.btnCopyFolderImage) {
+      this.dom.btnCopyFolderImage.addEventListener('click', () => {
+        this.copyFolderImageToClipboard();
+      });
+    }
+    if (this.dom.btnShareFolderImage) {
+      this.dom.btnShareFolderImage.addEventListener('click', () => {
+        this.shareFolderImage();
+      });
+    }
   }
 
   // =========================================================================
@@ -746,6 +921,9 @@ class OnePieceApp {
       if (sharedList.length > 0) {
         const exists = sharedList.some(f => f.id === this.activeFolderId);
         if (!exists) this.activeFolderId = sharedList[0].id;
+        if (this.activeFolderId) {
+          this.setupSharedFolderRealtimeListener(this.activeFolderId);
+        }
       } else {
         this.activeFolderId = null;
       }
@@ -753,6 +931,7 @@ class OnePieceApp {
 
     this.renderFolderTabs();
     this.renderAlbum();
+    this.updateActiveFolderBanner();
   }
 
   getSharedFoldersList() {
@@ -841,53 +1020,64 @@ class OnePieceApp {
   updateActiveFolderBanner() {
     if (!this.dom.folderActiveBanner) return;
 
-    if (this.folderScope === 'personal' && (this.activeFolderId === 'default' || !this.activeFolderId)) {
-      this.dom.folderActiveBanner.style.display = 'none';
-      return;
-    }
-
-    let folder = null;
     if (this.folderScope === 'personal') {
-      folder = this.personalFolders.find(f => f.id === this.activeFolderId);
-    } else {
-      folder = this.sharedFoldersMap.get(this.activeFolderId) || { id: this.activeFolderId, name: 'Carpeta Compartida', icon: '👥', cards: [] };
-    }
+      if (this.activeFolderId === 'default' || !this.activeFolderId) {
+        this.dom.folderActiveBanner.style.display = 'none';
+        return;
+      }
+      const folder = this.personalFolders.find(f => f.id === this.activeFolderId);
+      if (!folder) {
+        this.dom.folderActiveBanner.style.display = 'none';
+        return;
+      }
 
-    if (!folder) {
-      this.dom.folderActiveBanner.style.display = 'none';
-      return;
-    }
-
-    this.dom.folderActiveBanner.style.display = 'flex';
-    this.dom.folderActiveIcon.textContent = folder.icon || (this.folderScope === 'personal' ? '📁' : '👥');
-    this.dom.folderActiveTitle.textContent = folder.name;
-
-    if (this.dom.folderActiveTypeBadge) {
-      if (this.folderScope === 'shared') {
-        this.dom.folderActiveTypeBadge.className = 'folder-type-badge shared';
-        this.dom.folderActiveTypeBadge.textContent = '👥 Compartida';
-      } else {
+      this.dom.folderActiveBanner.style.display = 'flex';
+      this.dom.folderActiveIcon.textContent = folder.icon || '📁';
+      this.dom.folderActiveTitle.textContent = folder.name;
+      if (this.dom.folderActiveTypeBadge) {
         this.dom.folderActiveTypeBadge.className = 'folder-type-badge';
         this.dom.folderActiveTypeBadge.textContent = '📁 Personal';
       }
-    }
 
-    let totalCards = 0;
-    if (this.folderScope === 'personal') {
-      totalCards = this.collection.filter(c => c.folderId === folder.id).reduce((s, c) => s + (c.count || 0), 0);
+      const totalCards = this.collection.filter(c => c.folderId === folder.id).reduce((s, c) => s + (c.count || 0), 0);
+      this.dom.folderActiveCount.textContent = `${totalCards} carta(s) en esta carpeta`;
+
+      if (this.dom.btnShareActiveFolder) {
+        this.dom.btnShareActiveFolder.style.display = 'none';
+      }
+      if (this.dom.btnDeleteActiveFolder) {
+        this.dom.btnDeleteActiveFolder.textContent = '🗑️ Eliminar';
+      }
     } else {
-      totalCards = (folder.cards || []).reduce((s, c) => s + (c.count || 0), 0);
-    }
-    this.dom.folderActiveCount.textContent = `${totalCards} carta(s) en esta carpeta`;
+      // Ámbito Compartidas
+      if (!this.activeFolderId || this.sharedFolderIds.length === 0) {
+        this.dom.folderActiveBanner.style.display = 'none';
+        return;
+      }
 
-    // Botón de compartir solo visible en carpetas compartidas
-    if (this.dom.btnShareActiveFolder) {
-      this.dom.btnShareActiveFolder.style.display = (this.folderScope === 'shared') ? 'inline-flex' : 'none';
-    }
+      const folder = this.sharedFoldersMap.get(this.activeFolderId);
+      if (!folder) {
+        this.dom.folderActiveBanner.style.display = 'none';
+        return;
+      }
 
-    // Botón de eliminar cambia según contexto
-    if (this.dom.btnDeleteActiveFolder) {
-      this.dom.btnDeleteActiveFolder.textContent = (this.folderScope === 'shared') ? '🚪 Salir' : '🗑️ Eliminar';
+      this.dom.folderActiveBanner.style.display = 'flex';
+      this.dom.folderActiveIcon.textContent = folder.icon || '👥';
+      this.dom.folderActiveTitle.textContent = folder.name;
+      if (this.dom.folderActiveTypeBadge) {
+        this.dom.folderActiveTypeBadge.className = 'folder-type-badge shared';
+        this.dom.folderActiveTypeBadge.textContent = '👥 Compartida';
+      }
+
+      const totalCards = (folder.cards || []).reduce((s, c) => s + (c.count || 0), 0);
+      this.dom.folderActiveCount.textContent = `${totalCards} carta(s) en esta carpeta`;
+
+      if (this.dom.btnShareActiveFolder) {
+        this.dom.btnShareActiveFolder.style.display = 'inline-flex';
+      }
+      if (this.dom.btnDeleteActiveFolder) {
+        this.dom.btnDeleteActiveFolder.textContent = '🚪 Salir';
+      }
     }
   }
 
@@ -975,12 +1165,12 @@ class OnePieceApp {
           folder.icon = icon;
           folder.color = color;
           this.saveFolders();
-          this.showToast(`✏️ Carpeta \"${name}\" actualizada`);
+          this.showToast(`✏️ Carpeta "${name}" actualizada`);
         }
       } else {
         // Carpeta compartida en Firestore
         await this.updateSharedFolderMetaInFirestore(this.editingFolderId, { name, icon, color });
-        this.showToast(`✏️ Carpeta compartida \"${name}\" actualizada`);
+        this.showToast(`✏️ Carpeta compartida "${name}" actualizada`);
       }
       this.closeFolderModal();
     } else {
@@ -1002,7 +1192,7 @@ class OnePieceApp {
         this.activeFolderId = newFolder.id;
         this.saveFolders();
         this.closeFolderModal();
-        this.showToast(`📁 Carpeta personal \"${name}\" creada`);
+        this.showToast(`📁 Carpeta personal "${name}" creada`);
       } else {
         // Carpeta Compartida Colaborativa
         this.closeFolderModal();
@@ -1018,7 +1208,7 @@ class OnePieceApp {
       const folder = this.personalFolders.find(f => f.id === this.activeFolderId);
       if (!folder) return;
 
-      const confirmDel = confirm(`¿Estás seguro de eliminar la carpeta personal \"${folder.name}\"? Las cartas pasarán al Álbum General.`);
+      const confirmDel = confirm(`¿Estás seguro de eliminar la carpeta personal "${folder.name}"? Las cartas pasarán al Álbum General.`);
       if (!confirmDel) return;
 
       this.collection.forEach(c => {
@@ -1030,11 +1220,11 @@ class OnePieceApp {
       this.activeFolderId = 'default';
       this.saveCollection();
       this.saveFolders();
-      this.showToast(`🗑️ Carpeta \"${folder.name}\" eliminada`);
+      this.showToast(`🗑️ Carpeta "${folder.name}" eliminada`);
     } else {
       const folder = this.sharedFoldersMap.get(this.activeFolderId);
       const folderName = folder ? folder.name : 'Compartida';
-      const confirmLeave = confirm(`¿Deseas salir de la carpeta compartida \"${folderName}\"? Dejarás de ver sus cartas.`);
+      const confirmLeave = confirm(`¿Deseas salir de la carpeta compartida "${folderName}"? Dejarás de ver sus cartas.`);
       if (!confirmLeave) return;
 
       this.sharedFolderIds = this.sharedFolderIds.filter(id => id !== this.activeFolderId);
@@ -1044,7 +1234,7 @@ class OnePieceApp {
       this.activeFolderId = nextList.length > 0 ? nextList[0].id : null;
       this.renderFolderTabs();
       this.renderAlbum();
-      this.showToast(`🚪 Has salido de la carpeta \"${folderName}\"`);
+      this.showToast(`🚪 Has salido de la carpeta "${folderName}"`);
     }
   }
 
@@ -1093,7 +1283,7 @@ class OnePieceApp {
       }
     }
 
-    this.showToast(`👥 ¡Carpeta compartida \"${name}\" creada!`);
+    this.showToast(`👥 ¡Carpeta compartida "${name}" creada!`);
     // Abrir automáticamente el modal de compartir con el enlace listo
     this.openShareFolderModal(newFolderId);
   }
@@ -1129,12 +1319,12 @@ class OnePieceApp {
       if (doc.exists) {
         const data = doc.data();
         this.sharedFoldersMap.set(folderId, data);
+        this.saveSharedFoldersCache();
+        this.renderFolderTabs();
         if (this.folderScope === 'shared' && this.activeFolderId === folderId) {
-          this.renderFolderTabs();
           this.renderAlbum();
         }
       } else {
-        // Carpeta no existe en el servidor
         console.warn(`Carpeta compartida ${folderId} no existe en Firestore.`);
       }
     }, (error) => {
@@ -1251,7 +1441,7 @@ class OnePieceApp {
           this.setupSharedFolderRealtimeListener(folderId);
           this.renderFolderTabs();
           this.renderAlbum();
-          this.showToast(`👥 ¡Te has unido a \"${data.name}\"!`);
+          this.showToast(`👥 ¡Te has unido a "${data.name}"!`);
           return;
         } else {
           this.showToast(`⚠️ No se encontró la carpeta compartida (${folderId})`);
@@ -1373,7 +1563,7 @@ class OnePieceApp {
     this.renderFolderTabs();
     this.renderAlbum();
     this.updateSetGridCardBadges();
-    this.showToast(`👥 +${qty} ${card.name} añadido a \"${folder.name || 'Compartida'}\"`);
+    this.showToast(`👥 +${qty} ${card.name} añadido a "${folder.name || 'Compartida'}"`);
 
     if (window.FIREBASE_DB) {
       try {
@@ -1512,6 +1702,55 @@ class OnePieceApp {
 
     if (filtered.length === 0) {
       this.dom.albumEmpty.style.display = 'block';
+      if (this.folderScope === 'shared') {
+        if (!this.activeFolderId || this.sharedFolderIds.length === 0) {
+          this.dom.albumEmpty.innerHTML = `
+            <div class="empty-shared-welcome" style="padding: 24px 16px; text-align: center;">
+              <div style="font-size: 2.6rem; margin-bottom: 12px;">👥</div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #f8fafc; margin-bottom: 8px;">No te has unido a ninguna carpeta compartida aún</h3>
+              <p style="font-size: 0.88rem; color: #94a3b8; max-width: 440px; margin: 0 auto 20px auto; line-height: 1.45;">
+                Crea una carpeta compartida en la nube para coleccionar junto a tus amigos en tiempo real o únete a una ya existente pegando su enlace.
+              </p>
+              <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn-primary" style="padding: 10px 20px; font-weight: 600;" onclick="window.opApp.openCreateFolderModal()">
+                  ➕ Crear Carpeta Compartida
+                </button>
+                <button class="btn-outline" style="padding: 10px 20px; font-weight: 600;" onclick="window.opApp.openJoinFolderModal()">
+                  🔗 Unirse con Enlace
+                </button>
+              </div>
+            </div>
+          `;
+        } else {
+          const sharedFolder = this.sharedFoldersMap.get(this.activeFolderId);
+          const folderName = sharedFolder ? sharedFolder.name : 'esta carpeta compartida';
+          this.dom.albumEmpty.innerHTML = `
+            <div class="empty-shared-welcome" style="padding: 24px 16px; text-align: center;">
+              <div style="font-size: 2.6rem; margin-bottom: 12px;">📂</div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #f8fafc; margin-bottom: 8px;">"${folderName}" está vacía</h3>
+              <p style="font-size: 0.88rem; color: #94a3b8; max-width: 440px; margin: 0 auto 20px auto; line-height: 1.45;">
+                Esta carpeta compartida no contiene cartas todavía. Añade cartas para que tú y tus amigos las vean sincronizadas.
+              </p>
+              <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn-primary" style="padding: 10px 20px; font-weight: 600;" onclick="window.opApp.switchTab('scanner')">
+                  ➕ Añadir Cartas a "${folderName}"
+                </button>
+                <button class="btn-outline" style="padding: 10px 20px; font-weight: 600;" onclick="window.opApp.openShareFolderModal('${this.activeFolderId}')">
+                  🔗 Invitar Amigos
+                </button>
+              </div>
+            </div>
+          `;
+        }
+      } else {
+        this.dom.albumEmpty.innerHTML = `
+          <div style="padding: 20px 16px; text-align: center;">
+            <p style="font-size: 1.05rem; font-weight: 600; color: #f8fafc; margin-bottom: 6px;">No tienes cartas en este filtro o carpeta</p>
+            <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 16px;">¡Usa la pestaña <strong>➕ Añadir</strong> para registrar tus cartas o Starter Decks!</p>
+            <button class="btn-primary" style="padding: 10px 20px; font-weight: 600;" onclick="window.opApp.switchTab('scanner')">➕ Buscar y Añadir Cartas</button>
+          </div>
+        `;
+      }
     } else {
       this.dom.albumEmpty.style.display = 'none';
 
@@ -1808,7 +2047,7 @@ class OnePieceApp {
       return;
     }
 
-    this.showToast(`No se encontraron cartas para \"${raw}\". Prueba con Luffy, Zoro, ST01...`);
+    this.showToast(`No se encontraron cartas para "${raw}". Prueba con Luffy, Zoro, ST01...`);
   }
 
   showSetExplorer(setCodeQuery) {
@@ -1852,14 +2091,14 @@ class OnePieceApp {
     this.searchResults = matches;
     this.searchCurrentPage = 1;
 
-    this.dom.setResultsTitle.textContent = `Resultados para \"${query}\"`;
+    this.dom.setResultsTitle.textContent = `Resultados para "${query}"`;
     this.dom.setResultsSubtitle.textContent = `${matches.length} cartas encontradas • 18 cartas por página`;
 
     this.updateToolbarControls();
     this.renderSearchResultsPage();
     this.dom.setResultsContainer.style.display = 'block';
 
-    this.showToast(`🔍 ${matches.length} cartas encontradas para \"${query}\"`);
+    this.showToast(`🔍 ${matches.length} cartas encontradas para "${query}"`);
 
     setTimeout(() => {
       this.dom.setResultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -2038,16 +2277,51 @@ class OnePieceApp {
   }
 
   cleanCardCode(raw) {
-    if (!raw) return null;
-    let s = raw.trim().toUpperCase().replace(/[\s_]+/g, '-');
-    const match = s.match(/^(OP|ST|EB|P|PRB|PROMO)-?(\d{1,3})-?(\d{1,3})/i);
-    if (match) {
-      const prefix = match[1].toUpperCase();
-      const setNum = match[2].padStart(2, '0');
-      const cardNum = match[3].padStart(3, '0');
+    if (!raw || typeof raw !== 'string') return null;
+    const s = raw.trim().toUpperCase();
+
+    // 1. Prefijo de Set + número de set + separador/espacio/guion + número de carta (ej. OP01-001, OP17-039, OP 17 039, ST01-005)
+    const m1 = s.match(/^(OP|ST|EB|PRB)\s*0*([1-9][0-9]?)[-\s]+0*([1-9][0-9]{0,2})$/i);
+    if (m1) {
+      const prefix = m1[1].toUpperCase();
+      const setNum = m1[2].padStart(2, '0');
+      const cardNum = m1[3].padStart(3, '0');
       return `${prefix}${setNum}-${cardNum}`;
     }
+
+    // 2. Cartas promocionales: P-001, PROMO 025
+    const m2 = s.match(/^(P|PROMO)[-\s]+0*([1-9][0-9]{0,2})$/i);
+    if (m2) {
+      const cardNum = m2[2].padStart(3, '0');
+      return `P-${cardNum}`;
+    }
+
+    // 3. Formato compacto de 5 dígitos sin separador (ej. OP01001, ST01005, OP17039)
+    const m3 = s.match(/^(OP|ST|EB|PRB)(\d{2})(\d{3})$/i);
+    if (m3) {
+      const prefix = m3[1].toUpperCase();
+      return `${prefix}${m3[2]}-${m3[3]}`;
+    }
+
     return null;
+  }
+
+  getCardCountInActiveScope(cardId) {
+    if (this.folderScope === 'shared' && this.activeFolderId) {
+      const folder = this.sharedFoldersMap.get(this.activeFolderId);
+      if (folder && folder.cards) {
+        const found = folder.cards.find(c => c.id === cardId);
+        return found ? (found.count || 0) : 0;
+      }
+      return 0;
+    } else {
+      if (this.activeFolderId && this.activeFolderId !== 'default') {
+        const found = this.collection.find(c => c.id === cardId && c.folderId === this.activeFolderId);
+        return found ? (found.count || 0) : 0;
+      }
+      const found = this.collection.find(c => c.id === cardId);
+      return found ? (found.count || 0) : 0;
+    }
   }
 
   fetchAndOpenCardModal(cardId) {
@@ -2055,8 +2329,7 @@ class OnePieceApp {
     this.pendingCard = card;
     this.pendingQty = 1;
 
-    const existing = this.collection.find(c => c.id === card.id);
-    const currentOwned = existing ? existing.count : 0;
+    const currentOwned = this.getCardCountInActiveScope(card.id);
 
     this.dom.modalCardId.textContent = card.id;
     this.dom.modalCardName.textContent = card.name;
@@ -2090,16 +2363,15 @@ class OnePieceApp {
 
   updateModalForecast() {
     if (!this.pendingCard) return;
-    const existing = this.collection.find(c => c.id === this.pendingCard.id);
-    const cur = existing ? existing.count : 0;
+    const cur = this.getCardCountInActiveScope(this.pendingCard.id);
     const total = cur + this.pendingQty;
 
     if (cur > 0) {
       this.dom.modalForecast.textContent = `Añadir +${this.pendingQty} copias (Total: ${total})`;
-      this.dom.btnSaveCardToAlbum.textContent = `Sumar +${this.pendingQty} al Álbum`;
+      this.dom.btnSaveCardToAlbum.textContent = `Sumar +${this.pendingQty} a la Carpeta`;
     } else {
       this.dom.modalForecast.textContent = `Se añadirá por primera vez (${this.pendingQty} copia${this.pendingQty > 1 ? 's' : ''})`;
-      this.dom.btnSaveCardToAlbum.textContent = `Guardar en el Álbum`;
+      this.dom.btnSaveCardToAlbum.textContent = `Guardar en la Carpeta`;
     }
   }
 
@@ -2168,6 +2440,8 @@ class OnePieceApp {
 
     if (tabId === 'album') {
       this.renderAlbum();
+    } else if (tabId === 'export') {
+      this.populateExportFolderSelect();
     }
   }
 
@@ -2183,20 +2457,252 @@ class OnePieceApp {
   // EXPORTACIÓN E IMPORTACIÓN
   // =========================================================================
 
+  populateExportFolderSelect() {
+    if (!this.dom.exportFolderSelect) return;
+
+    const currentVal = this.dom.exportFolderSelect.value || 'all';
+    this.dom.exportFolderSelect.innerHTML = '';
+
+    // Opción Colección Completa
+    const totalAll = this.collection.reduce((sum, c) => sum + (c.count || 0), 0);
+    const optAll = document.createElement('option');
+    optAll.value = 'all';
+    optAll.textContent = `🌐 Toda la Colección (${totalAll} cartas)`;
+    this.dom.exportFolderSelect.appendChild(optAll);
+
+    // Grupo Carpetas Personales
+    const groupPersonal = document.createElement('optgroup');
+    groupPersonal.label = '📁 Mis Carpetas (Personales)';
+    this.personalFolders.forEach(f => {
+      const opt = document.createElement('option');
+      opt.value = `personal:${f.id}`;
+      const count = (f.id === 'default')
+        ? this.collection.filter(c => !c.folderId || c.folderId === 'default').reduce((sum, c) => sum + (c.count || 0), 0)
+        : this.collection.filter(c => c.folderId === f.id).reduce((sum, c) => sum + (c.count || 0), 0);
+      opt.textContent = `${f.icon || '📁'} ${f.name} (${count} cartas)`;
+      groupPersonal.appendChild(opt);
+    });
+    this.dom.exportFolderSelect.appendChild(groupPersonal);
+
+    // Grupo Carpetas Compartidas
+    const sharedList = this.getSharedFoldersList();
+    if (sharedList.length > 0) {
+      const groupShared = document.createElement('optgroup');
+      groupShared.label = '👥 Carpetas Compartidas';
+      sharedList.forEach(f => {
+        const opt = document.createElement('option');
+        opt.value = `shared:${f.id}`;
+        const count = (f.cards || []).reduce((sum, c) => sum + (c.count || 0), 0);
+        opt.textContent = `${f.icon || '👥'} ${f.name} (${count} cartas)`;
+        groupShared.appendChild(opt);
+      });
+      this.dom.exportFolderSelect.appendChild(groupShared);
+    }
+
+    // Mantener la selección si sigue existiendo
+    const exists = Array.from(this.dom.exportFolderSelect.options).some(o => o.value === currentVal);
+    if (exists) {
+      this.dom.exportFolderSelect.value = currentVal;
+    } else {
+      this.dom.exportFolderSelect.value = 'all';
+    }
+
+    this.updateExportStatsBadge();
+  }
+
+  updateExportStatsBadge() {
+    if (!this.dom.exportSourceStatsBadge) return;
+    const { cards } = this.getSelectedExportCards();
+    const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);
+    const uniqueCards = cards.length;
+    this.dom.exportSourceStatsBadge.textContent = `${totalCopies} cartas (${uniqueCards} únicas)`;
+  }
+
+  getSelectedExportCards() {
+    const val = this.dom.exportFolderSelect ? this.dom.exportFolderSelect.value : 'all';
+    let targetName = 'Toda la Colección';
+    let cards = [];
+
+    if (val === 'all') {
+      targetName = 'Toda la Colección';
+      cards = [...this.collection];
+    } else if (val.startsWith('personal:')) {
+      const folderId = val.replace('personal:', '');
+      const folder = this.personalFolders.find(f => f.id === folderId);
+      targetName = folder ? folder.name : 'Carpeta Personal';
+      if (folderId === 'default') {
+        cards = this.collection.filter(c => !c.folderId || c.folderId === 'default');
+      } else {
+        cards = this.collection.filter(c => c.folderId === folderId);
+      }
+    } else if (val.startsWith('shared:')) {
+      const folderId = val.replace('shared:', '');
+      const folder = this.sharedFoldersMap.get(folderId);
+      targetName = folder ? folder.name : 'Carpeta Compartida';
+      cards = folder && folder.cards ? [...folder.cards] : [];
+    }
+
+    return { name: targetName, cards };
+  }
+
+  exportActiveFolder() {
+    let selectVal = 'personal:default';
+    if (this.folderScope === 'personal') {
+      selectVal = `personal:${this.activeFolderId || 'default'}`;
+    } else if (this.folderScope === 'shared' && this.activeFolderId) {
+      selectVal = `shared:${this.activeFolderId}`;
+    }
+    this.switchTab('export');
+    if (this.dom.exportFolderSelect) {
+      this.dom.exportFolderSelect.value = selectVal;
+      this.updateExportStatsBadge();
+    }
+  }
+
+  async copyAndPreviewExport(text, title, subtitle) {
+    try {
+      await navigator.clipboard.writeText(text);
+      this.showToast("📋 ¡Copiado al portapapeles!");
+    } catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      this.showToast("📋 ¡Copiado al portapapeles!");
+    }
+
+    if (this.dom.exportPreviewModal && this.dom.exportPreviewTextarea) {
+      if (this.dom.exportPreviewTitle) this.dom.exportPreviewTitle.textContent = `📋 ${title}`;
+      if (this.dom.exportPreviewSubtitle) this.dom.exportPreviewSubtitle.textContent = subtitle;
+      this.dom.exportPreviewTextarea.value = text;
+      this.dom.exportPreviewModal.classList.add('active');
+    }
+  }
+
+  async copyFromExportPreview() {
+    if (!this.dom.exportPreviewTextarea) return;
+    const text = this.dom.exportPreviewTextarea.value;
+    try {
+      await navigator.clipboard.writeText(text);
+      this.showToast("📋 ¡Copiado de nuevo al portapapeles!");
+    } catch (e) {
+      this.dom.exportPreviewTextarea.select();
+      document.execCommand('copy');
+      this.showToast("📋 ¡Copiado al portapapeles!");
+    }
+  }
+
+  exportWishlist() {
+    const { name, cards } = this.getSelectedExportCards();
+    if (cards.length === 0) {
+      this.showToast(`No tienes cartas en "${name}" para exportar`);
+      return;
+    }
+
+    // Formato Wishlist Universal (Cardmarket / CardTrader): [Quantity]x [Card Name] [Collector Number]
+    const lines = cards.map(c => {
+      const qty = c.count || 1;
+      const cardName = (c.name || '').trim();
+      const code = (c.id || '').trim().toUpperCase();
+      return `${qty}x ${cardName} ${code}`;
+    });
+
+    const text = lines.join('\n');
+    const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);
+    this.copyAndPreviewExport(
+      text,
+      `Wishlist - ${name}`,
+      `Formato directo para lista de deseos (${totalCopies} cartas de "${name}"). ¡Ya está copiado en tu portapapeles!`
+    );
+  }
+
+  exportCardmarketWants() {
+    const { name, cards } = this.getSelectedExportCards();
+    if (cards.length === 0) {
+      this.showToast(`No tienes cartas en "${name}" para exportar`);
+      return;
+    }
+
+    // Formato Cardmarket Wants: [Quantity]x [Card Name] [Collector Number]
+    const lines = cards.map(c => {
+      const qty = c.count || 1;
+      const cardName = (c.name || '').trim();
+      const code = (c.id || '').trim().toUpperCase();
+      return `${qty}x ${cardName} ${code}`;
+    });
+
+    const text = lines.join('\n');
+    const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);
+    this.copyAndPreviewExport(
+      text,
+      `Cardmarket Wants - ${name}`,
+      `Formato directo para la Wants List de Cardmarket (${totalCopies} cartas de "${name}"). ¡Ya está en tu portapapeles!`
+    );
+  }
+
+  exportCardTraderWishlist() {
+    const { name, cards } = this.getSelectedExportCards();
+    if (cards.length === 0) {
+      this.showToast(`No tienes cartas en "${name}" para exportar`);
+      return;
+    }
+
+    // Formato CardTrader: [Quantity]x [Card Name]
+    const lines = cards.map(c => {
+      const qty = c.count || 1;
+      const cardName = (c.name || '').trim();
+      return `${qty}x ${cardName}`;
+    });
+
+    const text = lines.join('\n');
+    const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);
+    this.copyAndPreviewExport(
+      text,
+      `CardTrader Wishlist - ${name}`,
+      `Formato directo para importar a CardTrader Wishlist (${totalCopies} cartas de "${name}"). ¡Ya está en tu portapapeles!`
+    );
+  }
+
+  exportSimulatorDecklist() {
+    const { name, cards } = this.getSelectedExportCards();
+    if (cards.length === 0) {
+      this.showToast(`No tienes cartas en "${name}" para exportar`);
+      return;
+    }
+
+    // Formato OPTCGSim: [Quantity]x[Code]
+    const lines = cards.map(c => {
+      const qty = c.count || 1;
+      const code = (c.id || '').trim().toUpperCase();
+      return `${qty}x${code}`;
+    });
+
+    const text = lines.join('\n');
+    const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);
+    this.copyAndPreviewExport(
+      text,
+      `Simulador OPTCG - ${name}`,
+      `Formato para mazo de OPTCGSim (${totalCopies} cartas de "${name}"). ¡Ya está en tu portapapeles!`
+    );
+  }
+
   async copyToGoogleSheets() {
-    if (this.collection.length === 0) {
-      this.showToast("No tienes cartas en la colección");
+    const { name, cards } = this.getSelectedExportCards();
+    if (cards.length === 0) {
+      this.showToast(`No tienes cartas en "${name}" para exportar`);
       return;
     }
 
     let tsv = "Código\tNombre\tCantidad\tColor\tType / Rasgos\tTipo\tRareza\tCoste/Vida\tExpansión\tCarpeta\tFecha\n";
-    this.collection.forEach(c => {
+    cards.forEach(c => {
       tsv += `${c.id}\t${c.name}\t${c.count}\t${c.color}\t${c.traits || ''}\t${c.cardType || ''}\t${c.rarity || ''}\t${c.cost || ''}\t${c.set || ''}\t${c.folderId || 'default'}\t${c.addedAt || ''}\n`;
     });
 
     try {
       await navigator.clipboard.writeText(tsv);
-      this.showToast("📋 ¡Copiado! Abre Google Sheets y pulsa Pegar");
+      this.showToast(`📋 ¡Copiado (${name})! Abre Google Sheets y pulsa Pegar`);
     } catch (e) {
       const ta = document.createElement('textarea');
       ta.value = tsv;
@@ -2204,28 +2710,510 @@ class OnePieceApp {
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      this.showToast("📋 ¡Copiado para Google Sheets!");
+      this.showToast(`📋 ¡Copiado (${name}) para Google Sheets!`);
+    }
+  }
+
+  exportFolderJSON() {
+    const { name, cards } = this.getSelectedExportCards();
+    if (cards.length === 0) {
+      this.showToast(`No tienes cartas en "${name}" para exportar`);
+      return;
+    }
+
+    const payload = {
+      app: 'OnePieceTCGDex',
+      version: '2.6',
+      exportedAt: new Date().toISOString(),
+      folderName: name,
+      totalCards: cards.reduce((sum, c) => sum + (c.count || 0), 0),
+      uniqueCards: cards.length,
+      cards: cards
+    };
+
+    const jsonStr = JSON.stringify(payload, null, 2);
+    const sanitizedName = name.replace(/[^a-zA-Z0-9_\u00C0-\u017F-]/g, '_');
+    const blob = new Blob([jsonStr], { type: 'application/json;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `OnePiece_TCG_Backup_${sanitizedName}_${new Date().toISOString().slice(0, 10)}.json`;
+    link.click();
+    this.showToast(`💾 Copia JSON (${name}) descargada`);
+  }
+
+  // =========================================================================
+  // GENERADOR DE IMÁGENES DE CARPETAS (POSTER / BINDER)
+  // =========================================================================
+
+  openFolderImageModalForActive() {
+    let folderKey = 'personal:default';
+    if (this.folderScope === 'personal') {
+      folderKey = `personal:${this.activeFolderId || 'default'}`;
+    } else if (this.folderScope === 'shared' && this.activeFolderId) {
+      folderKey = `shared:${this.activeFolderId}`;
+    }
+    this.openFolderImageModal(folderKey);
+  }
+
+  openFolderImageModalForSelected() {
+    const val = this.dom.exportFolderSelect ? this.dom.exportFolderSelect.value : 'all';
+    this.openFolderImageModal(val);
+  }
+
+  openFolderImageModal(folderKey) {
+    let targetName = 'Toda la Colección';
+    let targetIcon = '🌐';
+    let targetType = 'Colección Completa';
+    let cards = [];
+
+    if (!folderKey || folderKey === 'all') {
+      targetName = 'Toda la Colección';
+      targetIcon = '🌐';
+      targetType = 'Colección Completa';
+      cards = [...this.collection];
+    } else if (folderKey.startsWith('personal:')) {
+      const folderId = folderKey.replace('personal:', '');
+      const folder = this.personalFolders.find(f => f.id === folderId);
+      targetName = folder ? folder.name : 'Álbum General';
+      targetIcon = folder ? (folder.icon || '📁') : '📁';
+      targetType = 'Carpeta Personal';
+      if (folderId === 'default') {
+        cards = this.collection.filter(c => !c.folderId || c.folderId === 'default');
+      } else {
+        cards = this.collection.filter(c => c.folderId === folderId);
+      }
+    } else if (folderKey.startsWith('shared:')) {
+      const folderId = folderKey.replace('shared:', '');
+      const folder = this.sharedFoldersMap.get(folderId);
+      targetName = folder ? folder.name : 'Carpeta Compartida';
+      targetIcon = folder ? (folder.icon || '👥') : '👥';
+      targetType = 'Carpeta Compartida';
+      cards = folder && folder.cards ? [...folder.cards] : [];
+    }
+
+    // Filtrar cartas con count > 0
+    cards = cards.filter(c => (c.count || 0) > 0);
+
+    if (cards.length === 0) {
+      this.showToast(`⚠️ No hay cartas en "${targetName}" para generar una imagen`);
+      return;
+    }
+
+    this.currentImageFolderData = {
+      name: targetName,
+      icon: targetIcon,
+      type: targetType,
+      cards: cards
+    };
+
+    if (this.dom.imageModalTitle) {
+      this.dom.imageModalTitle.textContent = `🖼️ Imagen: ${targetIcon} ${targetName}`;
+    }
+
+    if (this.dom.imageExportModal) {
+      this.dom.imageExportModal.classList.add('active');
+    }
+
+    this.renderFolderImage(this.currentImageTheme);
+  }
+
+  closeFolderImageModal() {
+    if (this.dom.imageExportModal) {
+      this.dom.imageExportModal.classList.remove('active');
+    }
+  }
+
+  switchImageTheme(theme) {
+    this.currentImageTheme = theme;
+    if (this.dom.imageThemeChips) {
+      this.dom.imageThemeChips.forEach(chip => {
+        chip.classList.toggle('active', chip.getAttribute('data-theme') === theme);
+      });
+    }
+    if (this.currentImageFolderData) {
+      this.renderFolderImage(theme);
+    }
+  }
+
+  async renderFolderImage(theme = 'dark') {
+    if (!this.currentImageFolderData) return;
+    const { name, icon, type, cards } = this.currentImageFolderData;
+
+    if (this.dom.imageGenStatus) {
+      this.dom.imageGenStatus.style.display = 'inline-flex';
+    }
+
+    const canvas = this.dom.folderImageCanvas || document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);
+    const uniqueCount = cards.length;
+
+    // Calcular distribución de columnas óptima
+    let cols = 4;
+    if (uniqueCount <= 3) cols = uniqueCount;
+    else if (uniqueCount <= 8) cols = 4;
+    else if (uniqueCount <= 20) cols = 5;
+    else cols = 6;
+
+    const rows = Math.ceil(uniqueCount / cols);
+
+    const padding = 36;
+    const headerHeight = 110;
+    const footerHeight = 46;
+    const cardGap = 16;
+    const cardWidth = 200;
+    const cardHeight = 280; // ratio estándar 5:7
+
+    const totalWidth = padding * 2 + (cols * cardWidth) + ((cols - 1) * cardGap);
+    const totalHeight = padding * 2 + headerHeight + (rows * cardHeight) + ((rows - 1) * cardGap) + footerHeight;
+
+    canvas.width = totalWidth;
+    canvas.height = totalHeight;
+
+    // Paleta de colores según tema
+    let bgGradientStart = '#0b0f19';
+    let bgGradientEnd = '#04070e';
+    let accentColor = '#f59e0b';
+    let textMain = '#ffffff';
+    let textMuted = '#94a3b8';
+    let borderSubtle = 'rgba(255, 255, 255, 0.12)';
+    let cardBg = '#131b2e';
+
+    if (theme === 'marine') {
+      bgGradientStart = '#0a192f';
+      bgGradientEnd = '#020c1b';
+      accentColor = '#38bdf8';
+      textMain = '#f0f9ff';
+      textMuted = '#7dd3fc';
+      borderSubtle = 'rgba(56, 189, 248, 0.25)';
+      cardBg = '#0e2444';
+    } else if (theme === 'gold') {
+      bgGradientStart = '#1f1606';
+      bgGradientEnd = '#0d0902';
+      accentColor = '#fbbf24';
+      textMain = '#fffbeb';
+      textMuted = '#d97706';
+      borderSubtle = 'rgba(251, 191, 36, 0.3)';
+      cardBg = '#291f09';
+    }
+
+    // Fondo degradado del Poster
+    const bgGrad = ctx.createLinearGradient(0, 0, 0, totalHeight);
+    bgGrad.addColorStop(0, bgGradientStart);
+    bgGrad.addColorStop(1, bgGradientEnd);
+    ctx.fillStyle = bgGrad;
+    ctx.fillRect(0, 0, totalWidth, totalHeight);
+
+    // Marco exterior con esquinas suaves
+    this.drawRoundedRect(ctx, 12, 12, totalWidth - 24, totalHeight - 24, 16);
+    ctx.strokeStyle = borderSubtle;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Header del Poster
+    ctx.font = 'bold 32px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+    ctx.fillStyle = textMain;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(`${icon} ${name}`, padding, padding + 30);
+
+    ctx.font = '600 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+    ctx.fillStyle = accentColor;
+    const statsText = `${type} • ${totalCopies} cartas en total (${uniqueCount} únicas)`;
+    ctx.fillText(statsText, padding, padding + 68);
+
+    // Badge OP-TCG DEX en la esquina superior derecha
+    ctx.font = 'bold 16px monospace';
+    ctx.fillStyle = accentColor;
+    ctx.textAlign = 'right';
+    ctx.fillText('OP-TCG DEX', totalWidth - padding, padding + 28);
+    ctx.font = '13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+    ctx.fillStyle = textMuted;
+    ctx.fillText(new Date().toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' }), totalWidth - padding, padding + 54);
+
+    // Línea divisoria bajo el header
+    ctx.strokeStyle = borderSubtle;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(padding, padding + headerHeight - 12);
+    ctx.lineTo(totalWidth - padding, padding + headerHeight - 12);
+    ctx.stroke();
+
+    // Cargar y dibujar cada carta
+    const gridStartY = padding + headerHeight;
+
+    for (let i = 0; i < cards.length; i++) {
+      const card = cards[i];
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      const x = padding + col * (cardWidth + cardGap);
+      const y = gridStartY + row * (cardHeight + cardGap);
+
+      // Fondo base de la carta
+      this.drawRoundedRect(ctx, x, y, cardWidth, cardHeight, 10);
+      ctx.fillStyle = cardBg;
+      ctx.fill();
+      ctx.strokeStyle = borderSubtle;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Cargar imagen de la carta
+      const imgUrls = (typeof getCardImageURLs === 'function') ? getCardImageURLs(card.id) : [];
+      let imgLoaded = false;
+
+      for (let url of imgUrls) {
+        if (!url) continue;
+        try {
+          const img = await this.loadImageAsync(url);
+          if (img) {
+            ctx.save();
+            this.drawRoundedRect(ctx, x, y, cardWidth, cardHeight, 10);
+            ctx.clip();
+            ctx.drawImage(img, x, y, cardWidth, cardHeight);
+            ctx.restore();
+            imgLoaded = true;
+            break;
+          }
+        } catch (e) {
+          // continuar con siguiente url
+        }
+      }
+
+      if (!imgLoaded) {
+        this.drawCardVectorFallback(ctx, card, x, y, cardWidth, cardHeight);
+      }
+
+      // Borde sutil de la carta
+      this.drawRoundedRect(ctx, x, y, cardWidth, cardHeight, 10);
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.22)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Badge de Cantidad (x4, x2, etc.) en esquina superior derecha
+      const qty = card.count || 1;
+      const badgeText = `x${qty}`;
+      ctx.font = 'bold 15px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+      const badgeMetrics = ctx.measureText(badgeText);
+      const badgeW = Math.max(34, badgeMetrics.width + 14);
+      const badgeH = 24;
+      const badgeX = x + cardWidth - badgeW - 6;
+      const badgeY = y + 6;
+
+      this.drawRoundedRect(ctx, badgeX, badgeY, badgeW, badgeH, 6);
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.88)';
+      ctx.fill();
+      ctx.strokeStyle = accentColor;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      ctx.fillStyle = accentColor;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(badgeText, badgeX + badgeW / 2, badgeY + badgeH / 2);
+
+      // Badge de Código en esquina inferior izquierda
+      const codeText = card.id || '';
+      ctx.font = 'bold 12px monospace';
+      const codeMetrics = ctx.measureText(codeText);
+      const codeW = codeMetrics.width + 10;
+      const codeH = 20;
+      const codeX = x + 6;
+      const codeY = y + cardHeight - codeH - 6;
+
+      this.drawRoundedRect(ctx, codeX, codeY, codeW, codeH, 4);
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.88)';
+      ctx.fill();
+      ctx.fillStyle = '#ffffff';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(codeText, codeX + codeW / 2, codeY + codeH / 2);
+    }
+
+    // Footer del Poster
+    const footerY = totalHeight - padding / 2 - 2;
+    ctx.font = '600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+    ctx.fillStyle = textMuted;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('Generado con One Piece TCG Dex • Colección & Álbum de Cartas', totalWidth / 2, footerY);
+
+    // Exportar resultado
+    try {
+      this.currentImageDataUrl = canvas.toDataURL('image/png');
+      if (this.dom.folderImageResult) {
+        this.dom.folderImageResult.src = this.currentImageDataUrl;
+      }
+      canvas.toBlob(blob => {
+        this.currentImageBlob = blob;
+      }, 'image/png');
+    } catch (e) {
+      console.warn('Canvas export warning:', e);
+      if (this.dom.folderImageResult) {
+        this.dom.folderImageResult.src = canvas.toDataURL();
+      }
+    }
+
+    if (this.dom.imageGenStatus) {
+      this.dom.imageGenStatus.style.display = 'none';
+    }
+  }
+
+  drawRoundedRect(ctx, x, y, width, height, radius) {
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+    ctx.lineTo(x + width, y + height - radius);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    ctx.lineTo(x + radius, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+    ctx.lineTo(x, y + radius);
+    ctx.quadraticCurveTo(x, y, x + radius, y);
+    ctx.closePath();
+  }
+
+  loadImageAsync(url) {
+    return new Promise((resolve, reject) => {
+      if (!url) return reject(new Error('No URL'));
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(new Error('Load error'));
+      img.src = url;
+    });
+  }
+
+  drawCardVectorFallback(ctx, card, x, y, w, h) {
+    const colorMap = {
+      'Red': ['#991b1b', '#450a0a'],
+      'Green': ['#065f46', '#022c22'],
+      'Blue': ['#1e40af', '#172554'],
+      'Purple': ['#6b21a8', '#3b0764'],
+      'Black': ['#334155', '#0f172a'],
+      'Yellow': ['#854d0e', '#422006']
+    };
+    const colors = colorMap[card.color] || ['#1e293b', '#0f172a'];
+    const grad = ctx.createLinearGradient(x, y, x, y + h);
+    grad.addColorStop(0, colors[0]);
+    grad.addColorStop(1, colors[1]);
+
+    ctx.save();
+    this.drawRoundedRect(ctx, x, y, w, h, 10);
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 15px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    
+    const name = card.name || 'Carta One Piece';
+    ctx.fillText(name.slice(0, 18), x + w / 2, y + h / 2 - 20);
+
+    ctx.font = '12px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+    ctx.fillText(card.cardType || 'Character', x + w / 2, y + h / 2 + 6);
+    if (card.traits) {
+      ctx.fillText(card.traits.slice(0, 20), x + w / 2, y + h / 2 + 26);
+    }
+
+    ctx.restore();
+  }
+
+  downloadFolderImage() {
+    if (!this.currentImageDataUrl && !this.dom.folderImageCanvas) {
+      this.showToast('⚠️ Primero abre una carpeta para generar la imagen');
+      return;
+    }
+    const folderName = (this.currentImageFolderData ? this.currentImageFolderData.name : 'Carpeta').replace(/[^a-zA-Z0-9_\u00C0-\u017F-]/g, '_');
+    const link = document.createElement('a');
+    link.download = `OnePiece_TCG_${folderName}_${new Date().toISOString().slice(0, 10)}.png`;
+    link.href = this.currentImageDataUrl || (this.dom.folderImageCanvas ? this.dom.folderImageCanvas.toDataURL('image/png') : '');
+    link.click();
+    this.showToast('📥 Imagen PNG descargada');
+  }
+
+  async copyFolderImageToClipboard() {
+    if (!this.currentImageBlob && this.dom.folderImageCanvas) {
+      try {
+        this.dom.folderImageCanvas.toBlob(blob => {
+          this.currentImageBlob = blob;
+          this.performCopyImageBlob(blob);
+        }, 'image/png');
+        return;
+      } catch (e) {}
+    }
+    if (this.currentImageBlob) {
+      this.performCopyImageBlob(this.currentImageBlob);
+    } else {
+      this.showToast('⚠️ No se pudo copiar la imagen directamente');
+    }
+  }
+
+  async performCopyImageBlob(blob) {
+    try {
+      if (navigator.clipboard && navigator.clipboard.write) {
+        const item = new ClipboardItem({ 'image/png': blob });
+        await navigator.clipboard.write([item]);
+        this.showToast('📋 ¡Imagen copiada al portapapeles!');
+      } else {
+        this.showToast('⚠️ Tu navegador no admite copiar imágenes al portapapeles');
+      }
+    } catch (e) {
+      console.warn('Clipboard write error:', e);
+      this.showToast('⚠️ Usa "Descargar PNG" para guardarla');
+    }
+  }
+
+  async shareFolderImage() {
+    if (!this.currentImageBlob) {
+      this.downloadFolderImage();
+      return;
+    }
+    const folderName = this.currentImageFolderData ? this.currentImageFolderData.name : 'Carpeta';
+    const fileName = `OnePiece_TCG_${folderName.replace(/[^a-zA-Z0-9_-]/g, '_')}.png`;
+    const file = new File([this.currentImageBlob], fileName, { type: 'image/png' });
+
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      try {
+        await navigator.share({
+          files: [file],
+          title: `One Piece TCG - ${folderName}`,
+          text: `¡Mira mi carpeta/mazo "${folderName}" de One Piece TCG!`
+        });
+        this.showToast('📤 Compartido con éxito');
+      } catch (e) {
+        if (e.name !== 'AbortError') {
+          this.downloadFolderImage();
+        }
+      }
+    } else {
+      this.downloadFolderImage();
     }
   }
 
   downloadExcelCSV() {
-    if (this.collection.length === 0) {
-      this.showToast("No tienes cartas en la colección");
+    const { name, cards } = this.getSelectedExportCards();
+    if (cards.length === 0) {
+      this.showToast(`No tienes cartas en "${name}" para exportar`);
       return;
     }
 
     let csv = "\uFEFFCódigo,Nombre,Cantidad,Color,Type / Rasgos,Tipo,Rareza,Coste/Vida,Expansión,Carpeta,Fecha\n";
-    this.collection.forEach(c => {
+    cards.forEach(c => {
       csv += `"${c.id}","${(c.name || '').replace(/"/g, '""')}",${c.count},"${c.color}","${(c.traits || '').replace(/"/g, '""')}","${c.cardType || ''}","${c.rarity || ''}","${c.cost || ''}","${(c.set || '').replace(/"/g, '""')}","${c.folderId || 'default'}","${c.addedAt || ''}"\n`;
     });
 
+    const sanitizedName = name.replace(/[^a-zA-Z0-9_\u00C0-\u017F-]/g, '_');
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `OnePiece_TCG_Coleccion_${new Date().toISOString().slice(0, 10)}.csv`;
+    link.download = `OnePiece_TCG_${sanitizedName}_${new Date().toISOString().slice(0, 10)}.csv`;
     link.click();
-    this.showToast("📊 Archivo Excel CSV descargado");
+    this.showToast(`📊 Archivo Excel CSV (${name}) descargado`);
   }
 
   handleExcelCSVImport(e) {
@@ -2243,6 +3231,52 @@ class OnePieceApp {
 
   parseAndImportDelimitedText(text) {
     if (!text || !text.trim()) return;
+
+    // Detectar si es un archivo de respaldo JSON
+    const trimmed = text.trim();
+    if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+      try {
+        const parsed = JSON.parse(trimmed);
+        const importedCards = Array.isArray(parsed) ? parsed : (Array.isArray(parsed.cards) ? parsed.cards : null);
+        if (importedCards && importedCards.length > 0) {
+          let totalImportedCopies = 0;
+          let newCardsCount = 0;
+          
+          importedCards.forEach(c => {
+            const cardCode = c.id || c.code;
+            if (!cardCode) return;
+            const qty = parseInt(c.count || c.qty) || 1;
+            const cardInfo = findOrGenerateCard(cardCode);
+            if (c.name && (!cardInfo.name || cardInfo.name.startsWith("Carta "))) {
+              cardInfo.name = c.name;
+            }
+
+            const targetFolder = (this.folderScope === 'personal' && this.activeFolderId) ? this.activeFolderId : 'default';
+            const existingIndex = this.collection.findIndex(item => item.id === cardInfo.id && item.folderId === targetFolder);
+            if (existingIndex >= 0) {
+              this.collection[existingIndex].count += qty;
+            } else {
+              this.collection.unshift({
+                ...cardInfo,
+                count: qty,
+                folderId: targetFolder,
+                addedAt: new Date().toLocaleDateString()
+              });
+              newCardsCount++;
+            }
+            totalImportedCopies += qty;
+          });
+
+          this.saveCollection();
+          this.renderAlbum();
+          this.switchTab('album');
+          this.showToast(`💾 ¡Respaldo JSON importado (+${totalImportedCopies} copias)!`);
+          return;
+        }
+      } catch (err) {
+        // Si no era JSON válido, continuar con parseo CSV/TSV
+      }
+    }
 
     const lines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').filter(l => l.trim().length > 0);
     if (lines.length === 0) {
@@ -2419,7 +3453,29 @@ class OnePieceApp {
   async logout() {
     if (window.FIREBASE_AUTH) {
       try {
+        if (this.firestoreUnsubUser) {
+          this.firestoreUnsubUser();
+          this.firestoreUnsubUser = null;
+        }
         await window.FIREBASE_AUTH.signOut();
+        
+        // Limpiar estado de usuario y colección para no mezclar cuentas
+        this.currentUser = null;
+        this.collection = [];
+        this.personalFolders = [{ id: 'default', name: 'Álbum General', icon: '📁', color: '#f59e0b', type: 'personal' }];
+        this.sharedFolderIds = [];
+        this.sharedFoldersMap.clear();
+        this.activeFolderId = 'default';
+        this.folderScope = 'personal';
+
+        localStorage.setItem('op_tcg_cards_v7', JSON.stringify([]));
+        localStorage.setItem('op_tcg_personal_folders_v1', JSON.stringify(this.personalFolders));
+        localStorage.setItem('op_tcg_shared_ids_v1', JSON.stringify([]));
+
+        this.updateHeaderStats();
+        this.renderFolderTabs();
+        this.renderAlbum();
+        this.populateExportFolderSelect();
         this.showToast("Has cerrado sesión.");
       } catch (err) {
         console.error("Error al cerrar sesión:", err);
@@ -2441,38 +3497,72 @@ class OnePieceApp {
         const data = doc.data();
         if (data) {
           let updated = false;
-          if (data.collection && JSON.stringify(data.collection) !== JSON.stringify(this.collection)) {
-            this.collection = data.collection;
+          let cloudCards = Array.isArray(data.collection) ? data.collection : [];
+          
+          // Si la nube tenía cartas demo residuales heredadas de cuentas vacías antiguas, limpiarlas
+          const legacyDemoIds = ["OP17-039", "OP17-118", "OP17-001", "OP09-082", "OP09-118", "OP09-021"];
+          const isLegacyDemo = cloudCards.length === 6 && 
+            cloudCards.every(c => legacyDemoIds.includes(c.id) && (!c.folderId || c.folderId === 'default'));
+          
+          if (isLegacyDemo) {
+            cloudCards = [];
+            // Actualizar doc en la nube para limpiar definitivamente
+            docRef.update({ collection: [], updatedAt: firebase.firestore.FieldValue.serverTimestamp() }).catch(() => {});
+          }
+
+          if (JSON.stringify(cloudCards) !== JSON.stringify(this.collection)) {
+            this.collection = cloudCards;
             localStorage.setItem('op_tcg_cards_v7', JSON.stringify(this.collection));
             updated = true;
           }
-          if (data.personalFolders && JSON.stringify(data.personalFolders) !== JSON.stringify(this.personalFolders)) {
-            this.personalFolders = data.personalFolders;
+
+          const personalFolders = Array.isArray(data.personalFolders) && data.personalFolders.length > 0
+            ? data.personalFolders
+            : [{ id: 'default', name: 'Álbum General', icon: '📁', color: '#f59e0b', type: 'personal' }];
+
+          if (JSON.stringify(personalFolders) !== JSON.stringify(this.personalFolders)) {
+            this.personalFolders = personalFolders;
             localStorage.setItem('op_tcg_personal_folders_v1', JSON.stringify(this.personalFolders));
             updated = true;
           }
-          if (data.sharedFolderIds && JSON.stringify(data.sharedFolderIds) !== JSON.stringify(this.sharedFolderIds)) {
-            this.sharedFolderIds = data.sharedFolderIds;
+
+          const sharedIds = Array.isArray(data.sharedFolderIds) ? data.sharedFolderIds : [];
+          if (JSON.stringify(sharedIds) !== JSON.stringify(this.sharedFolderIds)) {
+            this.sharedFolderIds = sharedIds;
             localStorage.setItem('op_tcg_shared_ids_v1', JSON.stringify(this.sharedFolderIds));
             this.setupAllSharedFolderListeners();
             updated = true;
           }
+
           if (updated) {
             this.updateHeaderStats();
             this.renderFolderTabs();
             this.renderAlbum();
+            this.populateExportFolderSelect();
           }
         }
       } else {
-        // Primera vez del usuario: subir colección local existente
+        // Primera vez del usuario en la nube:
+        // Asegurar que si es una cuenta nueva limpia, no tenga cartas demo residuales
+        const legacyDemoIds = ["OP17-039", "OP17-118", "OP17-001", "OP09-082", "OP09-118", "OP09-021"];
+        const isLegacyDemo = this.collection.length === 6 && 
+          this.collection.every(c => legacyDemoIds.includes(c.id) && (!c.folderId || c.folderId === 'default'));
+        
+        if (isLegacyDemo) {
+          this.collection = [];
+          localStorage.setItem('op_tcg_cards_v7', JSON.stringify([]));
+        }
+
         try {
           await docRef.set({
             collection: this.collection || [],
-            personalFolders: this.personalFolders || [],
+            personalFolders: this.personalFolders || [{ id: 'default', name: 'Álbum General', icon: '📁', color: '#f59e0b', type: 'personal' }],
             sharedFolderIds: this.sharedFolderIds || [],
             updatedAt: firebase.firestore.FieldValue.serverTimestamp()
           });
-          this.showToast("¡Tu colección se ha respaldado en la nube!");
+          if (this.collection.length > 0) {
+            this.showToast("¡Tu colección se ha respaldado en la nube!");
+          }
         } catch (err) {
           console.error("Error al inicializar datos en la nube:", err);
         }

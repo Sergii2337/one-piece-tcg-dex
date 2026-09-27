@@ -1609,14 +1609,48 @@ body {
 }
 
 .export-box h2 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--accent-gold);
+  font-weight: 800;
 }
 
 .export-desc {
   font-size: 0.86rem;
   color: var(--text-dim);
   line-height: 1.4;
+}
+
+.export-source-select-group {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+
+.export-select-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.export-stats-pill {
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid var(--border-accent);
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.export-folder-select {
+  border: 1.5px solid var(--border-accent);
+  background: #090d16;
+  font-weight: 800;
+  color: #fff;
 }
 
 .section-divider-title {
@@ -1630,7 +1664,91 @@ body {
 .export-actions-group, .import-actions-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+}
+
+/* Botones para tiendas / Marketplaces (Cardmarket, CardTrader, Simulador) */
+.btn-market {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  gap: 12px;
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+  user-select: none;
+}
+
+.btn-market:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+.btn-market:active {
+  transform: scale(0.98);
+}
+
+.btn-market-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.btn-market-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.btn-market-text strong {
+  font-size: 0.92rem;
+  color: #fff;
+  font-weight: 800;
+}
+
+.btn-market-text small {
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-market-text code {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #fff;
+}
+
+.btn-market-badge {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-cardmarket {
+  background: linear-gradient(135deg, #005086, #0077c8);
+  border-color: rgba(0, 119, 200, 0.6);
+}
+
+.btn-cardtrader {
+  background: linear-gradient(135deg, #0f766e, #0d9488);
+  border-color: rgba(13, 148, 136, 0.6);
+}
+
+.btn-sim {
+  background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+  border-color: rgba(139, 92, 246, 0.6);
 }
 
 .btn-sheets {
@@ -1642,6 +1760,12 @@ body {
   border-radius: 12px;
   cursor: pointer;
   font-size: 0.95rem;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.btn-sheets:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
 }
 
 .btn-excel {
@@ -1653,6 +1777,12 @@ body {
   border-radius: 12px;
   cursor: pointer;
   font-size: 0.95rem;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.btn-excel:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
 }
 
 .btn-import-csv {
@@ -1670,9 +1800,10 @@ body {
   font-size: 0.78rem;
   color: var(--text-dim);
   background: var(--bg-input);
-  padding: 10px;
-  border-radius: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
   line-height: 1.4;
+  border: 1px solid var(--border-subtle);
 }
 
 .btn-outline {
@@ -2440,7 +2571,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* Modal para Pegar desde Google Sheets / Excel */
+/* Modal para Pegar desde Google Sheets / Excel / Preview */
 .paste-textarea {
   width: 100%;
   height: 180px;
@@ -2457,6 +2588,16 @@ body {
 
 .paste-textarea:focus {
   box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.export-preview-textarea {
+  min-height: 200px;
+  font-family: monospace;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  background: #090d16;
+  border: 1.5px solid var(--border-accent);
+  color: #f8fafc;
 }
 
 /* ========================================== */
@@ -2598,51 +2739,193 @@ body {
   padding: 4px 10px 4px 5px;
   border-radius: 24px;
 }
-
+/* User Profile & Auth Header */
 .user-avatar-img {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  border: 1.5px solid var(--accent-gold);
   object-fit: cover;
+  border: 1.5px solid var(--accent-gold);
 }
 
 .user-meta-info {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
 }
 
 .user-name-text {
   font-size: 0.75rem;
   font-weight: 700;
   color: #fff;
-  max-width: 90px;
+  max-width: 100px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .sync-badge-ok {
-  font-size: 0.65rem;
-  color: #4ade80;
-  font-weight: 600;
-}
-
-.sync-badge-loading {
-  font-size: 0.65rem;
-  color: #facc15;
-  font-weight: 600;
+  font-size: 0.62rem;
+  color: #34d399;
+  font-weight: 700;
 }
 
 .btn-logout-mini {
-  background: rgba(239, 68, 68, 0.15);
-  border: 1px solid rgba(239, 68, 68, 0.4);
-  color: #fca5a5;
-  font-size: 0.68rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  color: #cbd5e1;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 3px 7px;
+  padding: 3px 8px;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.15s ease;
+}
+
+.btn-logout-mini:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border-color: #ef4444;
+}
+
+/* ========================================== */
+/* EXPORTAR A IMAGEN (POSTER / BINDER)        */
+/* ========================================== */
+.btn-folder-image {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(217, 119, 6, 0.35));
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.btn-folder-image:hover {
+  background: var(--accent-gold);
+  color: #000;
+}
+
+.btn-image-main-export {
+  background: linear-gradient(135deg, #b45309, #d97706, #f59e0b);
+  border-color: rgba(245, 158, 11, 0.7);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.25);
+}
+
+.btn-image-main-export:hover {
+  box-shadow: 0 6px 22px rgba(245, 158, 11, 0.45);
+}
+
+.btn-backup-json {
+  background: linear-gradient(135deg, #475569, #334155);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.btn-backup-json:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+/* Modal de Exportación a Imagen */
+.image-modal-card {
+  max-width: 680px;
+  width: 96%;
+}
+
+.image-export-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--bg-card);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+}
+
+.image-theme-select {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.image-theme-chip {
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.image-theme-chip:hover {
+  color: #fff;
+}
+
+.image-theme-chip.active {
+  background: var(--accent-gold);
+  color: #000;
+  border-color: var(--accent-gold);
+  font-weight: 800;
+}
+
+.image-gen-status {
+  font-size: 0.8rem;
+  color: var(--accent-gold);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.image-spinner {
+  display: inline-block;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.image-preview-container {
+  background: #060911;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 12px;
+  max-height: 58vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.folder-image-result {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.7);
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.image-modal-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .image-modal-actions button {
+    flex: 1 1 100% !important;
+  }
 }
