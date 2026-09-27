@@ -24618,7 +24618,34 @@ function searchCardsInDB(query) {
       const targetWords = cleanTarget.split(/\s+/).filter(Boolean);
 
       const matchesAll = textTokens.every(tok => {
-        return targetWords.some(w => w.startsWith(tok) || w.includes(tok)) || cleanTarget.includes(tok);
+        // 1. Promo P tokens (ej. p02, p2, p-02, p-002, p030) solo deben coincidir con cartas promocionales P-, nunca OP02, OP05, etc.
+        const pMatch = tok.match(/^p-?0*([1-9][0-9]{0,2})$/i);
+        if (pMatch) {
+          const promoTarget = `p-${pMatch[1].padStart(3, '0')}`;
+          const cleanTok = tok.replace(/[-_]/g, '');
+          const cleanCard = cardId.toLowerCase().replace(/[-_]/g, '');
+          return cardId.toLowerCase() === promoTarget.toLowerCase() || cleanCard === cleanTok;
+        }
+
+        // 2. Set/Card codes específicos (ej. op02, st01, eb01, prb01, op01-001)
+        const codeMatch = tok.match(/^(op|st|eb|prb)-?0*([1-9][0-9]?)(?:-?0*([1-9][0-9]{0,2}))?$/i);
+        if (codeMatch) {
+          const pfx = codeMatch[1].toUpperCase();
+          const sNum = codeMatch[2].padStart(2, '0');
+          const cNum = codeMatch[3] ? codeMatch[3].padStart(3, '0') : null;
+          if (cNum) {
+            return cardId.toUpperCase() === `${pfx}${sNum}-${cNum}` || cardId.replace(/[-_]/g, '').toUpperCase() === `${pfx}${sNum}${cNum}`;
+          }
+          return cardSetPrefix === `${pfx}${sNum}`;
+        }
+
+        // 3. Palabras de texto generales (nombre, rasgos, tipo, etc.)
+        return targetWords.some(w => {
+          if (w === tok) return true;
+          if (w.startsWith(tok)) return true;
+          if (tok.length >= 4 && w.includes(tok)) return true;
+          return false;
+        });
       });
       if (!matchesAll) continue;
     }

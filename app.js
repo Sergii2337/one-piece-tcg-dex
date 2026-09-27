@@ -227,6 +227,7 @@ class OnePieceApp {
       // Entrada por Código / Starter Decks
       starterDeckSelect: document.getElementById('starter-deck-select'),
       manualCodeInput: document.getElementById('manual-code-input'),
+      prefixBtns: document.querySelectorAll('#quick-prefix-bar .prefix-btn'),
       btnManualSearch: document.getElementById('btn-manual-search'),
       setChips: document.querySelectorAll('.set-chip'),
       exampleChips: document.querySelectorAll('.example-chip'),
@@ -260,6 +261,10 @@ class OnePieceApp {
       modalCardTraits: document.getElementById('modal-card-traits'),
       modalCardMeta: document.getElementById('modal-card-meta'),
       modalExistingMsg: document.getElementById('modal-existing-msg'),
+      modalLinkCardmarket: document.getElementById('modal-link-cardmarket'),
+      modalLinkCardtrader: document.getElementById('modal-link-cardtrader'),
+      modalMkmPriceVal: document.getElementById('modal-mkm-price-val'),
+      modalCtPriceVal: document.getElementById('modal-ct-price-val'),
       modalCardFolderSelect: document.getElementById('modal-card-folder-select'),
       modalCustomQty: document.getElementById('modal-custom-qty'),
       qtyBtns: document.querySelectorAll('.qty-preset-group .qty-btn'),
@@ -575,11 +580,15 @@ class OnePieceApp {
           this.submitCodeInput();
         }
       });
-      this.dom.manualCodeInput.addEventListener('focus', () => {
-        if (!this.dom.manualCodeInput.value) {
-          this.dom.manualCodeInput.value = 'OP';
-        }
-      });
+      // Quick prefix buttons click
+      if (this.dom.prefixBtns) {
+        this.dom.prefixBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const pfx = btn.getAttribute('data-prefix');
+            this.setSearchPrefix(pfx);
+          });
+        });
+      }
     }
 
     this.dom.setChips.forEach(chip => {
@@ -2012,18 +2021,47 @@ class OnePieceApp {
     }
   }
 
+  setSearchPrefix(prefix) {
+    if (!this.dom.manualCodeInput) return;
+    let val = this.dom.manualCodeInput.value.trim().toUpperCase();
+    
+    // Si ya empieza con algún prefijo conocido (OP, ST, EB, PRB, P), sustituirlo
+    const match = val.match(/^(OP|ST|EB|PRB|P)(.*)$/i);
+    if (match) {
+      val = prefix + match[2];
+    } else if (val) {
+      val = prefix + val;
+    } else {
+      val = prefix;
+    }
+    
+    this.dom.manualCodeInput.value = val;
+    this.dom.manualCodeInput.focus();
+    const len = this.dom.manualCodeInput.value.length;
+    this.dom.manualCodeInput.setSelectionRange(len, len);
+
+    if (this.dom.prefixBtns) {
+      this.dom.prefixBtns.forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-prefix') === prefix);
+      });
+    }
+  }
+
   submitCodeInput() {
     const raw = this.dom.manualCodeInput.value.trim();
-    if (!raw || raw === 'OP' || raw === 'ST') {
-      this.showToast("Introduce un nombre o código (ej. Luffy, OP17-039 o ST01)");
+    if (!raw || raw === 'OP' || raw === 'ST' || raw === 'EB' || raw === 'PRB' || raw === 'P') {
+      this.showToast("Carta no encontrada");
       this.dom.manualCodeInput.focus();
       return;
     }
 
     const setCode = normalizeSetCode(raw);
     if (setCode) {
-      this.showSetExplorer(setCode);
-      return;
+      const cards = getCardsBySet(setCode);
+      if (cards && cards.length > 0) {
+        this.showSetExplorer(setCode);
+        return;
+      }
     }
 
     const cleanCard = this.cleanCardCode(raw);
@@ -2034,7 +2072,7 @@ class OnePieceApp {
 
     const matches = window.searchCardsInDB ? window.searchCardsInDB(raw) : [];
     if (matches.length > 0) {
-      if (matches.length === 1 && cleanCard) {
+      if (matches.length === 1 && matches[0].id === cleanCard) {
         this.fetchAndOpenCardModal(matches[0].id);
       } else {
         this.showSearchResults(raw, matches);
@@ -2042,12 +2080,7 @@ class OnePieceApp {
       return;
     }
 
-    if (cleanCard) {
-      this.fetchAndOpenCardModal(cleanCard);
-      return;
-    }
-
-    this.showToast(`No se encontraron cartas para "${raw}". Prueba con Luffy, Zoro, ST01...`);
+    this.showToast("Carta no encontrada");
   }
 
   showSetExplorer(setCodeQuery) {
@@ -2061,7 +2094,7 @@ class OnePieceApp {
     this.searchCurrentPage = 1;
 
     if (cards.length === 0) {
-      this.showToast(`No se encontraron cartas para el set ${setCode}`);
+      this.showToast('Carta no encontrada');
       return;
     }
 
@@ -2331,34 +2364,62 @@ class OnePieceApp {
 
     const currentOwned = this.getCardCountInActiveScope(card.id);
 
-    this.dom.modalCardId.textContent = card.id;
-    this.dom.modalCardName.textContent = card.name;
-    this.dom.modalCardColor.textContent = card.color;
-    this.dom.modalCardColor.className = `color-badge col-${card.color.replace('/', '-')}`;
-    this.dom.modalCardTraits.textContent = card.traits || 'One Piece Pirates';
+    if (this.dom.modalCardId) this.dom.modalCardId.textContent = card.id;
+    if (this.dom.modalCardName) this.dom.modalCardName.textContent = card.name;
+    if (this.dom.modalCardColor) {
+      this.dom.modalCardColor.textContent = card.color;
+      this.dom.modalCardColor.className = `color-badge col-${(card.color || 'Red').replace('/', '-')}`;
+    }
+    if (this.dom.modalCardTraits) this.dom.modalCardTraits.textContent = card.traits || 'One Piece Pirates';
 
     let metaStr = `${card.cardType || 'Character'}`;
     if (card.rarity) metaStr += ` • ${card.rarity}`;
     if (card.cost) metaStr += ` • Coste/Vida: ${card.cost}`;
     if (card.set) metaStr += ` • ${card.set}`;
-    this.dom.modalCardMeta.textContent = metaStr;
+    if (this.dom.modalCardMeta) this.dom.modalCardMeta.textContent = metaStr;
 
-    if (currentOwned > 0) {
-      this.dom.modalExistingMsg.style.display = 'block';
-      this.dom.modalExistingMsg.innerHTML = `📦 Ya tienes <strong>${currentOwned} copia(s)</strong> en tu colección.`;
-    } else {
-      this.dom.modalExistingMsg.style.display = 'none';
+    if (this.dom.modalExistingMsg) {
+      if (currentOwned > 0) {
+        this.dom.modalExistingMsg.style.display = 'block';
+        this.dom.modalExistingMsg.innerHTML = `📦 Ya tienes <strong>${currentOwned} copia(s)</strong> en tu colección.`;
+      } else {
+        this.dom.modalExistingMsg.style.display = 'none';
+      }
+    }
+
+    // Actualizar datos y valores de tendencia de precio en texto/insignias (Cardmarket MKM & CardTrader)
+    const pricesDb = (typeof ONE_PIECE_PRICES_DB !== 'undefined' ? ONE_PIECE_PRICES_DB : (window.ONE_PIECE_PRICES_DB || {}));
+    const pData = pricesDb[card.id] || null;
+
+    if (this.dom.modalMkmPriceVal) {
+      if (pData && pData.mkm !== undefined && pData.mkm !== null) {
+        this.dom.modalMkmPriceVal.textContent = `${pData.mkm.toFixed(2).replace('.', ',')} €`;
+      } else {
+        this.dom.modalMkmPriceVal.textContent = 'No disp.';
+      }
+    }
+
+    if (this.dom.modalCtPriceVal) {
+      if (pData && pData.usd !== undefined && pData.usd !== null) {
+        // Conversión a Euros (1 USD ≈ 0.92 EUR)
+        const ctEur = pData.usd * 0.92;
+        this.dom.modalCtPriceVal.textContent = `${ctEur.toFixed(2).replace('.', ',')} €`;
+      } else {
+        this.dom.modalCtPriceVal.textContent = 'No disp.';
+      }
     }
 
     this.populateFolderSelects();
-    this.dom.modalCustomQty.value = 1;
-    this.dom.qtyBtns.forEach(b => {
-      b.classList.toggle('active', parseInt(b.getAttribute('data-q')) === 1);
-    });
+    if (this.dom.modalCustomQty) this.dom.modalCustomQty.value = 1;
+    if (this.dom.qtyBtns) {
+      this.dom.qtyBtns.forEach(b => {
+        b.classList.toggle('active', parseInt(b.getAttribute('data-q')) === 1);
+      });
+    }
 
     this.updateModalForecast();
-    this.setupRobustImage(this.dom.modalCardImg, card);
-    this.dom.cardModal.classList.add('active');
+    if (this.dom.modalCardImg) this.setupRobustImage(this.dom.modalCardImg, card);
+    if (this.dom.cardModal) this.dom.cardModal.classList.add('active');
   }
 
   updateModalForecast() {

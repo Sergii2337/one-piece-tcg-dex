@@ -242,7 +242,17 @@
 
         <!-- Campo Principal de Entrada por Código -->
         <div class="main-code-input-wrapper">
-          <label class="quick-set-label" for="manual-code-input">O teclear código individual:</label>
+          <div class="code-input-header-row">
+            <label class="quick-set-label" for="manual-code-input">O teclear código individual:</label>
+            <div class="quick-prefix-container" id="quick-prefix-bar">
+              <span class="prefix-label">Prefijo:</span>
+              <button type="button" class="prefix-btn" data-prefix="OP">OP</button>
+              <button type="button" class="prefix-btn" data-prefix="ST">ST</button>
+              <button type="button" class="prefix-btn" data-prefix="EB">EB</button>
+              <button type="button" class="prefix-btn" data-prefix="PRB">PRB</button>
+              <button type="button" class="prefix-btn" data-prefix="P">P</button>
+            </div>
+          </div>
           <input 
             type="text" 
             id="manual-code-input" 
@@ -525,6 +535,40 @@
 
         <div id="modal-existing-msg" class="existing-status-badge" style="display: none;">
           <!-- Mensaje de estado -->
+        </div>
+
+        <!-- SECCIÓN: TENDENCIAS DE PRECIO (CARDMARKET & CARDTRADER) -->
+        <div class="modal-market-trends-box">
+          <div class="market-trends-header">
+            <span class="market-trends-title">📈 Tendencias de Precio de Mercado</span>
+            <span class="market-trends-info-pill" title="Media ponderada de ventas reales recientes en estado Near Mint">ℹ️ Ventas Reales NM</span>
+          </div>
+
+          <div class="market-trends-list">
+            <!-- Tendencia Cardmarket -->
+            <div class="market-trend-row cm-row">
+              <div class="market-row-left">
+                <span class="market-badge-chip cm-chip">MKM</span>
+                <div class="market-row-texts">
+                  <span class="market-row-title">Tendencia Cardmarket:</span>
+                  <small class="market-row-sub">Media ventas recientes EUR</small>
+                </div>
+              </div>
+              <strong id="modal-mkm-price-val" class="market-price-tag mkm-tag">-- €</strong>
+            </div>
+
+            <!-- Tendencia CardTrader / Mercado -->
+            <div class="market-trend-row ct-row">
+              <div class="market-row-left">
+                <span class="market-badge-chip ct-chip">CT</span>
+                <div class="market-row-texts">
+                  <span class="market-row-title">Tendencia CardTrader:</span>
+                  <small class="market-row-sub">Price Guide & Cotización EUR</small>
+                </div>
+              </div>
+              <strong id="modal-ct-price-val" class="market-price-tag ct-tag">-- €</strong>
+            </div>
+          </div>
         </div>
 
         <!-- Selector de Carpeta Destino -->
@@ -865,6 +909,7 @@
   
   <!-- Scripts de la Aplicación -->
   <script src="cards-data.js?v=2.6"></script>
+  <script src="prices-data.js?v=1.0"></script>
   <script src="app.js?v=2.6"></script>
 </body>
 </html>
