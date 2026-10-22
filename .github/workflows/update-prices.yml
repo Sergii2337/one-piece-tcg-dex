@@ -1,0 +1,36 @@
+# Regenera prices-data.js cada día con la guía de precios de Cardmarket.
+# Así las cartas nuevas (p. ej. una expansión recién salida) tienen precio sin ejecutar nada a mano.
+name: Actualizar precios Cardmarket
+
+on:
+  schedule:
+    - cron: '30 5 * * *' # diario, después de que Cardmarket publique la guía (~02:45 CET)
+  workflow_dispatch: # botón "Run workflow" en la pestaña Actions
+
+permissions:
+  contents: write
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generar prices-data.js
+        run: python tools/update_prices.py
+
+      - name: Subir cambios
+        run: |
+          if git diff --quiet prices-data.js; then
+            echo "Sin cambios en los precios."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add prices-data.js
+          git commit -m "chore: actualizar precios Cardmarket"
+          git push

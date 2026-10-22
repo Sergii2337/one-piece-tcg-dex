@@ -1,0 +1,21 @@
+# Netlify Configuration for One Piece TCG Dex
+
+[[redirects]]
+  from = "/card-img/*"
+  to = "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/one-piece/:splat"
+  status = 200
+  force = true
+
+# Guía de precios diaria de Cardmarket (no permite CORS desde el navegador)
+[[redirects]]
+  from = "/mkm-prices/*"
+  to = "https://downloads.s3.cardmarket.com/productCatalog/priceGuide/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
