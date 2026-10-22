@@ -1324,38 +1324,6 @@ body {
   font-size: 1.02rem;
 }
 
-.examples-tray {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.example-title {
-  font-size: 0.76rem;
-  color: var(--text-muted);
-  font-weight: 600;
-}
-
-.example-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.example-chip {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-subtle);
-  color: #cbd5e1;
-  font-size: 0.74rem;
-  padding: 5px 10px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-.example-chip:active {
-  background: rgba(245, 158, 11, 0.2);
-  color: var(--accent-gold);
-}
-
 /* ========================================== */
 /* SECCIÓN: RESULTADOS DE SET / STARTER DECK  */
 /* ========================================== */
@@ -3135,6 +3103,9 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .album-sort-select,
@@ -3149,6 +3120,10 @@ body {
   cursor: pointer;
   outline: none;
   transition: border-color 0.15s ease;
+  min-width: 0;
+  max-width: 100%;
+  flex: 1 1 auto;
+  text-overflow: ellipsis;
 }
 
 .album-sort-select:focus,
@@ -3160,6 +3135,8 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 
@@ -3449,6 +3426,54 @@ body {
   background: #10b981;
   display: inline-block;
   flex-shrink: 0;
+}
+
+/* Cabecera compacta en móvil: solo iconos en sincronización y login */
+@media (max-width: 600px) {
+  .app-header {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .header-right-group {
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .stats-badge {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  #db-sync-label,
+  .btn-google-auth .auth-btn-label,
+  .user-meta-info {
+    display: none;
+  }
+
+  .db-sync-badge {
+    padding: 8px;
+  }
+
+  .btn-google-auth {
+    padding: 6px 8px;
+  }
+
+  .album-view-toolbar {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .album-sort-control {
+    flex-basis: 100%;
+    order: 3;
+  }
 }
 
 @keyframes pulse-sync-dot {

@@ -308,7 +308,6 @@ class OnePieceApp {
       prefixBtns: document.querySelectorAll('#quick-prefix-bar .prefix-btn'),
       btnManualSearch: document.getElementById('btn-manual-search'),
       setChips: document.querySelectorAll('.set-chip'),
-      exampleChips: document.querySelectorAll('.example-chip'),
 
       // Explorador de Sets
       setResultsContainer: document.getElementById('set-results-container'),
@@ -867,28 +866,6 @@ class OnePieceApp {
         }
       });
     }
-
-    this.dom.exampleChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        const code = chip.getAttribute('data-code');
-        if (code) {
-          this.dom.manualCodeInput.value = code;
-          const setCode = normalizeSetCode(code);
-          if (setCode) {
-            this.showSetExplorer(setCode);
-          } else {
-            const matches = window.searchCardsInDB ? window.searchCardsInDB(code) : [];
-            if (matches.length > 1) {
-              this.showSearchResults(code, matches);
-            } else if (matches.length === 1) {
-              this.fetchAndOpenCardModal(matches[0].id);
-            } else {
-              this.fetchAndOpenCardModal(code);
-            }
-          }
-        }
-      });
-    });
 
     // Explorador de Sets
     if (this.dom.btnSetAddAllDeck) {
