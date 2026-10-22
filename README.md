@@ -49,12 +49,16 @@ one-piece-tcg-dex/
 ├── index.html          # Estructura principal de la aplicación
 ├── style.css           # Estilos visuales y diseño responsive
 ├── app.js              # Controlador principal, gestión de estado y eventos
-├── cards-data.js       # Catálogo y funciones de búsqueda de cartas
+├── cards-data.js       # Catálogo, búsqueda y sincronización de cartas
+├── prices-data.js      # Precios Cardmarket por carta y versión (generado)
+├── firebase-config.js  # Login con Google y sincronización en la nube
+├── netlify.toml        # Proxy de imágenes /card-img/ para Netlify
 ├── manifest.json       # Configuración para instalación como PWA
 ├── README.md           # Documentación técnica del proyecto
 ├── LICENSE             # Términos de licencia MIT y aviso legal
 ├── .gitignore          # Reglas de exclusión para control de versiones
-└── tools/              # Scripts auxiliares para extracción y compilación de datos
+└── tools/
+    └── update_prices.py  # Regenera prices-data.js desde Cardmarket
 ```
 
 ---

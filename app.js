@@ -45,6 +45,11 @@ class OnePieceApp {
     // Modal de edición rápida de cantidad
     this.activeQtyCard = null;
 
+    // Ordenación de Álbum y Poster
+    this.albumSortOrder = 'color';
+    this.currentImageSortOrder = 'color';
+    this.moveFolderMode = 'move';
+
     // Exportación a Imagen (Poster / Binder)
     this.currentImageTheme = 'dark';
     this.currentImageFolderData = null;
@@ -63,11 +68,63 @@ class OnePieceApp {
     this.setupAllSharedFolderListeners();
     this.initFirebaseAuth();
     this.checkUrlForSharedFolder();
+    this.setupCardsDbSyncListeners();
     this.updateToolbarControls();
     this.renderFolderTabs();
     this.renderAlbum();
     this.populateExportFolderSelect();
     this.updateHeaderStats();
+    this.loadLivePrices();
+  }
+
+  // =========================================================================
+  // PRECIOS CARDMARKET (guía diaria vía proxy de Netlify, con respaldo en prices-data.js)
+  // =========================================================================
+
+  async loadLivePrices() {
+    const STORAGE_KEY = 'op_mkm_live_prices_v1';
+    const MAX_AGE_MS = 12 * 60 * 60 * 1000;
+    const snapshot = window.ONE_PIECE_PRICES_DB || {};
+
+    try {
+      const cached = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+      if (cached && cached.prices) {
+        this.livePrices = cached;
+        if (Date.now() - cached.fetchedAt < MAX_AGE_MS) return;
+      }
+    } catch (e) { /* caché corrupta: se vuelve a descargar */ }
+
+    try {
+      const res = await fetch('/mkm-prices/price_guide_18.json', { cache: 'no-cache' });
+      if (!res.ok) return;
+      const guide = await res.json();
+
+      // Solo guardamos los productos que corresponden a cartas de la app (~200 KB en vez de 2,7 MB)
+      const wanted = new Set(Object.values(snapshot).map(p => p.mkmId));
+      const prices = {};
+      (guide.priceGuides || []).forEach(p => {
+        if (wanted.has(p.idProduct)) prices[p.idProduct] = [p.trend, p.low, p.avg7];
+      });
+
+      this.livePrices = { fetchedAt: Date.now(), createdAt: guide.createdAt, prices };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.livePrices));
+    } catch (e) {
+      // Sin proxy (p. ej. servidor local) o sin conexión: se usan los precios de prices-data.js
+      console.info('[Precios] Usando precios guardados en prices-data.js');
+    }
+  }
+
+  getCardPrice(cardId) {
+    const snapshot = window.ONE_PIECE_PRICES_DB || {};
+    const entry = snapshot[normalizeCardId(cardId)];
+    if (!entry) return null;
+
+    const live = this.livePrices && this.livePrices.prices[entry.mkmId];
+    if (live) {
+      return { trend: live[0], low: live[1], avg7: live[2], date: this.livePrices.createdAt };
+    }
+    const meta = window.ONE_PIECE_PRICES_META || {};
+    return { trend: entry.mkm, low: entry.low, avg7: entry.avg7, date: meta.priceGuideDate };
   }
 
   loadFolders() {
@@ -133,7 +190,7 @@ class OnePieceApp {
       const raw = localStorage.getItem('op_tcg_cards_v7');
       if (raw) {
         const parsed = JSON.parse(raw);
-        this.collection = Array.isArray(parsed) ? parsed : [];
+        this.collection = this.normalizeCollection(Array.isArray(parsed) ? parsed : []);
         
         // Limpieza de datos demo residuales antiguos en cuentas vacías
         const legacyDemoIds = ["OP17-039", "OP17-118", "OP17-001", "OP09-082", "OP09-118", "OP09-021"];
@@ -167,6 +224,23 @@ class OnePieceApp {
     }
   }
 
+  // Unifica ids con distinto formato (OP09-093_P4 -> OP09-093_p4) y suma las copias duplicadas
+  normalizeCollection(cards) {
+    const merged = new Map();
+    cards.forEach(c => {
+      if (!c || !c.id) return;
+      const id = normalizeCardId(c.id);
+      const key = `${id}|${c.folderId || 'default'}`;
+      const existing = merged.get(key);
+      if (existing) {
+        existing.count = (existing.count || 0) + (c.count || 0);
+      } else {
+        merged.set(key, { ...c, id });
+      }
+    });
+    return [...merged.values()];
+  }
+
   saveCollection() {
     try {
       localStorage.setItem('op_tcg_cards_v7', JSON.stringify(this.collection));
@@ -181,6 +255,8 @@ class OnePieceApp {
   cacheDOM() {
     this.dom = {
       headerStats: document.getElementById('header-stats'),
+      btnDbSync: document.getElementById('btn-db-sync'),
+      dbSyncLabel: document.getElementById('db-sync-label'),
 
       viewAlbum: document.getElementById('view-album'),
       viewScanner: document.getElementById('view-scanner'),
@@ -215,7 +291,9 @@ class OnePieceApp {
       btnAlbumOpenSet: document.getElementById('btn-album-open-set'),
       filterPills: document.querySelectorAll('#color-filters .filter-pill'),
 
-      // Visualización Álbum
+      // Visualización Álbum y Ordenación
+      albumSortSelect: document.getElementById('album-sort-select'),
+      imageSortSelect: document.getElementById('image-sort-select'),
       btnViewGrid: document.getElementById('btn-view-grid'),
       btnViewList: document.getElementById('btn-view-list'),
       btnSizeDecrease: document.getElementById('btn-size-decrease'),
@@ -261,10 +339,9 @@ class OnePieceApp {
       modalCardTraits: document.getElementById('modal-card-traits'),
       modalCardMeta: document.getElementById('modal-card-meta'),
       modalExistingMsg: document.getElementById('modal-existing-msg'),
-      modalLinkCardmarket: document.getElementById('modal-link-cardmarket'),
-      modalLinkCardtrader: document.getElementById('modal-link-cardtrader'),
       modalMkmPriceVal: document.getElementById('modal-mkm-price-val'),
-      modalCtPriceVal: document.getElementById('modal-ct-price-val'),
+      modalLowPriceVal: document.getElementById('modal-low-price-val'),
+      modalPriceDate: document.getElementById('modal-price-date'),
       modalCardFolderSelect: document.getElementById('modal-card-folder-select'),
       modalCustomQty: document.getElementById('modal-custom-qty'),
       qtyBtns: document.querySelectorAll('.qty-preset-group .qty-btn'),
@@ -307,6 +384,23 @@ class OnePieceApp {
       moveFolderCurrentBadge: document.getElementById('move-folder-current-badge'),
       moveFolderOptionsList: document.getElementById('move-folder-options-list'),
       btnCancelMoveFolder: document.getElementById('btn-cancel-move-folder'),
+      moveFolderQtyInput: document.getElementById('move-folder-qty-input'),
+      btnMoveAllCopies: document.getElementById('btn-move-all-copies'),
+      btnModalMoveFolder: document.getElementById('btn-modal-move-folder'),
+      btnModalCopyFolder: document.getElementById('btn-modal-copy-folder'),
+      modalFolderActionsChoice: document.getElementById('modal-folder-actions-choice'),
+      modalStandardActions: document.getElementById('modal-standard-actions'),
+      btnQtyOpenMoveModal: document.getElementById('btn-qty-open-move-modal'),
+      btnMoveModeTransfer: document.getElementById('btn-move-mode-transfer'),
+      btnMoveModeCopy: document.getElementById('btn-move-mode-copy'),
+      moveFolderQtyTitle: document.getElementById('move-folder-qty-title'),
+
+      // Botones rápidos de Importación
+      btnImportActiveFolder: document.getElementById('btn-import-active-folder'),
+      btnEmptyImportList: document.getElementById('btn-empty-import-list'),
+      btnEmptyGoAdd: document.getElementById('btn-empty-go-add'),
+      btnScannerImportDeck: document.getElementById('btn-scanner-import-deck'),
+      btnPasteCreateFolder: document.getElementById('btn-paste-create-folder'),
 
       // Modal Editar Cantidad
       qtyEditModal: document.getElementById('qty-edit-modal'),
@@ -344,6 +438,9 @@ class OnePieceApp {
       btnExportExcel: document.getElementById('btn-export-excel'),
       btnPasteSheets: document.getElementById('btn-paste-sheets'),
       csvFileInput: document.getElementById('csv-file-input'),
+      importFolderSelect: document.getElementById('import-folder-select'),
+      importTargetStatsBadge: document.getElementById('import-target-stats-badge'),
+      pasteFolderSelect: document.getElementById('paste-folder-select'),
       pasteModal: document.getElementById('paste-modal'),
       btnClosePasteModal: document.getElementById('btn-close-paste-modal'),
       pasteTextarea: document.getElementById('paste-textarea'),
@@ -385,6 +482,47 @@ class OnePieceApp {
       cloudSyncStatus: document.getElementById('cloud-sync-status'),
       btnLogout: document.getElementById('btn-logout')
     };
+  }
+
+  setupCardsDbSyncListeners() {
+    window.addEventListener('cards-db-syncing', () => {
+      if (this.dom.btnDbSync) {
+        this.dom.btnDbSync.classList.add('syncing');
+        if (this.dom.dbSyncLabel) this.dom.dbSyncLabel.textContent = 'Sincronizando...';
+      }
+    });
+
+    window.addEventListener('cards-db-synced', (e) => {
+      const count = e.detail ? e.detail.count : Object.keys(window.ONE_PIECE_CARDS_DB || {}).length;
+      if (this.dom.btnDbSync) {
+        this.dom.btnDbSync.classList.remove('syncing');
+        if (this.dom.dbSyncLabel) this.dom.dbSyncLabel.textContent = `⚡ ${count.toLocaleString()} cartas`;
+        this.dom.btnDbSync.title = `Base de datos al día con CDN punk-records (${count} cartas). Clic para comprobar actualizaciones.`;
+      }
+      if (e.detail && e.detail.newCards > 0) {
+        this.showToast(`✨ Base de datos actualizada: +${e.detail.newCards} cartas nuevas`);
+      }
+      // Volver a pintar el álbum: las versiones alternativas ya tienen datos y código V.n
+      this.renderAlbum();
+      if (this.currentSearchMode === 'search' && this.lastCardSearchQuery) {
+        this.handleSearch(this.lastCardSearchQuery);
+      } else if (this.currentSearchMode === 'set' && this.currentSetCode) {
+        this.showSetExplorer(this.currentSetCode);
+      }
+    });
+
+    window.addEventListener('cards-db-sync-failed', () => {
+      if (this.dom.btnDbSync) {
+        this.dom.btnDbSync.classList.remove('syncing');
+        const count = Object.keys(window.ONE_PIECE_CARDS_DB || {}).length;
+        if (this.dom.dbSyncLabel) this.dom.dbSyncLabel.textContent = `⚡ ${count.toLocaleString()} cartas`;
+      }
+    });
+
+    if (typeof ONE_PIECE_CARDS_DB !== 'undefined' && this.dom.dbSyncLabel) {
+      const count = Object.keys(ONE_PIECE_CARDS_DB).length;
+      this.dom.dbSyncLabel.textContent = `⚡ ${count.toLocaleString()} cartas`;
+    }
   }
 
   bindEvents() {
@@ -506,6 +644,100 @@ class OnePieceApp {
     if (this.dom.btnCancelMoveFolder) {
       this.dom.btnCancelMoveFolder.addEventListener('click', () => this.closeMoveFolderModal());
     }
+    if (this.dom.moveFolderModal) {
+      this.dom.moveFolderModal.addEventListener('click', (e) => {
+        if (e.target === this.dom.moveFolderModal) this.closeMoveFolderModal();
+      });
+    }
+    if (this.dom.btnQtyOpenMoveModal) {
+      this.dom.btnQtyOpenMoveModal.addEventListener('click', () => {
+        const cardToMove = this.activeQtyCard;
+        this.closeQtyModal();
+        if (cardToMove) {
+          this.openMoveFolderModal(cardToMove);
+        }
+      });
+    }
+    if (this.dom.btnMoveModeTransfer) {
+      this.dom.btnMoveModeTransfer.addEventListener('click', () => {
+        this.setMoveFolderModalMode('move');
+      });
+    }
+    if (this.dom.btnMoveModeCopy) {
+      this.dom.btnMoveModeCopy.addEventListener('click', () => {
+        this.setMoveFolderModalMode('copy');
+      });
+    }
+
+    // Botones Rápidos de Importación a Carpetas
+    if (this.dom.btnImportActiveFolder) {
+      this.dom.btnImportActiveFolder.addEventListener('click', () => {
+        this.openImportPasteModal(this.activeFolderId || 'default');
+      });
+    }
+    if (this.dom.btnEmptyImportList) {
+      this.dom.btnEmptyImportList.addEventListener('click', () => {
+        this.openImportPasteModal(this.activeFolderId || 'default');
+      });
+    }
+    if (this.dom.btnEmptyGoAdd) {
+      this.dom.btnEmptyGoAdd.addEventListener('click', () => {
+        this.switchTab('scanner');
+      });
+    }
+    if (this.dom.btnScannerImportDeck) {
+      this.dom.btnScannerImportDeck.addEventListener('click', () => {
+        this.openImportPasteModal(this.activeFolderId || 'default');
+      });
+    }
+    if (this.dom.btnPasteCreateFolder) {
+      this.dom.btnPasteCreateFolder.addEventListener('click', () => {
+        this.openCreateFolderModal();
+      });
+    }
+    if (this.dom.modalCardFolderSelect) {
+      this.dom.modalCardFolderSelect.addEventListener('change', () => {
+        this.updateModalForecast();
+      });
+    }
+    if (this.dom.btnModalMoveFolder) {
+      this.dom.btnModalMoveFolder.addEventListener('click', () => {
+        if (!this.pendingCard) return;
+        const currentFolderId = this.activeFolderId || 'default';
+        const destFolderId = this.dom.modalCardFolderSelect ? this.dom.modalCardFolderSelect.value : currentFolderId;
+        if (destFolderId === currentFolderId) return;
+        const curOwned = this.getCardCountInActiveScope(this.pendingCard.id);
+        const qtyToMove = Math.min(this.pendingQty, curOwned);
+        if (qtyToMove <= 0) return;
+        this.executeMoveCard(this.pendingCard, qtyToMove, currentFolderId, destFolderId, false);
+        this.closeModal();
+      });
+    }
+    if (this.dom.btnModalCopyFolder) {
+      this.dom.btnModalCopyFolder.addEventListener('click', () => {
+        if (!this.pendingCard) return;
+        const currentFolderId = this.activeFolderId || 'default';
+        const destFolderId = this.dom.modalCardFolderSelect ? this.dom.modalCardFolderSelect.value : currentFolderId;
+        this.executeMoveCard(this.pendingCard, this.pendingQty, currentFolderId, destFolderId, true);
+        this.closeModal();
+      });
+    }
+    if (this.dom.importFolderSelect) {
+      this.dom.importFolderSelect.addEventListener('change', () => {
+        if (this.dom.pasteFolderSelect) {
+          this.dom.pasteFolderSelect.value = this.dom.importFolderSelect.value;
+        }
+        this.updateImportTargetBadge();
+      });
+    }
+    if (this.dom.pasteFolderSelect) {
+      this.dom.pasteFolderSelect.addEventListener('change', () => {
+        if (this.dom.importFolderSelect) {
+          this.dom.importFolderSelect.value = this.dom.pasteFolderSelect.value;
+        }
+        this.updateImportTargetBadge();
+      });
+    }
 
     // Búsqueda en el Álbum
     this.dom.albumSearchInput.addEventListener('input', (e) => {
@@ -527,6 +759,24 @@ class OnePieceApp {
         if (setCode) {
           this.switchTab('scanner');
           this.showSetExplorer(setCode);
+        }
+      });
+    }
+
+    // Selector de Ordenación de Álbum
+    if (this.dom.albumSortSelect) {
+      this.dom.albumSortSelect.addEventListener('change', (e) => {
+        this.albumSortOrder = e.target.value;
+        this.renderAlbum();
+      });
+    }
+
+    // Selector de Ordenación en Modal de Imagen
+    if (this.dom.imageSortSelect) {
+      this.dom.imageSortSelect.addEventListener('change', (e) => {
+        this.currentImageSortOrder = e.target.value;
+        if (this.currentImageFolderData) {
+          this.renderFolderImage(this.currentImageTheme);
         }
       });
     }
@@ -591,9 +841,21 @@ class OnePieceApp {
       }
     }
 
-    this.dom.setChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        this.dom.setChips.forEach(c => c.classList.remove('active'));
+    if (this.dom.btnDbSync) {
+      this.dom.btnDbSync.addEventListener('click', () => {
+        if (typeof window.syncCardsDatabase === 'function') {
+          this.showToast('🔄 Comprobando nuevas cartas en CDN...');
+          window.syncCardsDatabase(true);
+        }
+      });
+    }
+
+    const chipsScroll = document.querySelector('.set-chips-scroll');
+    if (chipsScroll) {
+      chipsScroll.addEventListener('click', (e) => {
+        const chip = e.target.closest('.set-chip');
+        if (!chip) return;
+        chipsScroll.querySelectorAll('.set-chip').forEach(c => c.classList.remove('active'));
         chip.classList.add('active');
         const setAttr = chip.getAttribute('data-set');
         this.dom.manualCodeInput.value = setAttr;
@@ -604,7 +866,7 @@ class OnePieceApp {
           this.dom.manualCodeInput.focus();
         }
       });
-    });
+    }
 
     this.dom.exampleChips.forEach(chip => {
       chip.addEventListener('click', () => {
@@ -786,20 +1048,20 @@ class OnePieceApp {
       });
     }
 
-    // Exportar - Lista de Deseos (Wishlist)
+    // Exportar - Lista de Deseos (Wishlist) & Tiendas
     if (this.dom.btnExportWishlist) {
       this.dom.btnExportWishlist.addEventListener('click', () => {
-        this.exportWishlist();
+        this.exportCardmarketWants();
       });
     }
     if (this.dom.btnExportCardmarket) {
       this.dom.btnExportCardmarket.addEventListener('click', () => {
-        this.exportWishlist();
+        this.exportCardmarketWants();
       });
     }
     if (this.dom.btnExportCardtrader) {
       this.dom.btnExportCardtrader.addEventListener('click', () => {
-        this.exportWishlist();
+        this.exportCardTraderWishlist();
       });
     }
     if (this.dom.btnExportSim) {
@@ -820,8 +1082,8 @@ class OnePieceApp {
     }
     if (this.dom.btnPasteSheets) {
       this.dom.btnPasteSheets.addEventListener('click', () => {
-        this.dom.pasteTextarea.value = '';
-        this.dom.pasteModal.classList.add('active');
+        const target = this.dom.importFolderSelect ? this.dom.importFolderSelect.value : (this.activeFolderId || 'default');
+        this.openImportPasteModal(target);
       });
     }
     if (this.dom.btnClosePasteModal) {
@@ -833,11 +1095,12 @@ class OnePieceApp {
     if (this.dom.btnConfirmPasteImport) {
       this.dom.btnConfirmPasteImport.addEventListener('click', () => {
         const text = this.dom.pasteTextarea.value;
+        const targetFolder = this.dom.pasteFolderSelect ? this.dom.pasteFolderSelect.value : (this.activeFolderId || 'default');
         if (text && text.trim()) {
-          this.parseAndImportDelimitedText(text);
+          this.parseAndImportDelimitedText(text, targetFolder);
           this.dom.pasteModal.classList.remove('active');
         } else {
-          this.showToast("Pega texto de filas primero");
+          this.showToast("Pega texto de filas o lista primero");
         }
       });
     }
@@ -1200,6 +1463,9 @@ class OnePieceApp {
         this.folderScope = 'personal';
         this.activeFolderId = newFolder.id;
         this.saveFolders();
+        this.populateImportFolderSelects();
+        this.populateExportFolderSelect();
+        if (this.dom.pasteFolderSelect) this.dom.pasteFolderSelect.value = newFolder.id;
         this.closeFolderModal();
         this.showToast(`📁 Carpeta personal "${name}" creada`);
       } else {
@@ -1278,6 +1544,9 @@ class OnePieceApp {
     this.folderScope = 'shared';
     this.activeFolderId = newFolderId;
     this.saveFolders();
+    this.populateImportFolderSelects();
+    this.populateExportFolderSelect();
+    if (this.dom.pasteFolderSelect) this.dom.pasteFolderSelect.value = newFolderId;
 
     // Sincronizar con Firestore si está disponible
     if (window.FIREBASE_DB) {
@@ -1486,25 +1755,41 @@ class OnePieceApp {
 
   populateFolderSelects() {
     if (!this.dom.modalCardFolderSelect) return;
-    this.dom.modalCardFolderSelect.innerHTML = '';
+    this.fillFolderSelect(this.dom.modalCardFolderSelect);
 
-    // Opción Personal Álbum General
+    // Preseleccionar carpeta activa actual
+    if (this.activeFolderId) {
+      this.dom.modalCardFolderSelect.value = this.activeFolderId;
+    }
+  }
+
+  populateImportFolderSelects() {
+    [this.dom.importFolderSelect, this.dom.pasteFolderSelect].forEach(select => {
+      if (!select) return;
+      const prevValue = select.value || this.activeFolderId || 'default';
+      this.fillFolderSelect(select);
+      select.value = prevValue;
+      if (!select.value) select.value = 'default';
+    });
+  }
+
+  // Rellena un <select> con: Álbum General, carpetas personales y compartidas
+  fillFolderSelect(select) {
+    select.innerHTML = '';
+
     const optDefault = document.createElement('option');
     optDefault.value = 'default';
     optDefault.textContent = '📁 Álbum General (Personal)';
-    this.dom.modalCardFolderSelect.appendChild(optDefault);
+    select.appendChild(optDefault);
 
-    // Carpetas Personales
     this.personalFolders.forEach(f => {
-      if (f.id !== 'default') {
-        const opt = document.createElement('option');
-        opt.value = f.id;
-        opt.textContent = `${f.icon || '📁'} ${f.name} (Personal)`;
-        this.dom.modalCardFolderSelect.appendChild(opt);
-      }
+      if (f.id === 'default') return;
+      const opt = document.createElement('option');
+      opt.value = f.id;
+      opt.textContent = `${f.icon || '📁'} ${f.name} (Personal)`;
+      select.appendChild(opt);
     });
 
-    // Carpetas Compartidas
     const sharedList = this.getSharedFoldersList();
     if (sharedList.length > 0) {
       const optGroup = document.createElement('optgroup');
@@ -1515,13 +1800,26 @@ class OnePieceApp {
         opt.textContent = `${f.icon || '👥'} ${f.name} (Compartida)`;
         optGroup.appendChild(opt);
       });
-      this.dom.modalCardFolderSelect.appendChild(optGroup);
+      select.appendChild(optGroup);
+    }
+  }
+
+  updateImportTargetBadge() {
+    if (!this.dom.importTargetStatsBadge) return;
+    const folderId = (this.dom.importFolderSelect && this.dom.importFolderSelect.value) || 'default';
+
+    let cards;
+    const shared = this.sharedFoldersMap.get(folderId);
+    if (shared) {
+      cards = shared.cards || [];
+    } else if (folderId === 'default') {
+      cards = this.collection.filter(c => !c.folderId || c.folderId === 'default');
+    } else {
+      cards = this.collection.filter(c => c.folderId === folderId);
     }
 
-    // Preseleccionar carpeta activa actual
-    if (this.activeFolderId) {
-      this.dom.modalCardFolderSelect.value = this.activeFolderId;
-    }
+    const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);
+    this.dom.importTargetStatsBadge.textContent = `${totalCopies} cartas (${cards.length} únicas)`;
   }
 
   async addCardToTargetFolder(card, qty, targetFolderId) {
@@ -1547,7 +1845,7 @@ class OnePieceApp {
       this.renderFolderTabs();
       this.renderAlbum();
       this.updateSetGridCardBadges();
-      this.showToast(`✅ +${qty} ${card.name} (${card.id}) añadido`);
+      this.showToast(`✅ +${qty} ${card.name} (${formatCardCode(card.id)}) añadido`);
     }
   }
 
@@ -1665,7 +1963,17 @@ class OnePieceApp {
       if (this.activeFolderId && this.activeFolderId !== 'default') {
         rawCards = this.collection.filter(c => c.folderId === this.activeFolderId);
       } else {
-        rawCards = this.collection;
+        // En Álbum General se ven todas las cartas juntas
+        const map = new Map();
+        for (const card of this.collection) {
+          if (!map.has(card.id)) {
+            map.set(card.id, { ...card });
+          } else {
+            const existing = map.get(card.id);
+            existing.count = (existing.count || 0) + (card.count || 0);
+          }
+        }
+        rawCards = Array.from(map.values());
       }
     } else {
       const sharedFolder = this.sharedFoldersMap.get(this.activeFolderId);
@@ -1686,7 +1994,7 @@ class OnePieceApp {
     }
 
     // Filtrar por búsqueda y color
-    const filtered = rawCards.filter(card => {
+    let filtered = rawCards.filter(card => {
       if (this.searchQuery) {
         const q = this.searchQuery;
         const matchName = (card.name || '').toLowerCase().includes(q);
@@ -1706,6 +2014,11 @@ class OnePieceApp {
       const matchType = (card.cardType || '').toLowerCase().includes(this.activeFilter.toLowerCase());
       return matchColor || matchTrait || matchType;
     });
+
+    // Ordenar cartas (por defecto estilo Mazo Oficial: Líderes -> Color -> Costes -> Eventos)
+    if (typeof sortCardsDeckStyle === 'function') {
+      filtered = sortCardsDeckStyle(filtered, this.albumSortOrder || 'color');
+    }
 
     this.dom.albumGrid.innerHTML = '';
 
@@ -1778,7 +2091,7 @@ class OnePieceApp {
             </div>
             <div class="list-card-details" title="Toca para ver detalles">
               <div class="list-card-header">
-                <span class="card-id-text">${card.id}</span>
+                <span class="card-id-text">${formatCardCode(card.id)}</span>
                 <span class="card-badge-color col-${colorClass}">${card.color}</span>
                 <span class="card-type-chip">${card.cardType || 'Card'} • ${card.rarity || 'R'}</span>
               </div>
@@ -1790,6 +2103,7 @@ class OnePieceApp {
                 <button class="step-btn btn-sub" data-id="${card.id}" title="Restar 1 copia">−</button>
                 <span class="step-count step-count-interactive" title="Modificar cantidad rápida">x${card.count}</span>
                 <button class="step-btn btn-add" data-id="${card.id}" title="Sumar 1 copia">+</button>
+                <button class="step-btn btn-move btn-card-move" data-id="${card.id}" title="Mover a otra carpeta">↗️</button>
               </div>
             </div>
           `;
@@ -1819,6 +2133,14 @@ class OnePieceApp {
             this.adjustCardCount(card.id, 1);
           });
 
+          const btnListMove = rowEl.querySelector('.btn-move');
+          if (btnListMove) {
+            btnListMove.addEventListener('click', (e) => {
+              e.stopPropagation();
+              this.openMoveFolderModal(card);
+            });
+          }
+
           this.dom.albumGrid.appendChild(rowEl);
 
         } else {
@@ -1835,7 +2157,7 @@ class OnePieceApp {
             </div>
             <div class="card-info-wrap">
               <div style="display:flex; justify-content:space-between; align-items:center;">
-                <span class="card-id-text">${card.id}</span>
+                <span class="card-id-text">${formatCardCode(card.id)}</span>
                 <span class="card-type-chip">${card.cardType || 'Card'} • ${card.rarity || 'R'}</span>
               </div>
               <div class="card-name-text" title="${card.name}">${card.name}</div>
@@ -1846,6 +2168,7 @@ class OnePieceApp {
                 <button class="step-btn btn-sub" data-id="${card.id}" title="Restar copia">−</button>
                 <span class="step-count step-count-interactive" title="Modificar cantidad rápida">x${card.count}</span>
                 <button class="step-btn btn-add" data-id="${card.id}" title="Sumar copia">+</button>
+                <button class="step-btn btn-move btn-card-move" data-id="${card.id}" title="Mover a otra carpeta">↗️</button>
               </div>
             </div>
           `;
@@ -1872,6 +2195,14 @@ class OnePieceApp {
             this.adjustCardCount(card.id, 1);
           });
 
+          const btnGridMove = cardEl.querySelector('.btn-move');
+          if (btnGridMove) {
+            btnGridMove.addEventListener('click', (e) => {
+              e.stopPropagation();
+              this.openMoveFolderModal(card);
+            });
+          }
+
           this.dom.albumGrid.appendChild(cardEl);
         }
       });
@@ -1885,7 +2216,15 @@ class OnePieceApp {
     if (this.folderScope === 'shared') {
       this.adjustSharedFolderCardCount(this.activeFolderId, cardId, delta);
     } else {
-      const idx = this.collection.findIndex(c => c.id === cardId && (this.activeFolderId === 'default' || c.folderId === this.activeFolderId));
+      let idx = -1;
+      if (this.activeFolderId && this.activeFolderId !== 'default') {
+        idx = this.collection.findIndex(c => c.id === cardId && c.folderId === this.activeFolderId);
+      } else {
+        idx = this.collection.findIndex(c => c.id === cardId && (!c.folderId || c.folderId === 'default'));
+        if (idx < 0) {
+          idx = this.collection.findIndex(c => c.id === cardId);
+        }
+      }
       if (idx < 0) return;
 
       this.collection[idx].count += delta;
@@ -1909,7 +2248,15 @@ class OnePieceApp {
     if (this.folderScope === 'shared') {
       this.setExactSharedFolderCardCount(this.activeFolderId, cardId, exactQty);
     } else {
-      const idx = this.collection.findIndex(c => c.id === cardId && (this.activeFolderId === 'default' || c.folderId === this.activeFolderId));
+      let idx = -1;
+      if (this.activeFolderId && this.activeFolderId !== 'default') {
+        idx = this.collection.findIndex(c => c.id === cardId && c.folderId === this.activeFolderId);
+      } else {
+        idx = this.collection.findIndex(c => c.id === cardId && (!c.folderId || c.folderId === 'default'));
+        if (idx < 0) {
+          idx = this.collection.findIndex(c => c.id === cardId);
+        }
+      }
       if (idx < 0) return;
 
       if (exactQty <= 0) {
@@ -1934,7 +2281,7 @@ class OnePieceApp {
 
   openQtyModal(card) {
     this.activeQtyCard = card;
-    this.dom.qtyModalId.textContent = card.id;
+    this.dom.qtyModalId.textContent = formatCardCode(card.id);
     this.dom.qtyModalName.textContent = card.name;
     this.dom.qtyModalCurrentCount.textContent = card.count;
     this.dom.qtyModalDirectInput.value = card.count;
@@ -1947,6 +2294,343 @@ class OnePieceApp {
   closeQtyModal() {
     this.dom.qtyEditModal.classList.remove('active');
     this.activeQtyCard = null;
+  }
+
+  // =========================================================================
+  // SISTEMA: MOVER CARTAS ENTRE CARPETAS
+  // =========================================================================
+
+  openImportPasteModal(targetFolderId) {
+    if (this.dom.pasteTextarea) this.dom.pasteTextarea.value = '';
+    this.populateImportFolderSelects();
+    const finalTarget = targetFolderId || (this.folderScope === 'shared' && this.activeFolderId ? this.activeFolderId : (this.activeFolderId || 'default'));
+    if (this.dom.pasteFolderSelect) {
+      this.dom.pasteFolderSelect.value = finalTarget;
+    }
+    if (this.dom.importFolderSelect) {
+      this.dom.importFolderSelect.value = finalTarget;
+    }
+    this.updateImportTargetBadge();
+    if (this.dom.pasteModal) {
+      this.dom.pasteModal.classList.add('active');
+      setTimeout(() => {
+        if (this.dom.pasteTextarea) this.dom.pasteTextarea.focus();
+      }, 100);
+    }
+  }
+
+  setMoveFolderModalMode(mode) {
+    this.moveFolderMode = mode;
+    if (this.dom.btnMoveModeTransfer && this.dom.btnMoveModeCopy) {
+      this.dom.btnMoveModeTransfer.classList.toggle('active', mode === 'move');
+      this.dom.btnMoveModeCopy.classList.toggle('active', mode === 'copy');
+    }
+    const maxCount = this.movingCard ? (this.movingCard.count || 1) : 1;
+    if (this.dom.moveFolderQtyTitle) {
+      this.dom.moveFolderQtyTitle.textContent = (mode === 'move')
+        ? '¿Cuántas copias deseas mover?:'
+        : '¿Cuántas copias deseas sumar / copiar?:';
+    }
+    if (this.dom.btnMoveAllCopies) {
+      this.dom.btnMoveAllCopies.textContent = (mode === 'move')
+        ? `Mover todas (x${maxCount})`
+        : `Copiar todas (x${maxCount})`;
+    }
+    if (this.dom.moveFolderOptionsList) {
+      const badges = this.dom.moveFolderOptionsList.querySelectorAll('.folder-item-action-badge');
+      badges.forEach(b => {
+        if (mode === 'move') {
+          b.textContent = 'Mover aquí ➔';
+          b.style.color = 'var(--accent-gold)';
+          b.style.borderColor = 'rgba(245, 158, 11, 0.3)';
+          b.style.background = 'rgba(245, 158, 11, 0.12)';
+        } else {
+          b.textContent = 'Sumar aquí ➔';
+          b.style.color = '#34d399';
+          b.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+          b.style.background = 'rgba(16, 185, 129, 0.15)';
+        }
+      });
+    }
+  }
+
+  openMoveFolderModal(card) {
+    if (!card) return;
+    this.movingCard = card;
+    this.movingSourceFolderId = this.activeFolderId || 'default';
+    this.moveFolderMode = 'move';
+
+    if (this.dom.moveFolderCardId) this.dom.moveFolderCardId.textContent = formatCardCode(card.id);
+    if (this.dom.moveFolderCardName) this.dom.moveFolderCardName.textContent = card.name;
+    if (this.dom.moveFolderCardImg) this.setupRobustImage(this.dom.moveFolderCardImg, card);
+
+    // Identificar carpeta de origen actual
+    let srcName = 'Álbum General';
+    let srcIcon = '📁';
+    if (this.folderScope === 'shared') {
+      const f = this.sharedFoldersMap.get(this.movingSourceFolderId);
+      if (f) {
+        srcName = f.name;
+        srcIcon = f.icon || '👥';
+      }
+    } else {
+      const f = this.personalFolders.find(p => p.id === this.movingSourceFolderId);
+      if (f) {
+        srcName = f.name;
+        srcIcon = f.icon || '📁';
+      }
+    }
+
+    if (this.dom.moveFolderCurrentBadge) {
+      this.dom.moveFolderCurrentBadge.textContent = `Origen: ${srcIcon} ${srcName} (${card.count || 1} copias)`;
+    }
+
+    const maxCount = card.count || 1;
+    if (this.dom.moveFolderQtyInput) {
+      this.dom.moveFolderQtyInput.value = maxCount;
+      this.dom.moveFolderQtyInput.max = maxCount;
+      this.dom.moveFolderQtyInput.min = 1;
+    }
+    if (this.dom.btnMoveAllCopies) {
+      this.dom.btnMoveAllCopies.textContent = `Mover todas (x${maxCount})`;
+      this.dom.btnMoveAllCopies.onclick = () => {
+        if (this.dom.moveFolderQtyInput) this.dom.moveFolderQtyInput.value = maxCount;
+      };
+    }
+
+    this.setMoveFolderModalMode('move');
+
+    // Renderizar lista de carpetas destino disponibles
+    if (this.dom.moveFolderOptionsList) {
+      this.dom.moveFolderOptionsList.innerHTML = '';
+      const destCandidates = [];
+
+      // Carpetas Personales disponibles
+      this.personalFolders.forEach(f => {
+        if (this.folderScope === 'personal' && f.id === this.movingSourceFolderId) return;
+        destCandidates.push({
+          id: f.id,
+          name: f.name,
+          icon: f.icon || '📁',
+          type: 'personal'
+        });
+      });
+
+      // Carpetas Compartidas disponibles
+      const sharedList = this.getSharedFoldersList();
+      sharedList.forEach(f => {
+        if (this.folderScope === 'shared' && f.id === this.movingSourceFolderId) return;
+        destCandidates.push({
+          id: f.id,
+          name: f.name,
+          icon: f.icon || '👥',
+          type: 'shared'
+        });
+      });
+
+      if (destCandidates.length === 0) {
+        this.dom.moveFolderOptionsList.innerHTML = `
+          <div style="text-align: center; padding: 16px; color: #94a3b8; font-size: 0.85rem;">
+            No tienes otras carpetas a las que mover o sumar esta carta. Crea una nueva carpeta en el álbum para organizar tus mazos.
+          </div>
+          <button type="button" class="btn-primary" style="width: 100%; margin-top: 6px;" onclick="window.opApp.closeMoveFolderModal(); window.opApp.openCreateFolderModal();">
+            ➕ Crear Nueva Carpeta
+          </button>
+        `;
+      } else {
+        destCandidates.forEach(dest => {
+          const item = document.createElement('div');
+          item.className = 'folder-select-item';
+          item.setAttribute('data-folder-id', dest.id);
+
+          const typeLabel = dest.type === 'shared' ? '👥 Compartida' : '📁 Personal';
+          const isMove = (this.moveFolderMode === 'move');
+
+          item.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 1.15rem;">${dest.icon}</span>
+              <div>
+                <div style="font-weight: 700; color: #fff;">${dest.name}</div>
+                <div style="font-size: 0.72rem; color: #94a3b8;">${typeLabel}</div>
+              </div>
+            </div>
+            <span class="folder-item-action-badge">${isMove ? 'Mover aquí ➔' : 'Sumar aquí ➔'}</span>
+          `;
+
+          item.addEventListener('click', () => {
+            const rawQty = this.dom.moveFolderQtyInput ? parseInt(this.dom.moveFolderQtyInput.value) : maxCount;
+            const qtyToMove = Math.min(Math.max(1, isNaN(rawQty) ? 1 : rawQty), maxCount);
+            const isCopy = (this.moveFolderMode === 'copy');
+            this.executeMoveCard(this.movingCard, qtyToMove, this.movingSourceFolderId, dest.id, isCopy);
+            this.closeMoveFolderModal();
+          });
+
+          this.dom.moveFolderOptionsList.appendChild(item);
+        });
+      }
+    }
+
+    if (this.dom.moveFolderModal) {
+      this.dom.moveFolderModal.classList.add('active');
+    }
+  }
+
+  closeMoveFolderModal() {
+    if (this.dom.moveFolderModal) {
+      this.dom.moveFolderModal.classList.remove('active');
+    }
+    this.movingCard = null;
+    this.movingSourceFolderId = null;
+  }
+
+  async executeMoveCard(card, qtyToMove, sourceFolderId, destFolderId, isCopyMode = false) {
+    if (!card || !destFolderId || sourceFolderId === destFolderId) return;
+
+    const sourceScope = (this.sharedFolderIds.includes(sourceFolderId) || this.sharedFoldersMap.has(sourceFolderId)) ? 'shared' : 'personal';
+    const destScope = (this.sharedFolderIds.includes(destFolderId) || this.sharedFoldersMap.has(destFolderId)) ? 'shared' : 'personal';
+
+    // Obtener nombres para los mensajes
+    let srcName = 'Álbum General';
+    if (sourceScope === 'shared') {
+      const f = this.sharedFoldersMap.get(sourceFolderId);
+      srcName = f ? f.name : 'Compartida';
+    } else {
+      const f = this.personalFolders.find(p => p.id === sourceFolderId);
+      srcName = f ? f.name : (sourceFolderId === 'default' ? 'Álbum General' : 'Personal');
+    }
+
+    let destName = 'Álbum General';
+    if (destScope === 'shared') {
+      const f = this.sharedFoldersMap.get(destFolderId);
+      destName = f ? f.name : 'Compartida';
+    } else {
+      const f = this.personalFolders.find(p => p.id === destFolderId);
+      destName = f ? f.name : (destFolderId === 'default' ? 'Álbum General' : 'Personal');
+    }
+
+    // 1. Restar copias de la carpeta origen (sólo si no es modo copia)
+    let actualMoved = qtyToMove;
+    if (!isCopyMode) {
+      if (sourceScope === 'personal') {
+        let remaining = qtyToMove;
+        const candidateIndices = [];
+        this.collection.forEach((c, idx) => {
+          if (c.id === card.id) {
+            if (sourceFolderId === 'default') {
+              candidateIndices.push(idx);
+            } else if (c.folderId === sourceFolderId) {
+              candidateIndices.push(idx);
+            }
+          }
+        });
+
+        if (sourceFolderId === 'default') {
+          candidateIndices.sort((a, b) => {
+            const aDef = (!this.collection[a].folderId || this.collection[a].folderId === 'default') ? 0 : 1;
+            const bDef = (!this.collection[b].folderId || this.collection[b].folderId === 'default') ? 0 : 1;
+            return aDef - bDef;
+          });
+        }
+
+        if (candidateIndices.length === 0) {
+          this.showToast(`No se encontró la carta en "${srcName}"`);
+          return;
+        }
+
+        actualMoved = 0;
+        for (const idx of candidateIndices) {
+          if (remaining <= 0) break;
+          const take = Math.min(remaining, this.collection[idx].count || 1);
+          this.collection[idx].count -= take;
+          remaining -= take;
+          actualMoved += take;
+        }
+
+        this.collection = this.collection.filter(c => (c.count || 0) > 0);
+        this.saveCollection();
+      }
+    } else {
+      const sharedFolder = this.sharedFoldersMap.get(sourceFolderId);
+      if (!sharedFolder || !sharedFolder.cards) return;
+      const srcIdx = sharedFolder.cards.findIndex(c => c.id === card.id);
+      if (srcIdx < 0) {
+        this.showToast(`No se encontró la carta en "${srcName}"`);
+        return;
+      }
+      actualMoved = Math.min(qtyToMove, sharedFolder.cards[srcIdx].count || 1);
+      sharedFolder.cards[srcIdx].count -= actualMoved;
+      if (sharedFolder.cards[srcIdx].count <= 0) {
+        sharedFolder.cards.splice(srcIdx, 1);
+      }
+      this.sharedFoldersMap.set(sourceFolderId, sharedFolder);
+      this.saveFolders();
+      if (window.FIREBASE_DB) {
+        try {
+          await window.FIREBASE_DB.collection('shared_folders').doc(sourceFolderId).update({
+            cards: sharedFolder.cards,
+            updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+          });
+        } catch (e) {
+          console.error("Error al actualizar origen en Firestore:", e);
+        }
+      }
+      if (actualMoved <= 0) return;
+    }
+
+    // 2. Sumar copias a la carpeta destino
+    if (destScope === 'personal') {
+      const destIdx = this.collection.findIndex(c => c.id === card.id && (c.folderId || 'default') === (destFolderId || 'default'));
+      if (destIdx >= 0) {
+        this.collection[destIdx].count += actualMoved;
+      } else {
+        this.collection.unshift({
+          ...card,
+          count: actualMoved,
+          folderId: destFolderId || 'default',
+          addedAt: new Date().toLocaleDateString()
+        });
+      }
+      this.saveCollection();
+    } else {
+      const destFolder = this.sharedFoldersMap.get(destFolderId) || { id: destFolderId, cards: [] };
+      const destCards = destFolder.cards || [];
+      const destIdx = destCards.findIndex(c => c.id === card.id);
+      if (destIdx >= 0) {
+        destCards[destIdx].count += actualMoved;
+      } else {
+        destCards.unshift({
+          ...card,
+          count: actualMoved,
+          addedBy: this.currentUser ? (this.currentUser.displayName || 'Amigo') : 'Amigo',
+          addedAt: new Date().toLocaleDateString()
+        });
+      }
+      destFolder.cards = destCards;
+      this.sharedFoldersMap.set(destFolderId, destFolder);
+      this.saveFolders();
+      if (window.FIREBASE_DB) {
+        try {
+          await window.FIREBASE_DB.collection('shared_folders').doc(destFolderId).update({
+            cards: destCards,
+            updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+          });
+        } catch (e) {
+          console.error("Error al actualizar destino en Firestore:", e);
+        }
+      }
+    }
+
+    // 3. Refrescar vistas
+    this.renderFolderTabs();
+    this.renderAlbum();
+    this.updateSetGridCardBadges();
+    this.populateExportFolderSelect();
+    this.populateImportFolderSelects();
+    if (isCopyMode) {
+      this.showToast(`➕ Sumada${actualMoved > 1 ? 's ' + actualMoved + ' copias' : ' 1 copia'} de ${card.name} a "${destName}"`);
+    } else {
+      this.showToast(`📦 Movida${actualMoved > 1 ? 's ' + actualMoved + ' copias' : ' 1 copia'} de ${card.name} a "${destName}"`);
+    }
   }
 
   // =========================================================================
@@ -2065,18 +2749,20 @@ class OnePieceApp {
     }
 
     const cleanCard = this.cleanCardCode(raw);
-    if (cleanCard && window.ONE_PIECE_CARDS_DB && window.ONE_PIECE_CARDS_DB[cleanCard]) {
-      this.fetchAndOpenCardModal(cleanCard);
-      return;
-    }
 
+    // Buscar en la base de datos (encuentra la carta base y todos sus estilos alternativos)
     const matches = window.searchCardsInDB ? window.searchCardsInDB(raw) : [];
     if (matches.length > 0) {
-      if (matches.length === 1 && matches[0].id === cleanCard) {
+      if (matches.length === 1 && (!cleanCard || matches[0].id.toLowerCase() === cleanCard.toLowerCase())) {
         this.fetchAndOpenCardModal(matches[0].id);
       } else {
         this.showSearchResults(raw, matches);
       }
+      return;
+    }
+
+    if (cleanCard && window.ONE_PIECE_CARDS_DB && window.ONE_PIECE_CARDS_DB[cleanCard]) {
+      this.fetchAndOpenCardModal(cleanCard);
       return;
     }
 
@@ -2118,9 +2804,20 @@ class OnePieceApp {
     }, 100);
   }
 
+  // Re-ejecuta la última búsqueda en silencio (tras sincronizar la base de datos)
+  handleSearch(query) {
+    const matches = window.searchCardsInDB ? window.searchCardsInDB(query) : [];
+    if (matches.length === 0) return;
+    this.searchResults = matches;
+    this.searchCurrentPage = Math.min(this.searchCurrentPage, Math.max(1, Math.ceil(matches.length / this.searchCardsPerPage)));
+    this.dom.setResultsSubtitle.textContent = `${matches.length} cartas encontradas • 18 cartas por página`;
+    this.renderSearchResultsPage();
+  }
+
   showSearchResults(query, matches) {
     this.currentSetCode = null;
     this.currentSearchMode = 'search';
+    this.lastCardSearchQuery = query;
     this.searchResults = matches;
     this.searchCurrentPage = 1;
 
@@ -2192,7 +2889,7 @@ class OnePieceApp {
           </div>
           <div class="list-card-details" title="Toca para ver detalles">
             <div class="list-card-header">
-              <span class="card-id-text">${card.id}</span>
+              <span class="card-id-text">${formatCardCode(card.id)}${card.id.includes('_') ? ' <span class="alt-art-pill">ALT ART</span>' : ''}</span>
               <span class="card-badge-color col-${colorClass}">${card.color}</span>
               <span class="card-badge-owned ${count > 0 ? 'has-copies' : ''}">
                 ${count > 0 ? `x${count} en álbum` : 'x0'}
@@ -2242,7 +2939,7 @@ class OnePieceApp {
           </div>
           <div class="card-info-wrap">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span class="card-id-text">${card.id}</span>
+              <span class="card-id-text">${formatCardCode(card.id)}${card.id.includes('_') ? ' <span class="alt-art-pill">ALT</span>' : ''}</span>
               <span class="card-type-chip">${card.cardType || 'Card'} • ${card.rarity || 'R'}</span>
             </div>
             <div class="card-name-text" title="${card.name}">${card.name}</div>
@@ -2297,7 +2994,9 @@ class OnePieceApp {
   }
 
   addEntireDeckToCollection(setCode) {
-    const cards = getCardsBySet(setCode);
+    const allCards = getCardsBySet(setCode);
+    // Filtrar artes alternativos para que solo se agregue el mazo base regular
+    const cards = allCards.filter(c => !c.id.includes('_'));
     if (!cards || cards.length === 0) return;
 
     const targetFolder = (this.folderScope === 'shared' && this.activeFolderId) ? this.activeFolderId : 'default';
@@ -2311,29 +3010,49 @@ class OnePieceApp {
 
   cleanCardCode(raw) {
     if (!raw || typeof raw !== 'string') return null;
-    const s = raw.trim().toUpperCase();
 
-    // 1. Prefijo de Set + número de set + separador/espacio/guion + número de carta (ej. OP01-001, OP17-039, OP 17 039, ST01-005)
+    // Código de versión estilo Cardmarket: OP09-093.v2, OP09-093 V2...
+    const versionId = resolveVersionCode(raw);
+    if (versionId) return versionId;
+
+    let s = raw.trim();
+
+    let suffix = '';
+    const altMatch = s.match(/[-_\s]+([pPrRsS]\d+)$/i);
+    if (altMatch) {
+      suffix = '_' + altMatch[1].toLowerCase();
+      s = s.slice(0, altMatch.index).trim();
+    } else {
+      const directAlt = s.match(/(_[a-zA-Z0-9]+)$/);
+      if (directAlt) {
+        suffix = directAlt[1].toLowerCase();
+        s = s.slice(0, directAlt.index).trim();
+      }
+    }
+
     const m1 = s.match(/^(OP|ST|EB|PRB)\s*0*([1-9][0-9]?)[-\s]+0*([1-9][0-9]{0,2})$/i);
     if (m1) {
       const prefix = m1[1].toUpperCase();
       const setNum = m1[2].padStart(2, '0');
       const cardNum = m1[3].padStart(3, '0');
-      return `${prefix}${setNum}-${cardNum}`;
+      return `${prefix}${setNum}-${cardNum}${suffix}`;
     }
 
-    // 2. Cartas promocionales: P-001, PROMO 025
-    const m2 = s.match(/^(P|PROMO)[-\s]+0*([1-9][0-9]{0,2})$/i);
+    const m2 = s.match(/^(?:P|PROMO)[-\s]+0*([1-9][0-9]{0,2})$/i);
     if (m2) {
-      const cardNum = m2[2].padStart(3, '0');
-      return `P-${cardNum}`;
+      const cardNum = m2[1].padStart(3, '0');
+      return `P-${cardNum}${suffix}`;
     }
 
-    // 3. Formato compacto de 5 dígitos sin separador (ej. OP01001, ST01005, OP17039)
     const m3 = s.match(/^(OP|ST|EB|PRB)(\d{2})(\d{3})$/i);
     if (m3) {
       const prefix = m3[1].toUpperCase();
-      return `${prefix}${m3[2]}-${m3[3]}`;
+      return `${prefix}${m3[2]}-${m3[3]}${suffix}`;
+    }
+
+    const m4 = s.match(/^([A-Za-z0-9]+-[A-Za-z0-9]+)$/);
+    if (m4) {
+      return `${m4[1].toUpperCase()}${suffix}`;
     }
 
     return null;
@@ -2364,7 +3083,7 @@ class OnePieceApp {
 
     const currentOwned = this.getCardCountInActiveScope(card.id);
 
-    if (this.dom.modalCardId) this.dom.modalCardId.textContent = card.id;
+    if (this.dom.modalCardId) this.dom.modalCardId.textContent = formatCardCode(card.id);
     if (this.dom.modalCardName) this.dom.modalCardName.textContent = card.name;
     if (this.dom.modalCardColor) {
       this.dom.modalCardColor.textContent = card.color;
@@ -2387,26 +3106,15 @@ class OnePieceApp {
       }
     }
 
-    // Actualizar datos y valores de tendencia de precio en texto/insignias (Cardmarket MKM & CardTrader)
-    const pricesDb = (typeof ONE_PIECE_PRICES_DB !== 'undefined' ? ONE_PIECE_PRICES_DB : (window.ONE_PIECE_PRICES_DB || {}));
-    const pData = pricesDb[card.id] || null;
-
-    if (this.dom.modalMkmPriceVal) {
-      if (pData && pData.mkm !== undefined && pData.mkm !== null) {
-        this.dom.modalMkmPriceVal.textContent = `${pData.mkm.toFixed(2).replace('.', ',')} €`;
-      } else {
-        this.dom.modalMkmPriceVal.textContent = 'No disp.';
-      }
-    }
-
-    if (this.dom.modalCtPriceVal) {
-      if (pData && pData.usd !== undefined && pData.usd !== null) {
-        // Conversión a Euros (1 USD ≈ 0.92 EUR)
-        const ctEur = pData.usd * 0.92;
-        this.dom.modalCtPriceVal.textContent = `${ctEur.toFixed(2).replace('.', ',')} €`;
-      } else {
-        this.dom.modalCtPriceVal.textContent = 'No disp.';
-      }
+    // Precios Cardmarket: tendencia y oferta más barata
+    const price = this.getCardPrice(card.id);
+    const formatEur = (v) => (typeof v === 'number' ? `${v.toFixed(2).replace('.', ',')} €` : 'No disp.');
+    if (this.dom.modalMkmPriceVal) this.dom.modalMkmPriceVal.textContent = formatEur(price && price.trend);
+    if (this.dom.modalLowPriceVal) this.dom.modalLowPriceVal.textContent = formatEur(price && price.low);
+    if (this.dom.modalPriceDate) {
+      this.dom.modalPriceDate.textContent = price && price.date
+        ? `📅 ${new Date(price.date.replace(/([+-]\d{2})(\d{2})$/, '$1:$2')).toLocaleDateString('es-ES')}`
+        : 'Sin datos';
     }
 
     this.populateFolderSelects();
@@ -2418,7 +3126,7 @@ class OnePieceApp {
     }
 
     this.updateModalForecast();
-    if (this.dom.modalCardImg) this.setupRobustImage(this.dom.modalCardImg, card);
+    if (this.dom.modalCardImg) this.setupRobustImage(this.dom.modalCardImg, card, 'full');
     if (this.dom.cardModal) this.dom.cardModal.classList.add('active');
   }
 
@@ -2436,41 +3144,56 @@ class OnePieceApp {
     }
   }
 
-  setupRobustImage(imgElement, card) {
+  // size 'thumb': miniatura ligera (cuadrículas). size 'full': muestra al instante la miniatura
+  // (ya en caché del navegador) y la sustituye por la imagen grande en cuanto termina de cargar.
+  setupRobustImage(imgElement, card, size = 'thumb') {
     if (!imgElement || !card) return;
-    const urls = card.imageFallbacks || (typeof getCardImageURLs === 'function' ? getCardImageURLs(card.id) : []);
-    const fallbackSvg = typeof generateFallbackCardSVG === 'function'
-      ? generateFallbackCardSVG(card)
-      : (typeof getFallbackCardDataUrl === 'function' ? getFallbackCardDataUrl(card.id, card.name, card.color) : '');
+    const urls = card.imageUrl ? [card.imageUrl] : [];
+    urls.push(...getCardImageURLs(card.id, 'thumb'));
 
-    let urlIdx = 0;
-    const tryNext = () => {
-      if (urlIdx < urls.length) {
-        const nextSrc = urls[urlIdx++];
-        imgElement.onerror = tryNext;
-        imgElement.src = nextSrc;
+    // Token para ignorar cargas antiguas si el mismo <img> se reutiliza con otra carta
+    const token = Symbol('img');
+    imgElement._loadToken = token;
+    const isCurrent = () => imgElement._loadToken === token;
+
+    // Miniatura: se carga en el propio <img> (respeta loading="lazy") probando URLs en orden
+    let idx = 0;
+    imgElement.onload = null;
+    imgElement.onerror = () => {
+      if (!isCurrent()) return;
+      if (idx < urls.length) {
+        imgElement.src = urls[idx++];
       } else {
         imgElement.onerror = null;
-        if (fallbackSvg) imgElement.src = fallbackSvg;
+        imgElement.src = generateFallbackCardSVG(card);
       }
     };
+    imgElement.src = urls[idx++];
 
-    if (card.imageUrl) {
-      imgElement.onerror = tryNext;
-      imgElement.src = card.imageUrl;
-    } else if (urls.length > 0) {
-      tryNext();
-    } else if (fallbackSvg) {
-      imgElement.src = fallbackSvg;
-    }
+    if (size !== 'full') return;
+
+    // Imagen grande: se precarga aparte y se cambia solo cuando está lista
+    const fullUrls = getCardImageURLs(card.id, 'full');
+    let fullIdx = 0;
+    const probe = new Image();
+    probe.onload = () => {
+      if (isCurrent()) {
+        imgElement.onerror = null;
+        imgElement.src = probe.src;
+      }
+    };
+    probe.onerror = () => {
+      if (isCurrent() && fullIdx < fullUrls.length) probe.src = fullUrls[fullIdx++];
+    };
+    probe.src = fullUrls[fullIdx++];
   }
 
   openLightbox(card) {
     if (!card) return;
-    if (this.dom.lightboxCardCode) this.dom.lightboxCardCode.textContent = card.id;
+    if (this.dom.lightboxCardCode) this.dom.lightboxCardCode.textContent = formatCardCode(card.id);
     if (this.dom.lightboxCardName) this.dom.lightboxCardName.textContent = card.name;
     if (this.dom.lightboxCardImg) {
-      this.setupRobustImage(this.dom.lightboxCardImg, card);
+      this.setupRobustImage(this.dom.lightboxCardImg, card, 'full');
     }
     if (this.dom.lightboxModal) {
       this.dom.lightboxModal.style.display = 'flex';
@@ -3571,6 +4294,7 @@ class OnePieceApp {
             docRef.update({ collection: [], updatedAt: firebase.firestore.FieldValue.serverTimestamp() }).catch(() => {});
           }
 
+          cloudCards = this.normalizeCollection(cloudCards);
           if (JSON.stringify(cloudCards) !== JSON.stringify(this.collection)) {
             this.collection = cloudCards;
             localStorage.setItem('op_tcg_cards_v7', JSON.stringify(this.collection));

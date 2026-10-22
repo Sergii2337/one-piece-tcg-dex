@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>One Piece TCG - Dex & Album</title>
-  <link rel="stylesheet" href="style.css?v=2.6">
+  <link rel="stylesheet" href="style.css?v=3.2">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏴‍☠️</text></svg>">
 </head>
 <body>
@@ -18,6 +18,10 @@
 
     <div class="header-right-group">
       <div class="stats-badge" id="header-stats">0 cartas</div>
+      <button type="button" id="btn-db-sync" class="db-sync-badge" title="Sincronización automática de cartas activa (CDN)">
+        <span class="db-sync-dot"></span>
+        <span id="db-sync-label">⚡ Base de datos</span>
+      </button>
 
       <!-- Google Auth y Perfil -->
       <div id="auth-container" class="auth-header-wrap">
@@ -91,6 +95,7 @@
           </div>
         </div>
         <div class="folder-active-actions">
+          <button id="btn-import-active-folder" class="btn-folder-action btn-folder-import" title="Importar lista o mazo a esta carpeta">📥 Importar Lista</button>
           <button id="btn-image-active-folder" class="btn-folder-action btn-folder-image" title="Convertir esta carpeta en una imagen visual (PNG)">🖼️ Imagen</button>
           <button id="btn-export-active-folder" class="btn-folder-action" title="Exportar cartas de esta carpeta">📤 Exportar</button>
           <button id="btn-share-active-folder" class="btn-folder-action btn-share-folder" style="display: none;" title="Copiar enlace para compartir con amigos">🔗 Compartir</button>
@@ -120,7 +125,7 @@
         </button>
       </div>
 
-      <!-- Barra de Configuración de Vista de Álbum (Modo Lista / Carta y Zoom) -->
+      <!-- Barra de Configuración de Vista de Álbum (Modo Lista / Carta, Orden y Zoom) -->
       <div class="album-view-toolbar">
         <div class="view-mode-toggle">
           <button id="btn-view-grid" class="view-mode-btn active" title="Modo Cuadrícula / Carta">
@@ -131,6 +136,19 @@
             <span class="icon">📋</span>
             <span class="label">Lista</span>
           </button>
+        </div>
+
+        <div class="album-sort-control">
+          <label for="album-sort-select" class="size-label">↕️ Orden:</label>
+          <select id="album-sort-select" class="album-sort-select" title="Ordenar cartas del álbum">
+            <option value="color" selected>🎨 Por Color & Tipo (Líder ➔ Cartas ➔ Eventos ➔ Stages)</option>
+            <option value="deck">🃏 Estilo Mazo</option>
+            <option value="cost-asc">⚡ Coste (Menor a Mayor)</option>
+            <option value="cost-desc">⚡ Coste (Mayor a Menor)</option>
+            <option value="code">🔢 Código de Carta</option>
+            <option value="name">🔤 Nombre (A-Z)</option>
+            <option value="count">📊 Cantidad (Mayor)</option>
+          </select>
         </div>
 
         <div class="card-size-control">
@@ -160,7 +178,10 @@
       <!-- Mensaje Vacío -->
       <div id="album-empty" class="empty-msg" style="display: none;">
         <p>No tienes cartas en este filtro o carpeta.</p>
-        <p style="font-size: 0.8rem; margin-top: 6px;">¡Usa la pestaña ➕ Añadir para registrar tus cartas o Starter Decks!</p>
+        <div style="margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+          <button type="button" id="btn-empty-import-list" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">📥 Importar Lista / Mazo a esta Carpeta</button>
+          <button type="button" id="btn-empty-go-add" class="btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">➕ Añadir Cartas Manualmente</button>
+        </div>
       </div>
     </section>
 
@@ -174,6 +195,20 @@
           <div class="entry-icon">🃏</div>
           <h2>Añadir Cartas al Álbum</h2>
           <p class="entry-subtitle">Elige un Starter Deck completo o busca cualquier carta por su código oficial.</p>
+        </div>
+
+        <!-- Acceso Rápido: Importar Mazo Completo o Lista a Carpeta -->
+        <div class="quick-import-card-box">
+          <div class="quick-import-card-info">
+            <span class="quick-import-icon">📋</span>
+            <div class="quick-import-texts">
+              <strong>Importar Lista o Mazo a una Carpeta</strong>
+              <p>Pega un mazo de OPTCGSim, Cardmarket, CardTrader o Excel y guárdalo directo en la carpeta que elijas.</p>
+            </div>
+          </div>
+          <button type="button" id="btn-scanner-import-deck" class="btn-primary btn-scanner-import">
+            📥 Importar Lista / Mazo
+          </button>
         </div>
 
         <!-- Selector rápido de Starter Decks -->
@@ -386,29 +421,46 @@
           </button>
         </div>
 
-        <!-- SECCIÓN 1: Formato Wishlist Unificado -->
+        <!-- SECCIÓN 1: Formato Wishlist & Mazos -->
         <div class="section-divider-title" style="margin-top: 6px;">🛒 Lista de Deseos (Wishlist) & Mazos</div>
         <div class="export-actions-group">
-          <button id="btn-export-wishlist" class="btn-market btn-cardmarket" title="Copiar lista para Wishlist / Wants List">
-            <span class="btn-market-icon">📋</span>
+          <!-- Botón Cardmarket Wants -->
+          <button id="btn-export-cardmarket" class="btn-market btn-cardmarket" title="Copiar lista para Cardmarket Wants List">
+            <span class="btn-market-icon">🟦</span>
             <div class="btn-market-text">
-              <strong>Copiar para Wishlist (Cardmarket / CardTrader)</strong>
+              <strong>Copiar para Cardmarket (Wants List)</strong>
               <small>Formato directo: <code>4x Edward.Newgate OP02-001</code></small>
             </div>
-            <span class="btn-market-badge">Copiar</span>
+            <span class="btn-market-badge">Cardmarket</span>
           </button>
+
+          <!-- Botón CardTrader Wishlist -->
+          <button id="btn-export-cardtrader" class="btn-market btn-cardtrader" title="Copiar lista para CardTrader Wishlist">
+            <span class="btn-market-icon">🟩</span>
+            <div class="btn-market-text">
+              <strong>Copiar para CardTrader (Wishlist)</strong>
+              <small>Formato oficial: <code>4x Edward.Newgate OP02-001</code></small>
+            </div>
+            <span class="btn-market-badge">CardTrader</span>
+          </button>
+
+          <!-- Botón Simulador OPTCGSim -->
           <button id="btn-export-sim" class="btn-market btn-sim" title="Copiar lista para el simulador OPTCGSim">
             <span class="btn-market-icon">🎮</span>
             <div class="btn-market-text">
               <strong>Copiar para OPTCGSim / Simulador</strong>
               <small>Formato de mazo: <code>4xOP02-001</code></small>
             </div>
-            <span class="btn-market-badge">Copiar</span>
+            <span class="btn-market-badge">Simulador</span>
           </button>
         </div>
 
         <div class="sheets-help-tip">
-          💡 <strong>Tip Wishlist:</strong> Pulsa el botón para copiar la lista directamente al portapapeles. Luego entra a tu <em>Wants List</em> en Cardmarket (pulsa <em>Add Deck List</em>) o en tu tienda favorita y presiona <code>Ctrl + V</code>.
+          💡 <strong>Tip Wishlists & Mazos:</strong>
+          <div style="margin-top: 4px; display: flex; flex-direction: column; gap: 4px;">
+            <div>• <strong>Cardmarket:</strong> Pulsa <em>Copiar para Cardmarket</em>, ve a tu <em>Wants List &rarr; Add Deck List</em> y pega con <code>Ctrl + V</code>.</div>
+            <div>• <strong>CardTrader:</strong> Pulsa <em>Copiar para CardTrader</em>, ve a tu <em>Wishlist / Importar cartas</em> y pega con <code>Ctrl + V</code>.</div>
+          </div>
         </div>
 
         <!-- SECCIÓN 2: Hojas de cálculo y backup -->
@@ -431,6 +483,15 @@
 
         <!-- SECCIÓN 3: Importar -->
         <div class="section-divider-title" style="margin-top: 10px;">📥 Importar a tu Colección</div>
+        <div class="form-group import-folder-picker-wrap" style="margin-bottom: 14px;">
+          <div class="export-select-header-row">
+            <label class="form-label" for="import-folder-select">📁 Carpeta destino donde importar:</label>
+            <span id="import-target-stats-badge" class="export-stats-pill">0 cartas</span>
+          </div>
+          <select id="import-folder-select" class="st-dropdown import-folder-select">
+            <!-- Rellenado dinámicamente con opciones de carpetas -->
+          </select>
+        </div>
         <div class="import-actions-group">
           <button id="btn-paste-sheets" class="btn-import-csv">
             📋 Pegar directamente desde Google Sheets / Excel / Texto
@@ -478,14 +539,23 @@
             <button id="btn-img-theme-marine" class="image-theme-chip" type="button" data-theme="marine">⚓ Marina</button>
             <button id="btn-img-theme-gold" class="image-theme-chip" type="button" data-theme="gold">👑 Oro</button>
           </div>
+          <div class="image-sort-select-wrap">
+            <label for="image-sort-select" class="size-label">↕️ Orden:</label>
+            <select id="image-sort-select" class="image-sort-select">
+              <option value="color" selected>🎨 Por Color (Líder ➔ Cartas ➔ Eventos ➔ Stages)</option>
+              <option value="deck">🃏 Estilo Mazo</option>
+              <option value="cost-asc">⚡ Por Coste (1, 2, 3...)</option>
+              <option value="code">🔢 Por Código</option>
+            </select>
+          </div>
           <div id="image-gen-status" class="image-gen-status" style="display: none;">
             <span class="image-spinner">⏳</span> Generando imagen en alta calidad...
           </div>
         </div>
 
         <div class="image-preview-container" id="image-preview-container">
-          <canvas id="folder-image-canvas" style="display: none;"></canvas>
-          <img id="folder-image-result" class="folder-image-result" alt="Vista previa de imagen de carpeta">
+          <canvas id="folder-image-canvas" class="folder-image-canvas"></canvas>
+          <img id="folder-image-result" class="folder-image-result" style="display: none;" alt="Vista previa de imagen de carpeta">
         </div>
 
         <div class="modal-actions image-modal-actions">
@@ -537,11 +607,11 @@
           <!-- Mensaje de estado -->
         </div>
 
-        <!-- SECCIÓN: TENDENCIAS DE PRECIO (CARDMARKET & CARDTRADER) -->
+        <!-- SECCIÓN: PRECIOS CARDMARKET -->
         <div class="modal-market-trends-box">
           <div class="market-trends-header">
-            <span class="market-trends-title">📈 Tendencias de Precio de Mercado</span>
-            <span class="market-trends-info-pill" title="Media ponderada de ventas reales recientes en estado Near Mint">ℹ️ Ventas Reales NM</span>
+            <span class="market-trends-title">📈 Precio en Cardmarket</span>
+            <span id="modal-price-date" class="market-trends-info-pill" title="Fecha de la guía de precios de Cardmarket">Sin datos</span>
           </div>
 
           <div class="market-trends-list">
@@ -551,22 +621,22 @@
                 <span class="market-badge-chip cm-chip">MKM</span>
                 <div class="market-row-texts">
                   <span class="market-row-title">Tendencia Cardmarket:</span>
-                  <small class="market-row-sub">Media ventas recientes EUR</small>
+                  <small class="market-row-sub">Precio de tendencia en EUR</small>
                 </div>
               </div>
               <strong id="modal-mkm-price-val" class="market-price-tag mkm-tag">-- €</strong>
             </div>
 
-            <!-- Tendencia CardTrader / Mercado -->
+            <!-- Oferta más barata en Cardmarket -->
             <div class="market-trend-row ct-row">
               <div class="market-row-left">
-                <span class="market-badge-chip ct-chip">CT</span>
+                <span class="market-badge-chip ct-chip">MIN</span>
                 <div class="market-row-texts">
-                  <span class="market-row-title">Tendencia CardTrader:</span>
-                  <small class="market-row-sub">Price Guide & Cotización EUR</small>
+                  <span class="market-row-title">Desde (Cardmarket):</span>
+                  <small class="market-row-sub">Oferta más barata ahora</small>
                 </div>
               </div>
-              <strong id="modal-ct-price-val" class="market-price-tag ct-tag">-- €</strong>
+              <strong id="modal-low-price-val" class="market-price-tag ct-tag">-- €</strong>
             </div>
           </div>
         </div>
@@ -597,8 +667,16 @@
           Se añadirá 1 copia
         </div>
 
-        <div class="modal-actions">
-          <button id="btn-save-card-to-album" class="btn-primary btn-save-modal">
+        <div id="modal-folder-actions-choice" class="modal-folder-actions-choice" style="display: none; flex-direction: column; gap: 8px;">
+          <button id="btn-modal-move-folder" class="btn-primary btn-move-modal" style="width: 100%;">
+            📦 Mover copias a esta Carpeta (Quitar de la actual)
+          </button>
+          <button id="btn-modal-copy-folder" class="btn-outline btn-copy-modal" style="width: 100%;">
+            ➕ Sumar a esta Carpeta (Conservar en la actual)
+          </button>
+        </div>
+        <div id="modal-standard-actions" class="modal-actions" style="display: flex; gap: 8px; flex-direction: column;">
+          <button id="btn-save-card-to-album" class="btn-primary btn-save-modal" style="width: 100%;">
             Guardar en el Álbum
           </button>
         </div>
@@ -658,6 +736,14 @@
           </div>
           <button id="btn-qty-modal-delete-all" class="btn-delete-all-copies">
             🗑️ Eliminar TODAS las copias de esta carta
+          </button>
+        </div>
+
+        <!-- Opción 3: Mover a otra carpeta -->
+        <div class="qty-section-box">
+          <label class="qty-section-title">📁 Mover a otra carpeta:</label>
+          <button type="button" id="btn-qty-open-move-modal" class="btn-outline btn-move-from-qty" style="width: 100%; padding: 11px 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; border-color: rgba(245, 158, 11, 0.4); color: #f8fafc;">
+            <span>📦 Mover esta carta a otra carpeta...</span>
           </button>
         </div>
 
@@ -813,7 +899,7 @@
   <div id="move-folder-modal" class="modal-backdrop">
     <div class="modal-card">
       <div class="modal-header">
-        <h3>📁 Mover a Carpeta</h3>
+        <h3>📦 Mover a Carpeta</h3>
         <button id="btn-close-move-folder-modal" class="close-modal-btn">✕</button>
       </div>
 
@@ -826,6 +912,28 @@
             <span id="move-folder-card-id" class="card-id-text">OP01-001</span>
             <h4 id="move-folder-card-name" class="modal-card-name">Monkey.D.Luffy</h4>
             <span id="move-folder-current-badge" class="trait-tag">Carpeta actual: Álbum General</span>
+          </div>
+        </div>
+
+        <div class="move-mode-toggle-wrap" style="margin-bottom: 12px;">
+          <label class="form-label" style="margin-bottom: 6px;">¿Qué acción deseas realizar?:</label>
+          <div class="move-mode-tabs">
+            <button type="button" id="btn-move-mode-transfer" class="move-mode-tab active" data-mode="move">
+              📦 Mover (Quitar de actual)
+            </button>
+            <button type="button" id="btn-move-mode-copy" class="move-mode-tab" data-mode="copy">
+              ➕ Sumar / Copiar (Mantener en actual)
+            </button>
+          </div>
+        </div>
+
+        <div class="qty-section-box" style="margin-bottom: 14px;">
+          <label class="qty-section-title" id="move-folder-qty-title" style="margin-bottom: 6px;">¿Cuántas copias deseas mover?:</label>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <input type="number" id="move-folder-qty-input" class="qty-input" min="1" max="99" value="1" style="width: 80px; text-align: center;">
+            <button type="button" id="btn-move-all-copies" class="btn-outline" style="padding: 7px 12px; font-size: 0.85rem; font-weight: 600;">
+              Mover todas (x1)
+            </button>
           </div>
         </div>
 
@@ -870,6 +978,7 @@
         <p id="export-preview-subtitle" class="modal-card-meta">
           Lista de cartas copiada al portapapeles y lista para pegar:
         </p>
+        <div id="export-format-switch-bar" class="export-format-switch-bar" style="display: none; margin-bottom: 10px; gap: 6px; flex-wrap: wrap;"></div>
         <textarea id="export-preview-textarea" class="paste-textarea export-preview-textarea" readonly rows="9"></textarea>
         <div class="modal-actions">
           <button id="btn-copy-export-preview" class="btn-primary" style="flex: 2; padding: 12px;">
@@ -887,15 +996,30 @@
   <div id="paste-modal" class="modal-backdrop">
     <div class="modal-card">
       <div class="modal-header">
-        <h3>Pegar desde Google Sheets / Excel</h3>
+        <h3>📋 Pegar / Importar Lista de Cartas</h3>
         <button id="btn-close-paste-modal" class="close-modal-btn">✕</button>
       </div>
       <div class="modal-body">
-        <p class="modal-card-meta">Copia las celdas de tu hoja de cálculo y pégalas en el siguiente recuadro:</p>
-        <textarea id="paste-textarea" class="paste-textarea" placeholder="Código	Nombre	Cantidad&#10;OP17-039	Rocks.D.Xebec	1&#10;ST01-001	Monkey.D.Luffy	2"></textarea>
+        <div class="form-group modal-folder-selector-wrap" style="margin-bottom: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label class="form-label" for="paste-folder-select" style="margin: 0;">📁 Carpeta destino donde importar:</label>
+            <button type="button" id="btn-paste-create-folder" class="btn-outline" style="padding: 4px 10px; font-size: 0.78rem; font-weight: 700; border-color: rgba(245, 158, 11, 0.4); color: var(--accent-gold);">
+              ➕ Nueva Carpeta
+            </button>
+          </div>
+          <select id="paste-folder-select" class="st-dropdown modal-folder-select">
+            <!-- Rellenado dinámicamente -->
+          </select>
+          <div id="paste-folder-hint" style="font-size: 0.75rem; color: #94a3b8; margin-top: 4px;">
+            Las cartas de la lista se importarán directamente en esta carpeta seleccionada.
+          </div>
+        </div>
+
+        <p class="modal-card-meta">Pega listas de OPTCGSim, Cardmarket, CardTrader, Excel / Sheets o códigos:</p>
+        <textarea id="paste-textarea" class="paste-textarea" placeholder="Formatos soportados:&#10;• OPTCGSim: 4xOP01-004&#10;• Cardmarket: 4x Edward.Newgate OP02-001&#10;• CardTrader: 4 Monkey.D.Luffy (OP-01)&#10;• Excel / Sheets: OP01-001	Luffy	2&#10;• Códigos: OP01-001 2"></textarea>
         <div class="modal-actions">
           <button id="btn-cancel-paste-import" class="btn-outline" style="flex: 1;">Cancelar</button>
-          <button id="btn-confirm-paste-import" class="btn-primary" style="flex: 1; padding: 12px;">Importar Filas</button>
+          <button id="btn-confirm-paste-import" class="btn-primary" style="flex: 1; padding: 12px;">Importar a la Carpeta</button>
         </div>
       </div>
     </div>
@@ -908,8 +1032,8 @@
   <script src="firebase-config.js"></script>
   
   <!-- Scripts de la Aplicación -->
-  <script src="cards-data.js?v=2.6"></script>
-  <script src="prices-data.js?v=1.0"></script>
-  <script src="app.js?v=2.6"></script>
+  <script src="cards-data.js?v=3.5"></script>
+  <script src="prices-data.js?v=2.0"></script>
+  <script src="app.js?v=3.5"></script>
 </body>
 </html>

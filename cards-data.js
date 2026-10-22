@@ -15820,7 +15820,7 @@ const ONE_PIECE_CARDS_DB = {
     "name": "Imu",
     "cardType": "Leader",
     "color": "Black",
-    "traits": "?",
+    "traits": "Celestial Dragons",
     "rarity": "L",
     "cost": "4 Life / 5000 Power"
   },
@@ -24283,7 +24283,7 @@ function getCardsBySet(setCodeQuery) {
   const results = [];
 
   for (const [id, card] of Object.entries(ONE_PIECE_CARDS_DB)) {
-    if (id.startsWith(prefix)) {
+    if (id.toUpperCase().startsWith(prefix)) {
       results.push({
         ...card,
         set: card.set || `Set ${normalized}`,
@@ -24293,9 +24293,17 @@ function getCardsBySet(setCodeQuery) {
   }
 
   results.sort((a, b) => {
-    const numA = parseInt(a.id.split('-')[1], 10) || 0;
-    const numB = parseInt(b.id.split('-')[1], 10) || 0;
-    return numA - numB;
+    const partsA = a.id.split('-');
+    const partsB = b.id.split('-');
+    const numPartA = partsA[1] || '0';
+    const numPartB = partsB[1] || '0';
+    const numA = parseInt(numPartA, 10) || 0;
+    const numB = parseInt(numPartB, 10) || 0;
+    if (numA !== numB) return numA - numB;
+    const isAltA = a.id.includes('_');
+    const isAltB = b.id.includes('_');
+    if (isAltA !== isAltB) return isAltA ? 1 : -1;
+    return a.id.localeCompare(b.id);
   });
 
   return results;
@@ -24416,17 +24424,351 @@ function determineCardColor(cardId) {
   return 'Red';
 }
 
-function getCardImageURLs(cardId) {
+// Normalizar preservando el sufijo _p1, _p2, _r1 en minúsculas (sensible en servidores Bandai)
+function normalizeCardId(rawId) {
+  const parts = rawId.trim().split('_');
+  if (parts.length > 1) {
+    return parts[0].toUpperCase() + '_' + parts.slice(1).join('_').toLowerCase();
+  }
+  return parts[0].toUpperCase();
+}
+
+// Índices (id en minúsculas -> clave real, y código base -> versiones) para no recorrer
+// toda la DB en cada búsqueda. Se invalidan cada vez que la DB cambia.
+let cardIdLowerIndex = null;
+let cardVersionsIndex = null;
+
+function invalidateCardIndex() {
+  cardIdLowerIndex = null;
+  cardVersionsIndex = null;
+}
+
+function findCardIdIgnoreCase(id) {
+  if (!cardIdLowerIndex) {
+    cardIdLowerIndex = new Map();
+    for (const k of Object.keys(ONE_PIECE_CARDS_DB)) {
+      cardIdLowerIndex.set(k.toLowerCase(), k);
+    }
+  }
+  return cardIdLowerIndex.get(id.toLowerCase()) || null;
+}
+
+// Fusiona cartas en la DB normalizando sus claves (_P4 -> _p4) y eliminando
+// las claves antiguas con otro formato, para que no aparezcan cartas duplicadas.
+function mergeIntoCardsDB(cards) {
+  for (const [key, card] of Object.entries(cards)) {
+    if (!card || typeof card !== 'object') continue;
+    const id = normalizeCardId(key);
+    if (id !== key) delete ONE_PIECE_CARDS_DB[key];
+    ONE_PIECE_CARDS_DB[id] = { ...card, id };
+  }
+  for (const key of Object.keys(ONE_PIECE_CARDS_DB)) {
+    const id = normalizeCardId(key);
+    if (id !== key) {
+      if (!ONE_PIECE_CARDS_DB[id]) ONE_PIECE_CARDS_DB[id] = { ...ONE_PIECE_CARDS_DB[key], id };
+      delete ONE_PIECE_CARDS_DB[key];
+    }
+  }
+  invalidateCardIndex();
+}
+
+// =========================================================================
+// VERSIONES (estilo Cardmarket): OP09-093 = V.1, OP09-093_p1 = V.2, ...
+// Orden: carta base, artes alternativos (_p1, _p2...) y reimpresiones (_r1, _r2...)
+// =========================================================================
+
+function compareVersionSuffix(a, b) {
+  const sa = a.includes('_') ? a.split('_')[1] : '';
+  const sb = b.includes('_') ? b.split('_')[1] : '';
+  if (!sa || !sb) return sa ? 1 : (sb ? -1 : 0);
+  const typeOrder = { p: 1, r: 2 };
+  const ta = typeOrder[sa[0]] || 3;
+  const tb = typeOrder[sb[0]] || 3;
+  if (ta !== tb) return ta - tb;
+  return (parseInt(sa.slice(1), 10) || 0) - (parseInt(sb.slice(1), 10) || 0);
+}
+
+function getCardVersions(cardId) {
+  if (!cardVersionsIndex) {
+    cardVersionsIndex = new Map();
+    for (const k of Object.keys(ONE_PIECE_CARDS_DB)) {
+      const base = k.split('_')[0];
+      if (!cardVersionsIndex.has(base)) cardVersionsIndex.set(base, []);
+      cardVersionsIndex.get(base).push(k);
+    }
+    cardVersionsIndex.forEach(list => list.sort(compareVersionSuffix));
+  }
+  return cardVersionsIndex.get(normalizeCardId(cardId).split('_')[0]) || [];
+}
+
+function getCardVersionNumber(cardId) {
+  const id = normalizeCardId(cardId);
+  const idx = getCardVersions(id).indexOf(id);
+  return idx === -1 ? null : idx + 1;
+}
+
+// Código para mostrar: "OP09-093" (base) u "OP09-093 V.6" (alternativas).
+// Si la carta aún no está en la DB (sincronización pendiente) se muestra el id tal cual.
+function formatCardCode(cardId) {
+  if (!cardId) return '';
+  const id = normalizeCardId(cardId);
+  if (!id.includes('_')) return id;
+  const version = getCardVersionNumber(id);
+  return version ? `${id.split('_')[0]} V.${version}` : id;
+}
+
+// Convierte "op09-093.v2", "OP09-093 V2", "op09093-v.2"... en el id real (OP09-093_p1)
+function resolveVersionCode(raw) {
+  if (!raw || typeof raw !== 'string') return null;
+  const m = raw.trim().match(/^(.+?)[\s._-]*v\.?\s*(\d{1,2})$/i);
+  if (!m) return null;
+  const c = m[1].replace(/\s+/g, '').toUpperCase();
+  const cm = c.match(/^(OP|ST|EB|PRB)(\d{2})-?(\d{3})$/) ||
+    c.match(/^(OP|ST|EB|PRB)(\d{1,2})-(\d{1,3})$/) ||
+    c.match(/^(P)-?()(\d{1,3})$/);
+  if (!cm) return null;
+  const base = cm[1] === 'P'
+    ? `P-${cm[3].padStart(3, '0')}`
+    : `${cm[1]}${cm[2].padStart(2, '0')}-${cm[3].padStart(3, '0')}`;
+  return getCardVersions(base)[parseInt(m[2], 10) - 1] || null;
+}
+
+const LIMITLESS_CDN = 'limitlesstcg.nyc3.cdn.digitaloceanspaces.com/one-piece';
+const BANDAI_CARD_IMG = 'en.onepiece-cardgame.com/images/cardlist/card';
+const THUMB_WIDTH = 360;
+
+// Proxy de imágenes weserv: redimensiona, convierte a WebP, cachea un año y permite CORS (canvas)
+function weservUrl(source, width) {
+  return 'https://images.weserv.nl/?url=' + encodeURIComponent(source) +
+    (width ? '&w=' + width : '') + '&output=webp';
+}
+
+// URLs de imagen ordenadas de más rápida a más lenta.
+// size 'thumb' = miniatura de 360px para cuadrículas; 'full' = 600px para ampliar / exportar.
+// Nota: las imágenes directas de Bandai NO se usan: envían "Cross-Origin-Resource-Policy: same-site"
+// y el navegador las bloquea siempre (tras descargarlas, de 4 a 13 s). Solo se usan vía weserv.
+function getCardImageURLs(cardId, size = 'full') {
   if (!cardId) return [];
-  const cleanId = cardId.toUpperCase().trim();
+  const cleanId = normalizeCardId(cardId);
   const setCode = cleanId.split('-')[0];
+  const width = size === 'thumb' ? THUMB_WIDTH : null;
+  const limitlessEN = LIMITLESS_CDN + '/' + setCode + '/' + cleanId + '_EN.webp';
+  const limitlessJP = LIMITLESS_CDN + '/' + setCode + '/' + cleanId + '_JP.webp';
 
   return [
-    `https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/one-piece/${setCode}/${cleanId}_EN.webp`,
-    `https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/one-piece/${setCode}/${cleanId}.webp`,
-    `https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/one-piece/${setCode}/${cleanId}_JP.webp`,
-    `https://en.onepiece-cardgame.com/images/cardlist/card/${cleanId}.png`
+    weservUrl(limitlessEN, width),
+    'https://' + limitlessEN,
+    '/card-img/' + setCode + '/' + cleanId + '_EN.webp',
+    weservUrl(limitlessJP, width),
+    // Último recurso (cartas que Limitless aún no tiene, p. ej. reimpresiones _r1): Bandai vía weserv
+    weservUrl(BANDAI_CARD_IMG + '/' + cleanId + '.png', width || 600)
   ];
+}
+
+function extractCardCostNum(card) {
+  if (!card) return 99;
+  if (typeof card.costNum === 'number') return card.costNum;
+  if (typeof card.cost === 'number') return card.cost;
+  const str = String(card.cost || '');
+  const match = str.match(/(\d+)\s*(?:Cost|Coste|Life|Vida)/i) || str.match(/^(\d+)/);
+  if (match) return parseInt(match[1], 10);
+  return 99;
+}
+
+function getCardColorRank(color) {
+  if (!color) return 999;
+  const c = color.toUpperCase().trim();
+  const baseOrder = ['RED', 'GREEN', 'BLUE', 'PURPLE', 'BLACK', 'YELLOW'];
+  const exactIdx = baseOrder.indexOf(c);
+  if (exactIdx !== -1) {
+    return (exactIdx + 1) * 100;
+  }
+  // Dual color: RED/GREEN, BLUE/PURPLE, etc.
+  const parts = c.split(/[\/\-_]/).map(p => p.trim());
+  if (parts.length >= 2) {
+    const idx1 = baseOrder.indexOf(parts[0]);
+    const idx2 = baseOrder.indexOf(parts[1]);
+    const p1 = idx1 !== -1 ? (idx1 + 1) * 100 : 900;
+    const p2 = idx2 !== -1 ? (idx2 + 1) : 50;
+    return p1 + p2;
+  }
+  return 999;
+}
+
+function getCardTypeRank(cardType) {
+  if (!cardType) return 1;
+  const t = cardType.toUpperCase().trim();
+  if (t === 'LEADER' || t === 'LÍDER') return 0;
+  if (t === 'CHARACTER' || t === 'PERSONAJE') return 1;
+  if (t === 'EVENT' || t === 'EVENTO') return 2;
+  if (t === 'STAGE' || t === 'ESCENARIO') return 3;
+  return 1;
+}
+
+function getCardTraits(card) {
+  if (!card) return '';
+  const name = (card.name || '').toLowerCase();
+  const id = (card.id || '').toUpperCase().trim();
+  // Restricción específica: Imu se considera Celestial Dragons
+  if (name.includes('imu') || id === 'OP13-079') {
+    return 'Celestial Dragons';
+  }
+  if (card.traits && typeof card.traits === 'string') return card.traits.trim();
+  if (id && typeof ONE_PIECE_CARDS_DB !== 'undefined' && ONE_PIECE_CARDS_DB[id] && ONE_PIECE_CARDS_DB[id].traits) {
+    return ONE_PIECE_CARDS_DB[id].traits.trim();
+  }
+  return '';
+}
+
+function getCardTraitsList(card) {
+  if (!card) return [];
+  const raw = getCardTraits(card);
+  if (!raw) return [];
+  return raw.split(/[\/;]/).map(p => p.trim()).filter(Boolean);
+}
+
+function getCardCategory(card) {
+  if (!card) return 'Character';
+  if (card.cardType && typeof card.cardType === 'string') return card.cardType.trim();
+  const id = (card.id || '').toUpperCase().trim();
+  if (id && typeof ONE_PIECE_CARDS_DB !== 'undefined' && ONE_PIECE_CARDS_DB[id] && ONE_PIECE_CARDS_DB[id].cardType) {
+    return ONE_PIECE_CARDS_DB[id].cardType.trim();
+  }
+  return 'Character';
+}
+
+function getCardColor(card) {
+  if (!card) return 'Red';
+  if (card.color && typeof card.color === 'string') return card.color.trim();
+  const id = (card.id || '').toUpperCase().trim();
+  if (id && typeof ONE_PIECE_CARDS_DB !== 'undefined' && ONE_PIECE_CARDS_DB[id] && ONE_PIECE_CARDS_DB[id].color) {
+    return ONE_PIECE_CARDS_DB[id].color.trim();
+  }
+  return 'Red';
+}
+
+const GENERIC_TRAIT_MODIFIERS = new Set([
+  'ANIMAL', 'GIANT', 'THE FOUR EMPERORS', 'SCIENTIST', 'FISH-MAN', 
+  'MERFOLK', 'MINKS', 'SUPERNOVAS', 'THE SEVEN WARLORDS OF THE SEA', 
+  'FORMER NAVY', 'FORMER ROCKS PIRATES', 'SMILE', 'PIRATES'
+]);
+
+function resolveCardArchetype(card, traitCountsMap) {
+  const traits = getCardTraitsList(card);
+  if (!traits || traits.length === 0) return 'ZZZ_NO_TRAIT';
+  if (traits.length === 1) return traits[0];
+
+  // Si la carta tiene multitipo (ej: "Land of Wano / Whitebeard Pirates"):
+  // Se evalúa según la presencia de otras cartas en el grupo. Si de un tipo (ej: Land of Wano) no hay más cartas
+  // y del segundo tipo (ej: Whitebeard Pirates) sí hay más cartas (Ace, Marco, etc.), se agrupa en el segundo tipo.
+  let bestTrait = traits[0];
+  let bestScore = -1;
+
+  for (const t of traits) {
+    const totalCount = traitCountsMap ? (traitCountsMap.get(t) || 0) : 0;
+    const isGeneric = GENERIC_TRAIT_MODIFIERS.has(t.toUpperCase());
+    const otherCardsCount = Math.max(0, totalCount - 1);
+
+    // Priorizamos fuertemente el rasgo que tenga compañeras en el grupo (otherCardsCount > 0)
+    let score = totalCount;
+    if (otherCardsCount > 0) {
+      score += 1000 * otherCardsCount;
+    }
+    if (isGeneric) {
+      score *= 0.1;
+    }
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestTrait = t;
+    }
+  }
+
+  return bestTrait;
+}
+
+function getCardArchetype(card) {
+  return resolveCardArchetype(card, null);
+}
+
+function sortCardsDeckStyle(cards, criteria = 'color') {
+  const list = [...cards];
+
+  if (criteria === 'color' || criteria === 'deck') {
+    // 1. Contar frecuencias de rasgos por cada color para resolver multitipos inteligentemente
+    const colorTraitCounts = new Map();
+    list.forEach(c => {
+      const color = getCardColor(c).toUpperCase().trim();
+      if (!colorTraitCounts.has(color)) {
+        colorTraitCounts.set(color, new Map());
+      }
+      const map = colorTraitCounts.get(color);
+      const traits = getCardTraitsList(c);
+      new Set(traits).forEach(t => {
+        map.set(t, (map.get(t) || 0) + 1);
+      });
+    });
+
+    // 2. Precalcular una sola vez las claves de ordenación de cada carta
+    const keys = new Map();
+    list.forEach(c => {
+      const color = getCardColor(c).toUpperCase().trim();
+      keys.set(c, {
+        colorRank: getCardColorRank(color),
+        arch: resolveCardArchetype(c, colorTraitCounts.get(color)) || 'ZZZ_NO_TRAIT',
+        typeRank: getCardTypeRank(getCardCategory(c)),
+        cost: extractCardCostNum(c)
+      });
+    });
+    const archCollator = new Intl.Collator('es', { sensitivity: 'base' });
+
+    // 3. Ordenar: Color -> Tipo/Arquetipo -> [Líder ➔ Personajes ➔ Eventos ➔ Stages] -> Coste -> ID
+    return list.sort((a, b) => {
+      const ka = keys.get(a);
+      const kb = keys.get(b);
+
+      // 1. Color
+      if (ka.colorRank !== kb.colorRank) return ka.colorRank - kb.colorRank;
+
+      // 2. Tipo / Arquetipo resuelto dentro del mismo color (sin rasgo al final)
+      const isNoTraitA = ka.arch === 'ZZZ_NO_TRAIT';
+      const isNoTraitB = kb.arch === 'ZZZ_NO_TRAIT';
+      if (isNoTraitA !== isNoTraitB) return isNoTraitA ? 1 : -1;
+      const archComp = archCollator.compare(ka.arch, kb.arch);
+      if (archComp !== 0) return archComp;
+
+      // 3. Categoría de carta: [Líder ➔ Personajes ➔ Eventos ➔ Stages]
+      if (ka.typeRank !== kb.typeRank) return ka.typeRank - kb.typeRank;
+
+      // 4. Coste de menor a mayor
+      if (ka.cost !== kb.cost) return ka.cost - kb.cost;
+
+      // 5. Código ID
+      return (a.id || '').localeCompare(b.id || '');
+    });
+  } else if (criteria === 'cost-asc') {
+    return list.sort((a, b) => {
+      const costA = extractCardCostNum(a);
+      const costB = extractCardCostNum(b);
+      if (costA !== costB) return costA - costB;
+      return (a.id || '').localeCompare(b.id || '');
+    });
+  } else if (criteria === 'cost-desc') {
+    return list.sort((a, b) => {
+      const costA = extractCardCostNum(a);
+      const costB = extractCardCostNum(b);
+      if (costA !== costB) return costB - costA;
+      return (a.id || '').localeCompare(b.id || '');
+    });
+  } else if (criteria === 'code') {
+    return list.sort((a, b) => (a.id || '').localeCompare(b.id || ''));
+  } else if (criteria === 'name') {
+    return list.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+  } else if (criteria === 'count') {
+    return list.sort((a, b) => (b.count || 0) - (a.count || 0));
+  }
+
+  return list;
 }
 
 function createGenericCard(cardId) {
@@ -24463,19 +24805,22 @@ function createGenericCard(cardId) {
 
 function findOrGenerateCard(query) {
   if (!query) return createGenericCard('OP01-001');
-  const clean = query.toUpperCase().trim();
+  const rawClean = query.trim();
+  const clean = resolveVersionCode(rawClean) || normalizeCardId(rawClean);
 
-  if (ONE_PIECE_CARDS_DB[clean]) {
-    const dbCard = ONE_PIECE_CARDS_DB[clean];
+  const realId = ONE_PIECE_CARDS_DB[clean] ? clean : findCardIdIgnoreCase(clean);
+  if (realId) {
+    const dbCard = ONE_PIECE_CARDS_DB[realId];
     return {
       ...dbCard,
-      set: dbCard.set || `Set ${clean.split('-')[0]}`,
-      imageFallbacks: getCardImageURLs(clean)
+      set: dbCard.set || `Set ${realId.split('-')[0]}`,
+      imageFallbacks: getCardImageURLs(realId)
     };
   }
 
+  const lowerName = rawClean.toLowerCase();
   for (const [id, c] of Object.entries(ONE_PIECE_CARDS_DB)) {
-    if (c.name && c.name.toLowerCase() === query.toLowerCase().trim()) {
+    if (c.name && c.name.toLowerCase() === lowerName) {
       return {
         ...c,
         set: c.set || `Set ${id.split('-')[0]}`,
@@ -24511,8 +24856,11 @@ function generateFallbackCardSVG(card) {
   
   const primaryColor = (card.color || 'Red').split('/')[0];
   const bgHex = colorMap[primaryColor] || '#2563eb';
-  const name = (card.name || card.id).slice(0, 20);
-  const type = card.cardType || 'Character';
+  const escapeXml = (str) => String(str).replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[ch]);
+  const name = escapeXml((card.name || card.id).slice(0, 20));
+  const type = escapeXml(card.cardType || 'Character');
+  const code = escapeXml(formatCardCode(card.id));
+  const color = escapeXml(card.color || '');
 
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="300" height="420" viewBox="0 0 300 420">
@@ -24524,11 +24872,11 @@ function generateFallbackCardSVG(card) {
       </defs>
       <rect width="300" height="420" rx="16" fill="url(#g)" stroke="#f59e0b" stroke-width="4"/>
       <circle cx="150" cy="160" r="70" fill="rgba(0,0,0,0.4)" stroke="#f59e0b" stroke-width="2"/>
-      <text x="150" y="175" font-size="50" text-anchor="middle" fill="#f59e0b">\U0001f3f4\u200d\u2620\ufe0f</text>
+      <text x="150" y="175" font-size="50" text-anchor="middle" fill="#f59e0b">\u{1F3F4}\u200d\u2620\ufe0f</text>
       <rect x="20" y="260" width="260" height="50" rx="8" fill="rgba(0,0,0,0.7)" />
       <text x="150" y="292" font-size="16" font-family="sans-serif" font-weight="bold" fill="#ffffff" text-anchor="middle">${name}</text>
-      <text x="150" y="340" font-size="20" font-family="monospace" font-weight="bold" fill="#f59e0b" text-anchor="middle">${card.id}</text>
-      <text x="150" y="375" font-size="13" font-family="sans-serif" fill="#94a3b8" text-anchor="middle">${type} \u2022 ${card.color}</text>
+      <text x="150" y="340" font-size="20" font-family="monospace" font-weight="bold" fill="#f59e0b" text-anchor="middle">${code}</text>
+      <text x="150" y="375" font-size="13" font-family="sans-serif" fill="#94a3b8" text-anchor="middle">${type} \u2022 ${color}</text>
     </svg>
   `;
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
@@ -24582,6 +24930,13 @@ function searchCardsInDB(query) {
   const rawQ = query.trim();
   if (!rawQ) return [];
 
+  // Código de versión estilo Cardmarket (op09-093.v2): devuelve exactamente esa carta
+  const versionId = resolveVersionCode(rawQ);
+  if (versionId) {
+    const card = ONE_PIECE_CARDS_DB[versionId];
+    return [{ ...card, set: card.set || `Set ${versionId.split('-')[0]}`, imageFallbacks: getCardImageURLs(versionId) }];
+  }
+
   const parsed = parseSearchQuery(rawQ);
   const reqSet = parsed.set;
   const reqColor = parsed.color;
@@ -24596,17 +24951,14 @@ function searchCardsInDB(query) {
     const cardColorRaw = (card.color || '');
     const cardColors = cardColorRaw.toLowerCase().split('/').map(c => c.trim());
 
-    // 1. Filtrado por set estricto si se especificó un set (ej: OP01, OP17, ST01)
     if (reqSet && cardSetPrefix !== reqSet) {
       continue;
     }
 
-    // 2. Filtrado por color estricto si se especificó un color (ej: Blue, Red, Green)
     if (reqColor && !cardColors.includes(reqColor.toLowerCase())) {
       continue;
     }
 
-    // 3. Filtrado por tokens de texto restantes (nombre, rasgos, id, tipo, rareza)
     if (textTokens.length > 0) {
       const name = card.name || '';
       const traits = card.traits || '';
@@ -24618,39 +24970,49 @@ function searchCardsInDB(query) {
       const targetWords = cleanTarget.split(/\s+/).filter(Boolean);
 
       const matchesAll = textTokens.every(tok => {
-        // 1. Promo P tokens (ej. p02, p2, p-02, p-002, p030) solo deben coincidir con cartas promocionales P-, nunca OP02, OP05, etc.
+        // A. Token de sufijo de arte alternativo (_p1, p1, p2, r1, etc.)
+        const altSfx = tok.match(/^_?([prse]\d+)$/i);
+        if (altSfx) {
+          const sfx = '_' + altSfx[1].toLowerCase();
+          return cardId.toLowerCase().endsWith(sfx);
+        }
+
+        // B. Promo P tokens (p02, p2, p-02, p-002, p030)
         const pMatch = tok.match(/^p-?0*([1-9][0-9]{0,2})$/i);
-        if (pMatch) {
+        if (pMatch && !cardId.includes('_')) {
           const promoTarget = `p-${pMatch[1].padStart(3, '0')}`;
           const cleanTok = tok.replace(/[-_]/g, '');
           const cleanCard = cardId.toLowerCase().replace(/[-_]/g, '');
           return cardId.toLowerCase() === promoTarget.toLowerCase() || cleanCard === cleanTok;
         }
 
-        // 2. Set/Card codes específicos (ej. op02, st01, eb01, prb01, op01-001)
+        // C. Set/Card codes específicos (OP01-001, OP02, ST01)
         const codeMatch = tok.match(/^(op|st|eb|prb)-?0*([1-9][0-9]?)(?:-?0*([1-9][0-9]{0,2}))?$/i);
         if (codeMatch) {
           const pfx = codeMatch[1].toUpperCase();
           const sNum = codeMatch[2].padStart(2, '0');
           const cNum = codeMatch[3] ? codeMatch[3].padStart(3, '0') : null;
           if (cNum) {
-            return cardId.toUpperCase() === `${pfx}${sNum}-${cNum}` || cardId.replace(/[-_]/g, '').toUpperCase() === `${pfx}${sNum}${cNum}`;
+            const targetBase = `${pfx}${sNum}-${cNum}`;
+            const cardBase = cardId.split('_')[0].toUpperCase();
+            // IMPORTANTE: Al buscar OP01-001, coincidir con base Y artes alternativos
+            return cardBase === targetBase;
           }
           return cardSetPrefix === `${pfx}${sNum}`;
         }
 
-        // 3. Palabras de texto generales (nombre, rasgos, tipo, etc.)
+        // D. Coincidencia por palabra
         return targetWords.some(w => {
           if (w === tok) return true;
           if (w.startsWith(tok)) return true;
-          if (tok.length >= 4 && w.includes(tok)) return true;
+          if (tok.length >= 3 && w.includes(tok)) return true;
           return false;
         });
       });
+
       if (!matchesAll) continue;
     }
 
-    // Si no hubo filtro de set ni color y tampoco tokens de texto, omitir
     if (!reqSet && !reqColor && textTokens.length === 0) {
       continue;
     }
@@ -24663,22 +25025,17 @@ function searchCardsInDB(query) {
     });
   }
 
-  // Ordenación natural por número de carta (OP01-001, OP01-002...)
+  // Ordenación: base primero, luego artes alternativos
   results.sort((a, b) => {
-    const aId = (a.id || '').toUpperCase();
-    const bId = (b.id || '').toUpperCase();
-    const cleanU = rawQ.toUpperCase();
-    if (aId === cleanU && bId !== cleanU) return -1;
-    if (bId === cleanU && aId !== cleanU) return 1;
-
-    const aParts = aId.split('-');
-    const bParts = bId.split('-');
-    if (aParts[0] === bParts[0] && aParts.length > 1 && bParts.length > 1) {
-      const aNum = parseInt(aParts[1], 10);
-      const bNum = parseInt(bParts[1], 10);
-      if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;
+    const aBase = (a.id || '').split('_')[0].toUpperCase();
+    const bBase = (b.id || '').split('_')[0].toUpperCase();
+    if (aBase !== bBase) {
+      return aBase.localeCompare(bBase);
     }
-    return aId.localeCompare(bId);
+    const isAltA = a.id.includes('_');
+    const isAltB = b.id.includes('_');
+    if (isAltA !== isAltB) return isAltA ? 1 : -1;
+    return a.id.localeCompare(b.id);
   });
 
   return results;
@@ -24692,6 +25049,230 @@ function getOfficialCardImageUrl(cardId) {
 function getFallbackCardDataUrl(cardId, name, color) {
   return generateFallbackCardSVG({ id: cardId, name: name, color: color });
 }
+
+
+// =========================================================================
+// MOTOR DE SINCRONIZACIÓN AUTOMÁTICA EN LA NUBE (PUNK-RECORDS CDN FEED)
+// =========================================================================
+
+const PUNK_RECORDS_CDN = 'https://cdn.jsdelivr.net/gh/buhbbl/punk-records@main/english/index/cards_by_id.json';
+const PUNK_RECORDS_FALLBACK = 'https://raw.githubusercontent.com/buhbbl/punk-records/main/english/index/cards_by_id.json';
+const IDB_NAME = 'OP_TCG_DEX_STORAGE_V1';
+const IDB_STORE = 'cards_cache';
+
+const RARITY_ABBR_MAP = {
+  'Leader': 'L',
+  'Common': 'C',
+  'Uncommon': 'UC',
+  'Rare': 'R',
+  'SuperRare': 'SR',
+  'SecretRare': 'SEC',
+  'Special': 'SP',
+  'TreasureRare': 'TR',
+  'Promo': 'P'
+};
+
+function decodeHtmlEntities(str) {
+  if (!str || typeof str !== 'string') return str || '';
+  return str
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+}
+
+function transformRemoteCard(c) {
+  if (!c || !c.card_id) return null;
+  const cid = normalizeCardId(String(c.card_id));
+  const sepIdx = cid.indexOf('_');
+  const suffix = sepIdx === -1 ? '' : cid.slice(sepIdx);
+
+  const rawName = c.name || cid;
+  const name = decodeHtmlEntities(rawName);
+  const cat = c.category || 'Character';
+  const colors = Array.isArray(c.colors) ? c.colors.join('/') : (c.colors || 'Red');
+  const traits = Array.isArray(c.types) ? c.types.map(decodeHtmlEntities).join(' / ') : (c.types || '');
+  const rawRarity = c.rarity || 'C';
+  const rarity = RARITY_ABBR_MAP[rawRarity] || rawRarity;
+
+  const costVal = c.cost;
+  const powerVal = c.power;
+  let costStr = '';
+  if (cat === 'Leader') {
+    costStr = (powerVal !== null && powerVal !== undefined)
+      ? String(costVal) + ' Life / ' + String(powerVal) + ' Power'
+      : String(costVal) + ' Life';
+  } else if (powerVal !== null && powerVal !== undefined) {
+    costStr = (costVal !== null && costVal !== undefined)
+      ? String(costVal) + ' Cost / ' + String(powerVal) + ' Power'
+      : String(powerVal) + ' Power';
+  } else if (costVal !== null && costVal !== undefined) {
+    costStr = String(costVal) + ' Cost';
+  }
+
+  const cardObj = {
+    id: cid,
+    name: name,
+    cardType: cat,
+    color: colors,
+    traits: traits,
+    rarity: rarity,
+    cost: costStr,
+    isAlt: Boolean(suffix),
+    altSuffix: suffix
+  };
+
+  if (c.img_url) {
+    cardObj.img = c.img_url;
+  }
+
+  return cardObj;
+}
+
+function openCardCacheDB() {
+  return new Promise((resolve, reject) => {
+    if (typeof indexedDB === 'undefined') return reject(new Error('IndexedDB no soportado'));
+    const req = indexedDB.open(IDB_NAME, 1);
+    req.onupgradeneeded = (e) => {
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains(IDB_STORE)) {
+        db.createObjectStore(IDB_STORE);
+      }
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+async function loadCardsFromLocalCache() {
+  try {
+    const db = await openCardCacheDB();
+    return new Promise((resolve) => {
+      const tx = db.transaction(IDB_STORE, 'readonly');
+      const store = tx.objectStore(IDB_STORE);
+      const req = store.get('all_cards');
+      req.onsuccess = () => resolve(req.result || null);
+      req.onerror = () => resolve(null);
+    });
+  } catch (err) {
+    console.warn('[DB Cache] No se pudo leer de IndexedDB:', err);
+    return null;
+  }
+}
+
+async function saveCardsToLocalCache(cards) {
+  try {
+    const db = await openCardCacheDB();
+    return new Promise((resolve) => {
+      const tx = db.transaction(IDB_STORE, 'readwrite');
+      const store = tx.objectStore(IDB_STORE);
+      store.put(cards, 'all_cards');
+      tx.oncomplete = () => resolve(true);
+      tx.onerror = () => resolve(false);
+    });
+  } catch (err) {
+    console.warn('[DB Cache] No se pudo guardar en IndexedDB:', err);
+    return false;
+  }
+}
+
+async function syncCardsDatabase(force = false) {
+  console.log('[DB Sync] Comprobando actualizaciones de cartas con CDN...');
+
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('cards-db-syncing', { detail: { force: force } }));
+  }
+
+  let rawData = null;
+  const urls = [PUNK_RECORDS_CDN, PUNK_RECORDS_FALLBACK];
+
+  for (const url of urls) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 9000);
+      const res = await fetch(url, { signal: controller.signal, cache: force ? 'reload' : 'default' });
+      clearTimeout(timeoutId);
+      if (res.ok) {
+        rawData = await res.json();
+        console.log('[DB Sync] Datos descargados exitosamente desde: ' + url);
+        break;
+      }
+    } catch (e) {
+      console.warn('[DB Sync] Intento fallido con ' + url + ':', e.message);
+    }
+  }
+
+  if (!rawData || typeof rawData !== 'object') {
+    console.warn('[DB Sync] No se pudo descargar la base de datos remota; se mantiene la versión actual.');
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('cards-db-sync-failed', { detail: { count: Object.keys(ONE_PIECE_CARDS_DB).length } }));
+    }
+    return false;
+  }
+
+  const transformed = {};
+  let newOrUpdatedCount = 0;
+
+  for (const [key, rawCard] of Object.entries(rawData)) {
+    const card = transformRemoteCard(rawCard);
+    if (card && card.id) {
+      transformed[card.id] = card;
+      if (!ONE_PIECE_CARDS_DB[card.id]) {
+        newOrUpdatedCount++;
+      }
+    }
+  }
+
+  // Fusión en memoria con ONE_PIECE_CARDS_DB
+  mergeIntoCardsDB(transformed);
+  const totalCount = Object.keys(ONE_PIECE_CARDS_DB).length;
+  console.log('[DB Sync] Fusión completada: ' + totalCount + ' cartas disponibles (+' + newOrUpdatedCount + ' nuevas).');
+
+  // Guardar en IndexedDB
+  saveCardsToLocalCache(ONE_PIECE_CARDS_DB);
+
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('cards-db-synced', {
+      detail: {
+        count: totalCount,
+        newCards: newOrUpdatedCount,
+        source: 'network'
+      }
+    }));
+  }
+
+  return true;
+}
+
+// Inicialización de caché y sincronización en segundo plano
+(async function initCardsEngine() {
+  if (typeof window === 'undefined') return;
+
+  try {
+    const cached = await loadCardsFromLocalCache();
+    if (cached && typeof cached === 'object' && Object.keys(cached).length > 0) {
+      mergeIntoCardsDB(cached);
+      console.log('[DB Cache] Restauradas ' + Object.keys(ONE_PIECE_CARDS_DB).length + ' cartas desde caché local');
+      window.dispatchEvent(new CustomEvent('cards-db-synced', {
+        detail: {
+          count: Object.keys(ONE_PIECE_CARDS_DB).length,
+          newCards: 0,
+          source: 'cache'
+        }
+      }));
+    }
+  } catch (err) {
+    console.error('[DB Cache] Error al inicializar caché:', err);
+  }
+
+  if (typeof window.requestIdleCallback === 'function') {
+    window.requestIdleCallback(() => syncCardsDatabase(), { timeout: 3000 });
+  } else {
+    setTimeout(() => syncCardsDatabase(), 1000);
+  }
+})();
+
 
 if (typeof window !== 'undefined') {
   window.ONE_PIECE_CARDS_DB = ONE_PIECE_CARDS_DB;
@@ -24708,4 +25289,12 @@ if (typeof window !== 'undefined') {
   window.searchCardsInDB = searchCardsInDB;
   window.getOfficialCardImageUrl = getOfficialCardImageUrl;
   window.getFallbackCardDataUrl = getFallbackCardDataUrl;
+  window.extractCardCostNum = extractCardCostNum;
+  window.getCardColorRank = getCardColorRank;
+  window.getCardTypeRank = getCardTypeRank;
+  window.sortCardsDeckStyle = sortCardsDeckStyle;
+  window.syncCardsDatabase = syncCardsDatabase;
+  window.normalizeCardId = normalizeCardId;
+  window.formatCardCode = formatCardCode;
+  window.resolveVersionCode = resolveVersionCode;
 }
