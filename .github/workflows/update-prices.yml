@@ -1,6 +1,7 @@
-# Regenera prices-data.js cada día con la guía de precios de Cardmarket.
-# Así las cartas nuevas (p. ej. una expansión recién salida) tienen precio sin ejecutar nada a mano.
-name: Actualizar precios Cardmarket
+# Regenera cada día prices-data.js (guía de precios de Cardmarket, versión inglesa) y
+# packs-data.js (nombre y portada oficial de cada sobre). Así una expansión recién salida
+# tiene precios y sobre sin ejecutar nada a mano.
+name: Actualizar precios y sobres
 
 on:
   schedule:
@@ -23,14 +24,18 @@ jobs:
       - name: Generar prices-data.js
         run: python tools/update_prices.py
 
+      - name: Generar packs-data.js
+        run: python tools/update_packs.py
+        continue-on-error: true # si la web de Bandai falla, los precios se suben igual
+
       - name: Subir cambios
         run: |
-          if git diff --quiet prices-data.js; then
-            echo "Sin cambios en los precios."
+          if git diff --quiet prices-data.js packs-data.js; then
+            echo "Sin cambios."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add prices-data.js
-          git commit -m "chore: actualizar precios Cardmarket"
+          git add prices-data.js packs-data.js
+          git commit -m "chore: actualizar precios Cardmarket y sobres"
           git push

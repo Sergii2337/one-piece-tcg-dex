@@ -82,7 +82,7 @@ class OnePieceApp {
   // =========================================================================
 
   async loadLivePrices() {
-    const STORAGE_KEY = 'op_mkm_live_prices_v1';
+    const STORAGE_KEY = 'op_mkm_live_prices_v2'; // v2: solo productos de la versión inglesa
     const MAX_AGE_MS = 12 * 60 * 60 * 1000;
     const snapshot = window.ONE_PIECE_PRICES_DB || {};
 
@@ -125,6 +125,14 @@ class OnePieceApp {
     }
     const meta = window.ONE_PIECE_PRICES_META || {};
     return { trend: entry.mkm, low: entry.low, avg7: entry.avg7, date: meta.priceGuideDate };
+  }
+
+  // "Character • SR": la rareza se toma de la DB porque la guardada en la colección
+  // puede venir de una versión antigua de los datos
+  getTypeRarityLabel(card) {
+    const dbCard = ONE_PIECE_CARDS_DB[normalizeCardId(card.id)];
+    const rarity = (dbCard && dbCard.rarity) || card.rarity;
+    return rarity ? `${card.cardType || 'Card'} • ${rarity}` : (card.cardType || 'Card');
   }
 
   loadFolders() {
@@ -261,6 +269,7 @@ class OnePieceApp {
       viewAlbum: document.getElementById('view-album'),
       viewScanner: document.getElementById('view-scanner'),
       viewExport: document.getElementById('view-export'),
+      viewPacks: document.getElementById('view-packs'),
       navButtons: document.querySelectorAll('.nav-button'),
 
       // Sub-pestañas de Carpetas (Personales vs Compartidas)
@@ -1826,6 +1835,49 @@ class OnePieceApp {
     }
   }
 
+  // Añade varias cartas de golpe ([{ card, qty }]) con un solo guardado / escritura en Firestore
+  async addCardsToTargetFolder(items, targetFolderId) {
+    const folderId = targetFolderId || 'default';
+    const isShared = this.sharedFolderIds.includes(folderId) || this.sharedFoldersMap.has(folderId);
+    const folder = isShared ? (this.sharedFoldersMap.get(folderId) || { id: folderId, cards: [] }) : null;
+    const target = isShared ? (folder.cards = folder.cards || []) : this.collection;
+    const addedAt = new Date().toLocaleDateString();
+    let total = 0;
+
+    items.forEach(({ card, qty }) => {
+      const existing = target.find(c => c.id === card.id && (isShared || c.folderId === folderId));
+      if (existing) {
+        existing.count += qty;
+      } else if (isShared) {
+        target.unshift({ ...card, count: qty, addedBy: this.currentUser ? (this.currentUser.displayName || 'Amigo') : 'Amigo', addedAt });
+      } else {
+        target.unshift({ ...card, count: qty, folderId, addedAt });
+      }
+      total += qty;
+    });
+
+    if (isShared) {
+      this.sharedFoldersMap.set(folderId, folder);
+    } else {
+      this.saveCollection();
+    }
+    this.renderFolderTabs();
+    this.renderAlbum();
+    this.updateSetGridCardBadges();
+    this.showToast(`✅ +${total} cartas añadidas${isShared ? ` a "${folder.name || 'Compartida'}"` : ''}`);
+
+    if (isShared && window.FIREBASE_DB) {
+      try {
+        await window.FIREBASE_DB.collection('shared_folders').doc(folderId).update({
+          cards: folder.cards,
+          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+        });
+      } catch (err) {
+        console.error("Error al añadir cartas a la carpeta compartida en Firestore:", err);
+      }
+    }
+  }
+
   async addCardToSharedFolder(folderId, card, qty) {
     const folder = this.sharedFoldersMap.get(folderId) || { id: folderId, cards: [] };
     const cards = folder.cards || [];
@@ -2070,7 +2122,7 @@ class OnePieceApp {
               <div class="list-card-header">
                 <span class="card-id-text">${formatCardCode(card.id)}</span>
                 <span class="card-badge-color col-${colorClass}">${card.color}</span>
-                <span class="card-type-chip">${card.cardType || 'Card'} • ${card.rarity || 'R'}</span>
+                <span class="card-type-chip">${this.getTypeRarityLabel(card)}</span>
               </div>
               <div class="list-card-name">${card.name}</div>
               <div class="list-card-traits">${card.traits || 'One Piece'}</div>
@@ -2135,7 +2187,7 @@ class OnePieceApp {
             <div class="card-info-wrap">
               <div style="display:flex; justify-content:space-between; align-items:center;">
                 <span class="card-id-text">${formatCardCode(card.id)}</span>
-                <span class="card-type-chip">${card.cardType || 'Card'} • ${card.rarity || 'R'}</span>
+                <span class="card-type-chip">${this.getTypeRarityLabel(card)}</span>
               </div>
               <div class="card-name-text" title="${card.name}">${card.name}</div>
               <div class="card-meta-row">
@@ -2871,7 +2923,7 @@ class OnePieceApp {
               <span class="card-badge-owned ${count > 0 ? 'has-copies' : ''}">
                 ${count > 0 ? `x${count} en álbum` : 'x0'}
               </span>
-              <span class="card-type-chip">${card.cardType || 'Card'} • ${card.rarity || 'R'}</span>
+              <span class="card-type-chip">${this.getTypeRarityLabel(card)}</span>
             </div>
             <div class="list-card-name">${card.name}</div>
             <div class="list-card-traits">${card.traits || 'One Piece'}</div>
@@ -2917,7 +2969,7 @@ class OnePieceApp {
           <div class="card-info-wrap">
             <div style="display:flex; justify-content:space-between; align-items:center;">
               <span class="card-id-text">${formatCardCode(card.id)}${card.id.includes('_') ? ' <span class="alt-art-pill">ALT</span>' : ''}</span>
-              <span class="card-type-chip">${card.cardType || 'Card'} • ${card.rarity || 'R'}</span>
+              <span class="card-type-chip">${this.getTypeRarityLabel(card)}</span>
             </div>
             <div class="card-name-text" title="${card.name}">${card.name}</div>
             <div class="trait-tag" title="${card.traits || 'One Piece'}">${card.traits || 'One Piece'}</div>
@@ -3194,6 +3246,7 @@ class OnePieceApp {
     this.dom.viewAlbum.classList.toggle('active', tabId === 'album');
     this.dom.viewScanner.classList.toggle('active', tabId === 'scanner');
     this.dom.viewExport.classList.toggle('active', tabId === 'export');
+    if (this.dom.viewPacks) this.dom.viewPacks.classList.toggle('active', tabId === 'packs');
 
     this.dom.navButtons.forEach(b => {
       b.classList.toggle('active', b.getAttribute('data-target') === `view-${tabId}`);
@@ -3203,6 +3256,8 @@ class OnePieceApp {
       this.renderAlbum();
     } else if (tabId === 'export') {
       this.populateExportFolderSelect();
+    } else if (tabId === 'packs' && window.packOpener) {
+      window.packOpener.renderPackList();
     }
   }
 
@@ -3355,6 +3410,33 @@ class OnePieceApp {
     }
   }
 
+  // Suma las copias de una misma carta repartida en varias carpetas
+  mergeExportCards(cards) {
+    const merged = new Map();
+    cards.forEach(c => {
+      const id = normalizeCardId(c.id || '');
+      if (!id) return;
+      const entry = merged.get(id);
+      if (entry) entry.qty += c.count || 1;
+      else merged.set(id, { card: c, qty: c.count || 1 });
+    });
+    return [...merged.values()];
+  }
+
+  // "OP09-093_p1" -> "OP09-093" (las tiendas no entienden el sufijo interno de versión)
+  baseCardCode(cardId) {
+    return normalizeCardId(cardId || '').split('_')[0];
+  }
+
+  // Línea de la Wants List de Cardmarket con versión (V.n) y expansión inglesa exactas cuando
+  // se conocen (prices-data.js); si no, Cardmarket acepta cualquier versión de ese código
+  cardmarketWantLine(card, qty) {
+    const entry = (window.ONE_PIECE_PRICES_DB || {})[normalizeCardId(card.id)];
+    const expansion = entry && (window.ONE_PIECE_MKM_EXPANSIONS || {})[entry.exp];
+    const version = entry && entry.v ? ` (V.${entry.v})` : '';
+    return `${qty}x ${(card.name || '').trim()} ${this.baseCardCode(card.id)}${version}${expansion ? ' ' + expansion : ''}`;
+  }
+
   exportWishlist() {
     const { name, cards } = this.getSelectedExportCards();
     if (cards.length === 0) {
@@ -3362,13 +3444,9 @@ class OnePieceApp {
       return;
     }
 
-    // Formato Wishlist Universal (Cardmarket / CardTrader): [Quantity]x [Card Name] [Collector Number]
-    const lines = cards.map(c => {
-      const qty = c.count || 1;
-      const cardName = (c.name || '').trim();
-      const code = (c.id || '').trim().toUpperCase();
-      return `${qty}x ${cardName} ${code}`;
-    });
+    // Formato Wishlist Universal: [Quantity]x [Card Name] [Collector Number]
+    const lines = this.mergeExportCards(cards).map(({ card, qty }) =>
+      `${qty}x ${(card.name || '').trim()} ${this.baseCardCode(card.id)}`);
 
     const text = lines.join('\n');
     const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);
@@ -3386,13 +3464,8 @@ class OnePieceApp {
       return;
     }
 
-    // Formato Cardmarket Wants: [Quantity]x [Card Name] [Collector Number]
-    const lines = cards.map(c => {
-      const qty = c.count || 1;
-      const cardName = (c.name || '').trim();
-      const code = (c.id || '').trim().toUpperCase();
-      return `${qty}x ${cardName} ${code}`;
-    });
+    // Formato Cardmarket Wants (help.cardmarket.com): "2x Roronoa Zoro OP01-025 (V.2) Romance Dawn"
+    const lines = this.mergeExportCards(cards).map(({ card, qty }) => this.cardmarketWantLine(card, qty));
 
     const text = lines.join('\n');
     const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);
@@ -3410,12 +3483,9 @@ class OnePieceApp {
       return;
     }
 
-    // Formato CardTrader: [Quantity]x [Card Name]
-    const lines = cards.map(c => {
-      const qty = c.count || 1;
-      const cardName = (c.name || '').trim();
-      return `${qty}x ${cardName}`;
-    });
+    // Formato CardTrader: [Quantity]x [Card Name] [Collector Number]
+    const lines = this.mergeExportCards(cards).map(({ card, qty }) =>
+      `${qty}x ${(card.name || '').trim()} ${this.baseCardCode(card.id)}`);
 
     const text = lines.join('\n');
     const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);

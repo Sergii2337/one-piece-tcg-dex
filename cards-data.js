@@ -8,7 +8,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "3 Cost / 4000 Power"
   },
   "EB01-012": {
@@ -17,7 +18,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Beautiful Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569201",
     "cost": "5 Cost / 6000 Power"
   },
   "EB01-030": {
@@ -26,7 +28,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "2 Cost"
   },
   "EB01-001": {
@@ -36,6 +39,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Green",
     "traits": "Land of Wano / Kouzuki Clan",
     "rarity": "L",
+    "pack": "569201",
     "cost": "4 Life / 5000 Power"
   },
   "EB01-018": {
@@ -44,7 +48,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Animal / Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "5 Cost / 7000 Power"
   },
   "EB01-020": {
@@ -53,7 +58,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "1 Cost"
   },
   "EB01-026": {
@@ -62,7 +68,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "2 Cost / 2000 Power"
   },
   "EB01-011": {
@@ -71,7 +78,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "1 Cost"
   },
   "EB01-021": {
@@ -81,6 +89,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Purple",
     "traits": "Impel Down",
     "rarity": "L",
+    "pack": "569201",
     "cost": "4 Life / 5000 Power"
   },
   "EB01-024": {
@@ -89,7 +98,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "3 Cost / 4000 Power"
   },
   "EB01-009": {
@@ -98,7 +108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Drum Kingdom / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "1 Cost"
   },
   "EB01-031": {
@@ -108,6 +119,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Water Seven / Galley-La Company",
     "rarity": "R",
+    "pack": "569201",
     "cost": "5 Cost / 5000 Power"
   },
   "EB01-023": {
@@ -117,6 +129,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea",
     "rarity": "R",
+    "pack": "569201",
     "cost": "4 Cost / 6000 Power"
   },
   "EB01-038": {
@@ -125,7 +138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "1 Cost"
   },
   "EB01-035": {
@@ -134,7 +148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "3 Cost / 5000 Power"
   },
   "EB01-029": {
@@ -143,7 +158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "East Blue / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "1 Cost"
   },
   "EB01-007": {
@@ -152,7 +168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "5 Cost / 5000 Power"
   },
   "EB01-033": {
@@ -162,6 +179,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Water Seven",
     "rarity": "R",
+    "pack": "569201",
     "cost": "4 Cost / 5000 Power"
   },
   "EB01-040": {
@@ -171,6 +189,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black/Yellow",
     "traits": "Dressrosa",
     "rarity": "L",
+    "pack": "569201",
     "cost": "4 Life / 5000 Power"
   },
   "EB01-005": {
@@ -179,7 +198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "1 Cost / 3000 Power"
   },
   "EB01-019": {
@@ -189,6 +209,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569201",
     "cost": "2 Cost"
   },
   "EB01-008": {
@@ -198,6 +219,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Giant / Whitebeard Pirates Allies",
     "rarity": "R",
+    "pack": "569201",
     "cost": "6 Cost / 7000 Power"
   },
   "EB01-016": {
@@ -206,7 +228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "1 Cost / 0 Power"
   },
   "EB01-006": {
@@ -215,7 +238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569201",
     "cost": "3 Cost / 4000 Power"
   },
   "EB01-036": {
@@ -224,7 +248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down / Jailer Beast",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "4 Cost / 5000 Power"
   },
   "EB01-039": {
@@ -234,6 +259,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569201",
     "cost": "5 Cost"
   },
   "EB01-022": {
@@ -242,7 +268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569201",
     "cost": "6 Cost / 7000 Power"
   },
   "EB01-015": {
@@ -252,6 +279,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / On-Air Pirates",
     "rarity": "R",
+    "pack": "569201",
     "cost": "1 Cost / 1000 Power"
   },
   "EB01-014": {
@@ -261,6 +289,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569201",
     "cost": "4 Cost / 5000 Power"
   },
   "EB01-010": {
@@ -270,6 +299,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Water Seven / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569201",
     "cost": "3 Cost"
   },
   "EB01-003": {
@@ -279,6 +309,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Supernovas / Kid Pirates",
     "rarity": "R",
+    "pack": "569201",
     "cost": "4 Cost / 5000 Power"
   },
   "EB01-032": {
@@ -287,7 +318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "5 Cost / 7000 Power"
   },
   "EB01-004": {
@@ -296,7 +328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "2 Cost / 3000 Power"
   },
   "EB01-025": {
@@ -305,7 +338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "3 Cost / 5000 Power"
   },
   "EB01-013": {
@@ -315,6 +349,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
     "rarity": "R",
+    "pack": "569201",
     "cost": "4 Cost / 0 Power"
   },
   "EB01-034": {
@@ -323,7 +358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569201",
     "cost": "3 Cost / 4000 Power"
   },
   "EB01-027": {
@@ -333,6 +369,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Baroque Works",
     "rarity": "R",
+    "pack": "569201",
     "cost": "5 Cost / 6000 Power"
   },
   "EB01-002": {
@@ -342,6 +379,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Land of Wano / Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569201",
     "cost": "5 Cost / 7000 Power"
   },
   "EB01-017": {
@@ -350,7 +388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / CP0",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "2 Cost / 2000 Power"
   },
   "EB01-028": {
@@ -360,6 +399,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Impel Down / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569201",
     "cost": "1 Cost"
   },
   "EB01-050": {
@@ -368,7 +408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "3 Cost"
   },
   "EB01-041": {
@@ -377,7 +418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Former Roger Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "6 Cost / 8000 Power"
   },
   "EB01-049": {
@@ -387,6 +429,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Water Seven / Navy",
     "rarity": "R",
+    "pack": "569201",
     "cost": "5 Cost / 5000 Power"
   },
   "EB01-046": {
@@ -395,7 +438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569201",
     "cost": "3 Cost / 4000 Power"
   },
   "EB01-043": {
@@ -405,6 +449,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "CP9",
     "rarity": "R",
+    "pack": "569201",
     "cost": "3 Cost / 2000 Power"
   },
   "EB01-042": {
@@ -414,6 +459,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Dressrosa",
     "rarity": "R",
+    "pack": "569201",
     "cost": "2 Cost / 0 Power"
   },
   "EB01-048": {
@@ -422,7 +468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569201",
     "cost": "4 Cost / 5000 Power"
   },
   "EB01-044": {
@@ -431,7 +478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "1 Cost / 1000 Power"
   },
   "EB01-045": {
@@ -440,7 +488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Rumbar Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "3 Cost / 4000 Power"
   },
   "EB01-047": {
@@ -449,7 +498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "2 Cost / 4000 Power"
   },
   "EB01-060": {
@@ -458,7 +508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "4 Cost"
   },
   "EB01-051": {
@@ -468,6 +519,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "CP9",
     "rarity": "R",
+    "pack": "569201",
     "cost": "4 Cost"
   },
   "EB01-052": {
@@ -476,7 +528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569201",
     "cost": "2 Cost / 0 Power"
   },
   "EB01-055": {
@@ -485,7 +538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "7 Cost / 9000 Power"
   },
   "EB01-058": {
@@ -494,7 +548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Monkey Mountain Alliance",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "2 Cost / 3000 Power"
   },
   "EB01-057": {
@@ -503,7 +558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Merfolk",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569201",
     "cost": "2 Cost / 0 Power"
   },
   "EB01-054": {
@@ -513,6 +569,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island",
     "rarity": "R",
+    "pack": "569201",
     "cost": "3 Cost / 4000 Power"
   },
   "EB01-053": {
@@ -521,7 +578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Scientist",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569201",
     "cost": "3 Cost / 5000 Power"
   },
   "EB01-061": {
@@ -530,7 +588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Former Baroque Works",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569201",
     "cost": "4 Cost / 1000 Power"
   },
   "EB01-059": {
@@ -540,6 +599,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island",
     "rarity": "R",
+    "pack": "569201",
     "cost": "6 Cost"
   },
   "EB01-056": {
@@ -549,6 +609,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569201",
     "cost": "1 Cost / 1000 Power"
   },
   "EB02-003": {
@@ -558,6 +619,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Animal / Drum Kingdom / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569202",
     "cost": "3 Cost / 3000 Power"
   },
   "EB02-004": {
@@ -566,7 +628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Accino Family",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "8 Cost / 10000 Power"
   },
   "EB02-002": {
@@ -576,6 +639,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Dressrosa / Revolutionary Army",
     "rarity": "R",
+    "pack": "569202",
     "cost": "4 Cost / 5000 Power"
   },
   "EB02-001": {
@@ -584,7 +648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "5 Cost / 7000 Power"
   },
   "EB02-007": {
@@ -593,7 +658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Animal / Water Seven / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "3 Cost"
   },
   "EB02-012": {
@@ -602,7 +668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "1 Cost / 1000 Power"
   },
   "EB02-005": {
@@ -611,7 +678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Fake Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "2 Cost / 3000 Power"
   },
   "EB02-011": {
@@ -620,7 +688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / East Blue / Arlong Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569202",
     "cost": "3 Cost / 4000 Power"
   },
   "EB02-008": {
@@ -630,6 +699,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Music",
     "rarity": "R",
+    "pack": "569202",
     "cost": "2 Cost"
   },
   "EB02-006": {
@@ -638,7 +708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569202",
     "cost": "6 Cost / 7000 Power"
   },
   "EB02-010": {
@@ -648,6 +719,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Purple",
     "traits": "Straw Hat Crew",
     "rarity": "L",
+    "pack": "569202",
     "cost": "4 Life / 5000 Power"
   },
   "EB02-009": {
@@ -656,7 +728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "2 Cost"
   },
   "EB02-017": {
@@ -666,6 +739,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569202",
     "cost": "1 Cost / 2000 Power"
   },
   "EB02-015": {
@@ -674,7 +748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569202",
     "cost": "7 Cost / 7000 Power"
   },
   "EB02-018": {
@@ -684,6 +759,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / Buggy Pirates",
     "rarity": "R",
+    "pack": "569202",
     "cost": "4 Cost / 6000 Power"
   },
   "EB02-014": {
@@ -692,7 +768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "2 Cost / 0 Power"
   },
   "EB02-013": {
@@ -701,7 +778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "1 Cost / 0 Power"
   },
   "EB02-016": {
@@ -710,7 +788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "5 Cost / 6000 Power"
   },
   "EB02-019": {
@@ -720,6 +799,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569202",
     "cost": "4 Cost / 5000 Power"
   },
   "EB02-021": {
@@ -728,7 +808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Water Seven / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "3 Cost"
   },
   "EB02-022": {
@@ -738,6 +819,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "East Blue / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569202",
     "cost": "4 Cost / 5000 Power"
   },
   "EB02-020": {
@@ -747,6 +829,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Music",
     "rarity": "R",
+    "pack": "569202",
     "cost": "2 Cost"
   },
   "EB02-023": {
@@ -755,7 +838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "4 Cost / 5000 Power"
   },
   "EB02-024": {
@@ -764,7 +848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Sniper Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "4 Cost / 5000 Power"
   },
   "EB02-025": {
@@ -774,6 +859,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569202",
     "cost": "2 Cost / 3000 Power"
   },
   "EB02-026": {
@@ -782,7 +868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569202",
     "cost": "3 Cost / 2000 Power"
   },
   "EB02-027": {
@@ -791,7 +878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "4 Cost / 5000 Power"
   },
   "EB02-028": {
@@ -801,6 +889,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Alabasta / Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569202",
     "cost": "5 Cost / 5000 Power"
   },
   "EB02-030": {
@@ -809,7 +898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Alabasta / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "2 Cost"
   },
   "EB02-034": {
@@ -818,7 +908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Navy / Foxy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "4 Cost / 6000 Power"
   },
   "EB02-035": {
@@ -827,7 +918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569202",
     "cost": "5 Cost / 7000 Power"
   },
   "EB02-033": {
@@ -836,7 +928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Sprite",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "1 Cost / 0 Power"
   },
   "EB02-031": {
@@ -846,6 +939,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Music",
     "rarity": "R",
+    "pack": "569202",
     "cost": "2 Cost"
   },
   "EB02-032": {
@@ -854,7 +948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Water Seven / Galley-La Company",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "1 Cost / 0 Power"
   },
   "EB02-036": {
@@ -864,6 +959,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569202",
     "cost": "3 Cost / 2000 Power"
   },
   "EB02-029": {
@@ -872,7 +968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal / East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "3 Cost / 5000 Power"
   },
   "EB02-037": {
@@ -882,6 +979,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Water Seven / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569202",
     "cost": "3 Cost / 4000 Power"
   },
   "EB02-039": {
@@ -890,7 +988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "4 Cost"
   },
   "EB02-040": {
@@ -900,6 +999,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Music",
     "rarity": "R",
+    "pack": "569202",
     "cost": "2 Cost"
   },
   "EB02-038": {
@@ -908,7 +1008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "3 Cost / 4000 Power"
   },
   "EB02-041": {
@@ -918,6 +1019,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569202",
     "cost": "1 Cost"
   },
   "EB02-044": {
@@ -926,7 +1028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569202",
     "cost": "7 Cost / 7000 Power"
   },
   "EB02-042": {
@@ -935,7 +1038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "6 Cost / 8000 Power"
   },
   "EB02-043": {
@@ -944,7 +1048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "7 Cost / 9000 Power"
   },
   "EB02-045": {
@@ -953,7 +1058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569202",
     "cost": "5 Cost / 6000 Power"
   },
   "EB02-047": {
@@ -962,7 +1068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "5 Cost / 6000 Power"
   },
   "EB02-046": {
@@ -971,7 +1078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "3 Cost / 3000 Power"
   },
   "EB02-048": {
@@ -981,6 +1089,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569202",
     "cost": "5 Cost / 6000 Power"
   },
   "EB02-049": {
@@ -990,6 +1099,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569202",
     "cost": "5 Cost / 6000 Power"
   },
   "EB02-050": {
@@ -999,6 +1109,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Music",
     "rarity": "R",
+    "pack": "569202",
     "cost": "2 Cost"
   },
   "EB02-051": {
@@ -1007,7 +1118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Former Rumbar Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "3 Cost"
   },
   "EB02-052": {
@@ -1016,7 +1128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569202",
     "cost": "10 Cost / 11000 Power"
   },
   "EB02-053": {
@@ -1025,7 +1138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Alchemi",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "3 Cost / 4000 Power"
   },
   "EB02-055": {
@@ -1035,6 +1149,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Fish-Man / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569202",
     "cost": "4 Cost / 5000 Power"
   },
   "EB02-054": {
@@ -1044,6 +1159,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "East Blue / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569202",
     "cost": "5 Cost / 6000 Power"
   },
   "EB02-057": {
@@ -1052,7 +1168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Treasure Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "4 Cost / 5000 Power"
   },
   "EB02-056": {
@@ -1061,7 +1178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Scientist / Egghead",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569202",
     "cost": "5 Cost / 0 Power"
   },
   "EB02-058": {
@@ -1071,6 +1189,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Music",
     "rarity": "R",
+    "pack": "569202",
     "cost": "2 Cost"
   },
   "EB02-059": {
@@ -1079,7 +1198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "4 Cost"
   },
   "EB02-061": {
@@ -1088,7 +1208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Water Seven / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569202",
     "cost": "6 Cost / 7000 Power"
   },
   "EB02-060": {
@@ -1097,7 +1218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Yellow",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569202",
     "cost": "2 Cost"
   },
   "EB03-001": {
@@ -1107,6 +1229,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Blue",
     "traits": "Alabasta",
     "rarity": "L",
+    "pack": "569203",
     "cost": "4 Life / 5000 Power"
   },
   "EB03-003": {
@@ -1115,7 +1238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569203",
     "cost": "5 Cost / 7000 Power"
   },
   "EB03-002": {
@@ -1124,7 +1248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Neo Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "5 Cost / 6000 Power"
   },
   "EB03-007": {
@@ -1133,7 +1258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Grantesoro",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "4 Cost / 5000 Power"
   },
   "EB03-006": {
@@ -1143,6 +1269,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Alabasta / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569203",
     "cost": "5 Cost / 7000 Power"
   },
   "EB03-004": {
@@ -1151,7 +1278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Grantesoro",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "3 Cost / 2000 Power"
   },
   "EB03-005": {
@@ -1161,6 +1289,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Donquixote Pirates",
     "rarity": "R",
+    "pack": "569203",
     "cost": "3 Cost / 0 Power"
   },
   "EB03-015": {
@@ -1169,7 +1298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Merfolk / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "2 Cost / 0 Power"
   },
   "EB03-016": {
@@ -1178,7 +1308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "1 Cost / 0 Power"
   },
   "EB03-008": {
@@ -1188,6 +1319,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Navy / SWORD",
     "rarity": "R",
+    "pack": "569203",
     "cost": "3 Cost / 5000 Power"
   },
   "EB03-009": {
@@ -1196,7 +1328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Windmill Village",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "1 Cost / 0 Power"
   },
   "EB03-010": {
@@ -1206,6 +1339,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Punk Hazard / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569203",
     "cost": "5 Cost / 6000 Power"
   },
   "EB03-017": {
@@ -1215,6 +1349,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / Bonney Pirates",
     "rarity": "R",
+    "pack": "569203",
     "cost": "5 Cost / 6000 Power"
   },
   "EB03-013": {
@@ -1224,6 +1359,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Minks",
     "rarity": "R",
+    "pack": "569203",
     "cost": "6 Cost / 7000 Power"
   },
   "EB03-012": {
@@ -1233,6 +1369,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano",
     "rarity": "R",
+    "pack": "569203",
     "cost": "2 Cost / 0 Power"
   },
   "EB03-019": {
@@ -1241,7 +1378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "6 Cost / 7000 Power"
   },
   "EB03-011": {
@@ -1250,7 +1388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "1 Cost"
   },
   "EB03-014": {
@@ -1259,7 +1398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Frost Moon Village",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "2 Cost / 0 Power"
   },
   "EB03-021": {
@@ -1268,7 +1408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "4 Cost / 2000 Power"
   },
   "EB03-023": {
@@ -1277,7 +1418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "2 Cost / 0 Power"
   },
   "EB03-020": {
@@ -1286,7 +1428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "1 Cost"
   },
   "EB03-018": {
@@ -1295,7 +1438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569203",
     "cost": "4 Cost / 6000 Power"
   },
   "EB03-022": {
@@ -1305,6 +1449,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569203",
     "cost": "6 Cost / 6000 Power"
   },
   "EB03-025": {
@@ -1314,6 +1459,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569203",
     "cost": "5 Cost / 6000 Power"
   },
   "EB03-027": {
@@ -1323,6 +1469,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Amazon Lily",
     "rarity": "R",
+    "pack": "569203",
     "cost": "6 Cost / 7000 Power"
   },
   "EB03-026": {
@@ -1331,7 +1478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569203",
     "cost": "6 Cost / 8000 Power"
   },
   "EB03-028": {
@@ -1340,7 +1488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "2 Cost / 0 Power"
   },
   "EB03-024": {
@@ -1349,7 +1498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569203",
     "cost": "5 Cost / 4000 Power"
   },
   "EB03-029": {
@@ -1358,7 +1508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "1 Cost"
   },
   "EB03-030": {
@@ -1367,7 +1518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "5 Cost / 6000 Power"
   },
   "EB03-031": {
@@ -1376,7 +1528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569203",
     "cost": "5 Cost / 5000 Power"
   },
   "EB03-034": {
@@ -1386,6 +1539,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Rocks Pirates",
     "rarity": "R",
+    "pack": "569203",
     "cost": "7 Cost / 7000 Power"
   },
   "EB03-036": {
@@ -1394,7 +1548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "4 Cost / 2000 Power"
   },
   "EB03-033": {
@@ -1403,7 +1558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "5 Cost / 6000 Power"
   },
   "EB03-035": {
@@ -1413,6 +1569,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569203",
     "cost": "4 Cost / 4000 Power"
   },
   "EB03-032": {
@@ -1421,7 +1578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "1 Cost / 2000 Power"
   },
   "EB03-038": {
@@ -1430,7 +1588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "1 Cost"
   },
   "EB03-037": {
@@ -1440,6 +1599,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "ODYSSEY",
     "rarity": "R",
+    "pack": "569203",
     "cost": "4 Cost / 5000 Power"
   },
   "EB03-040": {
@@ -1448,7 +1608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "5 Cost / 6000 Power"
   },
   "EB03-042": {
@@ -1457,7 +1618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569203",
     "cost": "4 Cost / 5000 Power"
   },
   "EB03-041": {
@@ -1467,6 +1629,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy / SWORD",
     "rarity": "R",
+    "pack": "569203",
     "cost": "4 Cost / 6000 Power"
   },
   "EB03-039": {
@@ -1476,6 +1639,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569203",
     "cost": "6 Cost / 7000 Power"
   },
   "EB03-043": {
@@ -1485,6 +1649,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "CP0",
     "rarity": "R",
+    "pack": "569203",
     "cost": "7 Cost / 7000 Power"
   },
   "EB03-044": {
@@ -1493,7 +1658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "3 Cost / 4000 Power"
   },
   "EB03-045": {
@@ -1502,7 +1668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Muggy Kingdom / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569203",
     "cost": "4 Cost / 6000 Power"
   },
   "EB03-047": {
@@ -1511,7 +1678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "2 Cost / 2000 Power"
   },
   "EB03-046": {
@@ -1520,7 +1688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "4 Cost / 5000 Power"
   },
   "EB03-048": {
@@ -1530,6 +1699,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Dressrosa",
     "rarity": "R",
+    "pack": "569203",
     "cost": "2 Cost / 0 Power"
   },
   "EB03-050": {
@@ -1538,7 +1708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "2 Cost / 0 Power"
   },
   "EB03-049": {
@@ -1547,7 +1718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "1 Cost"
   },
   "EB03-051": {
@@ -1556,7 +1728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "3 Cost / 3000 Power"
   },
   "EB03-053": {
@@ -1565,7 +1738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569203",
     "cost": "5 Cost / 6000 Power"
   },
   "EB03-052": {
@@ -1575,6 +1749,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Merfolk / Fish-Man Island",
     "rarity": "R",
+    "pack": "569203",
     "cost": "3 Cost / 0 Power"
   },
   "EB03-054": {
@@ -1583,7 +1758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "3 Cost / 5000 Power"
   },
   "EB03-062": {
@@ -1592,7 +1768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569203",
     "cost": "8 Cost / 6000 Power"
   },
   "EB03-056": {
@@ -1601,7 +1778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "4 Cost / 3000 Power"
   },
   "EB03-058": {
@@ -1611,6 +1789,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Egghead / Scientist",
     "rarity": "R",
+    "pack": "569203",
     "cost": "5 Cost / 6000 Power"
   },
   "EB03-055": {
@@ -1619,7 +1798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569203",
     "cost": "7 Cost / 8000 Power"
   },
   "EB03-059": {
@@ -1629,6 +1809,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Seraphim / Egghead",
     "rarity": "R",
+    "pack": "569203",
     "cost": "6 Cost / 7000 Power"
   },
   "EB04-003": {
@@ -1638,6 +1819,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Punk Hazard / Navy",
     "rarity": "R",
+    "pack": "569115",
     "cost": "8 Cost / 8000 Power"
   },
   "EB03-060": {
@@ -1646,7 +1828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569203",
     "cost": "1 Cost"
   },
   "EB03-061": {
@@ -1655,7 +1838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569203",
     "cost": "7 Cost / 8000 Power"
   },
   "EB04-002": {
@@ -1665,6 +1849,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Egghead / Bonney Pirates",
     "rarity": "R",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "EB04-001": {
@@ -1674,6 +1859,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Yellow",
     "traits": "Egghead / Bonney Pirates",
     "rarity": "L",
+    "pack": "569115",
     "cost": "4 Life / 5000 Power"
   },
   "EB04-004": {
@@ -1682,7 +1868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "7 Cost / 8000 Power"
   },
   "EB03-057": {
@@ -1692,6 +1879,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Land of Wano",
     "rarity": "R",
+    "pack": "569203",
     "cost": "5 Cost / 6000 Power"
   },
   "EB04-005": {
@@ -1700,7 +1888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Seven Warlords of the Sea / Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "3 Cost / 5000 Power"
   },
   "EB04-006": {
@@ -1709,7 +1898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Lulucia Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 0 Power"
   },
   "EB04-007": {
@@ -1718,7 +1908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "7 Cost / 9000 Power"
   },
   "EB04-008": {
@@ -1728,6 +1919,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Egghead / Bonney Pirates",
     "rarity": "R",
+    "pack": "569115",
     "cost": "1 Cost"
   },
   "EB04-010": {
@@ -1736,7 +1928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Red",
     "traits": "Lulucia Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "7 Cost"
   },
   "EB04-012": {
@@ -1745,7 +1938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "7 Cost / 8000 Power"
   },
   "EB04-014": {
@@ -1754,7 +1948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost / 0 Power"
   },
   "EB04-013": {
@@ -1763,7 +1958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "8 Cost / 9000 Power"
   },
   "EB04-011": {
@@ -1772,7 +1968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Neptunian",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "7 Cost / 8000 Power"
   },
   "EB04-015": {
@@ -1782,6 +1979,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Fish-Man / Fish-Man Island / The Sun Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "7 Cost / 8000 Power"
   },
   "EB04-016": {
@@ -1790,7 +1988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Neptunian",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "5 Cost / 7000 Power"
   },
   "EB04-009": {
@@ -1799,7 +1998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Former Roger Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "0 Cost"
   },
   "EB04-022": {
@@ -1809,6 +2009,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Dressrosa / Navy",
     "rarity": "R",
+    "pack": "569114",
     "cost": "5 Cost / 7000 Power"
   },
   "EB04-018": {
@@ -1818,6 +2019,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Animal / Fish-Man Island",
     "rarity": "R",
+    "pack": "569114",
     "cost": "4 Cost / 4000 Power"
   },
   "EB04-020": {
@@ -1826,7 +2028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Fish-Man / Fish-Man Island / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "EB04-019": {
@@ -1836,6 +2039,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Minks",
     "rarity": "R",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "EB04-021": {
@@ -1844,7 +2048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost / 4000 Power"
   },
   "EB04-023": {
@@ -1854,6 +2059,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Alabasta",
     "rarity": "R",
+    "pack": "569114",
     "cost": "8 Cost / 9000 Power"
   },
   "EB04-017": {
@@ -1862,7 +2068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "6 Cost / 5000 Power"
   },
   "EB04-026": {
@@ -1871,7 +2078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Egghead / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "4 Cost / 6000 Power"
   },
   "EB04-025": {
@@ -1880,7 +2088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "7 Cost / 4000 Power"
   },
   "EB04-024": {
@@ -1889,7 +2098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "2 Cost / 0 Power"
   },
   "EB04-028": {
@@ -1899,6 +2109,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569114",
     "cost": "5 Cost"
   },
   "EB04-027": {
@@ -1908,6 +2119,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "5 Cost / 7000 Power"
   },
   "EB04-029": {
@@ -1916,7 +2128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Punk Hazard / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "EB04-030": {
@@ -1926,6 +2139,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "7 Cost / 9000 Power"
   },
   "EB04-032": {
@@ -1935,6 +2149,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "1 Cost / 1000 Power"
   },
   "EB04-038": {
@@ -1943,7 +2158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Navy / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "6 Cost / 8000 Power"
   },
   "EB04-031": {
@@ -1953,6 +2169,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Lunarian / Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "6 Cost / 7000 Power"
   },
   "EB04-035": {
@@ -1961,7 +2178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "SMILE / Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost / 4000 Power"
   },
   "EB04-036": {
@@ -1970,7 +2188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Foxy Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "8 Cost / 9000 Power"
   },
   "EB04-034": {
@@ -1979,7 +2198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "2 Cost / 1000 Power"
   },
   "EB04-033": {
@@ -1988,7 +2208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Giant / Fish-Man / Foxy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "5 Cost / 6000 Power"
   },
   "EB04-037": {
@@ -1997,7 +2218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Foxy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "1 Cost / 2000 Power"
   },
   "EB04-043": {
@@ -2007,6 +2229,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Egghead / CP0",
     "rarity": "R",
+    "pack": "569115",
     "cost": "3 Cost / 4000 Power"
   },
   "EB04-040": {
@@ -2016,6 +2239,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "EB04-039": {
@@ -2025,6 +2249,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Supernovas / Kid Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "7 Cost / 8000 Power"
   },
   "EB04-047": {
@@ -2034,6 +2259,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy / SWORD",
     "rarity": "R",
+    "pack": "569115",
     "cost": "3 Cost / 3000 Power"
   },
   "EB04-042": {
@@ -2042,7 +2268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP8",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "EB04-041": {
@@ -2051,7 +2278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost"
   },
   "EB04-048": {
@@ -2060,7 +2288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Egghead / CP0",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "4 Cost / 6000 Power"
   },
   "EB04-045": {
@@ -2069,7 +2298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "EB04-046": {
@@ -2078,7 +2308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Egghead / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "2 Cost / 1000 Power"
   },
   "EB04-044": {
@@ -2087,7 +2318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy / SWORD",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "6 Cost / 7000 Power"
   },
   "EB04-049": {
@@ -2096,7 +2328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "4 Cost"
   },
   "EB04-051": {
@@ -2105,7 +2338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "8 Cost / 7000 Power"
   },
   "EB04-050": {
@@ -2115,6 +2349,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy / SWORD",
     "rarity": "R",
+    "pack": "569115",
     "cost": "1 Cost"
   },
   "EB04-053": {
@@ -2124,6 +2359,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Egghead / Navy",
     "rarity": "R",
+    "pack": "569115",
     "cost": "2 Cost / 1000 Power"
   },
   "EB04-054": {
@@ -2133,6 +2369,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Egghead / Revolutionary Army",
     "rarity": "R",
+    "pack": "569115",
     "cost": "7 Cost / 7000 Power"
   },
   "EB04-056": {
@@ -2141,7 +2378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Biological Weapon / Egghead / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 1000 Power"
   },
   "EB04-055": {
@@ -2150,7 +2388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "4 Cost / 5000 Power"
   },
   "EB04-052": {
@@ -2160,6 +2399,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569115",
     "cost": "4 Cost / 4000 Power"
   },
   "EB04-058": {
@@ -2168,7 +2408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "5 Cost / 6000 Power"
   },
   "EB04-057": {
@@ -2177,7 +2418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Ohara / Scientist",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "2 Cost / 0 Power"
   },
   "EB04-059": {
@@ -2187,6 +2429,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Fish-Man Island / Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569115",
     "cost": "6 Cost"
   },
   "OP01-003": {
@@ -2196,6 +2439,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Green",
     "traits": "Supernovas / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569101",
     "cost": "4 Life / 5000 Power"
   },
   "EB04-060": {
@@ -2204,7 +2448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Egghead / The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "2 Cost"
   },
   "OP01-001": {
@@ -2214,6 +2459,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Supernovas / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569101",
     "cost": "5 Life / 5000 Power"
   },
   "EB04-061": {
@@ -2222,7 +2468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569115",
     "cost": "10 Cost / 12000 Power"
   },
   "OP01-002": {
@@ -2232,6 +2479,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Green",
     "traits": "Supernovas / Heart Pirates",
     "rarity": "L",
+    "pack": "569101",
     "cost": "4 Life / 5000 Power"
   },
   "OP01-006": {
@@ -2240,7 +2488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "1 Cost / 0 Power"
   },
   "OP01-005": {
@@ -2250,6 +2499,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "FILM",
     "rarity": "R",
+    "pack": "569101",
     "cost": "4 Cost / 4000 Power"
   },
   "OP01-004": {
@@ -2259,6 +2509,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-007": {
@@ -2267,7 +2518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Caribou Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-008": {
@@ -2276,7 +2528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Beautiful Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "4 Cost / 5000 Power"
   },
   "OP01-010": {
@@ -2285,7 +2538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "1 Cost / 3000 Power"
   },
   "OP01-014": {
@@ -2294,7 +2548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Fish-Man / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "4 Cost / 5000 Power"
   },
   "OP01-013": {
@@ -2304,6 +2559,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-016": {
@@ -2313,6 +2569,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569101",
     "cost": "1 Cost / 2000 Power"
   },
   "OP01-015": {
@@ -2321,7 +2578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-017": {
@@ -2331,6 +2589,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-009": {
@@ -2339,7 +2598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-019": {
@@ -2348,7 +2608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Barto Club",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 2000 Power"
   },
   "OP01-012": {
@@ -2357,7 +2618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Happosui Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 4000 Power"
   },
   "OP01-011": {
@@ -2366,7 +2628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-022": {
@@ -2375,7 +2638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "4 Cost / 5000 Power"
   },
   "OP01-025": {
@@ -2384,7 +2648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569101",
     "cost": "3 Cost / 5000 Power"
   },
   "OP01-018": {
@@ -2393,7 +2658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Giant / New Giant Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "4 Cost / 6000 Power"
   },
   "OP01-021": {
@@ -2402,7 +2668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-020": {
@@ -2411,7 +2678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-024": {
@@ -2420,7 +2688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-023": {
@@ -2429,7 +2698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Former Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "3 Cost / 5000 Power"
   },
   "OP01-026": {
@@ -2439,6 +2709,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569101",
     "cost": "2 Cost"
   },
   "OP01-033": {
@@ -2447,7 +2718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / Former Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "3 Cost / 3000 Power"
   },
   "OP01-027": {
@@ -2456,7 +2728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Supernovas / Beautiful Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "4 Cost"
   },
   "OP01-028": {
@@ -2465,7 +2738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "1 Cost"
   },
   "OP01-029": {
@@ -2474,7 +2748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "1 Cost"
   },
   "OP01-032": {
@@ -2483,7 +2758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-030": {
@@ -2492,7 +2768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "1 Cost"
   },
   "OP01-034": {
@@ -2501,7 +2778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-031": {
@@ -2511,6 +2789,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
     "rarity": "L",
+    "pack": "569101",
     "cost": "5 Life / 5000 Power"
   },
   "OP01-035": {
@@ -2520,6 +2799,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano / The Akazaya Nine",
     "rarity": "R",
+    "pack": "569101",
     "cost": "3 Cost / 5000 Power"
   },
   "OP01-038": {
@@ -2528,7 +2808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-037": {
@@ -2537,7 +2818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-042": {
@@ -2546,7 +2828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "1 Cost / 0 Power"
   },
   "OP01-036": {
@@ -2555,7 +2838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "1 Cost / 3000 Power"
   },
   "OP01-039": {
@@ -2564,7 +2848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "2 Cost / 2000 Power"
   },
   "OP01-045": {
@@ -2573,7 +2858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "4 Cost / 6000 Power"
   },
   "OP01-040": {
@@ -2582,7 +2868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569101",
     "cost": "6 Cost / 6000 Power"
   },
   "OP01-044": {
@@ -2591,7 +2878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-041": {
@@ -2601,6 +2889,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
     "rarity": "R",
+    "pack": "569101",
     "cost": "1 Cost / 0 Power"
   },
   "OP01-043": {
@@ -2609,7 +2898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "3 Cost / 5000 Power"
   },
   "OP01-046": {
@@ -2619,6 +2909,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano / The Akazaya Nine",
     "rarity": "R",
+    "pack": "569101",
     "cost": "5 Cost / 7000 Power"
   },
   "OP01-051": {
@@ -2627,7 +2918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569101",
     "cost": "8 Cost / 8000 Power"
   },
   "OP01-053": {
@@ -2636,7 +2928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 4000 Power"
   },
   "OP01-048": {
@@ -2645,7 +2938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-049": {
@@ -2655,6 +2949,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Minks / Heart Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "4 Cost / 4000 Power"
   },
   "OP01-047": {
@@ -2663,7 +2958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569101",
     "cost": "5 Cost / 6000 Power"
   },
   "OP01-050": {
@@ -2672,7 +2968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "3 Cost / 2000 Power"
   },
   "OP01-059": {
@@ -2681,7 +2978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "3 Cost"
   },
   "OP01-056": {
@@ -2690,7 +2988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Supernovas / Hawkins Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "6 Cost"
   },
   "OP01-054": {
@@ -2700,6 +2999,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / Navy / Drake Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "5 Cost / 6000 Power"
   },
   "OP01-055": {
@@ -2708,7 +3008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "1 Cost"
   },
   "OP01-052": {
@@ -2717,7 +3018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-060": {
@@ -2727,6 +3029,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
     "rarity": "L",
+    "pack": "569101",
     "cost": "5 Life / 5000 Power"
   },
   "OP01-057": {
@@ -2735,7 +3038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "1 Cost"
   },
   "OP01-061": {
@@ -2745,6 +3049,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
     "rarity": "L",
+    "pack": "569101",
     "cost": "4 Life / 5000 Power"
   },
   "OP01-067": {
@@ -2753,7 +3058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569101",
     "cost": "7 Cost / 7000 Power"
   },
   "OP01-058": {
@@ -2763,6 +3069,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / Kid Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "2 Cost"
   },
   "OP01-062": {
@@ -2772,6 +3079,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Purple",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
     "rarity": "L",
+    "pack": "569101",
     "cost": "4 Life / 5000 Power"
   },
   "OP01-064": {
@@ -2780,7 +3088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Buggy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-063": {
@@ -2789,7 +3098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / Arlong Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "4 Cost / 5000 Power"
   },
   "OP01-066": {
@@ -2798,7 +3108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Krieg Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "4 Cost / 6000 Power"
   },
   "OP01-065": {
@@ -2807,7 +3118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy / Donquixote Pirates / Punk Hazard",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "5 Cost / 7000 Power"
   },
   "OP01-068": {
@@ -2817,6 +3129,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "4 Cost / 5000 Power"
   },
   "OP01-070": {
@@ -2825,7 +3138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569101",
     "cost": "9 Cost / 9000 Power"
   },
   "OP01-071": {
@@ -2835,6 +3149,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Fish-Man / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569101",
     "cost": "4 Cost / 2000 Power"
   },
   "OP01-069": {
@@ -2844,6 +3159,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Scientist / Punk Hazard",
     "rarity": "R",
+    "pack": "569101",
     "cost": "4 Cost / 5000 Power"
   },
   "OP01-072": {
@@ -2852,7 +3168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Biological Weapon / Punk Hazard",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "3 Cost / 1000 Power"
   },
   "OP01-073": {
@@ -2862,6 +3179,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-074": {
@@ -2871,6 +3189,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Revolutionary Army",
     "rarity": "R",
+    "pack": "569101",
     "cost": "4 Cost / 5000 Power"
   },
   "OP01-075": {
@@ -2879,7 +3198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Biological Weapon / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "4 Cost / 5000 Power"
   },
   "OP01-079": {
@@ -2889,6 +3209,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Baroque Works",
     "rarity": "R",
+    "pack": "569101",
     "cost": "3 Cost / 1000 Power"
   },
   "OP01-076": {
@@ -2897,7 +3218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 4000 Power"
   },
   "OP01-084": {
@@ -2906,7 +3228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-088": {
@@ -2915,7 +3238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "1 Cost"
   },
   "OP01-077": {
@@ -2924,7 +3248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "1 Cost / 2000 Power"
   },
   "OP01-080": {
@@ -2933,7 +3258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-078": {
@@ -2942,7 +3268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569101",
     "cost": "4 Cost / 5000 Power"
   },
   "OP01-086": {
@@ -2952,6 +3279,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "2 Cost"
   },
   "OP01-081": {
@@ -2960,7 +3288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Punk Hazard",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "3 Cost / 5000 Power"
   },
   "OP01-082": {
@@ -2969,7 +3298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Donquixote Pirates / Punk Hazard",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-083": {
@@ -2978,7 +3308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-085": {
@@ -2987,7 +3318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-093": {
@@ -2997,6 +3329,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-091": {
@@ -3006,6 +3339,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
     "rarity": "L",
+    "pack": "569101",
     "cost": "5 Life / 5000 Power"
   },
   "OP01-089": {
@@ -3014,7 +3348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "3 Cost"
   },
   "OP01-087": {
@@ -3023,7 +3358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost"
   },
   "OP01-090": {
@@ -3032,7 +3368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "1 Cost"
   },
   "OP01-092": {
@@ -3041,7 +3378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "7 Cost / 9000 Power"
   },
   "OP01-100": {
@@ -3050,7 +3388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Land of Wano / Kurozumi Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-094": {
@@ -3059,7 +3398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569101",
     "cost": "10 Cost / 12000 Power"
   },
   "OP01-102": {
@@ -3069,6 +3409,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-096": {
@@ -3077,7 +3418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569101",
     "cost": "7 Cost / 7000 Power"
   },
   "OP01-099": {
@@ -3086,7 +3428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Land of Wano / Kurozumi Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-103": {
@@ -3095,7 +3438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / On-Air Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "4 Cost / 6000 Power"
   },
   "OP01-095": {
@@ -3104,7 +3448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "5 Cost / 6000 Power"
   },
   "OP01-097": {
@@ -3114,6 +3459,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "6 Cost / 5000 Power"
   },
   "OP01-098": {
@@ -3122,7 +3468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Land of Wano / Kurozumi Clan",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "1 Cost / 2000 Power"
   },
   "OP01-101": {
@@ -3131,7 +3478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-104": {
@@ -3140,7 +3488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-105": {
@@ -3149,7 +3498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-107": {
@@ -3158,7 +3508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "5 Cost / 7000 Power"
   },
   "OP01-106": {
@@ -3167,7 +3518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / Hawkins Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "4 Cost / 2000 Power"
   },
   "OP01-108": {
@@ -3176,7 +3528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Supernovas / Kid Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "4 Cost / 5000 Power"
   },
   "OP01-111": {
@@ -3186,6 +3539,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "4 Cost / 5000 Power"
   },
   "OP01-110": {
@@ -3194,7 +3548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Land of Wano / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "6 Cost / 8000 Power"
   },
   "OP01-112": {
@@ -3204,6 +3559,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "4 Cost / 5000 Power"
   },
   "OP01-109": {
@@ -3212,7 +3568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "2 Cost / 3000 Power"
   },
   "OP01-114": {
@@ -3222,6 +3579,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Navy / Drake Pirates / Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "5 Cost / 5000 Power"
   },
   "OP01-113": {
@@ -3230,7 +3588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "3 Cost / 4000 Power"
   },
   "OP01-116": {
@@ -3239,7 +3598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "2 Cost"
   },
   "OP02-002": {
@@ -3249,6 +3609,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Black",
     "traits": "Navy",
     "rarity": "L",
+    "pack": "569102",
     "cost": "4 Life / 5000 Power"
   },
   "OP01-115": {
@@ -3257,7 +3618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "4 Cost"
   },
   "OP01-118": {
@@ -3266,7 +3628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569101",
     "cost": "1 Cost"
   },
   "OP01-117": {
@@ -3275,7 +3638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569101",
     "cost": "2 Cost"
   },
   "OP01-119": {
@@ -3285,6 +3649,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569101",
     "cost": "2 Cost"
   },
   "OP01-120": {
@@ -3293,7 +3658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Four Emperors / Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569101",
     "cost": "9 Cost / 10000 Power"
   },
   "OP02-001": {
@@ -3303,6 +3669,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
     "rarity": "L",
+    "pack": "569102",
     "cost": "6 Life / 6000 Power"
   },
   "OP02-004": {
@@ -3311,7 +3678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569102",
     "cost": "9 Cost / 10000 Power"
   },
   "OP01-121": {
@@ -3320,7 +3688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569101",
     "cost": "5 Cost / 5000 Power"
   },
   "OP02-003": {
@@ -3329,7 +3698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "4 Cost / 6000 Power"
   },
   "OP02-006": {
@@ -3338,7 +3708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "5 Cost / 7000 Power"
   },
   "OP02-005": {
@@ -3347,7 +3718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Mountain Bandits",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-007": {
@@ -3356,7 +3728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "6 Cost / 8000 Power"
   },
   "OP02-009": {
@@ -3365,7 +3738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "3 Cost / 5000 Power"
   },
   "OP02-008": {
@@ -3375,6 +3749,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569102",
     "cost": "4 Cost / 4000 Power"
   },
   "OP02-010": {
@@ -3383,7 +3758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Mountain Bandits",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "1 Cost / 2000 Power"
   },
   "OP02-013": {
@@ -3392,7 +3768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569102",
     "cost": "7 Cost / 7000 Power"
   },
   "OP02-015": {
@@ -3401,7 +3778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Windmill Village",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "1 Cost / 0 Power"
   },
   "OP02-017": {
@@ -3411,6 +3789,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Spade Pirates",
     "rarity": "R",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-012": {
@@ -3419,7 +3798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-011": {
@@ -3429,6 +3809,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569102",
     "cost": "3 Cost / 3000 Power"
   },
   "OP02-014": {
@@ -3437,7 +3818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "1 Cost / 2000 Power"
   },
   "OP02-023": {
@@ -3446,7 +3828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "1 Cost"
   },
   "OP02-018": {
@@ -3456,6 +3839,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569102",
     "cost": "4 Cost / 5000 Power"
   },
   "OP02-025": {
@@ -3465,6 +3849,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano / The Akazaya Nine",
     "rarity": "L",
+    "pack": "569102",
     "cost": "5 Life / 5000 Power"
   },
   "OP02-016": {
@@ -3473,7 +3858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Mountain Bandits",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "1 Cost / 2000 Power"
   },
   "OP02-021": {
@@ -3483,6 +3869,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569102",
     "cost": "1 Cost"
   },
   "OP02-019": {
@@ -3491,7 +3878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "3 Cost / 4000 Power"
   },
   "OP02-022": {
@@ -3500,7 +3888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "1 Cost"
   },
   "OP02-020": {
@@ -3509,7 +3898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Giant / Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "7 Cost / 9000 Power"
   },
   "OP02-028": {
@@ -3518,7 +3908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "3 Cost / 5000 Power"
   },
   "OP02-024": {
@@ -3527,7 +3918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost"
   },
   "OP02-026": {
@@ -3537,6 +3929,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Blue",
     "traits": "Straw Hat Crew",
     "rarity": "L",
+    "pack": "569102",
     "cost": "4 Life / 5000 Power"
   },
   "OP02-027": {
@@ -3545,7 +3938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "3 Cost / 4000 Power"
   },
   "OP02-032": {
@@ -3554,7 +3948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-029": {
@@ -3564,6 +3959,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Minks",
     "rarity": "R",
+    "pack": "569102",
     "cost": "5 Cost / 5000 Power"
   },
   "OP02-030": {
@@ -3572,7 +3968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569102",
     "cost": "8 Cost / 8000 Power"
   },
   "OP02-031": {
@@ -3581,7 +3978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "1 Cost / 0 Power"
   },
   "OP02-037": {
@@ -3590,7 +3988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "3 Cost / 4000 Power"
   },
   "OP02-033": {
@@ -3599,7 +3998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Fish-Man / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost / 4000 Power"
   },
   "OP02-034": {
@@ -3608,7 +4008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "2 Cost / 2000 Power"
   },
   "OP02-040": {
@@ -3618,6 +4019,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569102",
     "cost": "4 Cost / 5000 Power"
   },
   "OP02-036": {
@@ -3626,7 +4028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569102",
     "cost": "3 Cost / 5000 Power"
   },
   "OP02-035": {
@@ -3635,7 +4038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-044": {
@@ -3644,7 +4048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-046": {
@@ -3653,7 +4058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "2 Cost"
   },
   "OP02-039": {
@@ -3662,7 +4068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "5 Cost / 7000 Power"
   },
   "OP02-038": {
@@ -3671,7 +4078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "3 Cost / 4000 Power"
   },
   "OP02-041": {
@@ -3681,6 +4089,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "FILM / Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569102",
     "cost": "7 Cost / 7000 Power"
   },
   "OP02-045": {
@@ -3689,7 +4098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "FILM / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "3 Cost"
   },
   "OP02-043": {
@@ -3698,7 +4108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "4 Cost / 6000 Power"
   },
   "OP02-042": {
@@ -3708,6 +4119,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano",
     "rarity": "R",
+    "pack": "569102",
     "cost": "4 Cost / 6000 Power"
   },
   "OP02-047": {
@@ -3717,6 +4129,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
     "rarity": "R",
+    "pack": "569102",
     "cost": "1 Cost"
   },
   "OP02-049": {
@@ -3726,6 +4139,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Impel Down / Revolutionary Army",
     "rarity": "L",
+    "pack": "569102",
     "cost": "5 Life / 5000 Power"
   },
   "OP02-051": {
@@ -3734,7 +4148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569102",
     "cost": "7 Cost / 7000 Power"
   },
   "OP02-052": {
@@ -3743,7 +4158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Buggy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-054": {
@@ -3752,7 +4168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "4 Cost / 6000 Power"
   },
   "OP02-050": {
@@ -3762,6 +4179,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Impel Down / Revolutionary Army",
     "rarity": "R",
+    "pack": "569102",
     "cost": "4 Cost / 5000 Power"
   },
   "OP02-055": {
@@ -3770,7 +4188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "6 Cost / 8000 Power"
   },
   "OP02-048": {
@@ -3779,7 +4198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Green",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "1 Cost"
   },
   "OP02-059": {
@@ -3788,7 +4208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "4 Cost / 5000 Power"
   },
   "OP02-060": {
@@ -3797,7 +4218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Buggy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "1 Cost / 3000 Power"
   },
   "OP02-053": {
@@ -3806,7 +4228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "5 Cost / 7000 Power"
   },
   "OP02-058": {
@@ -3816,6 +4239,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Impel Down / Buggy Pirates",
     "rarity": "R",
+    "pack": "569102",
     "cost": "1 Cost / 2000 Power"
   },
   "OP02-063": {
@@ -3824,7 +4248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "1 Cost / 1000 Power"
   },
   "OP02-061": {
@@ -3833,7 +4258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Giant / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "4 Cost / 5000 Power"
   },
   "OP02-062": {
@@ -3842,7 +4268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569102",
     "cost": "6 Cost / 7000 Power"
   },
   "OP02-066": {
@@ -3851,7 +4278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "1 Cost"
   },
   "OP02-065": {
@@ -3861,6 +4289,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Impel Down / Former Baroque Works",
     "rarity": "R",
+    "pack": "569102",
     "cost": "4 Cost / 5000 Power"
   },
   "OP02-069": {
@@ -3869,7 +4298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Impel Down / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "3 Cost"
   },
   "OP02-064": {
@@ -3879,6 +4309,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Impel Down / Former Baroque Works",
     "rarity": "R",
+    "pack": "569102",
     "cost": "5 Cost / 5000 Power"
   },
   "OP02-068": {
@@ -3888,6 +4319,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Impel Down / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569102",
     "cost": "0 Cost"
   },
   "OP02-067": {
@@ -3896,7 +4328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Fish-Man / Impel Down",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "2 Cost"
   },
   "OP02-071": {
@@ -3906,6 +4339,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Impel Down",
     "rarity": "L",
+    "pack": "569102",
     "cost": "5 Life / 5000 Power"
   },
   "OP02-070": {
@@ -3914,7 +4348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Blue",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "1 Cost"
   },
   "OP02-056": {
@@ -3923,7 +4358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "1 Cost / 2000 Power"
   },
   "OP02-057": {
@@ -3932,7 +4368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "3 Cost / 3000 Power"
   },
   "OP02-073": {
@@ -3942,6 +4379,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Impel Down",
     "rarity": "R",
+    "pack": "569102",
     "cost": "3 Cost / 3000 Power"
   },
   "OP02-076": {
@@ -3951,6 +4389,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Impel Down",
     "rarity": "R",
+    "pack": "569102",
     "cost": "4 Cost / 5000 Power"
   },
   "OP02-074": {
@@ -3959,7 +4398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "1 Cost / 2000 Power"
   },
   "OP02-072": {
@@ -3969,6 +4409,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple/Black",
     "traits": "FILM / Neo Navy",
     "rarity": "L",
+    "pack": "569102",
     "cost": "4 Life / 5000 Power"
   },
   "OP02-077": {
@@ -3977,7 +4418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "3 Cost / 5000 Power"
   },
   "OP02-075": {
@@ -3987,6 +4429,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "FILM / Golden Lion Pirates",
     "rarity": "R",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-079": {
@@ -3995,7 +4438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / The Pirates Fest",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "5 Cost / 6000 Power"
   },
   "OP02-078": {
@@ -4004,7 +4448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "3 Cost / 5000 Power"
   },
   "OP02-086": {
@@ -4013,7 +4458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down / Jailer Beast",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "4 Cost / 5000 Power"
   },
   "OP02-085": {
@@ -4022,7 +4468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569102",
     "cost": "5 Cost / 6000 Power"
   },
   "OP02-081": {
@@ -4031,7 +4478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost / 2000 Power"
   },
   "OP02-088": {
@@ -4040,7 +4488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "4 Cost / 6000 Power"
   },
   "OP02-082": {
@@ -4049,7 +4498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "World Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "8 Cost / 8000 Power"
   },
   "OP02-083": {
@@ -4059,6 +4509,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Impel Down",
     "rarity": "R",
+    "pack": "569102",
     "cost": "1 Cost / 2000 Power"
   },
   "OP02-080": {
@@ -4067,7 +4518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost / 4000 Power"
   },
   "OP02-090": {
@@ -4076,7 +4528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "1 Cost"
   },
   "OP02-084": {
@@ -4085,7 +4538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "1 Cost / 3000 Power"
   },
   "OP02-087": {
@@ -4094,7 +4548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down / Jailer Beast",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "4 Cost / 5000 Power"
   },
   "OP02-092": {
@@ -4103,7 +4558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Purple",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "1 Cost"
   },
   "OP02-089": {
@@ -4113,6 +4569,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Impel Down",
     "rarity": "R",
+    "pack": "569102",
     "cost": "2 Cost"
   },
   "OP02-096": {
@@ -4121,7 +4578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569102",
     "cost": "4 Cost / 5000 Power"
   },
   "OP02-091": {
@@ -4130,7 +4588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "3 Cost"
   },
   "OP02-094": {
@@ -4139,7 +4598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "3 Cost / 4000 Power"
   },
   "OP02-093": {
@@ -4149,6 +4609,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy",
     "rarity": "L",
+    "pack": "569102",
     "cost": "5 Life / 5000 Power"
   },
   "OP02-097": {
@@ -4157,7 +4618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "1 Cost / 3000 Power"
   },
   "OP02-095": {
@@ -4166,7 +4628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "5 Cost / 6000 Power"
   },
   "OP02-099": {
@@ -4175,7 +4638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569102",
     "cost": "6 Cost / 7000 Power"
   },
   "OP02-098": {
@@ -4185,6 +4649,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569102",
     "cost": "3 Cost / 4000 Power"
   },
   "OP02-100": {
@@ -4193,7 +4658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-103": {
@@ -4203,6 +4669,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-106": {
@@ -4211,7 +4678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "1 Cost / 0 Power"
   },
   "OP02-101": {
@@ -4220,7 +4688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "4 Cost / 5000 Power"
   },
   "OP02-102": {
@@ -4230,6 +4699,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569102",
     "cost": "3 Cost / 4000 Power"
   },
   "OP02-104": {
@@ -4238,7 +4708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-105": {
@@ -4247,7 +4718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "3 Cost / 5000 Power"
   },
   "OP02-108": {
@@ -4256,7 +4728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost / 2000 Power"
   },
   "OP02-111": {
@@ -4265,7 +4738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-109": {
@@ -4274,7 +4748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Giant / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "4 Cost / 6000 Power"
   },
   "OP02-107": {
@@ -4283,7 +4758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "2 Cost / 4000 Power"
   },
   "OP02-114": {
@@ -4292,7 +4768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569102",
     "cost": "4 Cost / 5000 Power"
   },
   "OP02-112": {
@@ -4301,7 +4778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "1 Cost / 1000 Power"
   },
   "OP02-110": {
@@ -4311,6 +4789,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569102",
     "cost": "5 Cost / 6000 Power"
   },
   "OP02-115": {
@@ -4320,6 +4799,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569102",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-113": {
@@ -4328,7 +4808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "3 Cost / 3000 Power"
   },
   "OP02-116": {
@@ -4337,7 +4818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "3 Cost / 5000 Power"
   },
   "OP02-117": {
@@ -4346,7 +4828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569102",
     "cost": "1 Cost"
   },
   "OP03-004": {
@@ -4355,7 +4838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "3 Cost / 4000 Power"
   },
   "OP03-015": {
@@ -4364,7 +4848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "ODYSSEY",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "3 Cost / 2000 Power"
   },
   "OP03-009": {
@@ -4373,7 +4858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost / 3000 Power"
   },
   "OP02-119": {
@@ -4383,6 +4869,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569102",
     "cost": "2 Cost"
   },
   "OP03-008": {
@@ -4391,7 +4878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Buggy Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "1 Cost / 3000 Power"
   },
   "OP02-118": {
@@ -4400,7 +4888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569102",
     "cost": "1 Cost"
   },
   "OP02-120": {
@@ -4409,7 +4898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569102",
     "cost": "8 Cost / 8000 Power"
   },
   "OP02-121": {
@@ -4418,7 +4908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Former Navy",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569102",
     "cost": "10 Cost / 10000 Power"
   },
   "OP03-002": {
@@ -4427,7 +4918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "ODYSSEY",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "4 Cost / 5000 Power"
   },
   "OP03-001": {
@@ -4437,6 +4929,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Whitebeard Pirates",
     "rarity": "L",
+    "pack": "569103",
     "cost": "5 Life / 5000 Power"
   },
   "OP03-003": {
@@ -4446,6 +4939,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Land of Wano / Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569103",
     "cost": "1 Cost / 2000 Power"
   },
   "OP03-005": {
@@ -4454,7 +4948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "1 Cost / 2000 Power"
   },
   "OP03-007": {
@@ -4463,7 +4958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Fish-Man / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "3 Cost / 5000 Power"
   },
   "OP03-011": {
@@ -4472,7 +4968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "2 Cost / 3000 Power"
   },
   "OP03-006": {
@@ -4481,7 +4978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "4 Cost / 6000 Power"
   },
   "OP03-013": {
@@ -4490,7 +4988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569103",
     "cost": "5 Cost / 6000 Power"
   },
   "OP03-010": {
@@ -4499,7 +4998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost / 2000 Power"
   },
   "OP03-012": {
@@ -4509,6 +5009,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569103",
     "cost": "4 Cost / 6000 Power"
   },
   "OP03-014": {
@@ -4517,7 +5018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "3 Cost / 5000 Power"
   },
   "OP03-016": {
@@ -4527,6 +5029,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569103",
     "cost": "7 Cost"
   },
   "OP03-020": {
@@ -4535,7 +5038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost"
   },
   "OP03-018": {
@@ -4545,6 +5049,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569103",
     "cost": "3 Cost"
   },
   "OP03-017": {
@@ -4553,7 +5058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "2 Cost"
   },
   "OP03-021": {
@@ -4563,6 +5069,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / Black Cat Pirates",
     "rarity": "L",
+    "pack": "569103",
     "cost": "5 Life / 5000 Power"
   },
   "OP03-023": {
@@ -4571,7 +5078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Alvida Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost / 3000 Power"
   },
   "OP03-019": {
@@ -4580,7 +5088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost"
   },
   "OP03-029": {
@@ -4589,7 +5098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / East Blue / Arlong Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "4 Cost / 3000 Power"
   },
   "OP03-022": {
@@ -4599,6 +5109,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Yellow",
     "traits": "Fish-Man / East Blue / Arlong Pirates",
     "rarity": "L",
+    "pack": "569103",
     "cost": "4 Life / 5000 Power"
   },
   "OP03-024": {
@@ -4608,6 +5119,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / Krieg Pirates",
     "rarity": "R",
+    "pack": "569103",
     "cost": "4 Cost / 5000 Power"
   },
   "OP03-028": {
@@ -4617,6 +5129,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / Black Cat Pirates",
     "rarity": "R",
+    "pack": "569103",
     "cost": "5 Cost / 6000 Power"
   },
   "OP03-026": {
@@ -4625,7 +5138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / East Blue / Arlong Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "4 Cost / 3000 Power"
   },
   "OP03-027": {
@@ -4634,7 +5148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Black Cat Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "3 Cost / 4000 Power"
   },
   "OP03-025": {
@@ -4643,7 +5158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Krieg Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569103",
     "cost": "6 Cost / 7000 Power"
   },
   "OP03-030": {
@@ -4653,6 +5169,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / Arlong Pirates",
     "rarity": "R",
+    "pack": "569103",
     "cost": "2 Cost / 2000 Power"
   },
   "OP03-032": {
@@ -4661,7 +5178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Buggy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "3 Cost / 5000 Power"
   },
   "OP03-034": {
@@ -4670,7 +5188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Black Cat Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "4 Cost / 5000 Power"
   },
   "OP03-031": {
@@ -4679,7 +5198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Krieg Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost / 2000 Power"
   },
   "OP03-035": {
@@ -4688,7 +5208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Animal / East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost / 4000 Power"
   },
   "OP03-033": {
@@ -4697,7 +5218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / East Blue / Arlong Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "4 Cost / 4000 Power"
   },
   "OP03-036": {
@@ -4706,7 +5228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "East Blue / Black Cat Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "3 Cost"
   },
   "OP03-044": {
@@ -4716,6 +5239,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "East Blue",
     "rarity": "R",
+    "pack": "569103",
     "cost": "1 Cost / 0 Power"
   },
   "OP03-049": {
@@ -4724,7 +5248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "3 Cost / 5000 Power"
   },
   "OP03-051": {
@@ -4734,6 +5259,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "East Blue / Former Navy",
     "rarity": "R",
+    "pack": "569103",
     "cost": "4 Cost / 5000 Power"
   },
   "OP03-048": {
@@ -4742,7 +5268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "2 Cost / 0 Power"
   },
   "OP03-037": {
@@ -4751,7 +5278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Fish-Man / East Blue / Arlong Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost"
   },
   "OP03-042": {
@@ -4760,7 +5288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost / 0 Power"
   },
   "OP03-041": {
@@ -4769,7 +5298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569103",
     "cost": "4 Cost / 5000 Power"
   },
   "OP03-040": {
@@ -4779,6 +5309,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "East Blue",
     "rarity": "L",
+    "pack": "569103",
     "cost": "5 Life / 5000 Power"
   },
   "OP03-038": {
@@ -4788,6 +5319,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / Krieg Pirates",
     "rarity": "R",
+    "pack": "569103",
     "cost": "1 Cost"
   },
   "OP03-039": {
@@ -4796,7 +5328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "East Blue / Black Cat Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "1 Cost"
   },
   "OP03-050": {
@@ -4805,7 +5338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "2 Cost / 0 Power"
   },
   "OP03-047": {
@@ -4815,6 +5349,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "East Blue",
     "rarity": "R",
+    "pack": "569103",
     "cost": "5 Cost / 6000 Power"
   },
   "OP03-043": {
@@ -4823,7 +5358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost / 0 Power"
   },
   "OP03-045": {
@@ -4832,7 +5368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "3 Cost / 3000 Power"
   },
   "OP03-046": {
@@ -4841,7 +5378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost / 4000 Power"
   },
   "OP03-053": {
@@ -4850,7 +5388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost / 3000 Power"
   },
   "OP03-052": {
@@ -4859,7 +5398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost / 3000 Power"
   },
   "OP03-055": {
@@ -4868,7 +5408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "East Blue / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost"
   },
   "OP03-056": {
@@ -4877,7 +5418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "3 Cost"
   },
   "OP03-054": {
@@ -4886,7 +5428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "East Blue / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost"
   },
   "OP03-058": {
@@ -4896,6 +5439,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Water Seven / Galley-La Company",
     "rarity": "L",
+    "pack": "569103",
     "cost": "5 Life / 5000 Power"
   },
   "OP03-059": {
@@ -4904,7 +5448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Water Seven / Galley-La Company",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "5 Cost / 6000 Power"
   },
   "OP03-057": {
@@ -4914,6 +5459,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "East Blue / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569103",
     "cost": "4 Cost"
   },
   "OP03-064": {
@@ -4922,7 +5468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Water Seven / Galley-La Company",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "5 Cost / 6000 Power"
   },
   "OP03-066": {
@@ -4931,7 +5478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Water Seven / Galley-La Company",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569103",
     "cost": "5 Cost / 6000 Power"
   },
   "OP03-061": {
@@ -4940,7 +5488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Water Seven / The Franky Family",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost / 4000 Power"
   },
   "OP03-060": {
@@ -4949,7 +5498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Water Seven / Galley-La Company",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "4 Cost / 4000 Power"
   },
   "OP03-062": {
@@ -4959,6 +5509,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Merfolk / Water Seven",
     "rarity": "R",
+    "pack": "569103",
     "cost": "1 Cost / 2000 Power"
   },
   "OP03-063": {
@@ -4967,7 +5518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Water Seven / The Franky Family",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "3 Cost / 2000 Power"
   },
   "OP03-072": {
@@ -4977,6 +5529,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Water Seven / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569103",
     "cost": "0 Cost"
   },
   "OP03-065": {
@@ -4985,7 +5538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Water Seven",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost / 2000 Power"
   },
   "OP03-067": {
@@ -4994,7 +5548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Water Seven / Galley-La Company",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "5 Cost / 5000 Power"
   },
   "OP03-070": {
@@ -5004,6 +5559,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Water Seven / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569103",
     "cost": "6 Cost / 7000 Power"
   },
   "OP03-069": {
@@ -5012,7 +5568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down / Jailer Beast",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "3 Cost / 5000 Power"
   },
   "OP03-068": {
@@ -5021,7 +5578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down / Jailer Beast",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "4 Cost / 5000 Power"
   },
   "OP03-071": {
@@ -5031,6 +5589,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Water Seven / Galley-La Company",
     "rarity": "R",
+    "pack": "569103",
     "cost": "5 Cost / 6000 Power"
   },
   "OP03-073": {
@@ -5039,7 +5598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Water Seven / The Franky Family",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost"
   },
   "OP03-074": {
@@ -5048,7 +5608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Water Seven / Galley-La Company",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "2 Cost"
   },
   "OP03-076": {
@@ -5058,6 +5619,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "CP9",
     "rarity": "L",
+    "pack": "569103",
     "cost": "5 Life / 5000 Power"
   },
   "OP03-075": {
@@ -5066,7 +5628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Purple",
     "traits": "Water Seven / Galley-La Company",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "3 Cost"
   },
   "OP03-082": {
@@ -5075,7 +5638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "4 Cost / 6000 Power"
   },
   "OP03-077": {
@@ -5085,6 +5649,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black/Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
     "rarity": "L",
+    "pack": "569103",
     "cost": "4 Life / 5000 Power"
   },
   "OP03-078": {
@@ -5093,7 +5658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569103",
     "cost": "8 Cost / 9000 Power"
   },
   "OP03-090": {
@@ -5103,6 +5669,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "CP9",
     "rarity": "R",
+    "pack": "569103",
     "cost": "5 Cost / 6000 Power"
   },
   "OP03-081": {
@@ -5112,6 +5679,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "CP9",
     "rarity": "R",
+    "pack": "569103",
     "cost": "4 Cost / 4000 Power"
   },
   "OP03-079": {
@@ -5120,7 +5688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "5 Cost / 5000 Power"
   },
   "OP03-080": {
@@ -5129,7 +5698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569103",
     "cost": "5 Cost / 6000 Power"
   },
   "OP03-084": {
@@ -5138,7 +5708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP6",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost / 4000 Power"
   },
   "OP03-085": {
@@ -5147,7 +5718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "5 Cost / 7000 Power"
   },
   "OP03-086": {
@@ -5157,6 +5729,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "CP9",
     "rarity": "R",
+    "pack": "569103",
     "cost": "1 Cost / 2000 Power"
   },
   "OP03-087": {
@@ -5165,7 +5738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "3 Cost / 5000 Power"
   },
   "OP03-091": {
@@ -5174,7 +5748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost / 0 Power"
   },
   "OP03-088": {
@@ -5183,7 +5758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "3 Cost / 3000 Power"
   },
   "OP03-089": {
@@ -5193,6 +5769,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569103",
     "cost": "2 Cost / 3000 Power"
   },
   "OP03-083": {
@@ -5201,7 +5778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "World Government",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost / 0 Power"
   },
   "OP03-095": {
@@ -5210,7 +5788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost"
   },
   "OP03-092": {
@@ -5219,7 +5798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569103",
     "cost": "6 Cost / 7000 Power"
   },
   "OP03-094": {
@@ -5228,7 +5808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "4 Cost"
   },
   "OP03-096": {
@@ -5237,7 +5818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "2 Cost"
   },
   "OP03-098": {
@@ -5246,7 +5828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Black",
     "traits": "World Government",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost"
   },
   "OP03-093": {
@@ -5255,7 +5838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP7",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "2 Cost / 4000 Power"
   },
   "OP03-097": {
@@ -5265,6 +5849,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "CP9",
     "rarity": "R",
+    "pack": "569103",
     "cost": "0 Cost"
   },
   "OP03-100": {
@@ -5273,7 +5858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates / Homies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "3 Cost / 5000 Power"
   },
   "OP03-102": {
@@ -5283,6 +5869,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "The Vinsmoke Family",
     "rarity": "R",
+    "pack": "569103",
     "cost": "2 Cost / 3000 Power"
   },
   "OP03-101": {
@@ -5291,7 +5878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Merfolk",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "1 Cost / 3000 Power"
   },
   "OP03-103": {
@@ -5300,7 +5888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost / 4000 Power"
   },
   "OP03-099": {
@@ -5310,6 +5899,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Big Mom Pirates",
     "rarity": "L",
+    "pack": "569103",
     "cost": "5 Life / 5000 Power"
   },
   "OP03-104": {
@@ -5318,7 +5908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Merfolk",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "3 Cost / 3000 Power"
   },
   "OP03-106": {
@@ -5327,7 +5918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "4 Cost / 6000 Power"
   },
   "OP03-105": {
@@ -5336,7 +5928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "3 Cost / 4000 Power"
   },
   "OP03-110": {
@@ -5346,6 +5939,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569103",
     "cost": "4 Cost / 5000 Power"
   },
   "OP03-107": {
@@ -5354,7 +5948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost / 2000 Power"
   },
   "OP03-113": {
@@ -5363,7 +5958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569103",
     "cost": "3 Cost / 5000 Power"
   },
   "OP03-108": {
@@ -5372,7 +5968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569103",
     "cost": "4 Cost / 5000 Power"
   },
   "OP03-109": {
@@ -5381,7 +5978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost / 3000 Power"
   },
   "OP03-111": {
@@ -5390,7 +5988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Merfolk / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "3 Cost / 5000 Power"
   },
   "OP03-112": {
@@ -5400,6 +5999,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569103",
     "cost": "1 Cost / 2000 Power"
   },
   "OP03-114": {
@@ -5408,7 +6008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569103",
     "cost": "10 Cost / 12000 Power"
   },
   "OP03-115": {
@@ -5418,6 +6019,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569103",
     "cost": "1 Cost / 1000 Power"
   },
   "OP03-116": {
@@ -5426,7 +6028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Merfolk",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "5 Cost / 0 Power"
   },
   "OP03-117": {
@@ -5435,7 +6038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates / Homies",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "3 Cost / 3000 Power"
   },
   "OP03-118": {
@@ -5444,7 +6048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569103",
     "cost": "2 Cost"
   },
   "OP03-119": {
@@ -5454,6 +6059,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569103",
     "cost": "2 Cost"
   },
   "OP04-001": {
@@ -5463,6 +6069,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Blue",
     "traits": "Alabasta",
     "rarity": "L",
+    "pack": "569104",
     "cost": "5 Life / 5000 Power"
   },
   "OP03-120": {
@@ -5471,7 +6078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "3 Cost"
   },
   "OP03-121": {
@@ -5480,7 +6088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569103",
     "cost": "2 Cost"
   },
   "OP03-122": {
@@ -5489,7 +6098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Sniper Island",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569103",
     "cost": "7 Cost / 6000 Power"
   },
   "OP04-002": {
@@ -5499,6 +6109,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Alabasta",
     "rarity": "R",
+    "pack": "569104",
     "cost": "2 Cost / 3000 Power"
   },
   "OP03-123": {
@@ -5507,7 +6118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569103",
     "cost": "8 Cost / 8000 Power"
   },
   "OP04-003": {
@@ -5516,7 +6128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "4 Cost / 5000 Power"
   },
   "OP04-004": {
@@ -5525,7 +6138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "1 Cost / 2000 Power"
   },
   "OP04-008": {
@@ -5535,6 +6149,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Alabasta",
     "rarity": "R",
+    "pack": "569104",
     "cost": "3 Cost / 5000 Power"
   },
   "OP04-005": {
@@ -5543,7 +6158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "1 Cost / 1000 Power"
   },
   "OP04-007": {
@@ -5552,7 +6168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "1 Cost / 3000 Power"
   },
   "OP04-006": {
@@ -5561,7 +6178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "3 Cost / 3000 Power"
   },
   "OP04-009": {
@@ -5570,7 +6188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Alabasta",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "2 Cost / 3000 Power"
   },
   "OP04-011": {
@@ -5579,7 +6198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "2 Cost / 3000 Power"
   },
   "OP04-012": {
@@ -5588,7 +6208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "2 Cost / 0 Power"
   },
   "OP04-010": {
@@ -5597,7 +6218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Alabasta / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "3 Cost / 4000 Power"
   },
   "OP04-014": {
@@ -5606,7 +6228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "8 Cost / 9000 Power"
   },
   "OP04-015": {
@@ -5616,6 +6239,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Alabasta / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569104",
     "cost": "5 Cost / 6000 Power"
   },
   "OP04-016": {
@@ -5625,6 +6249,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Alabasta / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569104",
     "cost": "0 Cost"
   },
   "OP04-019": {
@@ -5634,6 +6259,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Purple",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
     "rarity": "L",
+    "pack": "569104",
     "cost": "4 Life / 5000 Power"
   },
   "OP04-013": {
@@ -5642,7 +6268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569104",
     "cost": "5 Cost / 6000 Power"
   },
   "OP04-018": {
@@ -5651,7 +6278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "3 Cost"
   },
   "OP04-017": {
@@ -5660,7 +6288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Alabasta / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "1 Cost"
   },
   "OP04-020": {
@@ -5670,6 +6299,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Black",
     "traits": "Navy",
     "rarity": "L",
+    "pack": "569104",
     "cost": "4 Life / 5000 Power"
   },
   "OP04-021": {
@@ -5678,7 +6308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "3 Cost / 3000 Power"
   },
   "OP04-022": {
@@ -5687,7 +6318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "1 Cost / 2000 Power"
   },
   "OP04-028": {
@@ -5697,6 +6329,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Donquixote Pirates",
     "rarity": "R",
+    "pack": "569104",
     "cost": "5 Cost / 6000 Power"
   },
   "OP04-030": {
@@ -5706,6 +6339,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Donquixote Pirates",
     "rarity": "R",
+    "pack": "569104",
     "cost": "6 Cost / 6000 Power"
   },
   "OP04-023": {
@@ -5714,7 +6348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Black Cat Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "6 Cost / 8000 Power"
   },
   "OP04-024": {
@@ -5723,7 +6358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569104",
     "cost": "2 Cost / 0 Power"
   },
   "OP04-027": {
@@ -5732,7 +6368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Former Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "4 Cost / 5000 Power"
   },
   "OP04-031": {
@@ -5741,7 +6378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569104",
     "cost": "10 Cost / 10000 Power"
   },
   "OP04-026": {
@@ -5751,6 +6389,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Donquixote Pirates",
     "rarity": "R",
+    "pack": "569104",
     "cost": "3 Cost / 5000 Power"
   },
   "OP04-025": {
@@ -5759,7 +6398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "4 Cost / 4000 Power"
   },
   "OP04-033": {
@@ -5768,7 +6408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "4 Cost / 5000 Power"
   },
   "OP04-029": {
@@ -5777,7 +6418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "3 Cost / 4000 Power"
   },
   "OP04-032": {
@@ -5786,7 +6428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "1 Cost / 1000 Power"
   },
   "OP04-036": {
@@ -5795,7 +6438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "1 Cost"
   },
   "OP04-034": {
@@ -5804,7 +6448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "4 Cost / 5000 Power"
   },
   "OP04-039": {
@@ -5814,6 +6459,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Black",
     "traits": "Dressrosa",
     "rarity": "L",
+    "pack": "569104",
     "cost": "5 Life / 5000 Power"
   },
   "OP04-038": {
@@ -5822,7 +6468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "5 Cost"
   },
   "OP04-035": {
@@ -5832,6 +6479,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569104",
     "cost": "2 Cost"
   },
   "OP04-040": {
@@ -5841,6 +6489,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Yellow",
     "traits": "Animal Kingdom Pirates",
     "rarity": "L",
+    "pack": "569104",
     "cost": "4 Life / 5000 Power"
   },
   "OP04-044": {
@@ -5849,7 +6498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569104",
     "cost": "10 Cost / 12000 Power"
   },
   "OP04-037": {
@@ -5858,7 +6508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "2 Cost"
   },
   "OP04-043": {
@@ -5868,6 +6519,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569104",
     "cost": "3 Cost / 4000 Power"
   },
   "OP04-042": {
@@ -5876,7 +6528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "2 Cost / 1000 Power"
   },
   "OP04-041": {
@@ -5885,7 +6538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "1 Cost / 0 Power"
   },
   "OP04-050": {
@@ -5894,7 +6548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "2 Cost / 0 Power"
   },
   "OP04-046": {
@@ -5903,7 +6558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "4 Cost / 5000 Power"
   },
   "OP04-048": {
@@ -5912,7 +6568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "3 Cost / 4000 Power"
   },
   "OP04-049": {
@@ -5921,7 +6578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "2 Cost / 3000 Power"
   },
   "OP04-045": {
@@ -5931,6 +6589,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569104",
     "cost": "7 Cost / 8000 Power"
   },
   "OP04-052": {
@@ -5939,7 +6598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "3 Cost / 3000 Power"
   },
   "OP04-047": {
@@ -5948,7 +6608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Plague / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "8 Cost / 0 Power"
   },
   "OP04-051": {
@@ -5958,6 +6619,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569104",
     "cost": "1 Cost / 2000 Power"
   },
   "OP04-053": {
@@ -5966,7 +6628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "4 Cost / 6000 Power"
   },
   "OP04-063": {
@@ -5976,6 +6639,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Water Seven / The Franky Family",
     "rarity": "R",
+    "pack": "569104",
     "cost": "1 Cost / 1000 Power"
   },
   "OP04-062": {
@@ -5984,7 +6648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "5 Cost / 7000 Power"
   },
   "OP04-054": {
@@ -5993,7 +6658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Giant / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "5 Cost / 7000 Power"
   },
   "OP04-055": {
@@ -6002,7 +6668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "2 Cost"
   },
   "OP04-057": {
@@ -6011,7 +6678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "2 Cost"
   },
   "OP04-059": {
@@ -6020,7 +6688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Water Seven / Galley-La Company",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "1 Cost / 0 Power"
   },
   "OP04-058": {
@@ -6030,6 +6699,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple/Yellow",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
     "rarity": "L",
+    "pack": "569104",
     "cost": "4 Life / 5000 Power"
   },
   "OP04-056": {
@@ -6039,6 +6709,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569104",
     "cost": "6 Cost"
   },
   "OP04-067": {
@@ -6047,7 +6718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "4 Cost / 4000 Power"
   },
   "OP04-060": {
@@ -6056,7 +6728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569104",
     "cost": "8 Cost / 9000 Power"
   },
   "OP04-061": {
@@ -6065,7 +6738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Fish-Man / Water Seven",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "3 Cost / 4000 Power"
   },
   "OP04-064": {
@@ -6074,7 +6748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569104",
     "cost": "5 Cost / 5000 Power"
   },
   "OP04-065": {
@@ -6083,7 +6758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "2 Cost / 3000 Power"
   },
   "OP04-066": {
@@ -6093,6 +6769,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Baroque Works",
     "rarity": "R",
+    "pack": "569104",
     "cost": "2 Cost / 2000 Power"
   },
   "OP04-069": {
@@ -6101,7 +6778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "3 Cost / 4000 Power"
   },
   "OP04-071": {
@@ -6110,7 +6788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "5 Cost / 6000 Power"
   },
   "OP04-068": {
@@ -6119,7 +6798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Water Seven",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "3 Cost / 3000 Power"
   },
   "OP04-072": {
@@ -6129,6 +6809,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Baroque Works",
     "rarity": "R",
+    "pack": "569104",
     "cost": "7 Cost / 8000 Power"
   },
   "OP04-070": {
@@ -6137,7 +6818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "3 Cost / 4000 Power"
   },
   "OP04-074": {
@@ -6147,6 +6829,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Baroque Works",
     "rarity": "R",
+    "pack": "569104",
     "cost": "1 Cost"
   },
   "OP04-073": {
@@ -6155,7 +6838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "3 Cost / 1000 Power"
   },
   "OP04-076": {
@@ -6164,7 +6848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "1 Cost"
   },
   "OP04-075": {
@@ -6173,7 +6858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "3 Cost"
   },
   "OP04-082": {
@@ -6183,6 +6869,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Dressrosa",
     "rarity": "R",
+    "pack": "569104",
     "cost": "3 Cost / 5000 Power"
   },
   "OP04-077": {
@@ -6191,7 +6878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "2 Cost / 2000 Power"
   },
   "OP04-083": {
@@ -6200,7 +6888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569104",
     "cost": "5 Cost / 6000 Power"
   },
   "OP04-080": {
@@ -6209,7 +6898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "1 Cost / 1000 Power"
   },
   "OP04-078": {
@@ -6218,7 +6908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Giant / World Government",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "6 Cost / 8000 Power"
   },
   "OP04-079": {
@@ -6227,7 +6918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Yonta Maria Fleet",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "4 Cost / 5000 Power"
   },
   "OP04-081": {
@@ -6237,6 +6929,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Dressrosa / Beautiful Pirates",
     "rarity": "R",
+    "pack": "569104",
     "cost": "5 Cost / 6000 Power"
   },
   "OP04-084": {
@@ -6245,7 +6938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP0",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "2 Cost / 3000 Power"
   },
   "OP04-086": {
@@ -6254,7 +6948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Happosui Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "5 Cost / 6000 Power"
   },
   "OP04-085": {
@@ -6263,7 +6958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "3 Cost / 4000 Power"
   },
   "OP04-087": {
@@ -6272,7 +6968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "5 Cost / 7000 Power"
   },
   "OP04-092": {
@@ -6282,6 +6979,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Dressrosa",
     "rarity": "R",
+    "pack": "569104",
     "cost": "1 Cost / 2000 Power"
   },
   "OP04-096": {
@@ -6290,7 +6988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Black",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "1 Cost"
   },
   "OP04-088": {
@@ -6299,7 +6998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Giant / Dressrosa / New Giant Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "6 Cost / 7000 Power"
   },
   "OP04-091": {
@@ -6308,7 +7008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "The Tontattas / Dressrosa",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "1 Cost / 2000 Power"
   },
   "OP04-089": {
@@ -6318,6 +7019,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Dressrosa / Barto Club",
     "rarity": "R",
+    "pack": "569104",
     "cost": "3 Cost / 3000 Power"
   },
   "OP04-090": {
@@ -6326,7 +7028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569104",
     "cost": "7 Cost / 7000 Power"
   },
   "OP04-097": {
@@ -6335,7 +7038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "1 Cost / 0 Power"
   },
   "OP04-093": {
@@ -6344,7 +7048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Dressrosa / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "3 Cost"
   },
   "OP04-100": {
@@ -6354,6 +7059,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Firetank Pirates",
     "rarity": "R",
+    "pack": "569104",
     "cost": "3 Cost / 3000 Power"
   },
   "OP04-094": {
@@ -6363,6 +7069,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Dressrosa",
     "rarity": "R",
+    "pack": "569104",
     "cost": "4 Cost"
   },
   "OP04-095": {
@@ -6371,7 +7078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Dressrosa / Barto Club",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "1 Cost"
   },
   "OP04-098": {
@@ -6380,7 +7088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "2 Cost / 0 Power"
   },
   "OP04-101": {
@@ -6389,7 +7098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The House of Lambs",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "2 Cost / 1000 Power"
   },
   "OP04-099": {
@@ -6399,6 +7109,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Land of Wano / The Four Emperors / Big Mom Pirates",
     "rarity": "R",
+    "pack": "569104",
     "cost": "7 Cost / 7000 Power"
   },
   "OP04-102": {
@@ -6408,6 +7119,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Land of Wano",
     "rarity": "R",
+    "pack": "569104",
     "cost": "6 Cost / 6000 Power"
   },
   "OP04-103": {
@@ -6416,7 +7128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "2 Cost / 0 Power"
   },
   "OP04-104": {
@@ -6425,7 +7138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Vinsmoke Family",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569104",
     "cost": "4 Cost / 5000 Power"
   },
   "OP04-109": {
@@ -6434,7 +7148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "2 Cost / 2000 Power"
   },
   "OP04-105": {
@@ -6444,6 +7159,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569104",
     "cost": "3 Cost / 3000 Power"
   },
   "OP04-106": {
@@ -6452,7 +7168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "3 Cost / 4000 Power"
   },
   "OP04-108": {
@@ -6461,7 +7178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "3 Cost / 4000 Power"
   },
   "OP04-111": {
@@ -6470,7 +7188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates / Homies",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "5 Cost / 3000 Power"
   },
   "OP04-110": {
@@ -6479,7 +7198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Whole Cake Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "3 Cost / 3000 Power"
   },
   "OP04-113": {
@@ -6488,7 +7208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates / Homies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "2 Cost / 3000 Power"
   },
   "OP04-107": {
@@ -6497,7 +7218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "6 Cost / 8000 Power"
   },
   "OP04-112": {
@@ -6506,7 +7228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569104",
     "cost": "9 Cost / 9000 Power"
   },
   "OP05-002": {
@@ -6516,6 +7239,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Yellow",
     "traits": "Revolutionary Army",
     "rarity": "L",
+    "pack": "569105",
     "cost": "4 Life / 5000 Power"
   },
   "OP04-114": {
@@ -6524,7 +7248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates / Homies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "5 Cost / 7000 Power"
   },
   "OP04-119": {
@@ -6533,7 +7258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Navy / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569104",
     "cost": "8 Cost / 8000 Power"
   },
   "OP04-115": {
@@ -6542,7 +7268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569104",
     "cost": "1 Cost"
   },
   "OP04-116": {
@@ -6551,7 +7278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "The Vinsmoke Family",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569104",
     "cost": "3 Cost"
   },
   "OP04-117": {
@@ -6561,6 +7289,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
     "rarity": "R",
+    "pack": "569104",
     "cost": "1 Cost"
   },
   "OP05-004": {
@@ -6569,7 +7298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "4 Cost / 5000 Power"
   },
   "OP04-118": {
@@ -6578,7 +7308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569104",
     "cost": "7 Cost / 4000 Power"
   },
   "OP05-001": {
@@ -6588,6 +7319,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Black",
     "traits": "Revolutionary Army",
     "rarity": "L",
+    "pack": "569105",
     "cost": "4 Life / 5000 Power"
   },
   "OP05-003": {
@@ -6596,7 +7328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "3 Cost / 4000 Power"
   },
   "OP05-005": {
@@ -6606,6 +7339,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Revolutionary Army",
     "rarity": "R",
+    "pack": "569105",
     "cost": "4 Cost / 5000 Power"
   },
   "OP05-007": {
@@ -6614,7 +7348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569105",
     "cost": "6 Cost / 7000 Power"
   },
   "OP05-011": {
@@ -6623,7 +7358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Seven Warlords of the Sea / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "2 Cost / 2000 Power"
   },
   "OP05-016": {
@@ -6633,6 +7369,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Giant / Revolutionary Army",
     "rarity": "R",
+    "pack": "569105",
     "cost": "3 Cost / 5000 Power"
   },
   "OP05-012": {
@@ -6641,7 +7378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Fish-Man / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "3 Cost / 5000 Power"
   },
   "OP05-013": {
@@ -6650,7 +7388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "2 Cost / 2000 Power"
   },
   "OP05-014": {
@@ -6659,7 +7398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "3 Cost / 4000 Power"
   },
   "OP05-010": {
@@ -6668,7 +7408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "1 Cost / 2000 Power"
   },
   "OP05-018": {
@@ -6677,7 +7418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "3 Cost"
   },
   "OP05-009": {
@@ -6686,7 +7428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "1 Cost / 0 Power"
   },
   "OP05-008": {
@@ -6695,7 +7438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "5 Cost / 6000 Power"
   },
   "OP05-006": {
@@ -6704,7 +7448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569105",
     "cost": "2 Cost / 3000 Power"
   },
   "OP05-015": {
@@ -6714,6 +7459,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Revolutionary Army",
     "rarity": "R",
+    "pack": "569105",
     "cost": "1 Cost / 2000 Power"
   },
   "OP05-017": {
@@ -6723,6 +7469,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Minks / Revolutionary Army",
     "rarity": "R",
+    "pack": "569105",
     "cost": "4 Cost / 5000 Power"
   },
   "OP05-019": {
@@ -6732,6 +7479,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Revolutionary Army",
     "rarity": "R",
+    "pack": "569105",
     "cost": "2 Cost"
   },
   "OP05-021": {
@@ -6740,7 +7488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "1 Cost"
   },
   "OP05-023": {
@@ -6750,6 +7499,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Navy / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569105",
     "cost": "3 Cost / 4000 Power"
   },
   "OP05-022": {
@@ -6759,6 +7509,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Blue",
     "traits": "Navy / Donquixote Pirates",
     "rarity": "L",
+    "pack": "569105",
     "cost": "4 Life / 5000 Power"
   },
   "OP05-025": {
@@ -6767,7 +7518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "5 Cost / 6000 Power"
   },
   "OP05-020": {
@@ -6776,7 +7528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Fish-Man / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "2 Cost"
   },
   "OP05-024": {
@@ -6785,7 +7538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "2 Cost / 2000 Power"
   },
   "OP05-026": {
@@ -6794,7 +7548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Bellamy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "4 Cost / 4000 Power"
   },
   "OP05-027": {
@@ -6803,7 +7558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "1 Cost / 2000 Power"
   },
   "OP05-028": {
@@ -6812,7 +7568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "1 Cost / 2000 Power"
   },
   "OP05-029": {
@@ -6821,7 +7578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "7 Cost / 8000 Power"
   },
   "OP05-031": {
@@ -6830,7 +7588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "3 Cost / 4000 Power"
   },
   "OP05-033": {
@@ -6839,7 +7598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "1 Cost / 1000 Power"
   },
   "OP05-030": {
@@ -6849,6 +7609,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Navy / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569105",
     "cost": "2 Cost / 1000 Power"
   },
   "OP05-032": {
@@ -6857,7 +7618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569105",
     "cost": "4 Cost / 6000 Power"
   },
   "OP05-034": {
@@ -6867,6 +7629,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Donquixote Pirates",
     "rarity": "R",
+    "pack": "569105",
     "cost": "1 Cost / 1000 Power"
   },
   "OP05-035": {
@@ -6875,7 +7638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "3 Cost / 5000 Power"
   },
   "OP05-039": {
@@ -6884,7 +7648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "2 Cost"
   },
   "OP05-036": {
@@ -6893,7 +7658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "3 Cost / 1000 Power"
   },
   "OP05-043": {
@@ -6902,7 +7668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569105",
     "cost": "4 Cost / 5000 Power"
   },
   "OP05-041": {
@@ -6912,6 +7679,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Black",
     "traits": "Navy",
     "rarity": "L",
+    "pack": "569105",
     "cost": "4 Life / 5000 Power"
   },
   "OP05-038": {
@@ -6920,7 +7688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "2 Cost"
   },
   "OP05-037": {
@@ -6930,6 +7699,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Donquixote Pirates",
     "rarity": "R",
+    "pack": "569105",
     "cost": "0 Cost"
   },
   "OP05-040": {
@@ -6938,7 +7708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Green",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "5 Cost"
   },
   "OP05-042": {
@@ -6948,6 +7719,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569105",
     "cost": "6 Cost / 6000 Power"
   },
   "OP05-044": {
@@ -6956,7 +7728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Giant / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "8 Cost / 10000 Power"
   },
   "OP05-045": {
@@ -6965,7 +7738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "4 Cost / 5000 Power"
   },
   "OP05-047": {
@@ -6974,7 +7748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal Kingdom Pirates / Hawkins Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "4 Cost / 5000 Power"
   },
   "OP05-058": {
@@ -6983,7 +7758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "8 Cost"
   },
   "OP05-048": {
@@ -6992,7 +7768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "5 Cost / 6000 Power"
   },
   "OP05-061": {
@@ -7001,7 +7778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "3 Cost / 4000 Power"
   },
   "OP05-046": {
@@ -7010,7 +7788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "4 Cost / 5000 Power"
   },
   "OP05-054": {
@@ -7019,7 +7798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "3 Cost / 3000 Power"
   },
   "OP05-057": {
@@ -7029,6 +7809,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569105",
     "cost": "2 Cost"
   },
   "OP05-049": {
@@ -7037,7 +7818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Giant / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "6 Cost / 7000 Power"
   },
   "OP05-056": {
@@ -7046,7 +7828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Former Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "2 Cost / 2000 Power"
   },
   "OP05-053": {
@@ -7055,7 +7838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "1 Cost / 2000 Power"
   },
   "OP05-050": {
@@ -7065,6 +7849,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569105",
     "cost": "3 Cost / 4000 Power"
   },
   "OP05-052": {
@@ -7073,7 +7858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "2 Cost / 2000 Power"
   },
   "OP05-055": {
@@ -7083,6 +7869,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy / Drake Pirates / Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569105",
     "cost": "5 Cost / 6000 Power"
   },
   "OP05-051": {
@@ -7091,7 +7878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569105",
     "cost": "7 Cost / 8000 Power"
   },
   "OP05-059": {
@@ -7100,7 +7888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "5 Cost"
   },
   "OP05-065": {
@@ -7109,7 +7898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "6 Cost / 8000 Power"
   },
   "OP05-060": {
@@ -7119,6 +7909,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Straw Hat Crew",
     "rarity": "L",
+    "pack": "569105",
     "cost": "5 Life / 5000 Power"
   },
   "OP05-062": {
@@ -7127,7 +7918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "1 Cost / 1000 Power"
   },
   "OP05-064": {
@@ -7137,6 +7929,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Kid Pirates",
     "rarity": "R",
+    "pack": "569105",
     "cost": "1 Cost / 2000 Power"
   },
   "OP05-063": {
@@ -7145,7 +7938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "4 Cost / 5000 Power"
   },
   "OP05-066": {
@@ -7154,7 +7948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Fish-Man / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "5 Cost / 6000 Power"
   },
   "OP05-067": {
@@ -7164,6 +7959,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569105",
     "cost": "3 Cost / 4000 Power"
   },
   "OP05-070": {
@@ -7172,7 +7968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "5 Cost / 4000 Power"
   },
   "OP05-068": {
@@ -7181,7 +7978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "2 Cost / 3000 Power"
   },
   "OP05-069": {
@@ -7190,7 +7988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569105",
     "cost": "3 Cost / 5000 Power"
   },
   "OP05-073": {
@@ -7199,7 +7998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "4 Cost / 4000 Power"
   },
   "OP05-072": {
@@ -7208,7 +8008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "4 Cost / 6000 Power"
   },
   "OP05-074": {
@@ -7217,7 +8018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569105",
     "cost": "5 Cost / 6000 Power"
   },
   "OP05-071": {
@@ -7227,6 +8029,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Minks / Heart Pirates",
     "rarity": "R",
+    "pack": "569105",
     "cost": "3 Cost / 5000 Power"
   },
   "OP05-077": {
@@ -7235,7 +8038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "2 Cost"
   },
   "OP05-078": {
@@ -7244,7 +8048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "2 Cost"
   },
   "OP05-082": {
@@ -7254,6 +8059,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Merfolk",
     "rarity": "R",
+    "pack": "569105",
     "cost": "1 Cost / 0 Power"
   },
   "OP05-076": {
@@ -7263,6 +8069,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Land of Wano",
     "rarity": "R",
+    "pack": "569105",
     "cost": "1 Cost"
   },
   "OP05-075": {
@@ -7271,7 +8078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "1 Cost / 1000 Power"
   },
   "OP05-079": {
@@ -7280,7 +8088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "2 Cost / 3000 Power"
   },
   "OP05-080": {
@@ -7289,7 +8098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Kingdom of Prodence / Dressrosa",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "4 Cost / 5000 Power"
   },
   "OP05-081": {
@@ -7298,7 +8108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "2 Cost / 0 Power"
   },
   "OP05-083": {
@@ -7307,7 +8118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Goa Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "2 Cost / 4000 Power"
   },
   "OP05-085": {
@@ -7316,7 +8128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "2 Cost / 1000 Power"
   },
   "OP05-084": {
@@ -7325,7 +8138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Celestial Dragons",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "3 Cost / 0 Power"
   },
   "OP05-087": {
@@ -7334,7 +8148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Beautiful Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "5 Cost / 6000 Power"
   },
   "OP05-086": {
@@ -7344,6 +8159,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Alabasta",
     "rarity": "R",
+    "pack": "569105",
     "cost": "1 Cost / 1000 Power"
   },
   "OP05-089": {
@@ -7352,7 +8168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Celestial Dragons",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "5 Cost / 1000 Power"
   },
   "OP05-098": {
@@ -7362,6 +8179,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island",
     "rarity": "L",
+    "pack": "569105",
     "cost": "4 Life / 5000 Power"
   },
   "OP05-091": {
@@ -7370,7 +8188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569105",
     "cost": "4 Cost / 0 Power"
   },
   "OP05-096": {
@@ -7379,7 +8198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Celestial Dragons",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "3 Cost"
   },
   "OP05-088": {
@@ -7389,6 +8209,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "The Tontattas / Dressrosa",
     "rarity": "R",
+    "pack": "569105",
     "cost": "1 Cost / 0 Power"
   },
   "OP05-099": {
@@ -7397,7 +8218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "3 Cost / 0 Power"
   },
   "OP05-092": {
@@ -7406,7 +8228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Celestial Dragons",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "5 Cost / 0 Power"
   },
   "OP05-097": {
@@ -7415,7 +8238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Black",
     "traits": "Mary Geoise",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "1 Cost"
   },
   "OP05-090": {
@@ -7424,7 +8248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "4 Cost / 5000 Power"
   },
   "OP05-093": {
@@ -7433,7 +8258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP0",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569105",
     "cost": "4 Cost / 6000 Power"
   },
   "OP05-094": {
@@ -7443,6 +8269,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "The Tontattas / Dressrosa",
     "rarity": "R",
+    "pack": "569105",
     "cost": "1 Cost"
   },
   "OP05-101": {
@@ -7452,6 +8279,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island / Vassals",
     "rarity": "R",
+    "pack": "569105",
     "cost": "4 Cost / 5000 Power"
   },
   "OP05-095": {
@@ -7460,7 +8288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "2 Cost"
   },
   "OP05-100": {
@@ -7469,7 +8298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569105",
     "cost": "7 Cost / 7000 Power"
   },
   "OP05-103": {
@@ -7478,7 +8308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "3 Cost / 3000 Power"
   },
   "OP05-107": {
@@ -7487,7 +8318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Moon",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "3 Cost / 4000 Power"
   },
   "OP05-102": {
@@ -7497,6 +8329,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island / Vassals",
     "rarity": "R",
+    "pack": "569105",
     "cost": "5 Cost / 6000 Power"
   },
   "OP05-112": {
@@ -7505,7 +8338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "3 Cost / 3000 Power"
   },
   "OP05-104": {
@@ -7514,7 +8348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "1 Cost / 0 Power"
   },
   "OP05-106": {
@@ -7524,6 +8359,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island / Vassals",
     "rarity": "R",
+    "pack": "569105",
     "cost": "2 Cost / 2000 Power"
   },
   "OP05-105": {
@@ -7533,6 +8369,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island / Vassals",
     "rarity": "R",
+    "pack": "569105",
     "cost": "5 Cost / 5000 Power"
   },
   "OP05-110": {
@@ -7541,7 +8378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal / Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "3 Cost / 5000 Power"
   },
   "OP05-115": {
@@ -7551,6 +8389,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island",
     "rarity": "R",
+    "pack": "569105",
     "cost": "2 Cost"
   },
   "OP05-108": {
@@ -7559,7 +8398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal / Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "5 Cost / 7000 Power"
   },
   "OP05-113": {
@@ -7568,7 +8408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "2 Cost / 2000 Power"
   },
   "OP05-109": {
@@ -7577,7 +8418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "1 Cost / 1000 Power"
   },
   "OP05-114": {
@@ -7586,7 +8428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "1 Cost"
   },
   "OP05-111": {
@@ -7595,7 +8438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "3 Cost / 3000 Power"
   },
   "OP05-116": {
@@ -7604,7 +8448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569105",
     "cost": "2 Cost"
   },
   "OP05-117": {
@@ -7613,7 +8458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569105",
     "cost": "1 Cost"
   },
   "OP05-118": {
@@ -7622,7 +8468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569105",
     "cost": "10 Cost / 12000 Power"
   },
   "OP06-003": {
@@ -7631,7 +8478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "5 Cost / 6000 Power"
   },
   "OP06-001": {
@@ -7641,6 +8489,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Purple",
     "traits": "FILM",
     "rarity": "L",
+    "pack": "569106",
     "cost": "4 Life / 5000 Power"
   },
   "OP05-119": {
@@ -7649,7 +8498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569105",
     "cost": "10 Cost / 12000 Power"
   },
   "OP06-002": {
@@ -7658,7 +8508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "4 Cost / 5000 Power"
   },
   "OP06-008": {
@@ -7667,7 +8518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Mugiwara Chase",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "3 Cost / 5000 Power"
   },
   "OP06-007": {
@@ -7676,7 +8528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / The Four Emperors / Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569106",
     "cost": "10 Cost / 12000 Power"
   },
   "OP06-005": {
@@ -7685,7 +8538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Former Navy / Gasparde Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "6 Cost / 8000 Power"
   },
   "OP06-004": {
@@ -7694,7 +8548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Omatsuri Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-006": {
@@ -7703,7 +8558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Asuka Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "4 Cost / 5000 Power"
   },
   "OP06-009": {
@@ -7712,7 +8568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Shipbuilding Town",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569106",
     "cost": "3 Cost / 4000 Power"
   },
   "OP06-010": {
@@ -7722,6 +8579,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "FILM / The Pirates Fest",
     "rarity": "R",
+    "pack": "569106",
     "cost": "6 Cost / 7000 Power"
   },
   "OP06-011": {
@@ -7731,6 +8589,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "FILM",
     "rarity": "R",
+    "pack": "569106",
     "cost": "5 Cost / 6000 Power"
   },
   "OP06-012": {
@@ -7739,7 +8598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Trump Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "5 Cost / 6000 Power"
   },
   "OP06-015": {
@@ -7748,7 +8608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Omatsuri Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "4 Cost / 0 Power"
   },
   "OP06-013": {
@@ -7758,6 +8619,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "FILM / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569106",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-016": {
@@ -7766,7 +8628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "1 Cost / 2000 Power"
   },
   "OP06-019": {
@@ -7775,7 +8638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "3 Cost"
   },
   "OP06-017": {
@@ -7784,7 +8648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost"
   },
   "OP06-018": {
@@ -7794,6 +8659,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "FILM / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569106",
     "cost": "2 Cost"
   },
   "OP06-014": {
@@ -7802,7 +8668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Mecha Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "1 Cost / 0 Power"
   },
   "OP06-026": {
@@ -7811,7 +8678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Frost Moon Village",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "3 Cost / 0 Power"
   },
   "OP06-021": {
@@ -7821,6 +8689,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Black",
     "traits": "Thriller Bark Pirates",
     "rarity": "L",
+    "pack": "569106",
     "cost": "4 Life / 5000 Power"
   },
   "OP06-020": {
@@ -7830,6 +8699,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Fish-Man / New Fish-Man Pirates",
     "rarity": "L",
+    "pack": "569106",
     "cost": "5 Life / 5000 Power"
   },
   "OP06-022": {
@@ -7839,6 +8709,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Yellow",
     "traits": "Land of Wano",
     "rarity": "L",
+    "pack": "569106",
     "cost": "4 Life / 5000 Power"
   },
   "OP06-025": {
@@ -7848,6 +8719,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Merfolk",
     "rarity": "R",
+    "pack": "569106",
     "cost": "1 Cost / 2000 Power"
   },
   "OP06-023": {
@@ -7857,6 +8729,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Fish-Man / East Blue / Arlong Pirates",
     "rarity": "R",
+    "pack": "569106",
     "cost": "4 Cost / 6000 Power"
   },
   "OP06-024": {
@@ -7865,7 +8738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / New Fish-Man Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "5 Cost / 6000 Power"
   },
   "OP06-028": {
@@ -7874,7 +8748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / New Fish-Man Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-036": {
@@ -7884,6 +8759,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano / Thriller Bark Pirates",
     "rarity": "R",
+    "pack": "569106",
     "cost": "4 Cost / 6000 Power"
   },
   "OP06-029": {
@@ -7892,7 +8768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / New Fish-Man Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "3 Cost / 4000 Power"
   },
   "OP06-035": {
@@ -7901,7 +8778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / New Fish-Man Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569106",
     "cost": "7 Cost / 8000 Power"
   },
   "OP06-032": {
@@ -7910,7 +8788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / New Fish-Man Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost / 2000 Power"
   },
   "OP06-027": {
@@ -7919,7 +8798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Gyro Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "1 Cost / 2000 Power"
   },
   "OP06-031": {
@@ -7928,7 +8808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / Former Arlong Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "4 Cost / 5000 Power"
   },
   "OP06-033": {
@@ -7938,6 +8819,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Fish-Man / Flying Pirates",
     "rarity": "R",
+    "pack": "569106",
     "cost": "2 Cost / 2000 Power"
   },
   "OP06-038": {
@@ -7946,7 +8828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Dressrosa / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "1 Cost"
   },
   "OP06-034": {
@@ -7955,7 +8838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "4 Cost / 6000 Power"
   },
   "OP06-030": {
@@ -7964,7 +8848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / New Fish-Man Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "3 Cost / 4000 Power"
   },
   "OP06-037": {
@@ -7973,7 +8858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / Flying Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "6 Cost / 8000 Power"
   },
   "OP06-047": {
@@ -7983,6 +8869,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569106",
     "cost": "4 Cost / 4000 Power"
   },
   "OP06-039": {
@@ -7992,6 +8879,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569106",
     "cost": "4 Cost"
   },
   "OP06-043": {
@@ -8000,7 +8888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569106",
     "cost": "8 Cost / 8000 Power"
   },
   "OP06-048": {
@@ -8009,7 +8898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "3 Cost / 3000 Power"
   },
   "OP06-041": {
@@ -8018,7 +8908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Green",
     "traits": "Fish-Man Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "6 Cost"
   },
   "OP06-046": {
@@ -8027,7 +8918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "5 Cost / 6000 Power"
   },
   "OP06-040": {
@@ -8036,7 +8928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Fish-Man / New Fish-Man Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost"
   },
   "OP06-042": {
@@ -8046,6 +8939,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
     "rarity": "L",
+    "pack": "569106",
     "cost": "4 Life / 5000 Power"
   },
   "OP06-045": {
@@ -8054,7 +8948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "3 Cost / 5000 Power"
   },
   "OP06-049": {
@@ -8063,7 +8958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "5 Cost / 7000 Power"
   },
   "OP06-044": {
@@ -8072,7 +8968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "4 Cost / 5000 Power"
   },
   "OP06-055": {
@@ -8081,7 +8978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "5 Cost / 7000 Power"
   },
   "OP06-052": {
@@ -8090,7 +8988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-054": {
@@ -8099,7 +8998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "2 Cost / 4000 Power"
   },
   "OP06-053": {
@@ -8108,7 +9008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Giant / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-050": {
@@ -8118,6 +9019,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569106",
     "cost": "1 Cost / 2000 Power"
   },
   "OP06-051": {
@@ -8127,6 +9029,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569106",
     "cost": "5 Cost / 4000 Power"
   },
   "OP06-057": {
@@ -8135,7 +9038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Dressrosa / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "1 Cost"
   },
   "OP06-061": {
@@ -8145,6 +9049,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
     "rarity": "R",
+    "pack": "569106",
     "cost": "7 Cost / 7000 Power"
   },
   "OP06-058": {
@@ -8154,6 +9059,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569106",
     "cost": "7 Cost"
   },
   "OP06-059": {
@@ -8162,7 +9068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "2 Cost"
   },
   "OP06-056": {
@@ -8171,7 +9078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "2 Cost"
   },
   "OP06-063": {
@@ -8180,7 +9088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Vinsmoke Family / Kingdom of GERMA",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "1 Cost / 0 Power"
   },
   "OP06-064": {
@@ -8189,7 +9098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "3 Cost / 3000 Power"
   },
   "OP06-060": {
@@ -8198,7 +9108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "4 Cost / 4000 Power"
   },
   "OP06-062": {
@@ -8207,7 +9118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569106",
     "cost": "8 Cost / 8000 Power"
   },
   "OP06-066": {
@@ -8216,7 +9128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost / 2000 Power"
   },
   "OP06-065": {
@@ -8226,6 +9139,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
     "rarity": "R",
+    "pack": "569106",
     "cost": "5 Cost / 6000 Power"
   },
   "OP06-073": {
@@ -8234,7 +9148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Golden Lion Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "2 Cost / 1000 Power"
   },
   "OP06-074": {
@@ -8244,6 +9159,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "FILM / Navy",
     "rarity": "R",
+    "pack": "569106",
     "cost": "7 Cost / 7000 Power"
   },
   "OP06-067": {
@@ -8253,6 +9169,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
     "rarity": "R",
+    "pack": "569106",
     "cost": "4 Cost / 5000 Power"
   },
   "OP06-069": {
@@ -8261,7 +9178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569106",
     "cost": "4 Cost / 5000 Power"
   },
   "OP06-078": {
@@ -8270,7 +9188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "1 Cost"
   },
   "OP06-070": {
@@ -8279,7 +9198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Eldoraggo Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "5 Cost / 7000 Power"
   },
   "OP06-076": {
@@ -8288,7 +9208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Supernovas / Kid Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "4 Cost / 5000 Power"
   },
   "OP06-072": {
@@ -8297,7 +9218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Kingdom of GERMA",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "1 Cost / 0 Power"
   },
   "OP06-071": {
@@ -8306,7 +9228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Grantesoro",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "5 Cost / 6000 Power"
   },
   "OP06-068": {
@@ -8315,7 +9238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost / 2000 Power"
   },
   "OP06-077": {
@@ -8325,6 +9249,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
     "rarity": "R",
+    "pack": "569106",
     "cost": "4 Cost"
   },
   "OP06-075": {
@@ -8333,7 +9258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Crown Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-079": {
@@ -8342,7 +9268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Purple",
     "traits": "Kingdom of GERMA",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "1 Cost"
   },
   "OP06-084": {
@@ -8351,7 +9278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-083": {
@@ -8360,7 +9288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Giant / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "4 Cost / 7000 Power"
   },
   "OP06-080": {
@@ -8370,6 +9299,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
     "rarity": "L",
+    "pack": "569106",
     "cost": "5 Life / 5000 Power"
   },
   "OP06-081": {
@@ -8379,6 +9309,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Thriller Bark Pirates",
     "rarity": "R",
+    "pack": "569106",
     "cost": "4 Cost / 5000 Power"
   },
   "OP06-086": {
@@ -8387,7 +9318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569106",
     "cost": "8 Cost / 9000 Power"
   },
   "OP06-082": {
@@ -8396,7 +9328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-085": {
@@ -8405,7 +9338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-087": {
@@ -8414,7 +9348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost / 2000 Power"
   },
   "OP06-088": {
@@ -8423,7 +9358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Happosui Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "3 Cost / 4000 Power"
   },
   "OP06-089": {
@@ -8432,7 +9368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-092": {
@@ -8442,6 +9379,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Former Rumbar Pirates",
     "rarity": "R",
+    "pack": "569106",
     "cost": "6 Cost / 6000 Power"
   },
   "OP06-090": {
@@ -8451,6 +9389,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Thriller Bark Pirates",
     "rarity": "R",
+    "pack": "569106",
     "cost": "4 Cost / 5000 Power"
   },
   "OP06-096": {
@@ -8459,7 +9398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "3 Cost"
   },
   "OP06-094": {
@@ -8468,7 +9408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "4 Cost / 6000 Power"
   },
   "OP06-095": {
@@ -8477,7 +9418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "2 Cost"
   },
   "OP06-091": {
@@ -8486,7 +9428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "1 Cost / 2000 Power"
   },
   "OP06-093": {
@@ -8495,7 +9438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569106",
     "cost": "4 Cost / 5000 Power"
   },
   "OP06-099": {
@@ -8504,7 +9448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "1 Cost / 0 Power"
   },
   "OP06-098": {
@@ -8513,7 +9458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "1 Cost"
   },
   "OP06-097": {
@@ -8523,6 +9469,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Thriller Bark Pirates",
     "rarity": "R",
+    "pack": "569106",
     "cost": "2 Cost"
   },
   "OP06-101": {
@@ -8532,6 +9479,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569106",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-102": {
@@ -8540,7 +9488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "3 Cost / 4000 Power"
   },
   "OP06-104": {
@@ -8550,6 +9499,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Land of Wano / The Akazaya Nine",
     "rarity": "R",
+    "pack": "569106",
     "cost": "4 Cost / 6000 Power"
   },
   "OP06-103": {
@@ -8558,7 +9508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Fish-Man / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "3 Cost / 5000 Power"
   },
   "OP06-100": {
@@ -8567,7 +9518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Minks / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "4 Cost / 5000 Power"
   },
   "OP06-109": {
@@ -8576,7 +9528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "5 Cost / 6000 Power"
   },
   "OP06-106": {
@@ -8585,7 +9538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569106",
     "cost": "2 Cost / 0 Power"
   },
   "OP06-107": {
@@ -8594,7 +9548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569106",
     "cost": "5 Cost / 6000 Power"
   },
   "OP06-105": {
@@ -8603,7 +9558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "3 Cost / 5000 Power"
   },
   "OP06-108": {
@@ -8612,7 +9568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "1 Cost / 2000 Power"
   },
   "OP07-006": {
@@ -8621,7 +9578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Goa Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "1 Cost / 1000 Power"
   },
   "OP07-016": {
@@ -8631,6 +9589,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Revolutionary Army",
     "rarity": "R",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-014": {
@@ -8639,7 +9598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Lulucia Kingdom",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost / 0 Power"
   },
   "OP07-017": {
@@ -8648,7 +9608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "2 Cost"
   },
   "OP07-018": {
@@ -8657,7 +9618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Impel Down / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-021": {
@@ -8667,6 +9629,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / Fallen Monk Pirates",
     "rarity": "R",
+    "pack": "569107",
     "cost": "4 Cost / 5000 Power"
   },
   "OP07-019": {
@@ -8676,6 +9639,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / Bonney Pirates",
     "rarity": "L",
+    "pack": "569107",
     "cost": "5 Life / 5000 Power"
   },
   "OP07-009": {
@@ -8684,7 +9648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Mountain Bandits",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "2 Cost / 3000 Power"
   },
   "OP07-020": {
@@ -8693,7 +9658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Merfolk / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-024": {
@@ -8702,7 +9668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Foolshout Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "3 Cost / 0 Power"
   },
   "OP07-023": {
@@ -8711,7 +9678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Caribou Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "4 Cost / 5000 Power"
   },
   "OP07-022": {
@@ -8721,6 +9689,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano",
     "rarity": "R",
+    "pack": "569107",
     "cost": "1 Cost / 0 Power"
   },
   "OP07-008": {
@@ -8729,7 +9698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Grantesoro",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "3 Cost / 3000 Power"
   },
   "OP07-013": {
@@ -8738,7 +9708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Spade Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost / 2000 Power"
   },
   "OP07-010": {
@@ -8748,6 +9719,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "FILM / Grantesoro",
     "rarity": "R",
+    "pack": "569107",
     "cost": "3 Cost / 4000 Power"
   },
   "OP07-011": {
@@ -8756,7 +9728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Goa Kingdom / Bluejam Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "4 Cost / 5000 Power"
   },
   "OP07-015": {
@@ -8765,7 +9738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569107",
     "cost": "8 Cost / 9000 Power"
   },
   "OP07-012": {
@@ -8774,7 +9748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Goa Kingdom / Bluejam Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-119": {
@@ -8783,7 +9758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569106",
     "cost": "9 Cost / 9000 Power"
   },
   "OP07-002": {
@@ -8793,6 +9769,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "FILM / Neo Navy",
     "rarity": "R",
+    "pack": "569107",
     "cost": "7 Cost / 6000 Power"
   },
   "OP07-007": {
@@ -8801,7 +9778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Grantesoro",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "4 Cost / 6000 Power"
   },
   "OP07-001": {
@@ -8811,6 +9789,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Revolutionary Army",
     "rarity": "L",
+    "pack": "569107",
     "cost": "5 Life / 5000 Power"
   },
   "OP07-004": {
@@ -8820,6 +9799,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Mountain Bandits",
     "rarity": "R",
+    "pack": "569107",
     "cost": "2 Cost / 3000 Power"
   },
   "OP06-110": {
@@ -8828,7 +9808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Minks / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "4 Cost / 5000 Power"
   },
   "OP07-029": {
@@ -8837,7 +9818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Hawkins Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569107",
     "cost": "6 Cost / 7000 Power"
   },
   "OP06-114": {
@@ -8846,7 +9828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569106",
     "cost": "5 Cost / 7000 Power"
   },
   "OP06-116": {
@@ -8856,6 +9839,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
     "rarity": "R",
+    "pack": "569106",
     "cost": "4 Cost"
   },
   "OP07-003": {
@@ -8865,6 +9849,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Goa Kingdom",
     "rarity": "R",
+    "pack": "569107",
     "cost": "2 Cost / 0 Power"
   },
   "OP07-005": {
@@ -8874,6 +9859,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "FILM / Grantesoro",
     "rarity": "R",
+    "pack": "569107",
     "cost": "3 Cost / 0 Power"
   },
   "OP06-112": {
@@ -8882,7 +9868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "3 Cost / 4000 Power"
   },
   "OP06-111": {
@@ -8891,7 +9878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "3 Cost / 4000 Power"
   },
   "OP06-117": {
@@ -8900,7 +9888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "1 Cost"
   },
   "OP07-027": {
@@ -8909,7 +9898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "4 Cost / 6000 Power"
   },
   "OP07-028": {
@@ -8918,7 +9908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / On-Air Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "6 Cost / 8000 Power"
   },
   "OP07-026": {
@@ -8927,7 +9918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-025": {
@@ -8936,7 +9928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Caribou Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "3 Cost / 3000 Power"
   },
   "OP06-115": {
@@ -8946,6 +9939,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island",
     "rarity": "R",
+    "pack": "569106",
     "cost": "0 Cost"
   },
   "OP06-118": {
@@ -8954,7 +9948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569106",
     "cost": "9 Cost / 9000 Power"
   },
   "OP06-113": {
@@ -8963,7 +9958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569106",
     "cost": "1 Cost / 1000 Power"
   },
   "OP07-046": {
@@ -8973,6 +9969,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569107",
     "cost": "1 Cost / 2000 Power"
   },
   "OP07-045": {
@@ -8981,7 +9978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / The Seven Warlords of the Sea / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569107",
     "cost": "4 Cost / 5000 Power"
   },
   "OP07-041": {
@@ -8990,7 +9988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Amazon Lily",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost / 0 Power"
   },
   "OP07-036": {
@@ -9000,6 +9999,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569107",
     "cost": "2 Cost"
   },
   "OP07-051": {
@@ -9008,7 +10008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569107",
     "cost": "6 Cost / 8000 Power"
   },
   "OP07-039": {
@@ -9017,7 +10018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "4 Cost / 5000 Power"
   },
   "OP07-047": {
@@ -9027,6 +10029,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Heart Pirates",
     "rarity": "R",
+    "pack": "569107",
     "cost": "4 Cost / 4000 Power"
   },
   "OP07-030": {
@@ -9035,7 +10038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Animal",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "2 Cost / 0 Power"
   },
   "OP07-042": {
@@ -9044,7 +10048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-050": {
@@ -9053,7 +10058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Kuja Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "3 Cost / 3000 Power"
   },
   "OP07-040": {
@@ -9062,7 +10068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "4 Cost / 5000 Power"
   },
   "OP07-032": {
@@ -9072,6 +10079,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Fish-Man / The Sun Pirates",
     "rarity": "R",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-044": {
@@ -9080,7 +10088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "8 Cost / 10000 Power"
   },
   "OP07-048": {
@@ -9089,7 +10098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "3 Cost / 4000 Power"
   },
   "OP07-049": {
@@ -9098,7 +10108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Weevil's Mother",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "2 Cost / 0 Power"
   },
   "OP07-056": {
@@ -9107,7 +10118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-031": {
@@ -9116,7 +10128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Barto Club",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "3 Cost / 4000 Power"
   },
   "OP07-043": {
@@ -9125,7 +10138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost / 2000 Power"
   },
   "OP07-035": {
@@ -9134,7 +10148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Supernovas / Fallen Monk Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-057": {
@@ -9144,6 +10159,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
     "rarity": "R",
+    "pack": "569107",
     "cost": "2 Cost"
   },
   "OP07-034": {
@@ -9152,7 +10168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost / 2000 Power"
   },
   "OP07-037": {
@@ -9161,7 +10178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Supernovas / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-033": {
@@ -9170,7 +10188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-054": {
@@ -9180,6 +10199,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Amazon Lily",
     "rarity": "R",
+    "pack": "569107",
     "cost": "3 Cost / 2000 Power"
   },
   "OP07-038": {
@@ -9189,6 +10209,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
     "rarity": "L",
+    "pack": "569107",
     "cost": "5 Life / 5000 Power"
   },
   "OP07-052": {
@@ -9197,7 +10218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Kuja Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-053": {
@@ -9207,6 +10229,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-055": {
@@ -9215,7 +10238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Kuja Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "2 Cost"
   },
   "OP07-064": {
@@ -9224,7 +10248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569107",
     "cost": "6 Cost / 6000 Power"
   },
   "OP07-062": {
@@ -9233,7 +10258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Kingdom of GERMA / The Vinsmoke Family",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "1 Cost / 2000 Power"
   },
   "OP07-058": {
@@ -9242,7 +10268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Blue",
     "traits": "Amazon Lily",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-063": {
@@ -9251,7 +10278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Fish-Man / Foxy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "3 Cost / 4000 Power"
   },
   "OP07-061": {
@@ -9260,7 +10288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Kingdom of GERMA / The Vinsmoke Family",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "1 Cost / 0 Power"
   },
   "OP07-065": {
@@ -9269,7 +10298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Foxy Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost / 0 Power"
   },
   "OP07-069": {
@@ -9278,7 +10308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Foxy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "3 Cost / 4000 Power"
   },
   "OP07-060": {
@@ -9287,7 +10318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Foxy Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "3 Cost / 0 Power"
   },
   "OP07-066": {
@@ -9297,6 +10329,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Animal / Foxy Pirates",
     "rarity": "R",
+    "pack": "569107",
     "cost": "2 Cost / 0 Power"
   },
   "OP07-067": {
@@ -9305,7 +10338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Long Ring Long Land",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "1 Cost / 3000 Power"
   },
   "OP07-059": {
@@ -9315,6 +10349,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Foxy Pirates",
     "rarity": "L",
+    "pack": "569107",
     "cost": "5 Life / 5000 Power"
   },
   "OP07-068": {
@@ -9323,7 +10358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Foxy Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-075": {
@@ -9332,7 +10368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Foxy Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-070": {
@@ -9341,7 +10378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Giant / Fish-Man / Foxy Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "6 Cost / 7000 Power"
   },
   "OP07-073": {
@@ -9351,6 +10389,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569107",
     "cost": "6 Cost / 7000 Power"
   },
   "OP07-071": {
@@ -9360,6 +10399,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Foxy Pirates",
     "rarity": "R",
+    "pack": "569107",
     "cost": "7 Cost / 7000 Power"
   },
   "OP07-083": {
@@ -9368,7 +10408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "4 Cost / 5000 Power"
   },
   "OP07-072": {
@@ -9377,7 +10418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Foxy Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569107",
     "cost": "3 Cost / 5000 Power"
   },
   "OP07-087": {
@@ -9386,7 +10428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "World Government",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "3 Cost / 3000 Power"
   },
   "OP07-078": {
@@ -9395,7 +10438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Foxy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "3 Cost"
   },
   "OP07-074": {
@@ -9404,7 +10448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Foxy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "2 Cost / 3000 Power"
   },
   "OP07-076": {
@@ -9413,7 +10458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Foxy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "2 Cost"
   },
   "OP07-079": {
@@ -9423,6 +10469,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "CP0",
     "rarity": "L",
+    "pack": "569107",
     "cost": "5 Life / 5000 Power"
   },
   "OP07-081": {
@@ -9431,7 +10478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP0",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "4 Cost / 5000 Power"
   },
   "OP07-080": {
@@ -9441,6 +10489,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "CP0",
     "rarity": "R",
+    "pack": "569107",
     "cost": "4 Cost / 5000 Power"
   },
   "OP07-082": {
@@ -9449,7 +10498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates / Former Rocks Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "2 Cost / 3000 Power"
   },
   "OP07-077": {
@@ -9459,6 +10509,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Four Emperors / Land of Wano",
     "rarity": "R",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-089": {
@@ -9467,7 +10518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP0",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "6 Cost / 8000 Power"
   },
   "OP07-085": {
@@ -9476,7 +10528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP0",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569107",
     "cost": "9 Cost / 9000 Power"
   },
   "OP07-091": {
@@ -9486,6 +10539,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-084": {
@@ -9494,7 +10548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP0",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "2 Cost / 2000 Power"
   },
   "OP07-088": {
@@ -9503,7 +10558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal / CP0",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost / 0 Power"
   },
   "OP07-086": {
@@ -9512,7 +10568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP0",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "3 Cost / 4000 Power"
   },
   "OP07-090": {
@@ -9521,7 +10578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Journalist",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "2 Cost / 2000 Power"
   },
   "OP07-092": {
@@ -9530,7 +10588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP0",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost / 2000 Power"
   },
   "OP07-095": {
@@ -9539,7 +10598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "2 Cost"
   },
   "OP07-093": {
@@ -9549,6 +10609,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "CP0",
     "rarity": "R",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-094": {
@@ -9557,7 +10618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "CP9",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-097": {
@@ -9567,6 +10629,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Scientist / Egghead",
     "rarity": "L",
+    "pack": "569107",
     "cost": "2 Life / 5000 Power"
   },
   "OP07-096": {
@@ -9576,6 +10639,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "CP9",
     "rarity": "R",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-099": {
@@ -9584,7 +10648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "1 Cost / 2000 Power"
   },
   "OP07-098": {
@@ -9593,7 +10658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Scientist / Egghead",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-101": {
@@ -9602,7 +10668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Scientist / Egghead",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-102": {
@@ -9611,7 +10678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Fish-Man / Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-100": {
@@ -9620,7 +10688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Scientist / Egghead",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "4 Cost / 5000 Power"
   },
   "OP07-103": {
@@ -9629,7 +10698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal / Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "2 Cost / 3000 Power"
   },
   "OP07-104": {
@@ -9638,7 +10708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "3 Cost / 4000 Power"
   },
   "OP07-105": {
@@ -9647,7 +10718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Scientist / Egghead",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-107": {
@@ -9657,6 +10729,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569107",
     "cost": "4 Cost / 5000 Power"
   },
   "OP07-109": {
@@ -9665,7 +10738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Four Emperors / Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-108": {
@@ -9674,7 +10748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "4 Cost / 6000 Power"
   },
   "OP07-106": {
@@ -9683,7 +10758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal / Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "4 Cost / 6000 Power"
   },
   "OP07-111": {
@@ -9692,7 +10768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Scientist / Egghead",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569107",
     "cost": "3 Cost / 5000 Power"
   },
   "OP07-113": {
@@ -9701,7 +10778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-114": {
@@ -9710,7 +10788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Scientist / Egghead",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-115": {
@@ -9719,7 +10798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Scientist / Egghead",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-110": {
@@ -9728,7 +10808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Scientist / Egghead",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "5 Cost / 6000 Power"
   },
   "OP07-112": {
@@ -9738,6 +10819,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Dressrosa / Revolutionary Army",
     "rarity": "R",
+    "pack": "569107",
     "cost": "6 Cost / 7000 Power"
   },
   "OP07-116": {
@@ -9747,6 +10829,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Land of Wano / The Akazaya Nine",
     "rarity": "R",
+    "pack": "569107",
     "cost": "1 Cost"
   },
   "OP07-118": {
@@ -9755,7 +10838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569107",
     "cost": "8 Cost / 9000 Power"
   },
   "OP07-117": {
@@ -9764,7 +10848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Yellow",
     "traits": "Egghead",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569107",
     "cost": "2 Cost"
   },
   "OP08-002": {
@@ -9774,6 +10859,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Blue",
     "traits": "Whitebeard Pirates",
     "rarity": "L",
+    "pack": "569108",
     "cost": "4 Life / 5000 Power"
   },
   "OP08-001": {
@@ -9783,6 +10869,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Green",
     "traits": "Animal / Drum Kingdom / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569108",
     "cost": "4 Life / 5000 Power"
   },
   "OP07-119": {
@@ -9791,7 +10878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569107",
     "cost": "10 Cost / 10000 Power"
   },
   "OP08-010": {
@@ -9800,7 +10888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Drum Kingdom",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "3 Cost / 3000 Power"
   },
   "OP08-003": {
@@ -9809,7 +10898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Drum Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "2 Cost / 2000 Power"
   },
   "OP08-006": {
@@ -9818,7 +10908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Drum Kingdom",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "5 Cost / 6000 Power"
   },
   "OP08-008": {
@@ -9828,6 +10919,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Drum Kingdom",
     "rarity": "R",
+    "pack": "569108",
     "cost": "5 Cost / 6000 Power"
   },
   "OP08-004": {
@@ -9836,7 +10928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Drum Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "4 Cost / 5000 Power"
   },
   "OP08-007": {
@@ -9845,7 +10938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Drum Kingdom / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569108",
     "cost": "3 Cost / 5000 Power"
   },
   "OP08-011": {
@@ -9854,7 +10948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Drum Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "6 Cost / 8000 Power"
   },
   "OP08-005": {
@@ -9863,7 +10958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Drum Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "3 Cost / 3000 Power"
   },
   "OP08-009": {
@@ -9872,7 +10968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Drum Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "3 Cost / 5000 Power"
   },
   "OP08-018": {
@@ -9882,6 +10979,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Animal / Drum Kingdom / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569108",
     "cost": "2 Cost"
   },
   "OP08-014": {
@@ -9891,6 +10989,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Drum Kingdom",
     "rarity": "R",
+    "pack": "569108",
     "cost": "6 Cost / 6000 Power"
   },
   "OP08-013": {
@@ -9899,7 +10998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Drum Kingdom",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "3 Cost / 4000 Power"
   },
   "OP08-016": {
@@ -9909,6 +11009,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Drum Kingdom",
     "rarity": "R",
+    "pack": "569108",
     "cost": "3 Cost / 0 Power"
   },
   "OP08-017": {
@@ -9917,7 +11018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Drum Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "2 Cost"
   },
   "OP08-012": {
@@ -9926,7 +11028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Drum Kingdom",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "3 Cost / 3000 Power"
   },
   "OP08-015": {
@@ -9936,6 +11039,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Drum Kingdom",
     "rarity": "R",
+    "pack": "569108",
     "cost": "1 Cost / 2000 Power"
   },
   "OP08-020": {
@@ -9944,7 +11048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Red",
     "traits": "Drum Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "1 Cost"
   },
   "OP08-019": {
@@ -9953,7 +11058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Drum Kingdom",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "3 Cost"
   },
   "OP08-025": {
@@ -9962,7 +11068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "3 Cost / 4000 Power"
   },
   "OP08-021": {
@@ -9972,6 +11079,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Minks",
     "rarity": "L",
+    "pack": "569108",
     "cost": "5 Life / 5000 Power"
   },
   "OP08-023": {
@@ -9980,7 +11088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569108",
     "cost": "5 Cost / 6000 Power"
   },
   "OP08-028": {
@@ -9989,7 +11098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "5 Cost / 6000 Power"
   },
   "OP08-024": {
@@ -9998,7 +11108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "3 Cost / 4000 Power"
   },
   "OP08-033": {
@@ -10007,7 +11118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "1 Cost / 2000 Power"
   },
   "OP08-030": {
@@ -10017,6 +11129,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Minks",
     "rarity": "R",
+    "pack": "569108",
     "cost": "4 Cost / 5000 Power"
   },
   "OP08-026": {
@@ -10025,7 +11138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "2 Cost / 3000 Power"
   },
   "OP08-022": {
@@ -10034,7 +11148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "5 Cost / 6000 Power"
   },
   "OP08-034": {
@@ -10044,6 +11159,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Minks",
     "rarity": "R",
+    "pack": "569108",
     "cost": "1 Cost / 2000 Power"
   },
   "OP08-031": {
@@ -10052,7 +11168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "3 Cost / 1000 Power"
   },
   "OP08-027": {
@@ -10061,7 +11178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "1 Cost / 3000 Power"
   },
   "OP08-035": {
@@ -10070,7 +11188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "2 Cost / 4000 Power"
   },
   "OP08-029": {
@@ -10079,7 +11198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "4 Cost / 6000 Power"
   },
   "OP08-032": {
@@ -10088,7 +11208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "2 Cost / 0 Power"
   },
   "OP08-037": {
@@ -10097,7 +11218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "1 Cost"
   },
   "OP08-036": {
@@ -10107,6 +11229,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Minks",
     "rarity": "R",
+    "pack": "569108",
     "cost": "3 Cost"
   },
   "OP08-039": {
@@ -10116,6 +11239,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Animal",
     "rarity": "R",
+    "pack": "569108",
     "cost": "3 Cost"
   },
   "OP08-041": {
@@ -10124,7 +11248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Amazon Lily",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "3 Cost / 4000 Power"
   },
   "OP08-044": {
@@ -10133,7 +11258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "4 Cost / 4000 Power"
   },
   "OP08-038": {
@@ -10142,7 +11268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Minks / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "1 Cost"
   },
   "OP08-042": {
@@ -10151,7 +11278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "4 Cost / 5000 Power"
   },
   "OP08-040": {
@@ -10160,7 +11288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "4 Cost / 5000 Power"
   },
   "OP08-043": {
@@ -10169,7 +11298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569108",
     "cost": "10 Cost / 12000 Power"
   },
   "OP08-046": {
@@ -10179,6 +11309,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Amazon Lily",
     "rarity": "R",
+    "pack": "569108",
     "cost": "5 Cost / 6000 Power"
   },
   "OP08-045": {
@@ -10187,7 +11318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "4 Cost / 5000 Power"
   },
   "OP08-053": {
@@ -10197,6 +11329,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569108",
     "cost": "1 Cost"
   },
   "OP08-047": {
@@ -10206,6 +11339,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569108",
     "cost": "6 Cost / 7000 Power"
   },
   "OP08-048": {
@@ -10214,7 +11348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Amazon Lily",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "4 Cost / 6000 Power"
   },
   "OP08-051": {
@@ -10223,7 +11358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Former Rocks Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "1 Cost / 2000 Power"
   },
   "OP08-056": {
@@ -10232,7 +11368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "2 Cost"
   },
   "OP08-049": {
@@ -10241,7 +11378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "4 Cost / 5000 Power"
   },
   "OP08-055": {
@@ -10250,7 +11388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Former Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "4 Cost"
   },
   "OP08-054": {
@@ -10259,7 +11398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "3 Cost"
   },
   "OP08-050": {
@@ -10268,7 +11408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "3 Cost / 2000 Power"
   },
   "OP08-052": {
@@ -10278,6 +11419,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569108",
     "cost": "5 Cost / 6000 Power"
   },
   "OP08-057": {
@@ -10287,6 +11429,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple/Black",
     "traits": "Animal Kingdom Pirates",
     "rarity": "L",
+    "pack": "569108",
     "cost": "4 Life / 5000 Power"
   },
   "OP08-062": {
@@ -10295,7 +11438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "2 Cost / 3000 Power"
   },
   "OP08-059": {
@@ -10304,7 +11448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Lunarian / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "4 Cost / 5000 Power"
   },
   "OP08-058": {
@@ -10314,6 +11459,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple/Yellow",
     "traits": "Big Mom Pirates",
     "rarity": "L",
+    "pack": "569108",
     "cost": "4 Life / 5000 Power"
   },
   "OP08-064": {
@@ -10322,7 +11468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "4 Cost / 5000 Power"
   },
   "OP08-065": {
@@ -10331,7 +11478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "7 Cost / 9000 Power"
   },
   "OP08-060": {
@@ -10341,6 +11489,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569108",
     "cost": "7 Cost / 8000 Power"
   },
   "OP08-063": {
@@ -10350,6 +11499,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569108",
     "cost": "6 Cost / 7000 Power"
   },
   "OP08-061": {
@@ -10358,7 +11508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "5 Cost / 6000 Power"
   },
   "OP08-067": {
@@ -10368,6 +11519,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569108",
     "cost": "3 Cost / 4000 Power"
   },
   "OP08-066": {
@@ -10376,7 +11528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "4 Cost / 1000 Power"
   },
   "OP08-068": {
@@ -10385,7 +11538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "3 Cost / 5000 Power"
   },
   "OP08-069": {
@@ -10394,7 +11548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Former Rocks Pirates / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569108",
     "cost": "9 Cost / 9000 Power"
   },
   "OP08-071": {
@@ -10403,7 +11558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "6 Cost / 7000 Power"
   },
   "OP08-070": {
@@ -10412,7 +11568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "3 Cost / 4000 Power"
   },
   "OP08-072": {
@@ -10421,7 +11578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "5 Cost / 5000 Power"
   },
   "OP08-073": {
@@ -10430,7 +11588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "5 Cost / 6000 Power"
   },
   "OP08-074": {
@@ -10439,7 +11598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569108",
     "cost": "3 Cost / 2000 Power"
   },
   "OP08-076": {
@@ -10448,7 +11608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Four Emperors / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "3 Cost"
   },
   "OP08-075": {
@@ -10457,7 +11618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "1 Cost"
   },
   "OP08-077": {
@@ -10467,6 +11629,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates / Big Mom Pirates",
     "rarity": "R",
+    "pack": "569108",
     "cost": "6 Cost"
   },
   "OP08-083": {
@@ -10475,7 +11638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "2 Cost / 3000 Power"
   },
   "OP08-078": {
@@ -10484,7 +11648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "4 Cost / 6000 Power"
   },
   "OP08-081": {
@@ -10493,7 +11658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "CP0",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "1 Cost / 2000 Power"
   },
   "OP08-079": {
@@ -10502,7 +11668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Former Rocks Pirates / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569108",
     "cost": "9 Cost / 9000 Power"
   },
   "OP08-080": {
@@ -10512,6 +11679,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569108",
     "cost": "1 Cost / 2000 Power"
   },
   "OP08-082": {
@@ -10521,6 +11689,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569108",
     "cost": "1 Cost / 1000 Power"
   },
   "OP08-086": {
@@ -10529,7 +11698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "2 Cost / 3000 Power"
   },
   "OP08-084": {
@@ -10538,7 +11708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569108",
     "cost": "7 Cost / 8000 Power"
   },
   "OP08-091": {
@@ -10548,6 +11719,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Animal Kingdom Pirates / Former CP9",
     "rarity": "R",
+    "pack": "569108",
     "cost": "5 Cost / 5000 Power"
   },
   "OP08-085": {
@@ -10556,7 +11728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Fish-Man / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "5 Cost / 6000 Power"
   },
   "OP08-097": {
@@ -10565,7 +11738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "3 Cost"
   },
   "OP08-095": {
@@ -10574,7 +11748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Animal Kingdom Pirates / Former CP9",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "2 Cost"
   },
   "OP08-099": {
@@ -10583,7 +11758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Jaya / Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "6 Cost / 8000 Power"
   },
   "OP08-088": {
@@ -10592,7 +11768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "The Flying Fish Riders",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "1 Cost / 2000 Power"
   },
   "OP08-087": {
@@ -10601,7 +11778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates / On-Air Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "4 Cost / 5000 Power"
   },
   "OP08-096": {
@@ -10610,7 +11788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "1 Cost"
   },
   "OP08-090": {
@@ -10619,7 +11798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "3 Cost / 4000 Power"
   },
   "OP08-089": {
@@ -10628,7 +11808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates / Hawkins Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "7 Cost / 9000 Power"
   },
   "OP08-093": {
@@ -10637,7 +11818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy / Drake Pirates / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "4 Cost / 6000 Power"
   },
   "OP08-092": {
@@ -10647,6 +11829,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569108",
     "cost": "5 Cost / 5000 Power"
   },
   "OP08-101": {
@@ -10655,7 +11838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "2 Cost / 3000 Power"
   },
   "OP08-094": {
@@ -10665,6 +11849,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569108",
     "cost": "2 Cost"
   },
   "OP08-098": {
@@ -10674,6 +11859,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Jaya / Sky Island / Shandian Warrior",
     "rarity": "L",
+    "pack": "569108",
     "cost": "5 Life / 5000 Power"
   },
   "OP08-100": {
@@ -10682,7 +11868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal / Jaya / Sky Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "1 Cost / 2000 Power"
   },
   "OP08-102": {
@@ -10691,7 +11878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "6 Cost / 6000 Power"
   },
   "OP08-103": {
@@ -10700,7 +11888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "2 Cost / 3000 Power"
   },
   "OP08-104": {
@@ -10709,7 +11898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "1 Cost / 2000 Power"
   },
   "OP08-105": {
@@ -10718,7 +11908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569108",
     "cost": "3 Cost / 4000 Power"
   },
   "OP08-111": {
@@ -10727,7 +11918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Seraphim",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "4 Cost / 5000 Power"
   },
   "OP08-109": {
@@ -10737,6 +11929,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Jaya / Botanist",
     "rarity": "R",
+    "pack": "569108",
     "cost": "5 Cost / 6000 Power"
   },
   "OP08-108": {
@@ -10745,7 +11938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Jaya / Monkey Mountain Alliance",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "4 Cost / 6000 Power"
   },
   "OP08-116": {
@@ -10754,7 +11948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "2 Cost"
   },
   "OP08-107": {
@@ -10763,7 +11958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates / Homies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "1 Cost / 2000 Power"
   },
   "OP08-106": {
@@ -10772,7 +11968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569108",
     "cost": "5 Cost / 5000 Power"
   },
   "OP08-113": {
@@ -10781,7 +11978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Seraphim",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569108",
     "cost": "3 Cost / 4000 Power"
   },
   "OP08-110": {
@@ -10791,6 +11989,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
     "rarity": "R",
+    "pack": "569108",
     "cost": "4 Cost / 5000 Power"
   },
   "OP08-112": {
@@ -10799,7 +11998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Seraphim",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569108",
     "cost": "5 Cost / 6000 Power"
   },
   "OP08-114": {
@@ -10809,6 +12009,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Egghead / Seraphim",
     "rarity": "R",
+    "pack": "569108",
     "cost": "4 Cost / 5000 Power"
   },
   "OP08-115": {
@@ -10818,6 +12019,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
     "rarity": "R",
+    "pack": "569108",
     "cost": "1 Cost"
   },
   "OP09-002": {
@@ -10827,6 +12029,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "FILM",
     "rarity": "R",
+    "pack": "569109",
     "cost": "1 Cost / 2000 Power"
   },
   "OP08-117": {
@@ -10835,7 +12038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569108",
     "cost": "5 Cost"
   },
   "OP09-004": {
@@ -10844,7 +12048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Four Emperors / Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569109",
     "cost": "10 Cost / 12000 Power"
   },
   "OP08-118": {
@@ -10853,7 +12058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Former Roger Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569108",
     "cost": "8 Cost / 8000 Power"
   },
   "OP09-001": {
@@ -10863,6 +12069,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "The Four Emperors / Red-Haired Pirates",
     "rarity": "L",
+    "pack": "569109",
     "cost": "5 Life / 5000 Power"
   },
   "OP08-119": {
@@ -10871,7 +12078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569108",
     "cost": "10 Cost / 12000 Power"
   },
   "OP09-003": {
@@ -10880,7 +12088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "4 Cost / 5000 Power"
   },
   "OP09-007": {
@@ -10889,7 +12098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "3 Cost / 4000 Power"
   },
   "OP09-006": {
@@ -10898,7 +12108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "5 Cost / 7000 Power"
   },
   "OP09-005": {
@@ -10908,6 +12119,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Roger Pirates",
     "rarity": "R",
+    "pack": "569109",
     "cost": "5 Cost / 6000 Power"
   },
   "OP09-008": {
@@ -10916,7 +12128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "1 Cost / 2000 Power"
   },
   "OP09-009": {
@@ -10925,7 +12138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569109",
     "cost": "7 Cost / 7000 Power"
   },
   "OP09-021": {
@@ -10934,7 +12148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "2 Cost"
   },
   "OP09-010": {
@@ -10943,7 +12158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "4 Cost / 5000 Power"
   },
   "OP09-014": {
@@ -10952,7 +12168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "3 Cost / 3000 Power"
   },
   "OP09-011": {
@@ -10961,7 +12178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "3 Cost / 3000 Power"
   },
   "OP09-012": {
@@ -10970,7 +12188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "3 Cost / 4000 Power"
   },
   "OP09-016": {
@@ -10979,7 +12198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "4 Cost / 6000 Power"
   },
   "OP09-015": {
@@ -10989,6 +12209,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569109",
     "cost": "4 Cost / 5000 Power"
   },
   "OP09-013": {
@@ -10998,6 +12219,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569109",
     "cost": "5 Cost / 6000 Power"
   },
   "OP09-022": {
@@ -11007,6 +12229,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Purple",
     "traits": "ODYSSEY",
     "rarity": "L",
+    "pack": "569109",
     "cost": "4 Life / 5000 Power"
   },
   "OP09-017": {
@@ -11015,7 +12238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "4 Cost / 4000 Power"
   },
   "OP09-019": {
@@ -11024,7 +12248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "2 Cost"
   },
   "OP09-023": {
@@ -11033,7 +12258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569109",
     "cost": "9 Cost / 9000 Power"
   },
   "OP09-020": {
@@ -11043,6 +12269,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "The Four Emperors / Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569109",
     "cost": "1 Cost"
   },
   "OP09-018": {
@@ -11051,7 +12278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "3 Cost"
   },
   "OP09-024": {
@@ -11060,7 +12288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "4 Cost / 5000 Power"
   },
   "OP09-032": {
@@ -11069,7 +12298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Navy / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "3 Cost / 4000 Power"
   },
   "OP09-031": {
@@ -11079,6 +12309,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "ODYSSEY / The Seven Warlords of the Sea / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569109",
     "cost": "5 Cost / 6000 Power"
   },
   "OP09-026": {
@@ -11088,6 +12319,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "ODYSSEY / Navy",
     "rarity": "R",
+    "pack": "569109",
     "cost": "6 Cost / 7000 Power"
   },
   "OP09-025": {
@@ -11096,7 +12328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "4 Cost / 5000 Power"
   },
   "OP09-027": {
@@ -11105,7 +12338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "5 Cost / 6000 Power"
   },
   "OP09-029": {
@@ -11114,7 +12348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "3 Cost / 4000 Power"
   },
   "OP09-028": {
@@ -11123,7 +12358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "5 Cost / 6000 Power"
   },
   "OP09-030": {
@@ -11132,7 +12368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "3 Cost / 4000 Power"
   },
   "OP09-034": {
@@ -11142,6 +12379,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Muggy Kingdom / Thriller Bark Pirates",
     "rarity": "R",
+    "pack": "569109",
     "cost": "1 Cost / 2000 Power"
   },
   "OP09-033": {
@@ -11150,7 +12388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "4 Cost / 5000 Power"
   },
   "OP09-036": {
@@ -11159,7 +12398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "5 Cost / 6000 Power"
   },
   "OP09-035": {
@@ -11168,7 +12408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "5 Cost / 5000 Power"
   },
   "OP09-037": {
@@ -11177,7 +12418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569109",
     "cost": "3 Cost / 5000 Power"
   },
   "OP09-039": {
@@ -11187,6 +12429,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "ODYSSEY / Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569109",
     "cost": "1 Cost"
   },
   "OP09-038": {
@@ -11195,7 +12438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / CP9",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "4 Cost / 6000 Power"
   },
   "OP09-040": {
@@ -11204,7 +12448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "ODYSSEY / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "3 Cost"
   },
   "OP09-044": {
@@ -11213,7 +12458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Land of Wano / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "3 Cost / 4000 Power"
   },
   "OP09-043": {
@@ -11222,7 +12468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "5 Cost / 6000 Power"
   },
   "OP09-042": {
@@ -11232,6 +12479,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Four Emperors / Cross Guild",
     "rarity": "L",
+    "pack": "569109",
     "cost": "5 Life / 5000 Power"
   },
   "OP09-041": {
@@ -11240,7 +12488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "ODYSSEY / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "1 Cost"
   },
   "OP09-046": {
@@ -11249,7 +12498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569109",
     "cost": "7 Cost / 7000 Power"
   },
   "OP09-045": {
@@ -11258,7 +12508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "5 Cost / 5000 Power"
   },
   "OP09-047": {
@@ -11267,7 +12518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Land of Wano / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "9 Cost / 10000 Power"
   },
   "OP09-049": {
@@ -11276,7 +12528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "4 Cost / 6000 Power"
   },
   "OP09-057": {
@@ -11286,6 +12539,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Cross Guild",
     "rarity": "R",
+    "pack": "569109",
     "cost": "1 Cost"
   },
   "OP09-048": {
@@ -11294,7 +12548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569109",
     "cost": "6 Cost / 7000 Power"
   },
   "OP09-055": {
@@ -11303,7 +12558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "5 Cost / 7000 Power"
   },
   "OP09-050": {
@@ -11313,6 +12569,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "East Blue",
     "rarity": "R",
+    "pack": "569109",
     "cost": "1 Cost / 1000 Power"
   },
   "OP09-052": {
@@ -11321,7 +12578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "3 Cost / 5000 Power"
   },
   "OP09-051": {
@@ -11331,6 +12589,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Four Emperors / Cross Guild",
     "rarity": "R",
+    "pack": "569109",
     "cost": "10 Cost / 12000 Power"
   },
   "OP09-054": {
@@ -11339,7 +12598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal / Cross Guild",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "2 Cost / 2000 Power"
   },
   "OP09-058": {
@@ -11348,7 +12608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Buggy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "2 Cost"
   },
   "OP09-053": {
@@ -11357,7 +12618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "5 Cost / 5000 Power"
   },
   "OP09-060": {
@@ -11366,7 +12628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Blue",
     "traits": "Cross Guild",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "1 Cost"
   },
   "OP09-056": {
@@ -11376,6 +12639,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Cross Guild / Former Baroque Works",
     "rarity": "R",
+    "pack": "569109",
     "cost": "1 Cost / 2000 Power"
   },
   "OP09-059": {
@@ -11384,7 +12648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Buggy Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "2 Cost"
   },
   "OP09-063": {
@@ -11393,7 +12658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "4 Cost / 6000 Power"
   },
   "OP09-062": {
@@ -11403,6 +12669,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple/Yellow",
     "traits": "Straw Hat Crew",
     "rarity": "L",
+    "pack": "569109",
     "cost": "4 Life / 5000 Power"
   },
   "OP09-064": {
@@ -11411,7 +12678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "5 Cost / 5000 Power"
   },
   "OP09-061": {
@@ -11421,6 +12689,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple/Black",
     "traits": "The Four Emperors / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569109",
     "cost": "4 Life / 5000 Power"
   },
   "OP09-068": {
@@ -11429,7 +12698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "5 Cost / 6000 Power"
   },
   "OP09-065": {
@@ -11438,7 +12708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569109",
     "cost": "7 Cost / 7000 Power"
   },
   "OP09-066": {
@@ -11447,7 +12718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "4 Cost / 6000 Power"
   },
   "OP09-067": {
@@ -11456,7 +12728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Fish-Man / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "7 Cost / 9000 Power"
   },
   "OP09-069": {
@@ -11466,6 +12739,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Heart Pirates",
     "rarity": "R",
+    "pack": "569109",
     "cost": "1 Cost / 2000 Power"
   },
   "OP09-080": {
@@ -11474,7 +12748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "1 Cost"
   },
   "OP09-070": {
@@ -11483,7 +12758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "3 Cost / 2000 Power"
   },
   "OP09-078": {
@@ -11493,6 +12769,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Four Emperors / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569109",
     "cost": "1 Cost"
   },
   "OP09-071": {
@@ -11501,7 +12778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "2 Cost / 2000 Power"
   },
   "OP09-072": {
@@ -11510,7 +12788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569109",
     "cost": "4 Cost / 5000 Power"
   },
   "OP09-073": {
@@ -11519,7 +12798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "6 Cost / 7000 Power"
   },
   "OP09-075": {
@@ -11528,7 +12808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "3 Cost / 5000 Power"
   },
   "OP09-077": {
@@ -11537,7 +12818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "2 Cost"
   },
   "OP09-074": {
@@ -11546,7 +12828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Minks / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "2 Cost / 2000 Power"
   },
   "OP09-076": {
@@ -11556,6 +12839,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569109",
     "cost": "3 Cost / 5000 Power"
   },
   "OP09-081": {
@@ -11565,6 +12849,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "The Four Emperors / Blackbeard Pirates",
     "rarity": "L",
+    "pack": "569109",
     "cost": "5 Life / 5000 Power"
   },
   "OP09-079": {
@@ -11573,7 +12858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "2 Cost"
   },
   "OP09-083": {
@@ -11583,6 +12869,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Blackbeard Pirates",
     "rarity": "R",
+    "pack": "569109",
     "cost": "5 Cost / 6000 Power"
   },
   "OP09-085": {
@@ -11591,7 +12878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "4 Cost / 5000 Power"
   },
   "OP09-082": {
@@ -11600,7 +12888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "4 Cost / 6000 Power"
   },
   "OP09-089": {
@@ -11609,7 +12898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "1 Cost / 0 Power"
   },
   "OP09-088": {
@@ -11618,7 +12908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "3 Cost / 4000 Power"
   },
   "OP09-084": {
@@ -11627,7 +12918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "5 Cost / 6000 Power"
   },
   "OP09-086": {
@@ -11637,6 +12929,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Blackbeard Pirates",
     "rarity": "R",
+    "pack": "569109",
     "cost": "4 Cost / 5000 Power"
   },
   "OP09-090": {
@@ -11646,6 +12939,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Blackbeard Pirates",
     "rarity": "R",
+    "pack": "569109",
     "cost": "2 Cost / 0 Power"
   },
   "OP09-093": {
@@ -11654,7 +12948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "The Four Emperors / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569109",
     "cost": "10 Cost / 12000 Power"
   },
   "OP09-087": {
@@ -11663,7 +12958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "2 Cost / 0 Power"
   },
   "OP09-091": {
@@ -11672,7 +12968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "2 Cost / 2000 Power"
   },
   "OP09-097": {
@@ -11681,7 +12978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "2 Cost"
   },
   "OP09-092": {
@@ -11690,7 +12988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "3 Cost / 4000 Power"
   },
   "OP09-094": {
@@ -11699,7 +12998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Peachbeard Pirates / Blackbeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "3 Cost / 5000 Power"
   },
   "OP09-096": {
@@ -11709,6 +13009,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Blackbeard Pirates",
     "rarity": "R",
+    "pack": "569109",
     "cost": "1 Cost"
   },
   "OP09-095": {
@@ -11718,6 +13019,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Blackbeard Pirates",
     "rarity": "R",
+    "pack": "569109",
     "cost": "1 Cost / 1000 Power"
   },
   "OP09-098": {
@@ -11726,7 +13028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "4 Cost"
   },
   "OP09-102": {
@@ -11736,6 +13039,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Ohara",
     "rarity": "R",
+    "pack": "569109",
     "cost": "1 Cost / 0 Power"
   },
   "OP09-104": {
@@ -11745,6 +13049,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Revolutionary Army",
     "rarity": "R",
+    "pack": "569109",
     "cost": "7 Cost / 7000 Power"
   },
   "OP09-100": {
@@ -11753,7 +13058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "3 Cost / 4000 Power"
   },
   "OP09-099": {
@@ -11762,7 +13068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Black",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "1 Cost"
   },
   "OP09-103": {
@@ -11771,7 +13078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569109",
     "cost": "6 Cost / 6000 Power"
   },
   "OP09-101": {
@@ -11781,6 +13089,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569109",
     "cost": "4 Cost / 5000 Power"
   },
   "OP09-107": {
@@ -11790,6 +13099,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569109",
     "cost": "6 Cost / 6000 Power"
   },
   "OP09-105": {
@@ -11798,7 +13108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "5 Cost / 6000 Power"
   },
   "OP09-106": {
@@ -11807,7 +13118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Ohara",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "1 Cost / 0 Power"
   },
   "OP09-115": {
@@ -11816,7 +13128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "1 Cost"
   },
   "OP09-108": {
@@ -11825,7 +13138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "4 Cost / 5000 Power"
   },
   "OP09-112": {
@@ -11834,7 +13148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "3 Cost / 4000 Power"
   },
   "OP09-109": {
@@ -11843,7 +13158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Ohara / Giant / Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569109",
     "cost": "3 Cost / 5000 Power"
   },
   "OP09-110": {
@@ -11852,7 +13168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal / Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "2 Cost / 2000 Power"
   },
   "OP09-111": {
@@ -11861,7 +13178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "5 Cost / 6000 Power"
   },
   "OP09-118": {
@@ -11870,7 +13188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "King of the Pirates / Roger Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569109",
     "cost": "10 Cost / 13000 Power"
   },
   "OP09-113": {
@@ -11879,7 +13198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Giant / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "4 Cost / 6000 Power"
   },
   "OP09-116": {
@@ -11888,7 +13208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "1 Cost"
   },
   "OP09-114": {
@@ -11897,7 +13218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Minks / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569109",
     "cost": "3 Cost / 4000 Power"
   },
   "OP09-119": {
@@ -11906,7 +13228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569109",
     "cost": "9 Cost / 10000 Power"
   },
   "OP09-117": {
@@ -11916,6 +13239,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Ohara",
     "rarity": "R",
+    "pack": "569109",
     "cost": "3 Cost"
   },
   "OP10-001": {
@@ -11925,6 +13249,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Green",
     "traits": "Punk Hazard / Navy",
     "rarity": "L",
+    "pack": "569110",
     "cost": "4 Life / 5000 Power"
   },
   "OP10-003": {
@@ -11934,6 +13259,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Purple",
     "traits": "Donquixote Pirates",
     "rarity": "L",
+    "pack": "569110",
     "cost": "4 Life / 5000 Power"
   },
   "OP10-002": {
@@ -11943,6 +13269,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Blue",
     "traits": "Scientist / Punk Hazard",
     "rarity": "L",
+    "pack": "569110",
     "cost": "4 Life / 5000 Power"
   },
   "OP10-004": {
@@ -11952,6 +13279,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Punk Hazard / Navy / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "1 Cost / 2000 Power"
   },
   "OP10-006": {
@@ -11960,7 +13288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Scientist / Punk Hazard",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "7 Cost / 7000 Power"
   },
   "OP10-005": {
@@ -11969,7 +13298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Punk Hazard / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569110",
     "cost": "3 Cost / 3000 Power"
   },
   "OP10-007": {
@@ -11978,7 +13308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Punk Hazard",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "3 Cost / 4000 Power"
   },
   "OP10-012": {
@@ -11987,7 +13318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Biological Weapon / Punk Hazard",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "2 Cost / 2000 Power"
   },
   "OP10-010": {
@@ -11996,7 +13328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Punk Hazard / Brownbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "3 Cost / 5000 Power"
   },
   "OP10-009": {
@@ -12006,6 +13339,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Biological Weapon / Punk Hazard",
     "rarity": "R",
+    "pack": "569110",
     "cost": "5 Cost / 6000 Power"
   },
   "OP10-017": {
@@ -12014,7 +13348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Punk Hazard",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "2 Cost / 3000 Power"
   },
   "OP10-008": {
@@ -12023,7 +13358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Punk Hazard",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "2 Cost / 1000 Power"
   },
   "OP10-011": {
@@ -12033,6 +13369,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Punk Hazard / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569110",
     "cost": "4 Cost / 4000 Power"
   },
   "OP10-015": {
@@ -12041,7 +13378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Punk Hazard",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "3 Cost / 3000 Power"
   },
   "OP10-013": {
@@ -12050,7 +13388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Punk Hazard / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "5 Cost / 7000 Power"
   },
   "OP10-014": {
@@ -12059,7 +13398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Punk Hazard / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "6 Cost / 8000 Power"
   },
   "OP10-016": {
@@ -12068,7 +13408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Punk Hazard / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569110",
     "cost": "2 Cost / 3000 Power"
   },
   "OP10-019": {
@@ -12078,6 +13419,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "The Four Emperors / Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "1 Cost"
   },
   "OP10-018": {
@@ -12086,7 +13428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Punk Hazard / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "2 Cost"
   },
   "OP10-022": {
@@ -12096,6 +13439,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Yellow",
     "traits": "Dressrosa / Supernovas / Heart Pirates",
     "rarity": "L",
+    "pack": "569110",
     "cost": "4 Life / 5000 Power"
   },
   "OP10-020": {
@@ -12104,7 +13448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Punk Hazard / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "2 Cost"
   },
   "OP10-021": {
@@ -12113,7 +13458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Red",
     "traits": "Punk Hazard",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "1 Cost"
   },
   "OP10-023": {
@@ -12122,7 +13468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Dressrosa / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "5 Cost / 6000 Power"
   },
   "OP10-024": {
@@ -12131,7 +13478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "5 Cost / 6000 Power"
   },
   "OP10-026": {
@@ -12140,7 +13488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Punk Hazard / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "2 Cost / 1000 Power"
   },
   "OP10-025": {
@@ -12150,6 +13499,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "ODYSSEY / Sky Island",
     "rarity": "R",
+    "pack": "569110",
     "cost": "5 Cost / 6000 Power"
   },
   "OP10-027": {
@@ -12158,7 +13508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Punk Hazard / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "2 Cost / 0 Power"
   },
   "OP10-028": {
@@ -12167,7 +13518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Punk Hazard / Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "1 Cost / 1000 Power"
   },
   "OP10-031": {
@@ -12176,7 +13528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Dressrosa / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "5 Cost / 7000 Power"
   },
   "OP10-033": {
@@ -12185,7 +13538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "2 Cost / 2000 Power"
   },
   "OP10-032": {
@@ -12194,7 +13548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Punk Hazard / Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569110",
     "cost": "3 Cost / 4000 Power"
   },
   "OP10-029": {
@@ -12204,6 +13559,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "ODYSSEY / The Seven Warlords of the Sea",
     "rarity": "R",
+    "pack": "569110",
     "cost": "5 Cost / 6000 Power"
   },
   "OP10-030": {
@@ -12212,7 +13568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Punk Hazard / Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569110",
     "cost": "5 Cost / 7000 Power"
   },
   "OP10-035": {
@@ -12221,7 +13578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "3 Cost / 5000 Power"
   },
   "OP10-036": {
@@ -12230,7 +13588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Muggy Kingdom / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-038": {
@@ -12239,7 +13598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "5 Cost / 6000 Power"
   },
   "OP10-034": {
@@ -12248,7 +13608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "ODYSSEY / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-037": {
@@ -12258,6 +13619,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "ODYSSEY",
     "rarity": "R",
+    "pack": "569110",
     "cost": "1 Cost / 0 Power"
   },
   "OP10-039": {
@@ -12266,7 +13628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "ODYSSEY / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "3 Cost"
   },
   "OP10-044": {
@@ -12275,7 +13638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Tontattas / Dressrosa",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "1 Cost / 2000 Power"
   },
   "OP10-041": {
@@ -12285,6 +13649,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Dressrosa / Supernovas / Heart Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "4 Cost"
   },
   "OP10-040": {
@@ -12293,7 +13658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Punk Hazard / The Seven Warlords of the Sea / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "5 Cost"
   },
   "OP10-046": {
@@ -12302,7 +13668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569110",
     "cost": "7 Cost / 9000 Power"
   },
   "OP10-043": {
@@ -12311,7 +13678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal / Dressrosa",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "2 Cost / 2000 Power"
   },
   "OP10-048": {
@@ -12320,7 +13688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Happosui Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "3 Cost / 5000 Power"
   },
   "OP10-052": {
@@ -12329,7 +13698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Barto Club",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "5 Cost / 6000 Power"
   },
   "OP10-051": {
@@ -12338,7 +13708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-042": {
@@ -12348,6 +13719,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Black",
     "traits": "Dressrosa / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569110",
     "cost": "4 Life / 5000 Power"
   },
   "OP10-045": {
@@ -12357,6 +13729,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Dressrosa / Beautiful Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "4 Cost / 6000 Power"
   },
   "OP10-047": {
@@ -12365,7 +13738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "2 Cost / 3000 Power"
   },
   "OP10-053": {
@@ -12374,7 +13748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Tontattas / Dressrosa",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "1 Cost / 1000 Power"
   },
   "OP10-050": {
@@ -12383,7 +13758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Giant / Dressrosa / New Giant Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "7 Cost / 9000 Power"
   },
   "OP10-049": {
@@ -12393,6 +13769,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Dressrosa / Revolutionary Army",
     "rarity": "R",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-054": {
@@ -12401,7 +13778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "3 Cost / 5000 Power"
   },
   "OP10-059": {
@@ -12411,6 +13789,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Dressrosa / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569110",
     "cost": "1 Cost"
   },
   "OP10-056": {
@@ -12419,7 +13798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Tontattas / Dressrosa",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "2 Cost / 0 Power"
   },
   "OP10-055": {
@@ -12429,6 +13809,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "3 Cost / 5000 Power"
   },
   "OP10-057": {
@@ -12438,6 +13819,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Tontattas / Dressrosa",
     "rarity": "R",
+    "pack": "569110",
     "cost": "1 Cost / 2000 Power"
   },
   "OP10-058": {
@@ -12446,7 +13828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569110",
     "cost": "7 Cost / 4000 Power"
   },
   "OP10-063": {
@@ -12456,6 +13839,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Kingdom of GERMA / The Vinsmoke Family",
     "rarity": "R",
+    "pack": "569110",
     "cost": "1 Cost / 2000 Power"
   },
   "OP10-061": {
@@ -12464,7 +13848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Dressrosa / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "3 Cost"
   },
   "OP10-062": {
@@ -12474,6 +13859,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Donquixote Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "3 Cost / 4000 Power"
   },
   "OP10-060": {
@@ -12482,7 +13868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Dressrosa / Barto Club",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "5 Cost"
   },
   "OP10-067": {
@@ -12492,6 +13879,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Donquixote Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "5 Cost / 6000 Power"
   },
   "OP10-069": {
@@ -12500,7 +13888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Dressrosa",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "4 Cost / 6000 Power"
   },
   "OP10-064": {
@@ -12509,7 +13898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Kingdom of GERMA",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "2 Cost / 2000 Power"
   },
   "OP10-066": {
@@ -12518,7 +13908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "2 Cost / 2000 Power"
   },
   "OP10-072": {
@@ -12527,7 +13918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Navy / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569110",
     "cost": "5 Cost / 6000 Power"
   },
   "OP10-065": {
@@ -12537,6 +13929,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Donquixote Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "1 Cost / 1000 Power"
   },
   "OP10-070": {
@@ -12545,7 +13938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-068": {
@@ -12554,7 +13948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "5 Cost / 7000 Power"
   },
   "OP10-071": {
@@ -12563,7 +13958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569110",
     "cost": "8 Cost / 9000 Power"
   },
   "OP10-077": {
@@ -12572,7 +13968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "3 Cost / 4000 Power"
   },
   "OP10-073": {
@@ -12581,7 +13978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "4 Cost / 6000 Power"
   },
   "OP10-074": {
@@ -12590,7 +13988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-075": {
@@ -12599,7 +13998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Foxy Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "2 Cost / 1000 Power"
   },
   "OP10-082": {
@@ -12608,7 +14008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Former Navy / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569110",
     "cost": "5 Cost / 5000 Power"
   },
   "OP10-076": {
@@ -12617,7 +14018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "3 Cost / 1000 Power"
   },
   "OP10-078": {
@@ -12627,6 +14029,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "1 Cost"
   },
   "OP10-080": {
@@ -12635,7 +14038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "3 Cost"
   },
   "OP10-079": {
@@ -12644,7 +14048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "5 Cost"
   },
   "OP10-084": {
@@ -12653,7 +14058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Giant / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "5 Cost / 7000 Power"
   },
   "OP10-090": {
@@ -12663,6 +14069,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Dressrosa / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-081": {
@@ -12671,7 +14078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-089": {
@@ -12680,7 +14088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "6 Cost / 8000 Power"
   },
   "OP10-086": {
@@ -12690,6 +14099,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Blackbeard Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-087": {
@@ -12698,7 +14108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal / Dressrosa / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "2 Cost / 0 Power"
   },
   "OP10-083": {
@@ -12707,7 +14118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "2 Cost / 0 Power"
   },
   "OP10-097": {
@@ -12716,7 +14128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Dressrosa / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "1 Cost"
   },
   "OP10-085": {
@@ -12725,7 +14138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "5 Cost / 6000 Power"
   },
   "OP10-088": {
@@ -12734,7 +14148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "2 Cost / 0 Power"
   },
   "OP10-096": {
@@ -12743,7 +14158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "4 Cost"
   },
   "OP10-092": {
@@ -12752,7 +14168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-098": {
@@ -12762,6 +14179,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Blackbeard Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "6 Cost"
   },
   "OP10-095": {
@@ -12771,6 +14189,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Dressrosa / Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569110",
     "cost": "4 Cost / 6000 Power"
   },
   "OP10-094": {
@@ -12779,7 +14198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "4 Cost / 6000 Power"
   },
   "OP10-091": {
@@ -12788,7 +14208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "3 Cost / 0 Power"
   },
   "OP10-093": {
@@ -12797,7 +14218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Celestial Dragons",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "1 Cost / 0 Power"
   },
   "OP10-104": {
@@ -12806,7 +14228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Caribou Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-100": {
@@ -12815,7 +14238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-101": {
@@ -12824,7 +14248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Fallen Monk Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "5 Cost / 7000 Power"
   },
   "OP10-102": {
@@ -12833,7 +14258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "5 Cost / 6000 Power"
   },
   "OP11-001": {
@@ -12843,6 +14269,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Black",
     "traits": "Navy / SWORD",
     "rarity": "L",
+    "pack": "569111",
     "cost": "4 Life / 5000 Power"
   },
   "OP10-099": {
@@ -12852,6 +14279,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Supernovas / Kid Pirates",
     "rarity": "L",
+    "pack": "569110",
     "cost": "5 Life / 5000 Power"
   },
   "OP10-106": {
@@ -12860,7 +14288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "3 Cost / 5000 Power"
   },
   "OP10-105": {
@@ -12869,7 +14298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Dressrosa / Supernovas / Beautiful Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "6 Cost / 8000 Power"
   },
   "OP10-107": {
@@ -12878,7 +14308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "3 Cost / 4000 Power"
   },
   "OP10-103": {
@@ -12888,6 +14319,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Supernovas / Firetank Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "1 Cost / 0 Power"
   },
   "OP10-111": {
@@ -12897,6 +14329,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569110",
     "cost": "1 Cost / 2000 Power"
   },
   "OP10-108": {
@@ -12905,7 +14338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / On-Air Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "1 Cost / 1000 Power"
   },
   "OP10-114": {
@@ -12914,7 +14348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Navy / Drake Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "3 Cost / 3000 Power"
   },
   "OP10-109": {
@@ -12924,6 +14359,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Supernovas / Hawkins Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-112": {
@@ -12932,7 +14368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569110",
     "cost": "8 Cost / 9000 Power"
   },
   "OP10-110": {
@@ -12941,7 +14378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "3 Cost / 4000 Power"
   },
   "OP10-115": {
@@ -12950,7 +14388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569110",
     "cost": "2 Cost"
   },
   "OP11-005": {
@@ -12959,7 +14398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "4 Cost / 5000 Power"
   },
   "OP10-113": {
@@ -12968,7 +14408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "3 Cost / 5000 Power"
   },
   "OP10-119": {
@@ -12977,7 +14418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Dressrosa / Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569110",
     "cost": "7 Cost / 9000 Power"
   },
   "OP11-003": {
@@ -12986,7 +14428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "5 Cost / 6000 Power"
   },
   "OP10-116": {
@@ -12996,6 +14439,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Supernovas / Kid Pirates",
     "rarity": "R",
+    "pack": "569110",
     "cost": "4 Cost"
   },
   "OP11-002": {
@@ -13004,7 +14448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Neo Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "3 Cost / 4000 Power"
   },
   "OP10-117": {
@@ -13013,7 +14458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569110",
     "cost": "1 Cost"
   },
   "OP10-118": {
@@ -13022,7 +14468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569110",
     "cost": "6 Cost / 7000 Power"
   },
   "OP11-006": {
@@ -13031,7 +14478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Neo Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "5 Cost / 6000 Power"
   },
   "OP11-008": {
@@ -13041,6 +14489,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569111",
     "cost": "4 Cost / 1000 Power"
   },
   "OP11-012": {
@@ -13049,7 +14498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "4 Cost / 4000 Power"
   },
   "OP11-004": {
@@ -13058,7 +14508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Navy / SWORD",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569111",
     "cost": "1 Cost / 0 Power"
   },
   "OP11-011": {
@@ -13067,7 +14518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Neo Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "5 Cost / 7000 Power"
   },
   "OP11-007": {
@@ -13076,7 +14528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "1 Cost / 1000 Power"
   },
   "OP11-009": {
@@ -13085,7 +14538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "3 Cost / 4000 Power"
   },
   "OP11-010": {
@@ -13094,7 +14548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Navy / SWORD",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569111",
     "cost": "5 Cost / 6000 Power"
   },
   "OP11-014": {
@@ -13104,6 +14559,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "FILM / Navy",
     "rarity": "R",
+    "pack": "569111",
     "cost": "3 Cost / 3000 Power"
   },
   "OP11-013": {
@@ -13113,6 +14569,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Navy / SWORD",
     "rarity": "R",
+    "pack": "569111",
     "cost": "1 Cost / 2000 Power"
   },
   "OP11-015": {
@@ -13121,7 +14578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Punk Hazard",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "4 Cost / 6000 Power"
   },
   "OP11-017": {
@@ -13130,7 +14588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Navy / SWORD / Drake Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "6 Cost / 7000 Power"
   },
   "OP11-019": {
@@ -13139,7 +14598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Navy / SWORD",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "2 Cost"
   },
   "OP11-016": {
@@ -13148,7 +14608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "5 Cost / 6000 Power"
   },
   "OP11-020": {
@@ -13157,7 +14618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Navy / SWORD / Drake Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "2 Cost"
   },
   "OP11-018": {
@@ -13167,6 +14629,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Navy / SWORD",
     "rarity": "R",
+    "pack": "569111",
     "cost": "6 Cost"
   },
   "OP11-021": {
@@ -13176,6 +14639,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Fish-Man / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569111",
     "cost": "5 Life / 5000 Power"
   },
   "OP11-023": {
@@ -13185,6 +14649,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Fish-Man / Fish-Man Island / The Sun Pirates",
     "rarity": "R",
+    "pack": "569111",
     "cost": "7 Cost / 7000 Power"
   },
   "OP11-024": {
@@ -13193,7 +14658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Merfolk / Fish-Man Island / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "4 Cost / 5000 Power"
   },
   "OP11-022": {
@@ -13203,6 +14669,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Yellow",
     "traits": "Merfolk / Fish-Man Island",
     "rarity": "L",
+    "pack": "569111",
     "cost": "5 Life / 5000 Power"
   },
   "OP11-025": {
@@ -13211,7 +14678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Merfolk / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "2 Cost / 0 Power"
   },
   "OP11-028": {
@@ -13221,6 +14689,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Neptunian / East Blue",
     "rarity": "R",
+    "pack": "569111",
     "cost": "4 Cost / 5000 Power"
   },
   "OP11-033": {
@@ -13229,7 +14698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Neptunian",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "6 Cost / 7000 Power"
   },
   "OP11-029": {
@@ -13238,7 +14708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Merfolk / Fish-Man Island / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "3 Cost / 4000 Power"
   },
   "OP11-026": {
@@ -13247,7 +14718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Neptunian",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "6 Cost / 8000 Power"
   },
   "OP11-027": {
@@ -13256,7 +14728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Neptunian",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "4 Cost / 6000 Power"
   },
   "OP11-034": {
@@ -13265,7 +14738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / Fish-Man Island / Former Arlong Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "4 Cost / 5000 Power"
   },
   "OP11-030": {
@@ -13275,6 +14749,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Merfolk / Fish-Man Island",
     "rarity": "R",
+    "pack": "569111",
     "cost": "1 Cost / 0 Power"
   },
   "OP11-032": {
@@ -13283,7 +14758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Animal / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "5 Cost / 6000 Power"
   },
   "OP11-031": {
@@ -13292,7 +14768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / Fish-Man Island / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569111",
     "cost": "6 Cost / 8000 Power"
   },
   "OP11-044": {
@@ -13301,7 +14778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "6 Cost / 8000 Power"
   },
   "OP11-040": {
@@ -13311,6 +14789,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Purple",
     "traits": "Straw Hat Crew",
     "rarity": "L",
+    "pack": "569111",
     "cost": "3 Life / 6000 Power"
   },
   "OP11-035": {
@@ -13319,7 +14798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / Fish-Man Island / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "6 Cost / 7000 Power"
   },
   "OP11-043": {
@@ -13328,7 +14808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "7 Cost / 7000 Power"
   },
   "OP11-036": {
@@ -13337,7 +14818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Neptunian",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "4 Cost / 5000 Power"
   },
   "OP11-042": {
@@ -13346,7 +14828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Firetank Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "3 Cost / 4000 Power"
   },
   "OP11-038": {
@@ -13356,6 +14839,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Fish-Man Island / Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569111",
     "cost": "1 Cost"
   },
   "OP11-046": {
@@ -13364,7 +14848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "4 Cost / 5000 Power"
   },
   "OP11-037": {
@@ -13373,7 +14858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Fish-Man Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "1 Cost"
   },
   "OP11-039": {
@@ -13382,7 +14868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Fish-Man / Fish-Man Island / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "1 Cost"
   },
   "OP11-041": {
@@ -13392,6 +14879,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Yellow",
     "traits": "Straw Hat Crew",
     "rarity": "L",
+    "pack": "569111",
     "cost": "4 Life / 5000 Power"
   },
   "OP11-047": {
@@ -13401,6 +14889,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Vinsmoke Family / GERMA 66",
     "rarity": "R",
+    "pack": "569111",
     "cost": "4 Cost / 5000 Power"
   },
   "OP11-045": {
@@ -13409,7 +14898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "5 Cost / 6000 Power"
   },
   "OP11-048": {
@@ -13419,6 +14909,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Supernovas / Firetank Pirates",
     "rarity": "R",
+    "pack": "569111",
     "cost": "1 Cost / 2000 Power"
   },
   "OP11-049": {
@@ -13428,6 +14919,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Minks",
     "rarity": "R",
+    "pack": "569111",
     "cost": "1 Cost / 1000 Power"
   },
   "OP11-053": {
@@ -13436,7 +14928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "5 Cost / 6000 Power"
   },
   "OP11-055": {
@@ -13445,7 +14938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Supernovas",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "6 Cost / 7000 Power"
   },
   "OP11-052": {
@@ -13454,7 +14948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Firetank Pirates / Former Rolling Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "5 Cost / 7000 Power"
   },
   "OP11-050": {
@@ -13463,7 +14958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Firetank Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "3 Cost / 4000 Power"
   },
   "OP11-051": {
@@ -13472,7 +14968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Vinsmoke Family / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569111",
     "cost": "6 Cost / 7000 Power"
   },
   "OP11-054": {
@@ -13481,7 +14978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569111",
     "cost": "5 Cost / 6000 Power"
   },
   "OP11-061": {
@@ -13490,7 +14988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "3 Cost"
   },
   "OP11-056": {
@@ -13500,6 +14999,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569111",
     "cost": "3 Cost / 4000 Power"
   },
   "OP11-064": {
@@ -13508,7 +15008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "6 Cost / 8000 Power"
   },
   "OP11-059": {
@@ -13517,7 +15018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "1 Cost"
   },
   "OP11-057": {
@@ -13526,7 +15028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Minks",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "1 Cost / 1000 Power"
   },
   "OP11-060": {
@@ -13536,6 +15039,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569111",
     "cost": "1 Cost"
   },
   "OP11-058": {
@@ -13544,7 +15048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "5 Cost / 7000 Power"
   },
   "OP11-075": {
@@ -13553,7 +15058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Giant / Ohara / Former Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "6 Cost / 6000 Power"
   },
   "OP11-062": {
@@ -13563,6 +15069,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Big Mom Pirates",
     "rarity": "L",
+    "pack": "569111",
     "cost": "5 Life / 5000 Power"
   },
   "OP11-068": {
@@ -13571,7 +15078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "6 Cost / 7000 Power"
   },
   "OP11-065": {
@@ -13580,7 +15088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "1 Cost / 1000 Power"
   },
   "OP11-063": {
@@ -13589,7 +15098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "2 Cost / 2000 Power"
   },
   "OP11-067": {
@@ -13598,7 +15108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569111",
     "cost": "8 Cost / 8000 Power"
   },
   "OP11-069": {
@@ -13608,6 +15119,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569111",
     "cost": "3 Cost / 4000 Power"
   },
   "OP11-066": {
@@ -13617,6 +15129,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569111",
     "cost": "4 Cost / 5000 Power"
   },
   "OP11-078": {
@@ -13625,7 +15138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "5 Cost / 6000 Power"
   },
   "OP11-074": {
@@ -13634,7 +15148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "3 Cost / 3000 Power"
   },
   "OP11-083": {
@@ -13644,6 +15159,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Caribou Pirates",
     "rarity": "R",
+    "pack": "569111",
     "cost": "1 Cost / 2000 Power"
   },
   "OP11-070": {
@@ -13652,7 +15168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569111",
     "cost": "1 Cost / 0 Power"
   },
   "OP11-073": {
@@ -13662,6 +15179,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Four Emperors / Big Mom Pirates",
     "rarity": "R",
+    "pack": "569111",
     "cost": "10 Cost / 12000 Power"
   },
   "OP11-076": {
@@ -13670,7 +15188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "5 Cost / 5000 Power"
   },
   "OP11-071": {
@@ -13680,6 +15199,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569111",
     "cost": "5 Cost / 7000 Power"
   },
   "OP11-072": {
@@ -13688,7 +15208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "3 Cost / 4000 Power"
   },
   "OP11-077": {
@@ -13697,7 +15218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Homies / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "1 Cost / 2000 Power"
   },
   "OP11-082": {
@@ -13707,6 +15229,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569111",
     "cost": "1 Cost / 2000 Power"
   },
   "OP11-081": {
@@ -13715,7 +15238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Four Emperors / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "6 Cost"
   },
   "OP11-080": {
@@ -13725,6 +15249,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569111",
     "cost": "1 Cost"
   },
   "OP11-085": {
@@ -13733,7 +15258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano / Kurozumi Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "3 Cost / 4000 Power"
   },
   "OP11-079": {
@@ -13742,7 +15268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "1 Cost"
   },
   "OP11-084": {
@@ -13752,6 +15279,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569111",
     "cost": "4 Cost / 5000 Power"
   },
   "OP11-090": {
@@ -13760,7 +15288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "2 Cost / 2000 Power"
   },
   "OP11-087": {
@@ -13769,7 +15298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "5 Cost / 6000 Power"
   },
   "OP11-086": {
@@ -13778,7 +15308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Caribou Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "3 Cost / 5000 Power"
   },
   "OP11-089": {
@@ -13787,7 +15318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "5 Cost / 7000 Power"
   },
   "OP11-096": {
@@ -13796,7 +15328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "East Blue / Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "1 Cost / 1000 Power"
   },
   "OP11-088": {
@@ -13805,7 +15338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "4 Cost / 5000 Power"
   },
   "OP11-094": {
@@ -13814,7 +15348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "6 Cost / 8000 Power"
   },
   "OP11-092": {
@@ -13823,7 +15358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy / SWORD",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569111",
     "cost": "6 Cost / 7000 Power"
   },
   "OP11-091": {
@@ -13832,7 +15368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "4 Cost / 5000 Power"
   },
   "OP11-095": {
@@ -13841,7 +15378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569111",
     "cost": "8 Cost / 8000 Power"
   },
   "OP11-098": {
@@ -13850,7 +15388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "3 Cost"
   },
   "OP11-093": {
@@ -13859,7 +15398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "6 Cost / 7000 Power"
   },
   "OP11-099": {
@@ -13869,6 +15409,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "East Blue / Navy",
     "rarity": "R",
+    "pack": "569111",
     "cost": "1 Cost"
   },
   "OP11-097": {
@@ -13877,7 +15418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "1 Cost"
   },
   "OP11-101": {
@@ -13886,7 +15428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Firetank Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569111",
     "cost": "2 Cost / 1000 Power"
   },
   "OP11-100": {
@@ -13895,7 +15438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Merfolk / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "1 Cost / 0 Power"
   },
   "OP11-104": {
@@ -13905,6 +15449,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Merfolk / Fish-Man Island",
     "rarity": "R",
+    "pack": "569111",
     "cost": "3 Cost / 4000 Power"
   },
   "OP11-110": {
@@ -13913,7 +15458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Merfolk / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "3 Cost / 5000 Power"
   },
   "OP11-108": {
@@ -13923,6 +15469,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Merfolk / Fish-Man Island",
     "rarity": "R",
+    "pack": "569111",
     "cost": "5 Cost / 7000 Power"
   },
   "OP11-103": {
@@ -13931,7 +15478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Neptunian",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "5 Cost / 7000 Power"
   },
   "OP11-113": {
@@ -13940,7 +15488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Merfolk / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "5 Cost / 7000 Power"
   },
   "OP11-105": {
@@ -13949,7 +15498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Firetank Pirates / Former Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "5 Cost / 6000 Power"
   },
   "OP11-109": {
@@ -13958,7 +15508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "1 Cost / 0 Power"
   },
   "OP11-107": {
@@ -13967,7 +15518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Neptunian",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "5 Cost / 6000 Power"
   },
   "OP11-102": {
@@ -13976,7 +15528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Merfolk / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "1 Cost / 1000 Power"
   },
   "OP12-001": {
@@ -13986,6 +15539,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Former Roger Pirates",
     "rarity": "L",
+    "pack": "569112",
     "cost": "5 Life / 5000 Power"
   },
   "OP11-106": {
@@ -13995,6 +15549,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Homies / Big Mom Pirates",
     "rarity": "R",
+    "pack": "569111",
     "cost": "2 Cost / 2000 Power"
   },
   "OP11-111": {
@@ -14003,7 +15558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Merfolk / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "6 Cost / 7000 Power"
   },
   "OP11-112": {
@@ -14012,7 +15568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "3 Cost / 2000 Power"
   },
   "OP11-114": {
@@ -14022,6 +15579,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569111",
     "cost": "1 Cost"
   },
   "OP11-116": {
@@ -14030,7 +15588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Merfolk / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "6 Cost"
   },
   "OP11-118": {
@@ -14039,7 +15598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569111",
     "cost": "8 Cost / 8000 Power"
   },
   "OP11-117": {
@@ -14048,7 +15608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Yellow",
     "traits": "Fish-Man Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569111",
     "cost": "2 Cost"
   },
   "OP11-119": {
@@ -14057,7 +15618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy / SWORD",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569111",
     "cost": "8 Cost / 9000 Power"
   },
   "OP12-005": {
@@ -14066,7 +15628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Golden Lion Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "8 Cost / 10000 Power"
   },
   "OP11-115": {
@@ -14075,7 +15638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Merfolk / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569111",
     "cost": "1 Cost"
   },
   "OP12-002": {
@@ -14084,7 +15648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "5 Cost / 6000 Power"
   },
   "OP12-004": {
@@ -14093,7 +15658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Land of Wano / Kouzuki Clan / Roger Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "2 Cost / 3000 Power"
   },
   "OP12-003": {
@@ -14102,7 +15668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Former Roger Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "2 Cost / 3000 Power"
   },
   "OP12-007": {
@@ -14111,7 +15678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Roger Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "2 Cost / 2000 Power"
   },
   "OP12-008": {
@@ -14121,6 +15689,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "The Four Emperors / Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569112",
     "cost": "4 Cost / 6000 Power"
   },
   "OP12-006": {
@@ -14130,6 +15699,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Amazon Lily",
     "rarity": "R",
+    "pack": "569112",
     "cost": "1 Cost / 2000 Power"
   },
   "OP12-009": {
@@ -14139,6 +15709,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Fish-Man / The Sun Pirates",
     "rarity": "R",
+    "pack": "569112",
     "cost": "3 Cost / 4000 Power"
   },
   "OP12-010": {
@@ -14147,7 +15718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / The Pirates Fest / Former Roger Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "6 Cost / 7000 Power"
   },
   "OP12-011": {
@@ -14156,7 +15728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Flying Fish Riders",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "5 Cost / 7000 Power"
   },
   "OP12-012": {
@@ -14165,7 +15738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Roger Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "2 Cost / 2000 Power"
   },
   "OP12-021": {
@@ -14174,7 +15748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "3 Cost / 0 Power"
   },
   "OP12-013": {
@@ -14183,7 +15758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Fish-Man / Former Arlong Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "1 Cost / 2000 Power"
   },
   "OP12-016": {
@@ -14192,7 +15768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Former Roger Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "0 Cost"
   },
   "OP12-017": {
@@ -14201,7 +15778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Former Roger Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "0 Cost"
   },
   "OP12-019": {
@@ -14210,7 +15788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Former Roger Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "0 Cost"
   },
   "OP12-015": {
@@ -14219,7 +15798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569112",
     "cost": "4 Cost / 4000 Power"
   },
   "OP12-014": {
@@ -14228,7 +15808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569112",
     "cost": "2 Cost / 3000 Power"
   },
   "OP12-018": {
@@ -14238,6 +15819,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Former Roger Pirates",
     "rarity": "R",
+    "pack": "569112",
     "cost": "0 Cost"
   },
   "OP12-020": {
@@ -14247,6 +15829,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569112",
     "cost": "5 Life / 5000 Power"
   },
   "OP12-024": {
@@ -14255,7 +15838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Animal / Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-028": {
@@ -14265,6 +15849,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
     "rarity": "R",
+    "pack": "569112",
     "cost": "1 Cost / 0 Power"
   },
   "OP12-023": {
@@ -14273,7 +15858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "5 Cost / 6000 Power"
   },
   "OP12-030": {
@@ -14282,7 +15868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Muggy Kingdom / The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569112",
     "cost": "8 Cost / 8000 Power"
   },
   "OP12-022": {
@@ -14291,7 +15878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "6 Cost / 7000 Power"
   },
   "OP12-025": {
@@ -14300,7 +15888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "6 Cost / 8000 Power"
   },
   "OP12-027": {
@@ -14309,7 +15898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Frost Moon Village",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "2 Cost / 1000 Power"
   },
   "OP12-032": {
@@ -14318,7 +15908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "6 Cost / 7000 Power"
   },
   "OP12-026": {
@@ -14327,7 +15918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Frost Moon Village",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "4 Cost / 1000 Power"
   },
   "OP12-031": {
@@ -14337,6 +15929,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / Navy",
     "rarity": "R",
+    "pack": "569112",
     "cost": "5 Cost / 7000 Power"
   },
   "OP12-033": {
@@ -14345,7 +15938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-029": {
@@ -14354,7 +15948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Frost Moon Village / Land of Wano",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "3 Cost / 2000 Power"
   },
   "OP12-040": {
@@ -14364,6 +15959,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "L",
+    "pack": "569112",
     "cost": "5 Life / 5000 Power"
   },
   "OP12-039": {
@@ -14373,6 +15969,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569112",
     "cost": "3 Cost"
   },
   "OP12-035": {
@@ -14381,7 +15978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "3 Cost / 5000 Power"
   },
   "OP12-037": {
@@ -14391,6 +15989,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569112",
     "cost": "1 Cost"
   },
   "OP12-043": {
@@ -14400,6 +15999,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569112",
     "cost": "6 Cost / 8000 Power"
   },
   "OP12-034": {
@@ -14408,7 +16008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Muggy Kingdom / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569112",
     "cost": "1 Cost / 2000 Power"
   },
   "OP12-038": {
@@ -14417,7 +16018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "1 Cost"
   },
   "OP12-036": {
@@ -14426,7 +16028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-041": {
@@ -14436,6 +16039,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Purple",
     "traits": "The Vinsmoke Family / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569112",
     "cost": "4 Life / 5000 Power"
   },
   "OP12-042": {
@@ -14444,7 +16048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-044": {
@@ -14454,6 +16059,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569112",
     "cost": "7 Cost / 8000 Power"
   },
   "OP12-048": {
@@ -14462,7 +16068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "1 Cost / 1000 Power"
   },
   "OP12-047": {
@@ -14472,6 +16079,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569112",
     "cost": "3 Cost / 3000 Power"
   },
   "OP12-046": {
@@ -14480,7 +16088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "FILM / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "5 Cost / 5000 Power"
   },
   "OP12-045": {
@@ -14489,7 +16098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "6 Cost / 8000 Power"
   },
   "OP12-049": {
@@ -14498,7 +16108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Four Emperors / Cross Guild",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "6 Cost / 7000 Power"
   },
   "OP12-050": {
@@ -14507,7 +16118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Giant / Ohara / Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "6 Cost / 7000 Power"
   },
   "OP12-054": {
@@ -14516,7 +16128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "1 Cost / 2000 Power"
   },
   "OP12-051": {
@@ -14525,7 +16138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "3 Cost / 3000 Power"
   },
   "OP12-052": {
@@ -14534,7 +16148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "4 Cost / 6000 Power"
   },
   "OP12-053": {
@@ -14544,6 +16159,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-063": {
@@ -14552,7 +16168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Vinsmoke Family / GERMA 66",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-055": {
@@ -14561,7 +16178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "5 Cost / 6000 Power"
   },
   "OP12-065": {
@@ -14570,7 +16188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "6 Cost / 7000 Power"
   },
   "OP12-056": {
@@ -14579,7 +16198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569112",
     "cost": "8 Cost / 8000 Power"
   },
   "OP12-058": {
@@ -14588,7 +16208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "9 Cost"
   },
   "OP12-072": {
@@ -14597,7 +16218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-064": {
@@ -14606,7 +16228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Punk Hazard / Navy / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "5 Cost / 7000 Power"
   },
   "OP12-057": {
@@ -14615,7 +16238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "1 Cost"
   },
   "OP12-059": {
@@ -14624,7 +16248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Sky Island / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "1 Cost"
   },
   "OP12-060": {
@@ -14634,6 +16259,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569112",
     "cost": "3 Cost"
   },
   "OP12-061": {
@@ -14643,6 +16269,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple/Yellow",
     "traits": "Navy / Donquixote Pirates",
     "rarity": "L",
+    "pack": "569112",
     "cost": "4 Life / 5000 Power"
   },
   "OP12-062": {
@@ -14652,6 +16279,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Kingdom of GERMA / The Vinsmoke Family",
     "rarity": "R",
+    "pack": "569112",
     "cost": "1 Cost / 0 Power"
   },
   "OP12-073": {
@@ -14660,7 +16288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Dressrosa / Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569112",
     "cost": "7 Cost / 8000 Power"
   },
   "OP12-067": {
@@ -14669,7 +16298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "3 Cost / 5000 Power"
   },
   "OP12-066": {
@@ -14678,7 +16308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "1 Cost / 1000 Power"
   },
   "OP12-068": {
@@ -14687,7 +16318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "East Blue / Krieg Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "6 Cost / 7000 Power"
   },
   "OP12-085": {
@@ -14696,7 +16328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "5 Cost / 6000 Power"
   },
   "OP12-070": {
@@ -14706,6 +16339,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Alabasta / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569112",
     "cost": "3 Cost / 5000 Power"
   },
   "OP12-069": {
@@ -14714,7 +16348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "6 Cost / 8000 Power"
   },
   "OP12-076": {
@@ -14723,7 +16358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Punk Hazard / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "5 Cost / 6000 Power"
   },
   "OP12-074": {
@@ -14732,7 +16368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "3 Cost / 2000 Power"
   },
   "OP12-077": {
@@ -14741,7 +16378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "2 Cost"
   },
   "OP12-071": {
@@ -14751,6 +16389,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569112",
     "cost": "1 Cost / 2000 Power"
   },
   "OP12-075": {
@@ -14759,7 +16398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-078": {
@@ -14768,7 +16408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "3 Cost"
   },
   "OP12-080": {
@@ -14777,7 +16418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Purple",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "1 Cost"
   },
   "OP12-079": {
@@ -14787,6 +16429,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569112",
     "cost": "1 Cost"
   },
   "OP12-082": {
@@ -14795,7 +16438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "8 Cost / 10000 Power"
   },
   "OP12-081": {
@@ -14805,6 +16449,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black/Yellow",
     "traits": "Dressrosa / Revolutionary Army",
     "rarity": "L",
+    "pack": "569112",
     "cost": "4 Life / 5000 Power"
   },
   "OP12-090": {
@@ -14813,7 +16458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "3 Cost / 4000 Power"
   },
   "OP12-084": {
@@ -14822,7 +16468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "3 Cost / 4000 Power"
   },
   "OP12-083": {
@@ -14831,7 +16478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "5 Cost / 6000 Power"
   },
   "OP12-088": {
@@ -14840,7 +16488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "6 Cost / 8000 Power"
   },
   "OP12-087": {
@@ -14849,7 +16498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569112",
     "cost": "6 Cost / 7000 Power"
   },
   "OP12-086": {
@@ -14859,6 +16509,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Dressrosa / Revolutionary Army",
     "rarity": "R",
+    "pack": "569112",
     "cost": "1 Cost / 2000 Power"
   },
   "OP12-089": {
@@ -14868,6 +16519,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Fish-Man / Dressrosa / Revolutionary Army",
     "rarity": "R",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-091": {
@@ -14876,7 +16528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "3 Cost / 4000 Power"
   },
   "OP12-097": {
@@ -14886,6 +16539,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Revolutionary Army",
     "rarity": "R",
+    "pack": "569112",
     "cost": "1 Cost"
   },
   "OP12-093": {
@@ -14894,7 +16548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Giant / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-098": {
@@ -14903,7 +16558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Impel Down / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "1 Cost"
   },
   "OP12-092": {
@@ -14912,7 +16568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal Kingdom Pirates / SMILE",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "6 Cost / 7000 Power"
   },
   "OP12-094": {
@@ -14921,7 +16578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569112",
     "cost": "8 Cost / 8000 Power"
   },
   "OP12-096": {
@@ -14930,7 +16588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "The Seven Warlords of the Sea / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "4 Cost"
   },
   "OP12-095": {
@@ -14939,7 +16598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Minks / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-099": {
@@ -14949,6 +16609,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Jaya / Sky Island / Shandian Warrior",
     "rarity": "R",
+    "pack": "569112",
     "cost": "5 Cost / 6000 Power"
   },
   "OP12-100": {
@@ -14958,6 +16619,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Dressrosa / Revolutionary Army",
     "rarity": "R",
+    "pack": "569112",
     "cost": "5 Cost / 6000 Power"
   },
   "OP12-105": {
@@ -14966,7 +16628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Flevance",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "1 Cost / 0 Power"
   },
   "OP12-103": {
@@ -14975,7 +16638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Jaya / Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "5 Cost / 6000 Power"
   },
   "OP12-106": {
@@ -14984,7 +16648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Dressrosa / Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "6 Cost / 7000 Power"
   },
   "OP12-101": {
@@ -14993,7 +16658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "3 Cost / 1000 Power"
   },
   "OP12-102": {
@@ -15002,7 +16668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Merfolk / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569112",
     "cost": "2 Cost / 0 Power"
   },
   "OP12-117": {
@@ -15012,6 +16679,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Supernovas / Kid Pirates",
     "rarity": "R",
+    "pack": "569112",
     "cost": "1 Cost"
   },
   "OP12-104": {
@@ -15020,7 +16688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-111": {
@@ -15029,7 +16698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "2 Cost / 4000 Power"
   },
   "OP12-108": {
@@ -15039,6 +16709,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Navy / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569112",
     "cost": "1 Cost / 2000 Power"
   },
   "OP12-107": {
@@ -15048,6 +16719,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569112",
     "cost": "8 Cost / 8000 Power"
   },
   "OP12-109": {
@@ -15056,7 +16728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Biological Weapon / Egghead / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP13-003": {
@@ -15066,6 +16739,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Purple",
     "traits": "King of the Pirates / Roger Pirates",
     "rarity": "L",
+    "pack": "569113",
     "cost": "5 Life / 7000 Power"
   },
   "OP12-112": {
@@ -15075,6 +16749,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Donquixote Pirates",
     "rarity": "R",
+    "pack": "569112",
     "cost": "4 Cost / 5000 Power"
   },
   "OP12-114": {
@@ -15083,7 +16758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "6 Cost / 7000 Power"
   },
   "OP12-113": {
@@ -15092,7 +16768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "5 Cost / 6000 Power"
   },
   "OP12-110": {
@@ -15101,7 +16778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "3 Cost / 5000 Power"
   },
   "OP12-118": {
@@ -15110,7 +16788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569112",
     "cost": "5 Cost / 6000 Power"
   },
   "OP12-116": {
@@ -15119,7 +16798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Jaya / Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569112",
     "cost": "3 Cost"
   },
   "OP12-115": {
@@ -15128,7 +16808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Navy / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569112",
     "cost": "1 Cost"
   },
   "OP13-001": {
@@ -15138,6 +16819,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Green",
     "traits": "Supernovas / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569113",
     "cost": "4 Life / 5000 Power"
   },
   "OP13-002": {
@@ -15147,6 +16829,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Blue",
     "traits": "Whitebeard Pirates",
     "rarity": "L",
+    "pack": "569113",
     "cost": "3 Life / 6000 Power"
   },
   "OP12-119": {
@@ -15155,7 +16838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569112",
     "cost": "6 Cost / 7000 Power"
   },
   "OP13-006": {
@@ -15164,7 +16848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Windmill Village",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost / 0 Power"
   },
   "OP13-005": {
@@ -15173,7 +16858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "4 Cost / 5000 Power"
   },
   "OP13-009": {
@@ -15182,7 +16868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Mountain Bandits",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost / 2000 Power"
   },
   "OP13-004": {
@@ -15192,6 +16879,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Black",
     "traits": "Dressrosa / Revolutionary Army",
     "rarity": "L",
+    "pack": "569113",
     "cost": "5 Life / 5000 Power"
   },
   "OP13-010": {
@@ -15200,7 +16888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Neptunian / East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "6 Cost / 8000 Power"
   },
   "OP13-012": {
@@ -15210,6 +16899,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Alabasta",
     "rarity": "R",
+    "pack": "569113",
     "cost": "1 Cost / 2000 Power"
   },
   "OP13-007": {
@@ -15218,7 +16908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Goa Kingdom",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569113",
     "cost": "1 Cost / 1000 Power"
   },
   "OP13-008": {
@@ -15227,7 +16918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "2 Cost / 3000 Power"
   },
   "OP13-014": {
@@ -15236,7 +16928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Baterilla",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost / 0 Power"
   },
   "OP13-015": {
@@ -15245,7 +16938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Windmill Village",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "1 Cost / 0 Power"
   },
   "OP13-016": {
@@ -15255,6 +16949,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569113",
     "cost": "1 Cost / 2000 Power"
   },
   "OP13-011": {
@@ -15263,7 +16958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-018": {
@@ -15272,7 +16968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Evil Black Drum Kingdom",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "6 Cost / 7000 Power"
   },
   "OP13-017": {
@@ -15282,6 +16979,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Revolutionary Army",
     "rarity": "R",
+    "pack": "569113",
     "cost": "6 Cost / 7000 Power"
   },
   "OP13-013": {
@@ -15290,7 +16988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Mountain Bandits",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost / 3000 Power"
   },
   "OP13-020": {
@@ -15299,7 +16998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "3 Cost"
   },
   "OP13-023": {
@@ -15308,7 +17008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569113",
     "cost": "4 Cost / 5000 Power"
   },
   "OP13-021": {
@@ -15317,7 +17018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP13-019": {
@@ -15327,6 +17029,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Dressrosa / Revolutionary Army",
     "rarity": "R",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP13-025": {
@@ -15335,7 +17038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-022": {
@@ -15344,7 +17048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Red",
     "traits": "Windmill Village",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP13-024": {
@@ -15353,7 +17058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost / 0 Power"
   },
   "OP13-026": {
@@ -15362,7 +17068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost / 2000 Power"
   },
   "OP13-029": {
@@ -15371,7 +17078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "6 Cost / 7000 Power"
   },
   "OP13-030": {
@@ -15380,7 +17088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Animal / FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-031": {
@@ -15390,6 +17099,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "FILM / Supernovas / Heart Pirates",
     "rarity": "R",
+    "pack": "569113",
     "cost": "6 Cost / 6000 Power"
   },
   "OP13-027": {
@@ -15399,6 +17109,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569113",
     "cost": "5 Cost / 7000 Power"
   },
   "OP13-028": {
@@ -15407,7 +17118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / The Four Emperors / Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569113",
     "cost": "10 Cost / 12000 Power"
   },
   "OP13-033": {
@@ -15416,7 +17128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "3 Cost / 5000 Power"
   },
   "OP13-032": {
@@ -15425,7 +17138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "7 Cost / 7000 Power"
   },
   "OP13-036": {
@@ -15434,7 +17148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-035": {
@@ -15443,7 +17158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / FILM / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "5 Cost / 7000 Power"
   },
   "OP13-037": {
@@ -15453,6 +17169,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "FILM / Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569113",
     "cost": "4 Cost / 5000 Power"
   },
   "OP13-034": {
@@ -15461,7 +17178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "3 Cost / 4000 Power"
   },
   "OP13-038": {
@@ -15470,7 +17188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "2 Cost"
   },
   "OP13-048": {
@@ -15479,7 +17198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-040": {
@@ -15489,6 +17209,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP13-039": {
@@ -15497,7 +17218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Fish-Man Island / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "2 Cost"
   },
   "OP13-041": {
@@ -15506,7 +17228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Land of Wano / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "6 Cost / 6000 Power"
   },
   "OP13-043": {
@@ -15516,6 +17239,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Land of Wano",
     "rarity": "R",
+    "pack": "569113",
     "cost": "1 Cost / 0 Power"
   },
   "OP13-046": {
@@ -15525,6 +17249,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569113",
     "cost": "6 Cost / 8000 Power"
   },
   "OP13-044": {
@@ -15533,7 +17258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "3 Cost / 4000 Power"
   },
   "OP13-042": {
@@ -15542,7 +17268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569113",
     "cost": "10 Cost / 12000 Power"
   },
   "OP13-054": {
@@ -15551,7 +17278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-051": {
@@ -15561,6 +17289,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
     "rarity": "R",
+    "pack": "569113",
     "cost": "3 Cost / 5000 Power"
   },
   "OP13-050": {
@@ -15569,7 +17298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Kuja Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "2 Cost / 3000 Power"
   },
   "OP13-045": {
@@ -15578,7 +17308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost / 2000 Power"
   },
   "OP13-047": {
@@ -15587,7 +17318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "2 Cost / 3000 Power"
   },
   "OP13-060": {
@@ -15596,7 +17328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Land of Wano / Roger Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "2 Cost / 3000 Power"
   },
   "OP13-049": {
@@ -15605,7 +17338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "6 Cost / 7000 Power"
   },
   "OP13-052": {
@@ -15614,7 +17348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Kuja Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "5 Cost / 4000 Power"
   },
   "OP13-055": {
@@ -15623,7 +17358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "3 Cost / 4000 Power"
   },
   "OP13-053": {
@@ -15632,7 +17368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "4 Cost / 5000 Power"
   },
   "OP13-059": {
@@ -15641,7 +17378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "4 Cost"
   },
   "OP13-056": {
@@ -15650,7 +17388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Giant / Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "7 Cost / 7000 Power"
   },
   "OP13-057": {
@@ -15660,6 +17399,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP13-063": {
@@ -15668,7 +17408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Land of Wano / Kouzuki Clan / Roger Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-061": {
@@ -15677,7 +17418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Minks / Roger Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "3 Cost / 3000 Power"
   },
   "OP13-058": {
@@ -15686,7 +17428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Former Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP13-065": {
@@ -15696,6 +17439,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Roger Pirates",
     "rarity": "R",
+    "pack": "569113",
     "cost": "1 Cost / 2000 Power"
   },
   "OP13-062": {
@@ -15704,7 +17448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Roger Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-069": {
@@ -15713,7 +17458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Fish-Man / Water Seven",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "2 Cost / 2000 Power"
   },
   "OP13-066": {
@@ -15722,7 +17468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Roger Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569113",
     "cost": "8 Cost / 9000 Power"
   },
   "OP13-064": {
@@ -15731,7 +17478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "King of the Pirates / Roger Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569113",
     "cost": "10 Cost / 13000 Power"
   },
   "OP13-067": {
@@ -15741,6 +17489,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Roger Pirates",
     "rarity": "R",
+    "pack": "569113",
     "cost": "6 Cost / 7000 Power"
   },
   "OP13-072": {
@@ -15750,6 +17499,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Roger Pirates",
     "rarity": "R",
+    "pack": "569113",
     "cost": "2 Cost / 2000 Power"
   },
   "OP13-070": {
@@ -15758,7 +17508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Homies / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "5 Cost / 7000 Power"
   },
   "OP13-068": {
@@ -15767,7 +17518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Former Roger Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "3 Cost / 4000 Power"
   },
   "OP13-074": {
@@ -15776,7 +17528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Homies / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "4 Cost / 5000 Power"
   },
   "OP13-075": {
@@ -15785,7 +17538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "King of the Pirates / Roger Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP13-076": {
@@ -15795,6 +17549,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "King of the Pirates / Roger Pirates",
     "rarity": "R",
+    "pack": "569113",
     "cost": "0 Cost"
   },
   "OP13-073": {
@@ -15803,7 +17558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Homies / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-071": {
@@ -15812,7 +17568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Minks / Roger Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "3 Cost / 3000 Power"
   },
   "OP13-079": {
@@ -15822,6 +17579,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Celestial Dragons",
     "rarity": "L",
+    "pack": "569113",
     "cost": "4 Life / 5000 Power"
   },
   "OP13-078": {
@@ -15830,7 +17588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Purple",
     "traits": "Roger Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP13-077": {
@@ -15839,7 +17598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Former Roger Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP13-087": {
@@ -15848,7 +17608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Celestial Dragons",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "2 Cost / 0 Power"
   },
   "OP13-090": {
@@ -15857,7 +17618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Fish-Man / Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "6 Cost / 7000 Power"
   },
   "OP13-081": {
@@ -15866,7 +17628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-083": {
@@ -15876,6 +17639,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Celestial Dragons / Five Elders",
     "rarity": "R",
+    "pack": "569113",
     "cost": "4 Cost / 5000 Power"
   },
   "OP13-082": {
@@ -15884,7 +17648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Celestial Dragons / Five Elders",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569113",
     "cost": "10 Cost / 12000 Power"
   },
   "OP13-080": {
@@ -15894,6 +17659,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Celestial Dragons / Five Elders",
     "rarity": "R",
+    "pack": "569113",
     "cost": "6 Cost / 5000 Power"
   },
   "OP13-084": {
@@ -15903,6 +17669,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Celestial Dragons / Five Elders",
     "rarity": "R",
+    "pack": "569113",
     "cost": "7 Cost / 5000 Power"
   },
   "OP13-085": {
@@ -15911,7 +17678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Celestial Dragons",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "2 Cost / 4000 Power"
   },
   "OP13-086": {
@@ -15920,7 +17688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Celestial Dragons",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "1 Cost / 0 Power"
   },
   "OP13-089": {
@@ -15930,6 +17699,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Celestial Dragons / Five Elders",
     "rarity": "R",
+    "pack": "569113",
     "cost": "4 Cost / 5000 Power"
   },
   "OP13-088": {
@@ -15938,7 +17708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-094": {
@@ -15947,7 +17718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Egghead / Scientist",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost / 1000 Power"
   },
   "OP13-095": {
@@ -15956,7 +17728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Celestial Dragons",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "3 Cost / 0 Power"
   },
   "OP13-091": {
@@ -15966,6 +17739,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Celestial Dragons / Five Elders",
     "rarity": "R",
+    "pack": "569113",
     "cost": "6 Cost / 5000 Power"
   },
   "OP13-103": {
@@ -15974,7 +17748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Bonney Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "4 Cost / 6000 Power"
   },
   "OP13-092": {
@@ -15983,7 +17758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Celestial Dragons",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "2 Cost / 0 Power"
   },
   "OP13-117": {
@@ -15993,6 +17769,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Egghead / The Four Emperors / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569113",
     "cost": "5 Cost"
   },
   "OP13-093": {
@@ -16001,7 +17778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Journalist",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "3 Cost / 4000 Power"
   },
   "OP13-096": {
@@ -16011,6 +17789,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Celestial Dragons / Five Elders",
     "rarity": "R",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP13-097": {
@@ -16019,7 +17798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Celestial Dragons / Five Elders",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP13-099": {
@@ -16028,7 +17808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Black",
     "traits": "Mary Geoise",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "7 Cost"
   },
   "OP13-098": {
@@ -16037,7 +17818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Celestial Dragons / Five Elders",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP13-100": {
@@ -16047,6 +17829,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Egghead / Bonney Pirates",
     "rarity": "L",
+    "pack": "569113",
     "cost": "5 Life / 5000 Power"
   },
   "OP13-104": {
@@ -16056,6 +17839,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Land of Wano / Kouzuki Clan",
     "rarity": "R",
+    "pack": "569113",
     "cost": "4 Cost / 0 Power"
   },
   "OP13-101": {
@@ -16064,7 +17848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Scientist",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-102": {
@@ -16073,7 +17858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Scientist",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "3 Cost / 2000 Power"
   },
   "OP13-106": {
@@ -16082,7 +17868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Bonney Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost / 1000 Power"
   },
   "OP13-110": {
@@ -16091,7 +17878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / CP0",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569113",
     "cost": "7 Cost / 7000 Power"
   },
   "OP13-107": {
@@ -16100,7 +17888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Scientist",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "5 Cost / 7000 Power"
   },
   "OP13-108": {
@@ -16109,7 +17898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569113",
     "cost": "9 Cost / 10000 Power"
   },
   "OP13-105": {
@@ -16118,7 +17908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "3 Cost / 0 Power"
   },
   "OP13-109": {
@@ -16127,7 +17918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "5 Cost / 6000 Power"
   },
   "OP13-111": {
@@ -16136,7 +17928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Scientist",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "6 Cost / 7000 Power"
   },
   "OP13-115": {
@@ -16145,7 +17938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Egghead / CP0",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "2 Cost"
   },
   "OP13-113": {
@@ -16155,6 +17949,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Egghead / Scientist",
     "rarity": "R",
+    "pack": "569113",
     "cost": "1 Cost / 2000 Power"
   },
   "OP13-119": {
@@ -16163,7 +17958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569113",
     "cost": "6 Cost / 7000 Power"
   },
   "OP13-114": {
@@ -16173,6 +17969,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Seraphim / Egghead",
     "rarity": "R",
+    "pack": "569113",
     "cost": "4 Cost / 5000 Power"
   },
   "OP13-112": {
@@ -16181,7 +17978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Scientist",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569113",
     "cost": "1 Cost / 1000 Power"
   },
   "OP13-116": {
@@ -16190,7 +17988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569113",
     "cost": "1 Cost"
   },
   "OP14-002": {
@@ -16199,7 +17998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Fallen Monk Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "3 Cost / 2000 Power"
   },
   "OP14-001": {
@@ -16209,6 +18009,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "The Seven Warlords of the Sea / Supernovas / Heart Pirates",
     "rarity": "L",
+    "pack": "569114",
     "cost": "5 Life / 5000 Power"
   },
   "OP13-118": {
@@ -16217,7 +18018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man Island / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569113",
     "cost": "6 Cost / 7000 Power"
   },
   "OP13-120": {
@@ -16226,7 +18028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569113",
     "cost": "6 Cost / 7000 Power"
   },
   "OP14-003": {
@@ -16235,7 +18038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Firetank Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "1 Cost / 2000 Power"
   },
   "OP14-013": {
@@ -16244,7 +18048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "1 Cost / 0 Power"
   },
   "OP14-008": {
@@ -16253,7 +18058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / On-Air Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost / 5000 Power"
   },
   "OP14-006": {
@@ -16262,7 +18068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "2 Cost / 2000 Power"
   },
   "OP14-004": {
@@ -16271,7 +18078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Dressrosa / Supernovas / Beautiful Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "2 Cost / 2000 Power"
   },
   "OP14-022": {
@@ -16280,7 +18088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "4 Cost / 5000 Power"
   },
   "OP14-007": {
@@ -16289,7 +18098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "6 Cost / 7000 Power"
   },
   "OP14-005": {
@@ -16298,7 +18108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "1 Cost / 1000 Power"
   },
   "OP14-009": {
@@ -16307,7 +18118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Seven Warlords of the Sea / Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "9 Cost / 10000 Power"
   },
   "OP14-011": {
@@ -16316,7 +18128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Dressrosa / Supernovas / Barto Club",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "2 Cost / 2000 Power"
   },
   "OP14-012": {
@@ -16325,7 +18138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Minks / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "2 Cost / 2000 Power"
   },
   "OP14-010": {
@@ -16334,7 +18148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Hawkins Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost / 2000 Power"
   },
   "OP14-015": {
@@ -16344,6 +18159,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569114",
     "cost": "7 Cost / 8000 Power"
   },
   "OP14-016": {
@@ -16353,6 +18169,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Supernovas / Navy / Drake Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "5 Cost / 7000 Power"
   },
   "OP14-017": {
@@ -16361,7 +18178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "The Seven Warlords of the Sea / Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost"
   },
   "OP14-025": {
@@ -16370,7 +18188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Black Cat Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "7 Cost / 8000 Power"
   },
   "OP14-014": {
@@ -16380,6 +18199,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Supernovas / Kid Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "4 Cost / 5000 Power"
   },
   "OP14-019": {
@@ -16388,7 +18208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "The Seven Warlords of the Sea / Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-018": {
@@ -16398,6 +18219,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "The Seven Warlords of the Sea / Supernovas / Heart Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-020": {
@@ -16407,6 +18229,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "The Seven Warlords of the Sea",
     "rarity": "L",
+    "pack": "569114",
     "cost": "5 Life / 5000 Power"
   },
   "OP14-023": {
@@ -16416,6 +18239,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Land of Wano / The Akazaya Nine",
     "rarity": "R",
+    "pack": "569114",
     "cost": "1 Cost / 2000 Power"
   },
   "OP14-026": {
@@ -16424,7 +18248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "4 Cost / 5000 Power"
   },
   "OP14-021": {
@@ -16433,7 +18258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Dressrosa / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "6 Cost / 7000 Power"
   },
   "OP14-024": {
@@ -16442,7 +18268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "4 Cost / 5000 Power"
   },
   "OP14-028": {
@@ -16451,7 +18278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "2 Cost / 2000 Power"
   },
   "OP14-027": {
@@ -16461,6 +18289,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / The Four Emperors / Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "7 Cost / 9000 Power"
   },
   "OP14-029": {
@@ -16470,6 +18299,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569114",
     "cost": "5 Cost / 6000 Power"
   },
   "OP14-030": {
@@ -16478,7 +18308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "6 Cost / 7000 Power"
   },
   "OP14-031": {
@@ -16487,7 +18318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "4 Cost / 2000 Power"
   },
   "OP14-033": {
@@ -16496,7 +18328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Muggy Kingdom / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "5 Cost / 6000 Power"
   },
   "OP14-032": {
@@ -16505,7 +18338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Animal / Muggy Kingdom",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "3 Cost / 4000 Power"
   },
   "OP14-037": {
@@ -16515,6 +18349,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / The Seven Warlords of the Sea",
     "rarity": "R",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-034": {
@@ -16524,6 +18359,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "FILM / Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569114",
     "cost": "3 Cost / 3000 Power"
   },
   "OP14-035": {
@@ -16532,7 +18368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "2 Cost / 2000 Power"
   },
   "OP14-036": {
@@ -16541,7 +18378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "East Blue / The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-038": {
@@ -16550,7 +18388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-039": {
@@ -16559,7 +18398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Green",
     "traits": "East Blue / The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-044": {
@@ -16568,7 +18408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "8 Cost / 8000 Power"
   },
   "OP14-042": {
@@ -16578,6 +18419,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Fish-Man / The Sun Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "1 Cost / 3000 Power"
   },
   "OP14-040": {
@@ -16587,6 +18429,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Fish-Man / The Seven Warlords of the Sea / The Sun Pirates",
     "rarity": "L",
+    "pack": "569114",
     "cost": "5 Life / 5000 Power"
   },
   "OP14-041": {
@@ -16596,6 +18439,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Yellow",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
     "rarity": "L",
+    "pack": "569114",
     "cost": "4 Life / 5000 Power"
   },
   "OP14-045": {
@@ -16604,7 +18448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "3 Cost / 3000 Power"
   },
   "OP14-046": {
@@ -16613,7 +18458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Foolshout Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "2 Cost / 0 Power"
   },
   "OP14-047": {
@@ -16623,6 +18469,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Merfolk / Fish-Man Island",
     "rarity": "R",
+    "pack": "569114",
     "cost": "4 Cost / 0 Power"
   },
   "OP14-043": {
@@ -16632,6 +18479,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Merfolk / The Sun Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "4 Cost / 5000 Power"
   },
   "OP14-049": {
@@ -16640,7 +18488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / The Seven Warlords of the Sea / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "8 Cost / 10000 Power"
   },
   "OP14-050": {
@@ -16649,7 +18498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost / 3000 Power"
   },
   "OP14-051": {
@@ -16658,7 +18508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "1 Cost / 3000 Power"
   },
   "OP14-048": {
@@ -16667,7 +18518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "8 Cost / 10000 Power"
   },
   "OP14-054": {
@@ -16676,7 +18528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "6 Cost / 7000 Power"
   },
   "OP14-052": {
@@ -16685,7 +18538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "5 Cost / 6000 Power"
   },
   "OP14-056": {
@@ -16694,7 +18548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost / 5000 Power"
   },
   "OP14-053": {
@@ -16703,7 +18558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost / 4000 Power"
   },
   "OP14-057": {
@@ -16712,7 +18568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Fish-Man / The Seven Warlords of the Sea / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "2 Cost"
   },
   "OP14-062": {
@@ -16721,7 +18578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost / 4000 Power"
   },
   "OP14-058": {
@@ -16731,6 +18589,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Fish-Man / The Seven Warlords of the Sea / The Sun Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "2 Cost"
   },
   "OP14-055": {
@@ -16739,7 +18598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "5 Cost / 6000 Power"
   },
   "OP14-059": {
@@ -16748,7 +18608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Fish-Man / The Seven Warlords of the Sea / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-068": {
@@ -16757,7 +18618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "5 Cost / 5000 Power"
   },
   "OP14-061": {
@@ -16767,6 +18629,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Punk Hazard / Navy / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "5 Cost / 7000 Power"
   },
   "OP14-064": {
@@ -16775,7 +18638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost / 1000 Power"
   },
   "OP14-065": {
@@ -16784,7 +18648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "4 Cost / 5000 Power"
   },
   "OP14-060": {
@@ -16794,6 +18659,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
     "rarity": "L",
+    "pack": "569114",
     "cost": "5 Life / 5000 Power"
   },
   "OP14-067": {
@@ -16802,7 +18668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost / 2000 Power"
   },
   "OP14-063": {
@@ -16812,6 +18679,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Donquixote Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "4 Cost / 1000 Power"
   },
   "OP14-066": {
@@ -16820,7 +18688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "6 Cost / 8000 Power"
   },
   "OP14-078": {
@@ -16829,7 +18698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "2 Cost"
   },
   "OP14-077": {
@@ -16838,7 +18708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "2 Cost"
   },
   "OP14-073": {
@@ -16847,7 +18718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "6 Cost / 7000 Power"
   },
   "OP14-071": {
@@ -16856,7 +18728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "5 Cost / 6000 Power"
   },
   "OP14-074": {
@@ -16866,6 +18739,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Punk Hazard / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "5 Cost / 6000 Power"
   },
   "OP14-069": {
@@ -16874,7 +18748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "10 Cost / 10000 Power"
   },
   "OP14-070": {
@@ -16883,7 +18758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "2 Cost / 1000 Power"
   },
   "OP14-072": {
@@ -16892,7 +18768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "4 Cost / 1000 Power"
   },
   "OP14-075": {
@@ -16901,7 +18778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost / 4000 Power"
   },
   "OP14-076": {
@@ -16911,6 +18789,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-079": {
@@ -16920,6 +18799,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
     "rarity": "L",
+    "pack": "569114",
     "cost": "5 Life / 5000 Power"
   },
   "OP14-080": {
@@ -16929,6 +18809,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black/Yellow",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
     "rarity": "L",
+    "pack": "569114",
     "cost": "4 Life / 5000 Power"
   },
   "OP14-081": {
@@ -16937,7 +18818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "1 Cost / 1000 Power"
   },
   "OP14-082": {
@@ -16946,7 +18828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "2 Cost / 3000 Power"
   },
   "OP14-083": {
@@ -16955,7 +18838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost / 1000 Power"
   },
   "OP14-086": {
@@ -16964,7 +18848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "5 Cost / 6000 Power"
   },
   "OP14-093": {
@@ -16973,7 +18858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "4 Cost / 5000 Power"
   },
   "OP14-085": {
@@ -16982,7 +18868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost / 2000 Power"
   },
   "OP14-084": {
@@ -16991,7 +18878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "7 Cost / 8000 Power"
   },
   "OP14-094": {
@@ -17000,7 +18888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "5 Cost / 6000 Power"
   },
   "OP14-088": {
@@ -17009,7 +18898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "1 Cost / 2000 Power"
   },
   "OP14-087": {
@@ -17019,6 +18909,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Baroque Works",
     "rarity": "R",
+    "pack": "569114",
     "cost": "1 Cost / 2000 Power"
   },
   "OP14-091": {
@@ -17027,7 +18918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "4 Cost / 5000 Power"
   },
   "OP14-090": {
@@ -17037,6 +18929,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Baroque Works",
     "rarity": "R",
+    "pack": "569114",
     "cost": "5 Cost / 6000 Power"
   },
   "OP14-089": {
@@ -17045,7 +18938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost / 5000 Power"
   },
   "OP14-092": {
@@ -17055,6 +18949,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Baroque Works",
     "rarity": "R",
+    "pack": "569114",
     "cost": "4 Cost / 6000 Power"
   },
   "OP14-096": {
@@ -17064,6 +18959,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
     "rarity": "R",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-100": {
@@ -17073,6 +18969,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Thriller Bark Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "3 Cost / 5000 Power"
   },
   "OP14-103": {
@@ -17081,7 +18978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Amazon Lily",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "2 Cost / 0 Power"
   },
   "OP14-095": {
@@ -17090,7 +18988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "5 Cost / 6000 Power"
   },
   "OP14-104": {
@@ -17099,7 +18998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "8 Cost / 10000 Power"
   },
   "OP14-106": {
@@ -17108,7 +19008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal / Amazon Lily",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost / 1000 Power"
   },
   "OP14-099": {
@@ -17117,7 +19018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-097": {
@@ -17126,7 +19028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-101": {
@@ -17135,7 +19038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Giant / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "8 Cost / 10000 Power"
   },
   "OP14-102": {
@@ -17144,7 +19048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "1 Cost / 2000 Power"
   },
   "OP14-098": {
@@ -17153,7 +19058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Impel Down / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-105": {
@@ -17162,7 +19068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "6 Cost / 5000 Power"
   },
   "OP14-107": {
@@ -17171,7 +19078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Amazon Lily",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "6 Cost / 5000 Power"
   },
   "OP14-109": {
@@ -17180,7 +19088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "3 Cost / 1000 Power"
   },
   "OP14-108": {
@@ -17190,6 +19099,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Former Roger Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "6 Cost / 6000 Power"
   },
   "OP14-110": {
@@ -17199,6 +19109,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Thriller Bark Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "4 Cost / 5000 Power"
   },
   "OP14-112": {
@@ -17207,7 +19118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569114",
     "cost": "9 Cost / 10000 Power"
   },
   "OP14-111": {
@@ -17217,6 +19129,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Thriller Bark Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "4 Cost / 5000 Power"
   },
   "OP14-113": {
@@ -17225,7 +19138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Amazon Lily",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "3 Cost / 5000 Power"
   },
   "OP14-118": {
@@ -17235,6 +19149,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
     "rarity": "R",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-114": {
@@ -17243,7 +19158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Kuja Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "4 Cost / 5000 Power"
   },
   "OP14-115": {
@@ -17252,7 +19168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Kuja Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "5 Cost / 5000 Power"
   },
   "OP14-119": {
@@ -17261,7 +19178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569114",
     "cost": "9 Cost / 10000 Power"
   },
   "OP14-117": {
@@ -17270,7 +19188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569114",
     "cost": "1 Cost"
   },
   "OP14-116": {
@@ -17279,7 +19198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Kuja Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569114",
     "cost": "4 Cost"
   },
   "OP14-120": {
@@ -17288,7 +19208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569114",
     "cost": "8 Cost / 10000 Power"
   },
   "OP15-022": {
@@ -17298,6 +19219,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Black",
     "traits": "Straw Hat Crew",
     "rarity": "L",
+    "pack": "569115",
     "cost": "4 Life / 5000 Power"
   },
   "OP15-001": {
@@ -17307,6 +19229,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Green",
     "traits": "East Blue / Krieg Pirates",
     "rarity": "L",
+    "pack": "569115",
     "cost": "4 Life / 5000 Power"
   },
   "OP15-005": {
@@ -17315,7 +19238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "East Blue / Buggy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "2 Cost / 3000 Power"
   },
   "OP15-002": {
@@ -17325,6 +19249,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Blue",
     "traits": "Dressrosa / Revolutionary Army",
     "rarity": "L",
+    "pack": "569115",
     "cost": "4 Life / 5000 Power"
   },
   "OP15-007": {
@@ -17333,7 +19258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "East Blue / Krieg Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "6 Cost / 7000 Power"
   },
   "OP15-006": {
@@ -17342,7 +19268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Dressrosa / Beautiful Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "4 Cost / 4000 Power"
   },
   "OP15-003": {
@@ -17352,6 +19279,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "East Blue / Alvida Pirates",
     "rarity": "R",
+    "pack": "569115",
     "cost": "5 Cost / 6000 Power"
   },
   "OP15-004": {
@@ -17360,7 +19288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 0 Power"
   },
   "OP15-008": {
@@ -17369,7 +19298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "East Blue / Krieg Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "8 Cost / 9000 Power"
   },
   "OP15-026": {
@@ -17378,7 +19308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Black Cat Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-013": {
@@ -17387,7 +19318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "4 Cost / 2000 Power"
   },
   "OP15-010": {
@@ -17396,7 +19328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "East Blue / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "2 Cost / 2000 Power"
   },
   "OP15-011": {
@@ -17406,6 +19339,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "East Blue / Krieg Pirates",
     "rarity": "R",
+    "pack": "569115",
     "cost": "4 Cost / 4000 Power"
   },
   "OP15-012": {
@@ -17414,7 +19348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "East Blue / Buggy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "3 Cost / 4000 Power"
   },
   "OP15-009": {
@@ -17423,7 +19358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "East Blue / Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-016": {
@@ -17432,7 +19368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "5 Cost / 6000 Power"
   },
   "OP15-014": {
@@ -17442,6 +19379,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Dressrosa / Barto Club",
     "rarity": "R",
+    "pack": "569115",
     "cost": "4 Cost / 6000 Power"
   },
   "OP15-017": {
@@ -17450,7 +19388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "East Blue / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "5 Cost / 6000 Power"
   },
   "OP15-020": {
@@ -17460,6 +19399,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Dressrosa / Revolutionary Army",
     "rarity": "R",
+    "pack": "569115",
     "cost": "7 Cost"
   },
   "OP15-015": {
@@ -17468,7 +19408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "East Blue / Mountain Bandits",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 1000 Power"
   },
   "OP15-021": {
@@ -17477,7 +19418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "4 Cost"
   },
   "OP15-019": {
@@ -17486,7 +19428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Dressrosa / Barto Club",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "3 Cost"
   },
   "OP15-024": {
@@ -17496,6 +19439,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569115",
     "cost": "4 Cost / 5000 Power"
   },
   "OP15-018": {
@@ -17504,7 +19448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "East Blue / Buggy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "2 Cost / 3000 Power"
   },
   "OP15-028": {
@@ -17513,7 +19458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Black Cat Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-027": {
@@ -17522,7 +19468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "4 Cost / 5000 Power"
   },
   "OP15-033": {
@@ -17531,7 +19478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / Fish-Man Island / New Fish-Man Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "4 Cost / 5000 Power"
   },
   "OP15-023": {
@@ -17541,6 +19489,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Fish-Man / East Blue / Arlong Pirates",
     "rarity": "R",
+    "pack": "569115",
     "cost": "4 Cost / 5000 Power"
   },
   "OP15-025": {
@@ -17550,6 +19499,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / Black Cat Pirates",
     "rarity": "R",
+    "pack": "569115",
     "cost": "7 Cost / 7000 Power"
   },
   "OP15-032": {
@@ -17558,7 +19508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "6 Cost / 6000 Power"
   },
   "OP15-031": {
@@ -17567,7 +19518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "2 Cost / 2000 Power"
   },
   "OP15-029": {
@@ -17576,7 +19528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "The Seven Warlords of the Sea / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "4 Cost / 5000 Power"
   },
   "OP15-037": {
@@ -17585,7 +19538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "East Blue / Krieg Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "1 Cost"
   },
   "OP15-034": {
@@ -17594,7 +19548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Rumbar Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 0 Power"
   },
   "OP15-030": {
@@ -17603,7 +19558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Merfolk / Fish-Man Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "5 Cost / 6000 Power"
   },
   "OP15-035": {
@@ -17612,7 +19568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Animal",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-041": {
@@ -17621,7 +19578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Yonta Maria Fleet",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "3 Cost / 4000 Power"
   },
   "OP15-040": {
@@ -17631,6 +19589,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Dressrosa / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-036": {
@@ -17639,7 +19598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "6 Cost / 8000 Power"
   },
   "OP15-039": {
@@ -17649,6 +19609,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Dressrosa",
     "rarity": "L",
+    "pack": "569115",
     "cost": "5 Life / 5000 Power"
   },
   "OP15-038": {
@@ -17658,6 +19619,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "East Blue / Krieg Pirates",
     "rarity": "R",
+    "pack": "569115",
     "cost": "1 Cost"
   },
   "OP15-043": {
@@ -17666,7 +19628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Mogaro Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "3 Cost / 3000 Power"
   },
   "OP15-050": {
@@ -17675,7 +19638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Mogaro Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "3 Cost / 3000 Power"
   },
   "OP15-048": {
@@ -17684,7 +19648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Happosui Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "4 Cost / 5000 Power"
   },
   "OP15-042": {
@@ -17694,6 +19659,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Dressrosa",
     "rarity": "R",
+    "pack": "569115",
     "cost": "3 Cost / 5000 Power"
   },
   "OP15-047": {
@@ -17703,6 +19669,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Dressrosa / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569115",
     "cost": "3 Cost / 4000 Power"
   },
   "OP15-045": {
@@ -17711,7 +19678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Happosui Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "5 Cost / 6000 Power"
   },
   "OP15-044": {
@@ -17720,7 +19688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "3 Cost / 2000 Power"
   },
   "OP15-046": {
@@ -17729,7 +19698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "7 Cost / 9000 Power"
   },
   "OP15-057": {
@@ -17738,7 +19708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Blue",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost"
   },
   "OP15-059": {
@@ -17747,7 +19718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "3 Cost / 0 Power"
   },
   "OP15-049": {
@@ -17756,7 +19728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Giant / Dressrosa / New Giant Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "5 Cost / 6000 Power"
   },
   "OP15-053": {
@@ -17765,7 +19738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "1 Cost / 0 Power"
   },
   "OP15-054": {
@@ -17774,7 +19748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "4 Cost"
   },
   "OP15-052": {
@@ -17783,7 +19758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Tontattas / Dressrosa",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-051": {
@@ -17792,7 +19768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "3 Cost / 4000 Power"
   },
   "OP15-058": {
@@ -17802,6 +19779,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Sky Island",
     "rarity": "L",
+    "pack": "569115",
     "cost": "5 Life / 5000 Power"
   },
   "OP15-055": {
@@ -17811,6 +19789,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Dressrosa / Barto Club",
     "rarity": "R",
+    "pack": "569115",
     "cost": "3 Cost"
   },
   "OP15-056": {
@@ -17819,7 +19798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "7 Cost"
   },
   "OP15-060": {
@@ -17828,7 +19808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "6 Cost / 8000 Power"
   },
   "OP15-063": {
@@ -17838,6 +19819,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Sky Island / Vassals",
     "rarity": "R",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-062": {
@@ -17846,7 +19828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Moon / Space Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "5 Cost / 6000 Power"
   },
   "OP15-061": {
@@ -17856,6 +19839,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Sky Island / Vassals",
     "rarity": "R",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-065": {
@@ -17864,7 +19848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Alabasta / Hot Springs Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "3 Cost / 0 Power"
   },
   "OP15-067": {
@@ -17874,6 +19859,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Sky Island / Vassals",
     "rarity": "R",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-066": {
@@ -17883,6 +19869,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Sky Island / Vassals",
     "rarity": "R",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-068": {
@@ -17891,7 +19878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 1000 Power"
   },
   "OP15-064": {
@@ -17900,7 +19888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-069": {
@@ -17909,7 +19898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Sky Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-073": {
@@ -17918,7 +19908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "3 Cost / 4000 Power"
   },
   "OP15-076": {
@@ -17927,7 +19918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "0 Cost"
   },
   "OP15-074": {
@@ -17936,7 +19928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "0 Cost"
   },
   "OP15-071": {
@@ -17945,7 +19938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "3 Cost / 4000 Power"
   },
   "OP15-080": {
@@ -17955,6 +19949,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Giant / Thriller Bark Pirates",
     "rarity": "R",
+    "pack": "569115",
     "cost": "4 Cost / 0 Power"
   },
   "OP15-072": {
@@ -17963,7 +19958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-078": {
@@ -17972,7 +19968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "0 Cost"
   },
   "OP15-075": {
@@ -17981,7 +19978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "0 Cost"
   },
   "OP15-070": {
@@ -17990,7 +19988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "3 Cost / 4000 Power"
   },
   "OP15-077": {
@@ -18000,6 +19999,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Sky Island",
     "rarity": "R",
+    "pack": "569115",
     "cost": "0 Cost"
   },
   "OP15-079": {
@@ -18008,7 +20008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "4 Cost / 5000 Power"
   },
   "OP15-082": {
@@ -18017,7 +20018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Rolling Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "4 Cost / 5000 Power"
   },
   "OP15-081": {
@@ -18026,7 +20028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-083": {
@@ -18035,7 +20038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "The Victims' Club",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 0 Power"
   },
   "OP15-084": {
@@ -18044,7 +20048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-085": {
@@ -18054,6 +20059,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Animal / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569115",
     "cost": "2 Cost / 2000 Power"
   },
   "OP15-090": {
@@ -18062,7 +20068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-088": {
@@ -18072,6 +20079,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569115",
     "cost": "5 Cost / 7000 Power"
   },
   "OP15-087": {
@@ -18080,7 +20088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "5 Cost / 7000 Power"
   },
   "OP15-101": {
@@ -18089,7 +20098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Jaya / Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "3 Cost / 5000 Power"
   },
   "OP15-086": {
@@ -18098,7 +20108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "8 Cost / 6000 Power"
   },
   "OP15-097": {
@@ -18107,7 +20118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost"
   },
   "OP15-091": {
@@ -18116,7 +20128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "The Owner of Cindry's Shadow",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 0 Power"
   },
   "OP15-094": {
@@ -18125,7 +20138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "2 Cost / 1000 Power"
   },
   "OP15-089": {
@@ -18134,7 +20148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "5 Cost / 6000 Power"
   },
   "OP15-098": {
@@ -18144,6 +20159,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569115",
     "cost": "5 Life / 5000 Power"
   },
   "OP15-093": {
@@ -18152,7 +20168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Rolling Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-096": {
@@ -18162,6 +20179,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569115",
     "cost": "0 Cost"
   },
   "OP15-099": {
@@ -18170,7 +20188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Supernovas / Fallen Monk Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "6 Cost / 7000 Power"
   },
   "OP15-092": {
@@ -18180,6 +20199,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569115",
     "cost": "7 Cost / 7000 Power"
   },
   "OP15-095": {
@@ -18188,7 +20208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "1 Cost"
   },
   "OP15-108": {
@@ -18198,6 +20219,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-105": {
@@ -18206,7 +20228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "1 Cost / 2000 Power"
   },
   "OP15-114": {
@@ -18215,7 +20238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "5 Cost / 6000 Power"
   },
   "OP15-102": {
@@ -18225,6 +20249,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island",
     "rarity": "R",
+    "pack": "569115",
     "cost": "4 Cost / 4000 Power"
   },
   "OP15-106": {
@@ -18233,7 +20258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal / Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "2 Cost / 0 Power"
   },
   "OP15-104": {
@@ -18242,7 +20268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "1 Cost / 0 Power"
   },
   "OP15-100": {
@@ -18251,7 +20278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "5 Cost / 6000 Power"
   },
   "OP15-103": {
@@ -18260,7 +20288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "3 Cost / 4000 Power"
   },
   "OP15-109": {
@@ -18270,6 +20299,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569115",
     "cost": "7 Cost / 7000 Power"
   },
   "OP15-107": {
@@ -18278,7 +20308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal / Sky Island / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "4 Cost / 6000 Power"
   },
   "OP15-112": {
@@ -18287,7 +20318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "4 Cost / 4000 Power"
   },
   "OP15-111": {
@@ -18296,7 +20328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Jaya / Botanist",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "4 Cost / 5000 Power"
   },
   "OP15-110": {
@@ -18305,7 +20338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Shandian Warrior",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "3 Cost / 4000 Power"
   },
   "OP15-113": {
@@ -18314,7 +20348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569115",
     "cost": "4 Cost / 6000 Power"
   },
   "OP15-117": {
@@ -18323,7 +20358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569115",
     "cost": "1 Cost"
   },
   "OP15-115": {
@@ -18332,7 +20368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Sky Island / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569115",
     "cost": "2 Cost"
   },
   "OP16-001": {
@@ -18342,6 +20379,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Whitebeard Pirates",
     "rarity": "L",
+    "pack": "569116",
     "cost": "5 Life / 5000 Power"
   },
   "OP15-116": {
@@ -18351,6 +20389,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Sky Island / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569115",
     "cost": "1 Cost"
   },
   "OP15-119": {
@@ -18359,7 +20398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Sky Island / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569115",
     "cost": "5 Cost / 7000 Power"
   },
   "OP15-118": {
@@ -18368,7 +20408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569115",
     "cost": "6 Cost / 8000 Power"
   },
   "OP16-002": {
@@ -18377,7 +20418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Land of Wano / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost / 2000 Power"
   },
   "OP16-003": {
@@ -18386,7 +20428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569116",
     "cost": "8 Cost / 10000 Power"
   },
   "OP16-006": {
@@ -18395,7 +20438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Four Emperors / Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "4 Cost / 5000 Power"
   },
   "OP16-005": {
@@ -18404,7 +20448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "8 Cost / 8000 Power"
   },
   "OP16-009": {
@@ -18413,7 +20458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "4 Cost / 5000 Power"
   },
   "OP16-012": {
@@ -18423,6 +20469,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569116",
     "cost": "5 Cost / 6000 Power"
   },
   "OP16-011": {
@@ -18432,6 +20479,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569116",
     "cost": "6 Cost / 8000 Power"
   },
   "OP16-007": {
@@ -18440,7 +20488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "7 Cost / 8000 Power"
   },
   "OP16-010": {
@@ -18449,7 +20498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Fish-Man / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost / 2000 Power"
   },
   "OP16-004": {
@@ -18458,7 +20508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "7 Cost / 8000 Power"
   },
   "OP16-008": {
@@ -18467,7 +20518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "5 Cost / 7000 Power"
   },
   "OP16-013": {
@@ -18476,7 +20528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "6 Cost / 8000 Power"
   },
   "OP16-015": {
@@ -18485,7 +20538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Impel Down / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569116",
     "cost": "4 Cost / 6000 Power"
   },
   "OP16-020": {
@@ -18494,7 +20548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "0 Cost"
   },
   "OP16-017": {
@@ -18504,6 +20559,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Giant / Whitebeard Pirates Allies",
     "rarity": "R",
+    "pack": "569116",
     "cost": "4 Cost / 8000 Power"
   },
   "OP16-014": {
@@ -18513,6 +20569,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569116",
     "cost": "6 Cost / 8000 Power"
   },
   "OP16-016": {
@@ -18521,7 +20578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "6 Cost / 8000 Power"
   },
   "OP16-022": {
@@ -18531,6 +20589,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Blue",
     "traits": "Impel Down / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569116",
     "cost": "4 Life / 5000 Power"
   },
   "OP16-019": {
@@ -18539,7 +20598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "9 Cost"
   },
   "OP16-021": {
@@ -18549,6 +20609,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-023": {
@@ -18557,7 +20618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Fish-Man / Impel Down / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "1 Cost / 3000 Power"
   },
   "OP16-018": {
@@ -18566,7 +20628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "1 Cost / 2000 Power"
   },
   "OP16-026": {
@@ -18575,7 +20638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569116",
     "cost": "4 Cost / 4000 Power"
   },
   "OP16-029": {
@@ -18584,7 +20648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "2 Cost / 3000 Power"
   },
   "OP16-024": {
@@ -18593,7 +20658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "2 Cost / 1000 Power"
   },
   "OP16-025": {
@@ -18602,7 +20668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "2 Cost / 3000 Power"
   },
   "OP16-027": {
@@ -18612,6 +20679,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Fish-Man / Impel Down / The Sun Pirates",
     "rarity": "R",
+    "pack": "569116",
     "cost": "2 Cost / 2000 Power"
   },
   "OP16-028": {
@@ -18620,7 +20688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "6 Cost / 7000 Power"
   },
   "OP16-030": {
@@ -18630,6 +20699,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / Heart Pirates",
     "rarity": "R",
+    "pack": "569116",
     "cost": "8 Cost / 9000 Power"
   },
   "OP16-031": {
@@ -18638,7 +20708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down / Buggy Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "4 Cost / 5000 Power"
   },
   "OP16-037": {
@@ -18647,7 +20718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "2 Cost / 3000 Power"
   },
   "OP16-032": {
@@ -18656,7 +20728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down / The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569116",
     "cost": "7 Cost / 9000 Power"
   },
   "OP16-034": {
@@ -18666,6 +20739,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Impel Down / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569116",
     "cost": "1 Cost / 0 Power"
   },
   "OP16-033": {
@@ -18674,7 +20748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Giant / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "4 Cost / 5000 Power"
   },
   "OP16-035": {
@@ -18683,7 +20758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "7 Cost / 9000 Power"
   },
   "OP16-039": {
@@ -18692,7 +20768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Impel Down / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-040": {
@@ -18701,7 +20778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Impel Down / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-042": {
@@ -18711,6 +20789,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Impel Down",
     "rarity": "R",
+    "pack": "569116",
     "cost": "6 Cost / 6000 Power"
   },
   "OP16-036": {
@@ -18719,7 +20798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "4 Cost / 1000 Power"
   },
   "OP16-038": {
@@ -18729,6 +20809,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Impel Down / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-052": {
@@ -18737,7 +20818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "2 Cost / 3000 Power"
   },
   "OP16-041": {
@@ -18747,6 +20829,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Impel Down / Buggy Pirates",
     "rarity": "L",
+    "pack": "569116",
     "cost": "5 Life / 5000 Power"
   },
   "OP16-060": {
@@ -18756,6 +20839,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Navy",
     "rarity": "L",
+    "pack": "569116",
     "cost": "5 Life / 5000 Power"
   },
   "OP16-046": {
@@ -18764,7 +20848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / Impel Down / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "5 Cost / 6000 Power"
   },
   "OP16-043": {
@@ -18773,7 +20858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "2 Cost / 1000 Power"
   },
   "OP16-045": {
@@ -18782,7 +20868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "4 Cost / 6000 Power"
   },
   "OP16-044": {
@@ -18791,7 +20878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "2 Cost / 2000 Power"
   },
   "OP16-048": {
@@ -18800,7 +20888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Buggy Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569116",
     "cost": "5 Cost / 6000 Power"
   },
   "OP16-047": {
@@ -18809,7 +20898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "3 Cost / 0 Power"
   },
   "OP16-056": {
@@ -18818,7 +20908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569116",
     "cost": "4 Cost / 5000 Power"
   },
   "OP16-051": {
@@ -18827,7 +20918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "6 Cost / 7000 Power"
   },
   "OP16-053": {
@@ -18836,7 +20928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Dressrosa / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "7 Cost / 9000 Power"
   },
   "OP16-049": {
@@ -18845,7 +20938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "3 Cost / 0 Power"
   },
   "OP16-080": {
@@ -18855,6 +20949,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black/Yellow",
     "traits": "The Seven Warlords of the Sea / Blackbeard Pirates",
     "rarity": "L",
+    "pack": "569116",
     "cost": "4 Life / 5000 Power"
   },
   "OP16-055": {
@@ -18864,6 +20959,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Impel Down / Former Baroque Works",
     "rarity": "R",
+    "pack": "569116",
     "cost": "2 Cost / 1000 Power"
   },
   "OP16-057": {
@@ -18872,7 +20968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-050": {
@@ -18881,7 +20978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "5 Cost / 6000 Power"
   },
   "OP16-059": {
@@ -18890,7 +20988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Impel Down / Buggy Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-054": {
@@ -18900,6 +20999,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Impel Down / Former Baroque Works",
     "rarity": "R",
+    "pack": "569116",
     "cost": "2 Cost / 2000 Power"
   },
   "OP16-058": {
@@ -18909,6 +21009,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Impel Down",
     "rarity": "R",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-061": {
@@ -18917,7 +21018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "5 Cost / 7000 Power"
   },
   "OP16-074": {
@@ -18926,7 +21028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "8 Cost / 10000 Power"
   },
   "OP16-065": {
@@ -18935,7 +21038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Admiral / Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569116",
     "cost": "7 Cost / 8000 Power"
   },
   "OP16-064": {
@@ -18945,6 +21049,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569116",
     "cost": "1 Cost / 2000 Power"
   },
   "OP16-070": {
@@ -18953,7 +21058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Navy / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "2 Cost / 1000 Power"
   },
   "OP16-066": {
@@ -18962,7 +21068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "5 Cost / 5000 Power"
   },
   "OP16-069": {
@@ -18971,7 +21078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "7 Cost / 8000 Power"
   },
   "OP16-062": {
@@ -18980,7 +21088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "5 Cost / 6000 Power"
   },
   "OP16-073": {
@@ -18990,6 +21099,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Admiral / Navy",
     "rarity": "R",
+    "pack": "569116",
     "cost": "7 Cost / 8000 Power"
   },
   "OP16-068": {
@@ -18998,7 +21108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "4 Cost / 3000 Power"
   },
   "OP16-063": {
@@ -19008,6 +21119,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Admiral / Navy",
     "rarity": "R",
+    "pack": "569116",
     "cost": "7 Cost / 8000 Power"
   },
   "OP16-067": {
@@ -19016,7 +21128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost / 2000 Power"
   },
   "OP16-071": {
@@ -19025,7 +21138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "3 Cost / 5000 Power"
   },
   "OP16-077": {
@@ -19035,6 +21149,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Navy",
     "rarity": "R",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-072": {
@@ -19043,7 +21158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Impel Down",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "2 Cost / 3000 Power"
   },
   "OP16-075": {
@@ -19052,7 +21168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "5 Cost / 6000 Power"
   },
   "OP16-084": {
@@ -19061,7 +21178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "5 Cost / 0 Power"
   },
   "OP16-078": {
@@ -19070,7 +21188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Purple",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-076": {
@@ -19079,7 +21198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Admiral / Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-079": {
@@ -19089,6 +21209,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Land of Wano",
     "rarity": "L",
+    "pack": "569116",
     "cost": "5 Life / 5000 Power"
   },
   "OP16-082": {
@@ -19097,7 +21218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569116",
     "cost": "4 Cost / 6000 Power"
   },
   "OP16-081": {
@@ -19106,7 +21228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "2 Cost / 0 Power"
   },
   "OP16-088": {
@@ -19115,7 +21238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "2 Cost / 2000 Power"
   },
   "OP16-102": {
@@ -19124,7 +21248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Impel Down / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost / 2000 Power"
   },
   "OP16-083": {
@@ -19133,7 +21258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "5 Cost / 6000 Power"
   },
   "OP16-086": {
@@ -19142,7 +21268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "8 Cost / 9000 Power"
   },
   "OP16-085": {
@@ -19152,6 +21279,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Land of Wano / Kouzuki Clan",
     "rarity": "R",
+    "pack": "569116",
     "cost": "9 Cost / 6000 Power"
   },
   "OP16-094": {
@@ -19160,7 +21288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano / Spade Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "4 Cost / 5000 Power"
   },
   "OP16-103": {
@@ -19169,7 +21298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost / 2000 Power"
   },
   "OP16-106": {
@@ -19179,6 +21309,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Giant / Impel Down / Blackbeard Pirates",
     "rarity": "R",
+    "pack": "569116",
     "cost": "4 Cost / 5000 Power"
   },
   "OP16-087": {
@@ -19187,7 +21318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "2 Cost / 1000 Power"
   },
   "OP16-092": {
@@ -19196,7 +21328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost / 2000 Power"
   },
   "OP16-090": {
@@ -19205,7 +21338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal / Land of Wano / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "3 Cost / 4000 Power"
   },
   "OP16-089": {
@@ -19214,7 +21348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "6 Cost / 8000 Power"
   },
   "OP16-091": {
@@ -19224,6 +21359,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Land of Wano / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569116",
     "cost": "1 Cost / 2000 Power"
   },
   "OP16-097": {
@@ -19233,6 +21369,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Land of Wano",
     "rarity": "R",
+    "pack": "569116",
     "cost": "8 Cost / 8000 Power"
   },
   "OP16-105": {
@@ -19241,7 +21378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "6 Cost / 7000 Power"
   },
   "OP16-095": {
@@ -19251,6 +21389,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Land of Wano / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569116",
     "cost": "2 Cost / 2000 Power"
   },
   "OP16-100": {
@@ -19259,7 +21398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-101": {
@@ -19268,7 +21408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "2 Cost"
   },
   "OP16-108": {
@@ -19277,7 +21418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Impel Down / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569116",
     "cost": "6 Cost / 8000 Power"
   },
   "OP16-098": {
@@ -19286,7 +21428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569116",
     "cost": "6 Cost / 5000 Power"
   },
   "OP16-093": {
@@ -19295,7 +21438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "The Seven Warlords of the Sea / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "3 Cost / 4000 Power"
   },
   "OP16-096": {
@@ -19305,6 +21449,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Land of Wano",
     "rarity": "R",
+    "pack": "569116",
     "cost": "8 Cost / 8000 Power"
   },
   "OP16-099": {
@@ -19313,7 +21458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-112": {
@@ -19322,7 +21468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Kuja Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "6 Cost / 8000 Power"
   },
   "OP16-104": {
@@ -19332,6 +21479,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Impel Down / Blackbeard Pirates",
     "rarity": "R",
+    "pack": "569116",
     "cost": "4 Cost / 3000 Power"
   },
   "OP17-002": {
@@ -19340,7 +21488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "4 Cost / 6000 Power"
   },
   "OP16-110": {
@@ -19350,6 +21499,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Impel Down / Blackbeard Pirates",
     "rarity": "R",
+    "pack": "569116",
     "cost": "1 Cost / 2000 Power"
   },
   "OP16-107": {
@@ -19358,7 +21508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "3 Cost / 5000 Power"
   },
   "OP16-109": {
@@ -19367,7 +21518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost / 0 Power"
   },
   "OP16-114": {
@@ -19376,7 +21528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "1 Cost / 2000 Power"
   },
   "OP16-115": {
@@ -19385,7 +21538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "1 Cost"
   },
   "OP16-111": {
@@ -19394,7 +21548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Kuja Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "4 Cost / 5000 Power"
   },
   "OP17-004": {
@@ -19403,7 +21558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Minks / Land of Wano / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "3 Cost / 2000 Power"
   },
   "OP16-113": {
@@ -19412,7 +21568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Kuja Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569116",
     "cost": "5 Cost / 5000 Power"
   },
   "OP16-116": {
@@ -19422,6 +21579,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Blackbeard Pirates",
     "rarity": "R",
+    "pack": "569116",
     "cost": "8 Cost"
   },
   "OP16-119": {
@@ -19430,7 +21588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569116",
     "cost": "8 Cost / 10000 Power"
   },
   "OP17-001": {
@@ -19440,6 +21599,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
     "rarity": "L",
+    "pack": "569117",
     "cost": "5 Life / 5000 Power"
   },
   "OP17-003": {
@@ -19449,6 +21609,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Land of Wano / Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "4 Cost / 6000 Power"
   },
   "OP16-117": {
@@ -19457,7 +21618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "The Seven Warlords of the Sea / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569116",
     "cost": "2 Cost"
   },
   "OP16-118": {
@@ -19466,7 +21628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569116",
     "cost": "5 Cost / 6000 Power"
   },
   "OP17-008": {
@@ -19476,6 +21639,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "6 Cost / 8000 Power"
   },
   "OP17-005": {
@@ -19484,7 +21648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569117",
     "cost": "10 Cost / 12000 Power"
   },
   "OP17-009": {
@@ -19493,7 +21658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "4 Cost / 5000 Power"
   },
   "OP17-010": {
@@ -19502,7 +21668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "1 Cost / 3000 Power"
   },
   "OP17-006": {
@@ -19511,7 +21678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "7 Cost / 8000 Power"
   },
   "OP17-012": {
@@ -19520,7 +21688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "2 Cost / 1000 Power"
   },
   "OP17-007": {
@@ -19530,6 +21699,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Land of Wano / Kouzuki Clan / Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "7 Cost / 8000 Power"
   },
   "OP17-015": {
@@ -19538,7 +21708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "5 Cost / 6000 Power"
   },
   "OP17-013": {
@@ -19547,7 +21718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "6 Cost / 6000 Power"
   },
   "OP17-011": {
@@ -19556,7 +21728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "5 Cost / 6000 Power"
   },
   "OP17-014": {
@@ -19565,7 +21738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "1 Cost / 1000 Power"
   },
   "OP17-023": {
@@ -19574,7 +21748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "1 Cost / 1000 Power"
   },
   "OP17-017": {
@@ -19583,7 +21758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "OP17-016": {
@@ -19592,7 +21768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "3 Cost / 2000 Power"
   },
   "OP17-035": {
@@ -19601,7 +21778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "7 Cost / 8000 Power"
   },
   "OP17-018": {
@@ -19610,7 +21788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "OP17-019": {
@@ -19620,6 +21799,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "OP17-022": {
@@ -19628,7 +21808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "The Four Emperors / Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569117",
     "cost": "10 Cost / 12000 Power"
   },
   "OP17-024": {
@@ -19637,7 +21818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "8 Cost / 8000 Power"
   },
   "OP17-026": {
@@ -19646,7 +21828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Red-Haired Pirates Allies",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "1 Cost / 2000 Power"
   },
   "OP17-020": {
@@ -19656,6 +21839,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "The Four Emperors / Red-Haired Pirates",
     "rarity": "L",
+    "pack": "569117",
     "cost": "5 Life / 5000 Power"
   },
   "OP17-021": {
@@ -19664,7 +21848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Red-Haired Pirates Allies",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "1 Cost / 0 Power"
   },
   "OP17-025": {
@@ -19673,7 +21858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "4 Cost / 5000 Power"
   },
   "OP17-039": {
@@ -19683,6 +21869,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Rocks Pirates",
     "rarity": "L",
+    "pack": "569117",
     "cost": "5 Life / 5000 Power"
   },
   "OP17-027": {
@@ -19692,6 +21879,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "7 Cost / 9000 Power"
   },
   "OP17-038": {
@@ -19700,7 +21888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "0 Cost"
   },
   "OP17-028": {
@@ -19709,7 +21898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Animal / Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "4 Cost / 3000 Power"
   },
   "OP17-032": {
@@ -19719,6 +21909,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "1 Cost / 2000 Power"
   },
   "OP17-036": {
@@ -19727,7 +21918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "The Four Emperors / Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "OP17-030": {
@@ -19736,7 +21928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "4 Cost / 5000 Power"
   },
   "OP17-029": {
@@ -19746,6 +21939,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "4 Cost / 4000 Power"
   },
   "OP17-034": {
@@ -19754,7 +21948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "5 Cost / 6000 Power"
   },
   "OP17-033": {
@@ -19764,6 +21959,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "4 Cost / 5000 Power"
   },
   "OP17-031": {
@@ -19772,7 +21968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569117",
     "cost": "5 Cost / 6000 Power"
   },
   "OP17-041": {
@@ -19781,7 +21978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Rocks Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "4 Cost / 6000 Power"
   },
   "OP17-037": {
@@ -19791,6 +21989,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "The Four Emperors / Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "OP17-042": {
@@ -19800,6 +21999,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Rocks Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "4 Cost / 6000 Power"
   },
   "OP17-043": {
@@ -19808,7 +22008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Rocks Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "5 Cost / 7000 Power"
   },
   "OP17-040": {
@@ -19818,6 +22019,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Rocks Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "6 Cost / 8000 Power"
   },
   "OP17-047": {
@@ -19826,7 +22028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "FILM / Impel Down / Golden Lion Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "9 Cost / 10000 Power"
   },
   "OP17-044": {
@@ -19835,7 +22038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Rocks Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "4 Cost / 6000 Power"
   },
   "OP17-045": {
@@ -19844,7 +22048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Rocks Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "2 Cost / 4000 Power"
   },
   "OP17-046": {
@@ -19853,7 +22058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Amazon Lily / Rocks Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569117",
     "cost": "4 Cost / 1000 Power"
   },
   "OP17-048": {
@@ -19862,7 +22068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Rocks Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569117",
     "cost": "7 Cost / 9000 Power"
   },
   "OP17-051": {
@@ -19871,7 +22078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / Impel Down / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "7 Cost / 8000 Power"
   },
   "OP17-050": {
@@ -19880,7 +22088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Rocks Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "1 Cost / 2000 Power"
   },
   "OP17-049": {
@@ -19890,6 +22099,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Rocks Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "5 Cost / 7000 Power"
   },
   "OP17-052": {
@@ -19898,7 +22108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Rocks Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "3 Cost / 5000 Power"
   },
   "OP17-055": {
@@ -19908,6 +22119,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Rocks Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "0 Cost"
   },
   "OP17-070": {
@@ -19916,7 +22128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "On-Air Pirates / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "6 Cost / 7000 Power"
   },
   "OP17-054": {
@@ -19926,6 +22139,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Rocks Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "3 Cost / 5000 Power"
   },
   "OP17-053": {
@@ -19934,7 +22148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / Rocks Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "5 Cost / 7000 Power"
   },
   "OP17-058": {
@@ -19944,6 +22159,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
     "rarity": "L",
+    "pack": "569117",
     "cost": "5 Life / 5000 Power"
   },
   "OP17-056": {
@@ -19952,7 +22168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Rocks Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "0 Cost"
   },
   "OP17-057": {
@@ -19961,7 +22178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Blue",
     "traits": "Rocks Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "OP17-063": {
@@ -19970,7 +22188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569117",
     "cost": "10 Cost / 12000 Power"
   },
   "OP17-060": {
@@ -19980,6 +22199,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "6 Cost / 6000 Power"
   },
   "OP17-059": {
@@ -19988,7 +22208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Admiral / Navy",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "7 Cost / 8000 Power"
   },
   "OP17-062": {
@@ -19997,7 +22218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569117",
     "cost": "10 Cost / 12000 Power"
   },
   "OP17-061": {
@@ -20007,6 +22229,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Fish-Man / Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "9 Cost / 11000 Power"
   },
   "OP17-066": {
@@ -20015,7 +22238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Land of Wano / Kurozumi Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "1 Cost / 0 Power"
   },
   "OP17-064": {
@@ -20024,7 +22248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Lunarian / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "9 Cost / 10000 Power"
   },
   "OP17-067": {
@@ -20033,7 +22258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Land of Wano / Kurozumi Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "2 Cost / 3000 Power"
   },
   "OP17-065": {
@@ -20042,7 +22268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "9 Cost / 10000 Power"
   },
   "OP17-071": {
@@ -20051,7 +22278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / Former CP9",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "2 Cost / 3000 Power"
   },
   "OP17-072": {
@@ -20060,7 +22288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "2 Cost / 1000 Power"
   },
   "OP17-077": {
@@ -20069,7 +22298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "OP17-068": {
@@ -20078,7 +22308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "3 Cost / 4000 Power"
   },
   "OP17-069": {
@@ -20087,7 +22318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Fish-Man / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "9 Cost / 10000 Power"
   },
   "OP17-075": {
@@ -20096,7 +22328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Navy / Drake Pirates / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "2 Cost / 2000 Power"
   },
   "OP17-073": {
@@ -20105,7 +22338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / Hawkins Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "3 Cost / 1000 Power"
   },
   "OP17-074": {
@@ -20115,6 +22349,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Land of Wano",
     "rarity": "R",
+    "pack": "569117",
     "cost": "3 Cost / 1000 Power"
   },
   "OP17-076": {
@@ -20124,6 +22359,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "0 Cost"
   },
   "OP17-079": {
@@ -20133,6 +22369,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Elbaph / The Four Emperors / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569117",
     "cost": "5 Life / 5000 Power"
   },
   "OP17-080": {
@@ -20141,7 +22378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Elbaph / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569117",
     "cost": "2 Cost / 2000 Power"
   },
   "OP17-086": {
@@ -20150,7 +22388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Elbaph / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "1 Cost / 2000 Power"
   },
   "OP17-078": {
@@ -20159,7 +22398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "2 Cost"
   },
   "OP17-081": {
@@ -20169,6 +22409,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Giant / Elbaph / New Giant Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "2 Cost / 3000 Power"
   },
   "OP17-082": {
@@ -20177,7 +22418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Elbaph / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "2 Cost / 2000 Power"
   },
   "OP17-087": {
@@ -20187,6 +22429,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Elbaph / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569117",
     "cost": "2 Cost / 2000 Power"
   },
   "OP17-083": {
@@ -20195,7 +22438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Fish-Man / Elbaph / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "2 Cost / 2000 Power"
   },
   "OP17-090": {
@@ -20204,7 +22448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Elbaph / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "2 Cost / 2000 Power"
   },
   "OP17-085": {
@@ -20213,7 +22458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Giant / Elbaph / Giant Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "5 Cost / 5000 Power"
   },
   "OP17-092": {
@@ -20222,7 +22468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Giant / Elbaph / Giant Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "5 Cost / 5000 Power"
   },
   "OP17-084": {
@@ -20231,7 +22478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal / Elbaph / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "1 Cost / 2000 Power"
   },
   "OP17-094": {
@@ -20240,7 +22488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Giant / Elbaph / New Giant Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "1 Cost / 2000 Power"
   },
   "OP17-088": {
@@ -20249,7 +22498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Giant / Elbaph / New Giant Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "7 Cost / 8000 Power"
   },
   "OP17-089": {
@@ -20259,6 +22509,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Giant / Elbaph / Former Navy",
     "rarity": "R",
+    "pack": "569117",
     "cost": "4 Cost / 6000 Power"
   },
   "OP17-091": {
@@ -20267,7 +22518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Elbaph / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "2 Cost / 2000 Power"
   },
   "OP17-093": {
@@ -20276,7 +22528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Elbaph / The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569117",
     "cost": "8 Cost / 8000 Power"
   },
   "OP17-096": {
@@ -20286,6 +22539,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Elbaph / The Four Emperors / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "OP17-095": {
@@ -20294,7 +22548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Elbaph / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "2 Cost / 2000 Power"
   },
   "OP17-097": {
@@ -20303,7 +22558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Giant / Elbaph",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "OP17-099": {
@@ -20313,6 +22569,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
     "rarity": "L",
+    "pack": "569117",
     "cost": "5 Life / 5000 Power"
   },
   "OP17-104": {
@@ -20321,7 +22578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "3 Cost / 4000 Power"
   },
   "OP17-098": {
@@ -20330,7 +22588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Elbaph / The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "OP17-103": {
@@ -20339,7 +22598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "6 Cost / 4000 Power"
   },
   "OP17-101": {
@@ -20348,7 +22608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Caribou Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "5 Cost / 6000 Power"
   },
   "OP17-102": {
@@ -20357,7 +22618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "4 Cost / 4000 Power"
   },
   "OP17-100": {
@@ -20366,7 +22628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Firetank Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "7 Cost / 8000 Power"
   },
   "OP17-105": {
@@ -20375,7 +22638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Firetank Pirates / Former Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "5 Cost / 0 Power"
   },
   "OP17-106": {
@@ -20384,7 +22648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "5 Cost / 4000 Power"
   },
   "OP17-108": {
@@ -20393,7 +22658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "3 Cost / 4000 Power"
   },
   "OP17-107": {
@@ -20402,7 +22668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "3 Cost / 4000 Power"
   },
   "OP17-110": {
@@ -20411,7 +22678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "7 Cost / 4000 Power"
   },
   "OP17-117": {
@@ -20420,7 +22688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "OP17-109": {
@@ -20430,6 +22699,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "3 Cost / 4000 Power"
   },
   "OP17-111": {
@@ -20438,7 +22708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569117",
     "cost": "3 Cost / 4000 Power"
   },
   "OP17-114": {
@@ -20448,6 +22719,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "6 Cost / 4000 Power"
   },
   "OP17-112": {
@@ -20456,7 +22728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569117",
     "cost": "10 Cost / 12000 Power"
   },
   "OP17-116": {
@@ -20465,7 +22738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "UC",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "OP17-113": {
@@ -20475,6 +22749,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Big Mom Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "1 Cost / 2000 Power"
   },
   "OP17-115": {
@@ -20484,6 +22759,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
     "rarity": "R",
+    "pack": "569117",
     "cost": "1 Cost"
   },
   "P-030": {
@@ -20492,7 +22768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / The Seven Warlords of the Sea / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "P",
+    "pack": "569901",
     "cost": "4 Cost / 5000 Power"
   },
   "PRB02-001": {
@@ -20502,6 +22779,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Navy / SWORD",
     "rarity": "R",
+    "pack": "569302",
     "cost": "4 Cost / 5000 Power"
   },
   "P-041": {
@@ -20510,7 +22788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "P",
+    "pack": "569901",
     "cost": "10 Cost / 12000 Power"
   },
   "OP17-118": {
@@ -20519,7 +22798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Rocks Pirates",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569117",
     "cost": "10 Cost / 12000 Power"
   },
   "PRB01-001": {
@@ -20529,6 +22809,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Straw Hat Crew",
     "rarity": "L",
+    "pack": "569301",
     "cost": "5 Life / 5000 Power"
   },
   "P-014": {
@@ -20537,7 +22818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Navy",
-    "rarity": "R",
+    "rarity": "P",
+    "pack": "569901",
     "cost": "3 Cost / 3000 Power"
   },
   "P-084": {
@@ -20546,7 +22828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Four Emperors / Cross Guild",
-    "rarity": "R",
+    "rarity": "P",
+    "pack": "569025",
     "cost": "7 Cost / 8000 Power"
   },
   "OP17-119": {
@@ -20555,7 +22838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Giant / Elbaph",
-    "rarity": "R",
+    "rarity": "SEC",
+    "pack": "569117",
     "cost": "6 Cost / 8000 Power"
   },
   "P-055": {
@@ -20564,7 +22848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "P",
+    "pack": "569901",
     "cost": "4 Cost / 5000 Power"
   },
   "P-029": {
@@ -20573,7 +22858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Supernovas / Barto Club",
-    "rarity": "R",
+    "rarity": "P",
+    "pack": "569901",
     "cost": "2 Cost / 3000 Power"
   },
   "P-053": {
@@ -20582,7 +22868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "P",
+    "pack": "569901",
     "cost": "1 Cost / 1000 Power"
   },
   "P-061": {
@@ -20591,7 +22878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "P",
+    "pack": "569901",
     "cost": "8 Cost / 10000 Power"
   },
   "PRB02-003": {
@@ -20601,6 +22889,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Red-Haired Pirates",
     "rarity": "R",
+    "pack": "569302",
     "cost": "4 Cost / 2000 Power"
   },
   "PRB02-005": {
@@ -20609,7 +22898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569302",
     "cost": "4 Cost / 5000 Power"
   },
   "PRB02-002": {
@@ -20618,7 +22908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Punk Hazard / The Seven Warlords of the Sea / Heart Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569302",
     "cost": "6 Cost / 7000 Power"
   },
   "PRB02-004": {
@@ -20628,6 +22919,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / Bonney Pirates",
     "rarity": "R",
+    "pack": "569302",
     "cost": "3 Cost / 3000 Power"
   },
   "PRB02-006": {
@@ -20637,6 +22929,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / Straw Hat Crew",
     "rarity": "R",
+    "pack": "569302",
     "cost": "4 Cost / 4000 Power"
   },
   "PRB02-007": {
@@ -20646,6 +22939,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Fish-Man / The Seven Warlords of the Sea / The Sun Pirates",
     "rarity": "R",
+    "pack": "569302",
     "cost": "4 Cost / 5000 Power"
   },
   "PRB02-008": {
@@ -20654,7 +22948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Land of Wano / Former Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569302",
     "cost": "4 Cost / 6000 Power"
   },
   "PRB02-010": {
@@ -20663,7 +22958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569302",
     "cost": "7 Cost / 5000 Power"
   },
   "PRB02-012": {
@@ -20673,6 +22969,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "Straw Hat Crew",
     "rarity": "R",
+    "pack": "569302",
     "cost": "2 Cost / 2000 Power"
   },
   "PRB02-009": {
@@ -20682,6 +22979,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "Cross Guild / Former Baroque Works",
     "rarity": "R",
+    "pack": "569302",
     "cost": "2 Cost / 1000 Power"
   },
   "PRB02-011": {
@@ -20691,6 +22989,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
     "rarity": "R",
+    "pack": "569302",
     "cost": "5 Cost / 6000 Power"
   },
   "PRB02-013": {
@@ -20700,6 +22999,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
     "rarity": "R",
+    "pack": "569302",
     "cost": "6 Cost / 7000 Power"
   },
   "PRB02-014": {
@@ -20708,7 +23008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569302",
     "cost": "6 Cost / 6000 Power"
   },
   "ST01-002": {
@@ -20717,7 +23018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "2 Cost / 2000 Power"
   },
   "PRB02-016": {
@@ -20727,6 +23029,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Land of Wano",
     "rarity": "R",
+    "pack": "569302",
     "cost": "2 Cost / 0 Power"
   },
   "PRB02-015": {
@@ -20736,6 +23039,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Blackbeard Pirates",
     "rarity": "R",
+    "pack": "569302",
     "cost": "4 Cost / 5000 Power"
   },
   "PRB02-017": {
@@ -20744,7 +23048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "FILM / The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569302",
     "cost": "5 Cost / 7000 Power"
   },
   "PRB02-018": {
@@ -20754,6 +23059,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Whitebeard Pirates",
     "rarity": "R",
+    "pack": "569302",
     "cost": "5 Cost / 7000 Power"
   },
   "ST01-001": {
@@ -20763,6 +23069,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "Supernovas / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569001",
     "cost": "5 Life / 5000 Power"
   },
   "ST01-003": {
@@ -20771,7 +23078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "1 Cost / 3000 Power"
   },
   "ST01-004": {
@@ -20780,7 +23088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "2 Cost / 4000 Power"
   },
   "ST01-007": {
@@ -20789,7 +23098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "1 Cost / 1000 Power"
   },
   "ST01-008": {
@@ -20798,7 +23108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "3 Cost / 5000 Power"
   },
   "ST01-005": {
@@ -20807,7 +23118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Fish-Man / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "3 Cost / 5000 Power"
   },
   "ST01-010": {
@@ -20816,7 +23128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "4 Cost / 6000 Power"
   },
   "ST01-006": {
@@ -20825,7 +23138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "1 Cost / 1000 Power"
   },
   "ST01-009": {
@@ -20834,7 +23148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "2 Cost / 4000 Power"
   },
   "ST01-011": {
@@ -20843,7 +23158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "2 Cost / 3000 Power"
   },
   "ST01-012": {
@@ -20852,7 +23168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569001",
     "cost": "5 Cost / 6000 Power"
   },
   "ST01-013": {
@@ -20861,7 +23178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569001",
     "cost": "3 Cost / 5000 Power"
   },
   "ST01-014": {
@@ -20870,7 +23188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "1 Cost"
   },
   "ST02-001": {
@@ -20880,6 +23199,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "Supernovas / Kid Pirates",
     "rarity": "L",
+    "pack": "569002",
     "cost": "5 Life / 5000 Power"
   },
   "ST01-015": {
@@ -20888,7 +23208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "4 Cost"
   },
   "ST02-002": {
@@ -20897,7 +23218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Firetank Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "3 Cost / 5000 Power"
   },
   "ST02-004": {
@@ -20906,7 +23228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Firetank Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "1 Cost / 1000 Power"
   },
   "ST02-007": {
@@ -20915,7 +23238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "1 Cost / 1000 Power"
   },
   "ST01-017": {
@@ -20924,7 +23248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "2 Cost"
   },
   "ST01-016": {
@@ -20933,7 +23258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569001",
     "cost": "1 Cost"
   },
   "ST02-005": {
@@ -20942,7 +23268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "3 Cost / 3000 Power"
   },
   "ST02-009": {
@@ -20951,7 +23278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569002",
     "cost": "5 Cost / 6000 Power"
   },
   "ST02-006": {
@@ -20960,7 +23288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "4 Cost / 6000 Power"
   },
   "ST02-003": {
@@ -20969,7 +23298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Fallen Monk Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "2 Cost / 3000 Power"
   },
   "ST02-008": {
@@ -20978,7 +23308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / On-Air Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "2 Cost / 3000 Power"
   },
   "ST02-010": {
@@ -20987,7 +23318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Hawkins Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "5 Cost / 6000 Power"
   },
   "ST02-011": {
@@ -20996,7 +23328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "2 Cost / 4000 Power"
   },
   "ST02-013": {
@@ -21005,7 +23338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569002",
     "cost": "7 Cost / 7000 Power"
   },
   "ST02-012": {
@@ -21014,7 +23348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "1 Cost / 3000 Power"
   },
   "ST03-004": {
@@ -21023,7 +23358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "4 Cost / 5000 Power"
   },
   "ST02-017": {
@@ -21032,7 +23368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Supernovas / Hawkins Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "2 Cost"
   },
   "ST02-016": {
@@ -21041,7 +23378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "2 Cost"
   },
   "ST03-006": {
@@ -21050,7 +23388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Fish-Man / The Seven Warlords of the Sea / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "2 Cost / 4000 Power"
   },
   "ST02-015": {
@@ -21059,7 +23398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "1 Cost"
   },
   "ST03-001": {
@@ -21069,6 +23409,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
     "rarity": "L",
+    "pack": "569003",
     "cost": "5 Life / 5000 Power"
   },
   "ST02-014": {
@@ -21077,7 +23418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Navy / Supernovas / Drake Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569002",
     "cost": "4 Cost / 5000 Power"
   },
   "ST03-003": {
@@ -21086,7 +23428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569003",
     "cost": "5 Cost / 6000 Power"
   },
   "ST03-002": {
@@ -21095,7 +23438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "3 Cost / 5000 Power"
   },
   "ST03-011": {
@@ -21104,7 +23448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Buggy's Delivery",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "1 Cost / 3000 Power"
   },
   "ST03-005": {
@@ -21113,7 +23458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "4 Cost / 5000 Power"
   },
   "ST03-007": {
@@ -21122,7 +23468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "3 Cost / 4000 Power"
   },
   "ST03-017": {
@@ -21131,7 +23478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "2 Cost"
   },
   "ST03-008": {
@@ -21140,7 +23488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "1 Cost / 1000 Power"
   },
   "ST03-009": {
@@ -21149,7 +23498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Donquixote Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569003",
     "cost": "7 Cost / 7000 Power"
   },
   "ST03-012": {
@@ -21158,7 +23508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Biological Weapon / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "4 Cost / 6000 Power"
   },
   "ST03-014": {
@@ -21167,7 +23518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "4 Cost / 4000 Power"
   },
   "ST03-016": {
@@ -21176,7 +23528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "2 Cost"
   },
   "ST04-002": {
@@ -21185,7 +23538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "4 Cost / 5000 Power"
   },
   "ST03-013": {
@@ -21194,7 +23548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "3 Cost / 1000 Power"
   },
   "ST03-010": {
@@ -21203,7 +23558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "2 Cost / 3000 Power"
   },
   "ST03-015": {
@@ -21212,7 +23568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569003",
     "cost": "4 Cost"
   },
   "ST04-001": {
@@ -21222,6 +23579,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
     "rarity": "L",
+    "pack": "569004",
     "cost": "5 Life / 5000 Power"
   },
   "ST04-003": {
@@ -21230,7 +23588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569004",
     "cost": "9 Cost / 10000 Power"
   },
   "ST04-004": {
@@ -21239,7 +23598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569004",
     "cost": "6 Cost / 7000 Power"
   },
   "ST04-012": {
@@ -21248,7 +23608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "4 Cost / 6000 Power"
   },
   "ST04-011": {
@@ -21257,7 +23618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "2 Cost / 2000 Power"
   },
   "ST04-010": {
@@ -21266,7 +23628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "3 Cost / 3000 Power"
   },
   "ST04-005": {
@@ -21275,7 +23638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "5 Cost / 6000 Power"
   },
   "ST04-006": {
@@ -21284,7 +23648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "3 Cost / 4000 Power"
   },
   "ST04-007": {
@@ -21293,7 +23658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / Smile",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "2 Cost / 4000 Power"
   },
   "ST04-014": {
@@ -21302,7 +23668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "4 Cost"
   },
   "ST04-008": {
@@ -21311,7 +23678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "3 Cost / 4000 Power"
   },
   "ST04-009": {
@@ -21320,7 +23688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates / Smile",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "1 Cost / 3000 Power"
   },
   "ST04-015": {
@@ -21329,7 +23698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "6 Cost"
   },
   "ST04-016": {
@@ -21338,7 +23708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "1 Cost"
   },
   "ST04-013": {
@@ -21347,7 +23718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Navy / Drake Pirates / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "3 Cost / 5000 Power"
   },
   "ST05-001": {
@@ -21357,6 +23729,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Purple",
     "traits": "FILM / The Four Emperors / Red-Haired Pirates",
     "rarity": "L",
+    "pack": "569005",
     "cost": "5 Life / 5000 Power"
   },
   "ST04-017": {
@@ -21365,7 +23738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Purple",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569004",
     "cost": "3 Cost"
   },
   "ST05-007": {
@@ -21374,7 +23748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "1 Cost / 3000 Power"
   },
   "ST05-004": {
@@ -21383,7 +23758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569005",
     "cost": "4 Cost / 5000 Power"
   },
   "ST05-005": {
@@ -21392,7 +23768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Grantesoro",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "2 Cost / 3000 Power"
   },
   "ST05-002": {
@@ -21401,7 +23778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Neo Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "4 Cost / 5000 Power"
   },
   "ST05-012": {
@@ -21410,7 +23788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Grantesoro",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "3 Cost / 5000 Power"
   },
   "ST05-013": {
@@ -21419,7 +23798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Neo Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "4 Cost / 6000 Power"
   },
   "ST05-003": {
@@ -21428,7 +23808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / The Pirates Fest",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "2 Cost / 3000 Power"
   },
   "ST05-009": {
@@ -21437,7 +23818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Animal / Golden Lion Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "2 Cost / 3000 Power"
   },
   "ST05-010": {
@@ -21446,7 +23828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Neo Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "7 Cost / 8000 Power"
   },
   "ST05-006": {
@@ -21455,7 +23838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Grantesoro",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "5 Cost / 6000 Power"
   },
   "ST05-008": {
@@ -21464,7 +23848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Golden Lion Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "6 Cost / 7000 Power"
   },
   "ST05-011": {
@@ -21473,7 +23858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / The Pirates Fest",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569005",
     "cost": "8 Cost / 10000 Power"
   },
   "ST05-015": {
@@ -21482,7 +23868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / Scientist / Golden Lion Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "2 Cost / 4000 Power"
   },
   "ST05-014": {
@@ -21491,7 +23878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "FILM / The Pirates Fest",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "1 Cost / 0 Power"
   },
   "ST06-004": {
@@ -21500,7 +23888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569006",
     "cost": "5 Cost / 7000 Power"
   },
   "ST06-008": {
@@ -21509,7 +23898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "3 Cost / 5000 Power"
   },
   "ST06-002": {
@@ -21518,7 +23908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "1 Cost / 2000 Power"
   },
   "ST06-001": {
@@ -21528,6 +23919,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Navy",
     "rarity": "L",
+    "pack": "569006",
     "cost": "5 Life / 5000 Power"
   },
   "ST05-016": {
@@ -21536,7 +23928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "FILM / Golden Lion Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "3 Cost"
   },
   "ST06-003": {
@@ -21545,7 +23938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "1 Cost / 3000 Power"
   },
   "ST05-017": {
@@ -21554,7 +23948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "FILM / The Pirates Fest",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569005",
     "cost": "2 Cost"
   },
   "ST06-006": {
@@ -21563,7 +23958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "3 Cost / 4000 Power"
   },
   "ST06-005": {
@@ -21572,7 +23968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "5 Cost / 6000 Power"
   },
   "ST06-010": {
@@ -21581,7 +23978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "2 Cost / 3000 Power"
   },
   "ST06-007": {
@@ -21590,7 +23988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "2 Cost / 2000 Power"
   },
   "ST06-009": {
@@ -21599,7 +23998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "2 Cost / 4000 Power"
   },
   "ST06-014": {
@@ -21608,7 +24008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "2 Cost"
   },
   "ST07-001": {
@@ -21618,6 +24019,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
     "rarity": "L",
+    "pack": "569007",
     "cost": "5 Life / 5000 Power"
   },
   "ST06-016": {
@@ -21626,7 +24028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "1 Cost"
   },
   "ST07-005": {
@@ -21635,7 +24038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "4 Cost / 5000 Power"
   },
   "ST06-017": {
@@ -21644,7 +24048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "1 Cost"
   },
   "ST06-013": {
@@ -21653,7 +24058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "3 Cost / 5000 Power"
   },
   "ST07-003": {
@@ -21662,7 +24068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569007",
     "cost": "4 Cost / 6000 Power"
   },
   "ST07-006": {
@@ -21671,7 +24078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "2 Cost / 4000 Power"
   },
   "ST06-011": {
@@ -21680,7 +24088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "4 Cost / 6000 Power"
   },
   "ST06-015": {
@@ -21689,7 +24098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569006",
     "cost": "1 Cost"
   },
   "ST07-002": {
@@ -21698,7 +24108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "1 Cost / 3000 Power"
   },
   "ST06-012": {
@@ -21707,7 +24118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569006",
     "cost": "5 Cost / 6000 Power"
   },
   "ST07-004": {
@@ -21716,7 +24128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "5 Cost / 6000 Power"
   },
   "ST07-007": {
@@ -21725,7 +24138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "3 Cost / 1000 Power"
   },
   "ST08-002": {
@@ -21734,7 +24148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569008",
     "cost": "2 Cost / 3000 Power"
   },
   "ST07-010": {
@@ -21743,7 +24158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569007",
     "cost": "7 Cost / 8000 Power"
   },
   "ST07-008": {
@@ -21752,7 +24168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "2 Cost / 3000 Power"
   },
   "ST07-012": {
@@ -21761,7 +24178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "4 Cost / 6000 Power"
   },
   "ST07-009": {
@@ -21770,7 +24188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "3 Cost / 4000 Power"
   },
   "ST07-015": {
@@ -21779,7 +24198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "5 Cost"
   },
   "ST07-014": {
@@ -21788,7 +24208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Minks / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "3 Cost / 5000 Power"
   },
   "ST07-011": {
@@ -21797,7 +24218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates / Homies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "3 Cost / 3000 Power"
   },
   "ST08-003": {
@@ -21806,7 +24228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569008",
     "cost": "2 Cost / 4000 Power"
   },
   "ST07-017": {
@@ -21815,7 +24238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Yellow",
     "traits": "Big Mom Pirates / Homies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "2 Cost"
   },
   "ST07-016": {
@@ -21824,7 +24248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "1 Cost"
   },
   "ST07-013": {
@@ -21833,7 +24258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates / Homies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569007",
     "cost": "3 Cost / 3000 Power"
   },
   "ST08-001": {
@@ -21843,6 +24269,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Straw Hat Crew",
     "rarity": "L",
+    "pack": "569008",
     "cost": "5 Life / 5000 Power"
   },
   "ST08-006": {
@@ -21851,7 +24278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Merfolk",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569008",
     "cost": "4 Cost / 0 Power"
   },
   "ST09-001": {
@@ -21861,6 +24289,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Land of Wano",
     "rarity": "L",
+    "pack": "569009",
     "cost": "5 Life / 5000 Power"
   },
   "ST08-004": {
@@ -21869,7 +24298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569008",
     "cost": "4 Cost / 1000 Power"
   },
   "ST08-007": {
@@ -21878,7 +24308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Alabasta",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569008",
     "cost": "3 Cost / 1000 Power"
   },
   "ST08-008": {
@@ -21887,7 +24318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Mountain Bandits",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569008",
     "cost": "1 Cost / 2000 Power"
   },
   "ST08-005": {
@@ -21896,7 +24328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569008",
     "cost": "9 Cost / 10000 Power"
   },
   "ST08-009": {
@@ -21905,7 +24338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Windmill Village",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569008",
     "cost": "2 Cost / 0 Power"
   },
   "ST08-010": {
@@ -21914,7 +24348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569008",
     "cost": "5 Cost / 7000 Power"
   },
   "ST08-012": {
@@ -21923,7 +24358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569008",
     "cost": "4 Cost / 6000 Power"
   },
   "ST08-013": {
@@ -21932,7 +24368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Former Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569008",
     "cost": "5 Cost / 6000 Power"
   },
   "ST08-011": {
@@ -21941,7 +24378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569008",
     "cost": "3 Cost / 5000 Power"
   },
   "ST08-015": {
@@ -21950,7 +24388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569008",
     "cost": "3 Cost"
   },
   "ST08-014": {
@@ -21959,7 +24398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569008",
     "cost": "2 Cost"
   },
   "ST09-004": {
@@ -21968,7 +24408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Four Emperors / Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569009",
     "cost": "4 Cost / 5000 Power"
   },
   "ST09-003": {
@@ -21977,7 +24418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal Kingdom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569009",
     "cost": "4 Cost / 6000 Power"
   },
   "ST09-002": {
@@ -21986,7 +24428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569009",
     "cost": "4 Cost / 5000 Power"
   },
   "ST09-005": {
@@ -21995,7 +24438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569009",
     "cost": "7 Cost / 7000 Power"
   },
   "ST09-008": {
@@ -22004,7 +24448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569009",
     "cost": "5 Cost / 6000 Power"
   },
   "ST09-007": {
@@ -22013,7 +24458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569009",
     "cost": "3 Cost / 2000 Power"
   },
   "ST09-011": {
@@ -22022,7 +24468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569009",
     "cost": "3 Cost / 5000 Power"
   },
   "ST09-009": {
@@ -22031,7 +24478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569009",
     "cost": "3 Cost / 4000 Power"
   },
   "ST09-006": {
@@ -22040,7 +24488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569009",
     "cost": "2 Cost / 4000 Power"
   },
   "ST09-010": {
@@ -22049,7 +24498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569009",
     "cost": "6 Cost / 7000 Power"
   },
   "ST10-001": {
@@ -22059,6 +24509,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Purple",
     "traits": "Heart Pirates",
     "rarity": "L",
+    "pack": "569010",
     "cost": "4 Life / 5000 Power"
   },
   "ST09-014": {
@@ -22067,7 +24518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569009",
     "cost": "1 Cost"
   },
   "ST09-013": {
@@ -22076,7 +24528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569009",
     "cost": "5 Cost / 7000 Power"
   },
   "ST09-012": {
@@ -22085,7 +24538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569009",
     "cost": "3 Cost / 3000 Power"
   },
   "ST10-005": {
@@ -22094,7 +24548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Fish-Man / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569010",
     "cost": "2 Cost / 2000 Power"
   },
   "ST10-004": {
@@ -22103,7 +24558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569010",
     "cost": "6 Cost / 6000 Power"
   },
   "ST09-015": {
@@ -22112,7 +24568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569009",
     "cost": "2 Cost"
   },
   "ST10-003": {
@@ -22122,6 +24579,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Purple",
     "traits": "Kid Pirates",
     "rarity": "L",
+    "pack": "569010",
     "cost": "5 Life / 5000 Power"
   },
   "ST10-002": {
@@ -22131,6 +24589,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Purple",
     "traits": "Straw Hat Crew",
     "rarity": "L",
+    "pack": "569010",
     "cost": "3 Life / 6000 Power"
   },
   "ST10-008": {
@@ -22139,7 +24598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569010",
     "cost": "4 Cost / 5000 Power"
   },
   "ST10-007": {
@@ -22148,7 +24608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569010",
     "cost": "5 Cost / 6000 Power"
   },
   "ST10-006": {
@@ -22157,7 +24618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569010",
     "cost": "10 Cost / 11000 Power"
   },
   "ST10-009": {
@@ -22166,7 +24628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569010",
     "cost": "4 Cost / 5000 Power"
   },
   "ST10-010": {
@@ -22175,7 +24638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Heart Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569010",
     "cost": "4 Cost / 5000 Power"
   },
   "ST10-012": {
@@ -22184,7 +24648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Minks / Heart Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569010",
     "cost": "4 Cost / 5000 Power"
   },
   "ST10-011": {
@@ -22193,7 +24658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569010",
     "cost": "3 Cost / 4000 Power"
   },
   "ST10-013": {
@@ -22202,7 +24668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569010",
     "cost": "7 Cost / 8000 Power"
   },
   "ST10-014": {
@@ -22211,7 +24678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569010",
     "cost": "3 Cost / 3000 Power"
   },
   "ST10-017": {
@@ -22220,7 +24688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Purple",
     "traits": "Kid Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569010",
     "cost": "3 Cost"
   },
   "ST10-015": {
@@ -22229,7 +24698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569010",
     "cost": "1 Cost"
   },
   "ST11-001": {
@@ -22239,6 +24709,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green",
     "traits": "FILM",
     "rarity": "L",
+    "pack": "569011",
     "cost": "5 Life / 5000 Power"
   },
   "ST10-016": {
@@ -22247,7 +24718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569010",
     "cost": "5 Cost"
   },
   "ST11-003": {
@@ -22256,7 +24728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Music / FILM",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569011",
     "cost": "2 Cost"
   },
   "ST11-004": {
@@ -22265,7 +24738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Music / FILM",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569011",
     "cost": "1 Cost"
   },
   "ST12-001": {
@@ -22275,6 +24749,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Green/Blue",
     "traits": "Straw Hat Crew",
     "rarity": "L",
+    "pack": "569012",
     "cost": "4 Life / 5000 Power"
   },
   "ST12-003": {
@@ -22283,7 +24758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "The Seven Warlords of the Sea / Muggy Kingdom",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569012",
     "cost": "3 Cost / 4000 Power"
   },
   "ST11-005": {
@@ -22292,7 +24768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Music / FILM",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569011",
     "cost": "3 Cost"
   },
   "ST11-002": {
@@ -22301,7 +24778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569011",
     "cost": "3 Cost / 4000 Power"
   },
   "ST12-004": {
@@ -22310,7 +24788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Animal / Muggy Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "3 Cost / 5000 Power"
   },
   "ST12-002": {
@@ -22319,7 +24798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Frost Moon Village",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "3 Cost / 2000 Power"
   },
   "ST12-005": {
@@ -22328,7 +24808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Muggy Kingdom / Thriller Bark Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "4 Cost / 6000 Power"
   },
   "ST12-007": {
@@ -22337,7 +24818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "2 Cost / 0 Power"
   },
   "ST12-006": {
@@ -22346,7 +24828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "2 Cost / 3000 Power"
   },
   "ST12-010": {
@@ -22355,7 +24838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Impel Down / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569012",
     "cost": "3 Cost / 4000 Power"
   },
   "ST12-012": {
@@ -22364,7 +24848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "2 Cost / 2000 Power"
   },
   "ST12-008": {
@@ -22373,7 +24858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "4 Cost / 6000 Power"
   },
   "ST12-009": {
@@ -22382,7 +24868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Animal",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "1 Cost / 3000 Power"
   },
   "ST12-013": {
@@ -22391,7 +24878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "5 Cost / 5000 Power"
   },
   "ST12-014": {
@@ -22400,7 +24888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Flying Fish Riders",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "2 Cost / 1000 Power"
   },
   "ST12-011": {
@@ -22409,7 +24898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "2 Cost / 3000 Power"
   },
   "ST12-017": {
@@ -22418,7 +24908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "1 Cost"
   },
   "ST13-002": {
@@ -22428,6 +24919,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue/Yellow",
     "traits": "Whitebeard Pirates",
     "rarity": "L",
+    "pack": "569013",
     "cost": "4 Life / 5000 Power"
   },
   "ST13-001": {
@@ -22437,6 +24929,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Yellow",
     "traits": "Dressrosa / Revolutionary Army",
     "rarity": "L",
+    "pack": "569013",
     "cost": "4 Life / 5000 Power"
   },
   "ST12-015": {
@@ -22445,7 +24938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "East Blue",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "2 Cost / 4000 Power"
   },
   "ST12-016": {
@@ -22454,7 +24948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Green",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569012",
     "cost": "2 Cost"
   },
   "ST13-003": {
@@ -22464,6 +24959,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black/Yellow",
     "traits": "Supernovas / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569013",
     "cost": "4 Life / 5000 Power"
   },
   "ST13-004": {
@@ -22472,7 +24968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569013",
     "cost": "6 Cost / 7000 Power"
   },
   "ST13-005": {
@@ -22482,6 +24979,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Revolutionary Army",
     "rarity": "R",
+    "pack": "569013",
     "cost": "3 Cost / 4000 Power"
   },
   "ST13-006": {
@@ -22490,7 +24988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Mountain Bandits",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569013",
     "cost": "5 Cost / 4000 Power"
   },
   "ST13-007": {
@@ -22499,7 +24998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Goa Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569013",
     "cost": "2 Cost / 2000 Power"
   },
   "ST13-008": {
@@ -22508,7 +25008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569013",
     "cost": "5 Cost / 6000 Power"
   },
   "ST13-010": {
@@ -22517,7 +25018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Goa Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569013",
     "cost": "2 Cost / 2000 Power"
   },
   "ST13-011": {
@@ -22526,7 +25028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569013",
     "cost": "5 Cost / 7000 Power"
   },
   "ST14-005": {
@@ -22535,7 +25038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "4 Cost / 6000 Power"
   },
   "ST13-014": {
@@ -22544,7 +25048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Goa Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569013",
     "cost": "2 Cost / 2000 Power"
   },
   "ST13-009": {
@@ -22553,7 +25058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Four Emperors / Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569013",
     "cost": "7 Cost / 7000 Power"
   },
   "ST13-013": {
@@ -22562,7 +25068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569013",
     "cost": "1 Cost / 2000 Power"
   },
   "ST13-016": {
@@ -22571,7 +25078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569013",
     "cost": "5 Cost / 4000 Power"
   },
   "ST13-012": {
@@ -22580,7 +25088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Windmill Village",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569013",
     "cost": "1 Cost / 0 Power"
   },
   "ST13-015": {
@@ -22589,7 +25098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569013",
     "cost": "5 Cost / 6000 Power"
   },
   "ST13-018": {
@@ -22598,7 +25108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Punk Hazard / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569013",
     "cost": "1 Cost"
   },
   "ST13-017": {
@@ -22607,7 +25118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569013",
     "cost": "2 Cost"
   },
   "ST14-004": {
@@ -22616,7 +25128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Fish-Man / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "3 Cost / 4000 Power"
   },
   "ST14-009": {
@@ -22625,7 +25138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "5 Cost / 6000 Power"
   },
   "ST14-002": {
@@ -22634,7 +25148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "3 Cost / 4000 Power"
   },
   "ST13-019": {
@@ -22643,7 +25158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Goa Kingdom",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569013",
     "cost": "1 Cost"
   },
   "ST14-008": {
@@ -22652,7 +25168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Sky Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "1 Cost / 0 Power"
   },
   "ST14-003": {
@@ -22661,7 +25178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569014",
     "cost": "5 Cost / 6000 Power"
   },
   "ST14-001": {
@@ -22671,6 +25189,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Black",
     "traits": "Straw Hat Crew",
     "rarity": "L",
+    "pack": "569014",
     "cost": "5 Life / 5000 Power"
   },
   "ST14-010": {
@@ -22679,7 +25198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "5 Cost / 7000 Power"
   },
   "ST14-007": {
@@ -22688,7 +25208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "6 Cost / 7000 Power"
   },
   "ST14-006": {
@@ -22697,7 +25218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569014",
     "cost": "3 Cost / 2000 Power"
   },
   "ST14-011": {
@@ -22706,7 +25228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Bowin Island",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "1 Cost / 2000 Power"
   },
   "ST14-013": {
@@ -22715,7 +25238,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "6 Cost / 8000 Power"
   },
   "ST15-004": {
@@ -22724,7 +25248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569015",
     "cost": "1 Cost / 2000 Power"
   },
   "ST15-003": {
@@ -22733,7 +25258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569015",
     "cost": "3 Cost / 4000 Power"
   },
   "ST14-012": {
@@ -22742,7 +25268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "8 Cost / 10000 Power"
   },
   "ST15-002": {
@@ -22751,7 +25278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569015",
     "cost": "7 Cost / 8000 Power"
   },
   "ST14-015": {
@@ -22760,7 +25288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "2 Cost"
   },
   "ST16-001": {
@@ -22769,7 +25298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569016",
     "cost": "4 Cost / 6000 Power"
   },
   "ST15-001": {
@@ -22778,7 +25308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569015",
     "cost": "4 Cost / 5000 Power"
   },
   "ST14-016": {
@@ -22787,7 +25318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "1 Cost"
   },
   "ST14-017": {
@@ -22796,7 +25328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "1 Cost"
   },
   "ST14-014": {
@@ -22805,7 +25338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Black",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569014",
     "cost": "1 Cost"
   },
   "ST15-005": {
@@ -22814,7 +25348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569015",
     "cost": "5 Cost / 6000 Power"
   },
   "ST16-002": {
@@ -22823,7 +25358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569016",
     "cost": "2 Cost / 0 Power"
   },
   "ST16-003": {
@@ -22832,7 +25368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569016",
     "cost": "3 Cost / 4000 Power"
   },
   "ST16-005": {
@@ -22841,7 +25378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569016",
     "cost": "2 Cost / 3000 Power"
   },
   "ST16-004": {
@@ -22850,7 +25388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "FILM / The Four Emperors / Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569016",
     "cost": "9 Cost / 11000 Power"
   },
   "ST17-001": {
@@ -22859,7 +25398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569017",
     "cost": "4 Cost / 5000 Power"
   },
   "ST17-002": {
@@ -22868,7 +25408,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Heart Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569017",
     "cost": "4 Cost / 5000 Power"
   },
   "ST18-001": {
@@ -22877,7 +25418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569018",
     "cost": "3 Cost / 3000 Power"
   },
   "ST17-005": {
@@ -22886,7 +25428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569017",
     "cost": "2 Cost / 3000 Power"
   },
   "ST18-004": {
@@ -22895,7 +25438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569018",
     "cost": "4 Cost / 6000 Power"
   },
   "ST17-004": {
@@ -22904,7 +25448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Kuja Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569017",
     "cost": "4 Cost / 6000 Power"
   },
   "ST17-003": {
@@ -22913,7 +25458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Seven Warlords of the Sea / Buggy's Delivery",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569017",
     "cost": "1 Cost / 2000 Power"
   },
   "ST18-003": {
@@ -22922,7 +25468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569018",
     "cost": "5 Cost / 6000 Power"
   },
   "ST18-002": {
@@ -22931,7 +25478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569018",
     "cost": "4 Cost / 2000 Power"
   },
   "ST19-001": {
@@ -22940,7 +25488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569019",
     "cost": "6 Cost / 8000 Power"
   },
   "ST18-005": {
@@ -22949,7 +25498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569018",
     "cost": "7 Cost / 8000 Power"
   },
   "ST19-002": {
@@ -22958,7 +25508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569019",
     "cost": "1 Cost / 1000 Power"
   },
   "ST20-004": {
@@ -22967,7 +25518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569020",
     "cost": "3 Cost / 2000 Power"
   },
   "ST20-005": {
@@ -22976,7 +25528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "The Four Emperors / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569020",
     "cost": "6 Cost / 7000 Power"
   },
   "ST21-001": {
@@ -22986,6 +25539,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red",
     "traits": "The Four Emperors / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569021",
     "cost": "5 Life / 5000 Power"
   },
   "ST19-003": {
@@ -22994,7 +25548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569019",
     "cost": "5 Cost / 6000 Power"
   },
   "ST20-001": {
@@ -23003,7 +25558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569020",
     "cost": "5 Cost / 6000 Power"
   },
   "ST19-004": {
@@ -23012,7 +25568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569019",
     "cost": "4 Cost / 6000 Power"
   },
   "ST20-002": {
@@ -23021,7 +25578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569020",
     "cost": "4 Cost / 5000 Power"
   },
   "ST20-003": {
@@ -23030,7 +25588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569020",
     "cost": "3 Cost / 3000 Power"
   },
   "ST21-002": {
@@ -23039,7 +25598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "2 Cost / 3000 Power"
   },
   "ST19-005": {
@@ -23048,7 +25608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569019",
     "cost": "3 Cost / 4000 Power"
   },
   "ST21-003": {
@@ -23057,7 +25618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "2 Cost / 3000 Power"
   },
   "ST21-004": {
@@ -23066,7 +25628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Egghead / Bonney Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "1 Cost / 3000 Power"
   },
   "ST21-007": {
@@ -23075,7 +25638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Egghead / Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "2 Cost / 2000 Power"
   },
   "ST21-006": {
@@ -23084,7 +25648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Egghead",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "3 Cost / 5000 Power"
   },
   "ST21-015": {
@@ -23093,7 +25658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569021",
     "cost": "4 Cost / 5000 Power"
   },
   "ST21-009": {
@@ -23102,7 +25668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "3 Cost / 1000 Power"
   },
   "ST21-012": {
@@ -23111,7 +25678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "3 Cost / 4000 Power"
   },
   "ST21-011": {
@@ -23120,7 +25688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "3 Cost / 4000 Power"
   },
   "ST21-005": {
@@ -23129,7 +25698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Fish-Man / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "2 Cost / 4000 Power"
   },
   "ST21-014": {
@@ -23138,7 +25708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569021",
     "cost": "5 Cost / 6000 Power"
   },
   "ST21-008": {
@@ -23147,7 +25718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "4 Cost / 6000 Power"
   },
   "ST21-017": {
@@ -23156,7 +25728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "4 Cost"
   },
   "ST21-013": {
@@ -23165,7 +25738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Scientist / Egghead",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "1 Cost / 3000 Power"
   },
   "ST21-010": {
@@ -23174,7 +25748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "3 Cost / 4000 Power"
   },
   "ST21-016": {
@@ -23183,7 +25758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569021",
     "cost": "2 Cost"
   },
   "ST22-002": {
@@ -23192,7 +25768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Land of Wano / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569022",
     "cost": "1 Cost / 0 Power"
   },
   "ST22-001": {
@@ -23202,6 +25779,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Blue",
     "traits": "The Four Emperors / Whitebeard Pirates",
     "rarity": "L",
+    "pack": "569022",
     "cost": "5 Life / 5000 Power"
   },
   "ST22-003": {
@@ -23210,7 +25788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "9 Cost / 10000 Power"
   },
   "ST22-004": {
@@ -23219,7 +25798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "3 Cost / 5000 Power"
   },
   "ST22-007": {
@@ -23228,7 +25808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "1 Cost / 2000 Power"
   },
   "ST22-005": {
@@ -23237,7 +25818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Land of Wano / Kouzuki Clan / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569022",
     "cost": "7 Cost / 8000 Power"
   },
   "ST22-009": {
@@ -23246,7 +25828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "1 Cost / 1000 Power"
   },
   "ST22-006": {
@@ -23255,7 +25838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "7 Cost / 8000 Power"
   },
   "ST22-008": {
@@ -23264,7 +25848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "2 Cost / 4000 Power"
   },
   "ST22-010": {
@@ -23273,7 +25858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "5 Cost / 6000 Power"
   },
   "ST22-013": {
@@ -23282,7 +25868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Giant / Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "5 Cost / 7000 Power"
   },
   "ST22-011": {
@@ -23291,7 +25878,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "1 Cost / 1000 Power"
   },
   "ST22-014": {
@@ -23300,7 +25888,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "4 Cost / 6000 Power"
   },
   "ST22-012": {
@@ -23309,7 +25898,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "4 Cost / 5000 Power"
   },
   "ST22-015": {
@@ -23318,7 +25908,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "8 Cost"
   },
   "ST22-017": {
@@ -23327,7 +25918,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "5 Cost"
   },
   "ST24-005": {
@@ -23336,7 +25928,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Navy / Drake Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569024",
     "cost": "5 Cost / 5000 Power"
   },
   "ST24-001": {
@@ -23345,7 +25938,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Firetank Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569024",
     "cost": "2 Cost / 1000 Power"
   },
   "ST23-002": {
@@ -23354,7 +25948,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Four Emperors / Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569023",
     "cost": "9 Cost / 10000 Power"
   },
   "ST23-003": {
@@ -23363,7 +25958,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569023",
     "cost": "4 Cost / 5000 Power"
   },
   "ST22-016": {
@@ -23372,7 +25968,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Blue",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569022",
     "cost": "1 Cost"
   },
   "ST24-002": {
@@ -23381,7 +25978,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569024",
     "cost": "2 Cost / 2000 Power"
   },
   "ST23-001": {
@@ -23390,7 +25988,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569023",
     "cost": "6 Cost / 4000 Power"
   },
   "ST23-005": {
@@ -23399,7 +25998,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Red-Haired Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569023",
     "cost": "1 Cost / 1000 Power"
   },
   "ST23-004": {
@@ -23408,7 +26008,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "FILM / Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569023",
     "cost": "1 Cost / 2000 Power"
   },
   "ST24-004": {
@@ -23417,7 +26018,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Minks / Supernovas / Heart Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569024",
     "cost": "10 Cost / 11000 Power"
   },
   "ST24-003": {
@@ -23426,7 +26028,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Hawkins Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569024",
     "cost": "4 Cost / 4000 Power"
   },
   "ST26-002": {
@@ -23435,7 +26038,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Animal / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569026",
     "cost": "3 Cost / 4000 Power"
   },
   "ST25-003": {
@@ -23444,7 +26048,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569025",
     "cost": "8 Cost / 7000 Power"
   },
   "ST25-002": {
@@ -23453,7 +26058,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569025",
     "cost": "4 Cost / 1000 Power"
   },
   "ST27-001": {
@@ -23462,7 +26068,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569027",
     "cost": "1 Cost / 1000 Power"
   },
   "ST26-004": {
@@ -23471,7 +26078,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569026",
     "cost": "8 Cost / 10000 Power"
   },
   "ST25-001": {
@@ -23480,7 +26088,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569025",
     "cost": "4 Cost / 5000 Power"
   },
   "ST26-003": {
@@ -23489,7 +26098,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569026",
     "cost": "3 Cost / 4000 Power"
   },
   "ST28-001": {
@@ -23498,7 +26108,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569028",
     "cost": "3 Cost / 3000 Power"
   },
   "ST25-004": {
@@ -23507,7 +26118,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "The Four Emperors / Cross Guild",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569025",
     "cost": "4 Cost / 1000 Power"
   },
   "ST28-003": {
@@ -23516,7 +26128,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569028",
     "cost": "4 Cost / 5000 Power"
   },
   "ST25-005": {
@@ -23525,7 +26138,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Cross Guild",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569025",
     "cost": "4 Cost / 1000 Power"
   },
   "ST27-003": {
@@ -23534,7 +26148,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Blackbeard Pirates / Former Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569027",
     "cost": "6 Cost / 6000 Power"
   },
   "ST26-005": {
@@ -23543,7 +26158,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569026",
     "cost": "6 Cost / 7000 Power"
   },
   "ST26-001": {
@@ -23552,7 +26168,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569026",
     "cost": "7 Cost / 9000 Power"
   },
   "ST27-005": {
@@ -23561,7 +26178,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "The Four Emperors / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569027",
     "cost": "7 Cost / 8000 Power"
   },
   "ST27-004": {
@@ -23570,7 +26188,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Giant / Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569027",
     "cost": "4 Cost / 6000 Power"
   },
   "ST27-002": {
@@ -23579,7 +26198,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Blackbeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569027",
     "cost": "1 Cost / 1000 Power"
   },
   "ST28-002": {
@@ -23588,7 +26208,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / Former Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569028",
     "cost": "2 Cost / 1000 Power"
   },
   "ST28-004": {
@@ -23597,7 +26218,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569028",
     "cost": "6 Cost / 7000 Power"
   },
   "ST29-003": {
@@ -23606,7 +26228,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / CP0",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "4 Cost / 5000 Power"
   },
   "ST29-001": {
@@ -23616,6 +26239,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Yellow",
     "traits": "Egghead / The Four Emperors / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569029",
     "cost": "6 Life / 5000 Power"
   },
   "ST28-005": {
@@ -23624,7 +26248,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Land of Wano",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569028",
     "cost": "1 Cost / 0 Power"
   },
   "ST29-007": {
@@ -23633,7 +26258,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Animal / Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "4 Cost / 5000 Power"
   },
   "ST29-005": {
@@ -23642,7 +26268,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Fish-Man / Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "6 Cost / 5000 Power"
   },
   "ST29-002": {
@@ -23651,7 +26278,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "3 Cost / 4000 Power"
   },
   "ST29-004": {
@@ -23660,7 +26288,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569029",
     "cost": "4 Cost / 5000 Power"
   },
   "ST29-006": {
@@ -23669,7 +26298,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "6 Cost / 7000 Power"
   },
   "ST29-008": {
@@ -23678,7 +26308,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "3 Cost / 1000 Power"
   },
   "ST29-009": {
@@ -23687,7 +26318,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "4 Cost / 2000 Power"
   },
   "ST29-012": {
@@ -23696,7 +26328,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "1 Cost / 0 Power"
   },
   "ST29-011": {
@@ -23705,7 +26338,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "2 Cost / 2000 Power"
   },
   "ST29-014": {
@@ -23714,7 +26348,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569029",
     "cost": "6 Cost / 8000 Power"
   },
   "ST29-010": {
@@ -23723,7 +26358,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "5 Cost / 6000 Power"
   },
   "ST29-013": {
@@ -23732,7 +26368,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Egghead / CP0",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "5 Cost / 6000 Power"
   },
   "ST29-016": {
@@ -23741,7 +26378,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Egghead / The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "1 Cost"
   },
   "ST29-015": {
@@ -23750,7 +26388,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "1 Cost"
   },
   "ST29-017": {
@@ -23759,7 +26398,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Yellow",
     "traits": "Egghead / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569029",
     "cost": "2 Cost"
   },
   "ST30-001": {
@@ -23769,6 +26409,7 @@ const ONE_PIECE_CARDS_DB = {
     "color": "Red/Green",
     "traits": "Impel Down / Whitebeard Pirates / Straw Hat Crew",
     "rarity": "L",
+    "pack": "569030",
     "cost": "4 Life / 6000 Power"
   },
   "ST30-003": {
@@ -23777,7 +26418,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Four Emperors / Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "8 Cost / 6000 Power"
   },
   "ST30-002": {
@@ -23786,7 +26428,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Impel Down / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "1 Cost / 2000 Power"
   },
   "ST30-006": {
@@ -23795,7 +26438,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Fish-Man / Impel Down / The Sun Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "5 Cost / 6000 Power"
   },
   "ST30-004": {
@@ -23804,7 +26448,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Impel Down / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "1 Cost / 2000 Power"
   },
   "ST30-005": {
@@ -23813,7 +26458,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "5 Cost / 6000 Power"
   },
   "ST30-011": {
@@ -23822,7 +26468,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down / Buggy Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "2 Cost / 1000 Power"
   },
   "ST30-007": {
@@ -23831,7 +26478,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569030",
     "cost": "4 Cost / 6000 Power"
   },
   "ST30-015": {
@@ -23840,7 +26488,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "1 Cost"
   },
   "ST30-010": {
@@ -23849,7 +26498,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "6 Cost / 6000 Power"
   },
   "ST30-008": {
@@ -23858,7 +26508,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "5 Cost / 6000 Power"
   },
   "ST30-012": {
@@ -23867,7 +26518,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569030",
     "cost": "4 Cost / 6000 Power"
   },
   "ST30-017": {
@@ -23876,7 +26528,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Whitebeard Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "1 Cost"
   },
   "ST30-009": {
@@ -23885,7 +26538,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Giant / Whitebeard Pirates Allies",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "1 Cost / 2000 Power"
   },
   "ST30-013": {
@@ -23894,7 +26548,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "4 Cost / 6000 Power"
   },
   "ST31-001": {
@@ -23903,7 +26558,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569031",
     "cost": "5 Cost / 3000 Power"
   },
   "ST30-014": {
@@ -23912,7 +26568,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Impel Down / Former Baroque Works",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "2 Cost / 3000 Power"
   },
   "ST30-016": {
@@ -23921,7 +26578,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Event",
     "color": "Red",
     "traits": "Whitebeard Pirates / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569030",
     "cost": "1 Cost"
   },
   "ST32-002": {
@@ -23930,7 +26588,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / Kouzuki Clan",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569032",
     "cost": "5 Cost / 6000 Power"
   },
   "ST32-001": {
@@ -23939,7 +26598,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Land of Wano / The Akazaya Nine",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569032",
     "cost": "1 Cost / 2000 Power"
   },
   "ST31-003": {
@@ -23948,7 +26608,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569031",
     "cost": "2 Cost / 3000 Power"
   },
   "ST33-001": {
@@ -23957,7 +26618,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569033",
     "cost": "2 Cost / 1000 Power"
   },
   "ST31-005": {
@@ -23966,7 +26628,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Stage",
     "color": "Red",
     "traits": "Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569031",
     "cost": "1 Cost"
   },
   "ST31-002": {
@@ -23975,7 +26638,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Fish-Man / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569031",
     "cost": "5 Cost / 6000 Power"
   },
   "ST33-002": {
@@ -23984,7 +26648,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569033",
     "cost": "4 Cost / 5000 Power"
   },
   "ST33-005": {
@@ -23993,7 +26658,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569033",
     "cost": "6 Cost / 6000 Power"
   },
   "ST32-004": {
@@ -24002,7 +26668,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Former Roger Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569032",
     "cost": "4 Cost / 5000 Power"
   },
   "ST32-005": {
@@ -24011,7 +26678,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Supernovas / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569032",
     "cost": "1 Cost / 2000 Power"
   },
   "ST31-004": {
@@ -24020,7 +26688,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "The Four Emperors / Straw Hat Crew",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569031",
     "cost": "7 Cost / 9000 Power"
   },
   "ST33-004": {
@@ -24029,7 +26698,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569033",
     "cost": "6 Cost / 6000 Power"
   },
   "ST32-003": {
@@ -24038,7 +26708,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Green",
     "traits": "Muggy Kingdom / The Seven Warlords of the Sea",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569032",
     "cost": "6 Cost / 7000 Power"
   },
   "ST33-003": {
@@ -24047,7 +26718,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Blue",
     "traits": "Navy",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569033",
     "cost": "2 Cost / 3000 Power"
   },
   "ST35-002": {
@@ -24056,7 +26728,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Minks / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569035",
     "cost": "4 Cost / 4000 Power"
   },
   "ST35-003": {
@@ -24065,7 +26738,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569035",
     "cost": "3 Cost / 4000 Power"
   },
   "ST34-003": {
@@ -24074,7 +26748,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569034",
     "cost": "1 Cost / 2000 Power"
   },
   "ST34-004": {
@@ -24083,7 +26758,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "The Four Emperors / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569034",
     "cost": "10 Cost / 12000 Power"
   },
   "ST35-001": {
@@ -24092,7 +26768,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Red",
     "traits": "Fish-Man / Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569035",
     "cost": "4 Cost / 4000 Power"
   },
   "ST34-001": {
@@ -24101,7 +26778,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569034",
     "cost": "5 Cost / 7000 Power"
   },
   "ST34-002": {
@@ -24110,7 +26788,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569034",
     "cost": "4 Cost / 5000 Power"
   },
   "ST34-005": {
@@ -24119,7 +26798,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Purple",
     "traits": "Minks / Big Mom Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569034",
     "cost": "3 Cost / 4000 Power"
   },
   "ST35-005": {
@@ -24128,7 +26808,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569035",
     "cost": "5 Cost / 5000 Power"
   },
   "ST36-004": {
@@ -24137,7 +26818,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Dressrosa / Supernovas / Barto Club",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569036",
     "cost": "1 Cost / 2000 Power"
   },
   "ST36-001": {
@@ -24146,7 +26828,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Dressrosa / Supernovas / Beautiful Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569036",
     "cost": "3 Cost / 3000 Power"
   },
   "ST35-004": {
@@ -24155,7 +26838,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Black",
     "traits": "Dressrosa / Revolutionary Army",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569035",
     "cost": "7 Cost / 6000 Power"
   },
   "ST36-002": {
@@ -24164,7 +26848,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569036",
     "cost": "4 Cost / 6000 Power"
   },
   "ST36-005": {
@@ -24173,7 +26858,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / Kid Pirates",
-    "rarity": "R",
+    "rarity": "SR",
+    "pack": "569036",
     "cost": "6 Cost / 7000 Power"
   },
   "ST36-003": {
@@ -24182,7 +26868,8 @@ const ONE_PIECE_CARDS_DB = {
     "cardType": "Character",
     "color": "Yellow",
     "traits": "Supernovas / On-Air Pirates",
-    "rarity": "R",
+    "rarity": "C",
+    "pack": "569036",
     "cost": "4 Cost / 4000 Power"
   }
 };
@@ -25125,6 +27812,10 @@ function transformRemoteCard(c) {
 
   if (c.img_url) {
     cardObj.img = c.img_url;
+  }
+  // Sobre / producto en el que sale la carta (lo usa el abridor de sobres)
+  if (c.pack_id) {
+    cardObj.pack = String(c.pack_id);
   }
 
   return cardObj;

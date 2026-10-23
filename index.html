@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>One Piece TCG - Dex & Album</title>
-  <link rel="stylesheet" href="style.css?v=3.2">
+  <link rel="stylesheet" href="style.css?v=3.4">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏴‍☠️</text></svg>">
 </head>
 <body>
@@ -492,6 +492,18 @@
       </div>
     </section>
 
+    <!-- VISTA: ABRIR SOBRES -->
+    <section id="view-packs" class="view-panel">
+      <div class="packs-box">
+        <div class="packs-intro">
+          <h2>🎁 Abrir Sobres</h2>
+          <p class="export-desc">Abre sobres de cualquier expansión con sus cartas reales y probabilidades aproximadas. Al terminar puedes guardar todo, o solo las cartas que elijas, en la carpeta que quieras.</p>
+        </div>
+        <div id="packs-grid" class="packs-grid"></div>
+        <div id="packs-action-bar" class="packs-action-bar"></div>
+      </div>
+    </section>
+
   </div>
 
   <!-- Barra de Navegación Inferior Móvil -->
@@ -503,6 +515,10 @@
     <button class="nav-button" data-target="view-scanner">
       <span class="nav-icon">➕</span>
       <span class="nav-label">Añadir</span>
+    </button>
+    <button class="nav-button" data-target="view-packs">
+      <span class="nav-icon">🎁</span>
+      <span class="nav-label">Sobres</span>
     </button>
     <button class="nav-button" data-target="view-export">
       <span class="nav-icon">📊</span>
@@ -1013,6 +1029,19 @@
     </div>
   </div>
 
+  <!-- APERTURA DE SOBRES (pantalla completa) -->
+  <div id="pack-open-overlay" class="pack-overlay">
+    <div class="pack-overlay-top">
+      <div class="pack-overlay-heading">
+        <span id="pack-overlay-title" class="pack-overlay-title">🎁 Sobre</span>
+        <span id="pack-overlay-progress" class="pack-overlay-progress"></span>
+      </div>
+      <button type="button" class="close-modal-btn" data-action="close" title="Cerrar">✕</button>
+    </div>
+    <div id="pack-stage" class="pack-stage"></div>
+    <div id="pack-overlay-actions" class="pack-overlay-actions"></div>
+  </div>
+
   <!-- Firebase SDKs (Compatibles sin necesidad de build tools) -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
@@ -1020,8 +1049,10 @@
   <script src="firebase-config.js"></script>
   
   <!-- Scripts de la Aplicación -->
-  <script src="cards-data.js?v=3.5"></script>
-  <script src="prices-data.js?v=2.0"></script>
-  <script src="app.js?v=3.5"></script>
+  <script src="cards-data.js?v=3.6"></script>
+  <script src="prices-data.js?v=2.2"></script>
+  <script src="packs-data.js?v=1.0"></script>
+  <script src="app.js?v=3.7"></script>
+  <script src="pack-opener.js?v=1.1"></script>
 </body>
 </html>
