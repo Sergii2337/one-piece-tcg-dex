@@ -1,7 +1,7 @@
 // Nombre oficial y portada (versión inglesa) de cada sobre, por pack_id.
 // Generado automáticamente con tools/update_packs.py — no editar a mano.
 
-const ONE_PIECE_PACKS_META = {"source": "https://en.onepiece-cardgame.com/products/", "generatedAt": "2026-10-23T10:21:10"};
+const ONE_PIECE_PACKS_META = {"source": "https://en.onepiece-cardgame.com/products/", "generatedAt": "2026-10-24T09:42:30"};
 
 const ONE_PIECE_PACKS = {
   "569101": {"name": "ROMANCE DAWN", "label": "OP-01", "cover": "https://en.onepiece-cardgame.com/renewal/images/products/boosters/op01/img_item01.webp"},
