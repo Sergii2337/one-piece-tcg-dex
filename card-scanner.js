@@ -9,18 +9,22 @@ const CARD_RATIO = 63 / 88; // ancho / alto de una carta
 // Zona del código dentro de la carta (fracciones del marco guía): abajo a la derecha
 const CODE_ZONE = { x: 0.45, y: 0.85, w: 0.55, h: 0.15 };
 
-// Preprocesados que se van alternando en cada fotograma: [invertir, canal]
+// Preprocesados que se van alternando en cada fotograma: [invertir, canal, binarizar]
 // lum = gris normal; g = verde (texto dorado sobre morado); b = azul (texto dorado sobre fondo rosa/blanco)
-const FRAME_VARIANTS = [[true, 'lum'], [true, 'g'], [false, 'lum'], [false, 'b']];
+// Los binarizados son para las cartas foil / full art (secretas), con el código sobre el dibujo
+const FRAME_VARIANTS = [
+  [true, 'lum', false], [true, 'g', false], [false, 'lum', false], [false, 'b', false],
+  [true, 'lum', true], [false, 'lum', true]
+];
 const READ_WINDOW_MS = 8000;
 
 // Saca los códigos de carta de un texto de OCR, corrigiendo las confusiones típicas
-// (0P09-093 -> OP09-093, 5727-005 / 5127-005 -> ST27-005, OP0S-O93 -> OP05-093...)
+// (0P09-093 -> OP09-093, OP09-I|9 -> OP09-119, 5727-005 / 5127-005 -> ST27-005, OP0S-O93 -> OP05-093...)
 function extractCardCodes(text) {
   const t = String(text || '').toUpperCase();
-  const digits = (s) => s.replace(/O/g, '0').replace(/[IL]/g, '1').replace(/S/g, '5').replace(/B/g, '8');
+  const digits = (s) => s.replace(/O/g, '0').replace(/[IL|!]/g, '1').replace(/S/g, '5').replace(/B/g, '8');
   const prefix = (s) => s.replace(/^[0Q]P$/, 'OP').replace(/^[S5][T71I]$/, 'ST').replace(/^E8$/, 'EB').replace(/^PR8$/, 'PRB');
-  const re = /(PR[B8]|E[B8]|[O0Q]P|[S5][T71I])\s?([0-9OILSB]{2})\s?[-–—~]?\s?([0-9OILSB]{3})/g;
+  const re = /(PR[B8]|E[B8]|[O0Q]P|[S5][T71I])\s?([0-9OILSB|!]{2})\s?[-–—~]?\s?([0-9OILSB|!]{3})/g;
   const out = [];
   let m;
   while ((m = re.exec(t))) {
@@ -28,6 +32,30 @@ function extractCardCodes(text) {
     if (!out.includes(id)) out.push(id);
   }
   return out;
+}
+
+// Umbral de Otsu: el nivel de gris que mejor separa texto y fondo según el histograma
+function otsuThreshold(hist, total) {
+  let sumAll = 0;
+  for (let v = 0; v < 256; v++) sumAll += v * hist[v];
+  let sumBack = 0;
+  let weightBack = 0;
+  let best = 0;
+  let threshold = 127;
+  for (let v = 0; v < 256; v++) {
+    weightBack += hist[v];
+    if (!weightBack) continue;
+    const weightFore = total - weightBack;
+    if (!weightFore) break;
+    sumBack += v * hist[v];
+    const diff = sumBack / weightBack - (sumAll - sumBack) / weightFore;
+    const between = weightBack * weightFore * diff * diff;
+    if (between > best) {
+      best = between;
+      threshold = v;
+    }
+  }
+  return threshold;
 }
 
 function loadScript(src) {
@@ -285,7 +313,8 @@ class CardScanner {
   // Dibuja una zona de la fuente en el canvas, ampliada, en escala de grises y con contraste.
   // invert: el código suele ser texto blanco sobre fondo oscuro y Tesseract lee mejor negro sobre blanco.
   // channel: 'lum' (gris) o un solo canal ('g' / 'b'): el texto dorado se confunde con algunos fondos en gris
-  prepareCanvas(source, sx, sy, sw, sh, targetWidth, invert, channel = 'lum') {
+  // binarize: blanco/negro puro con umbral de Otsu (separa el texto del arte de fondo en las cartas full art)
+  prepareCanvas(source, sx, sy, sw, sh, targetWidth, invert, channel = 'lum', binarize = false) {
     const scale = targetWidth / sw;
     const canvas = this.canvas;
     canvas.width = Math.round(sw * scale);
@@ -296,17 +325,28 @@ class CardScanner {
 
     const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const d = img.data;
-    let min = 255;
-    let max = 0;
+    const hist = new Uint32Array(256);
     for (let i = 0; i < d.length; i += 4) {
-      const g = channel === 'g' ? d[i + 1] : channel === 'b' ? d[i + 2] : d[i] * 0.299 + d[i + 1] * 0.587 + d[i + 2] * 0.114;
+      const g = Math.round(channel === 'g' ? d[i + 1] : channel === 'b' ? d[i + 2] : d[i] * 0.299 + d[i + 1] * 0.587 + d[i + 2] * 0.114);
       d[i] = g;
-      if (g < min) min = g;
-      if (g > max) max = g;
+      hist[g]++;
     }
+    // Contraste por percentiles, no por mínimo/máximo: en las cartas foil (secretas, paralelas)
+    // un reflejo de brillo puro dejaba el resto del recorte casi sin contraste
+    const total = d.length / 4;
+    const percentile = (p) => {
+      let acc = 0;
+      for (let v = 0; v < 256; v++) if ((acc += hist[v]) >= total * p) return v;
+      return 255;
+    };
+    const min = percentile(0.02);
+    const max = percentile(0.98);
     const range = Math.max(1, max - min);
+    const threshold = binarize ? otsuThreshold(hist, total) : -1;
     for (let i = 0; i < d.length; i += 4) {
-      let v = ((d[i] - min) / range) * 255;
+      let v = threshold >= 0
+        ? (d[i] > threshold ? 255 : 0)
+        : Math.min(255, Math.max(0, ((d[i] - min) / range) * 255));
       if (invert) v = 255 - v;
       d[i] = d[i + 1] = d[i + 2] = v;
     }
@@ -350,12 +390,12 @@ class CardScanner {
 
       // Alterna preprocesados: cada carta se lee mejor con uno (fondo oscuro, claro, texto dorado...)
       const variant = this.frameCount++ % FRAME_VARIANTS.length;
-      const [invert, channel] = FRAME_VARIANTS[variant];
+      const [invert, channel, binarize] = FRAME_VARIANTS[variant];
       const started = performance.now();
-      const ids = await this.recognize(this.prepareCanvas(video, sx, sy, sw, sh, 1200, invert, channel));
+      const ids = await this.recognize(this.prepareCanvas(video, sx, sy, sw, sh, 1200, invert, channel, binarize));
       this.attempts++;
       this.renderDebug(`Vídeo ${video.videoWidth}x${video.videoHeight} · recorte ${Math.round(sw)}x${Math.round(sh)} px · ` +
-        `${FRAME_VARIANTS[variant].join('/')} · ${Math.round(performance.now() - started)} ms · intento ${this.attempts}`);
+        `${[invert ? 'inv' : 'norm', channel, binarize ? 'b/n' : 'gris'].join('/')} · ${Math.round(performance.now() - started)} ms · intento ${this.attempts}`);
       if (this.state !== 'scanning') return;
       if (!ids.length) {
         if (!this.recentReads.length) this.setStatus(`🔍 Buscando el código... (${this.attempts} intentos)`);
@@ -403,8 +443,8 @@ class CardScanner {
         [0, 0, w, h]                              // foto entera
       ];
       for (const [sx, sy, sw, sh] of zones) {
-        for (const [invert, channel] of FRAME_VARIANTS) {
-          const ids = await this.recognize(this.prepareCanvas(bitmap, sx, sy, sw, sh, Math.min(2000, Math.max(1200, sw)), invert, channel));
+        for (const [invert, channel, binarize] of FRAME_VARIANTS) {
+          const ids = await this.recognize(this.prepareCanvas(bitmap, sx, sy, sw, sh, Math.min(2000, Math.max(1200, sw)), invert, channel, binarize));
           if (ids.length) {
             this.showResult(ids[0]);
             return;
