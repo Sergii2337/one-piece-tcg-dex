@@ -1635,7 +1635,7 @@ body {
   gap: 10px;
 }
 
-/* Botones para tiendas / Marketplaces (Cardmarket, CardTrader, Simulador) */
+/* Botones para tiendas / Marketplaces (Wishlist, Simulador) */
 .btn-market {
   display: flex;
   align-items: center;
@@ -1707,11 +1707,6 @@ body {
 .btn-cardmarket {
   background: linear-gradient(135deg, #005086, #0077c8);
   border-color: rgba(0, 119, 200, 0.6);
-}
-
-.btn-cardtrader {
-  background: linear-gradient(135deg, #0f766e, #0d9488);
-  border-color: rgba(13, 148, 136, 0.6);
 }
 
 .btn-sim {

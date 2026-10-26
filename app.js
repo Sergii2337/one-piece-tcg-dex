@@ -445,9 +445,7 @@ class OnePieceApp {
       // Export Source & Wishlist
       exportFolderSelect: document.getElementById('export-folder-select'),
       exportSourceStatsBadge: document.getElementById('export-source-stats-badge'),
-      btnExportWishlist: document.getElementById('btn-export-wishlist') || document.getElementById('btn-export-cardmarket'),
-      btnExportCardmarket: document.getElementById('btn-export-cardmarket'),
-      btnExportCardtrader: document.getElementById('btn-export-cardtrader'),
+      btnExportWishlist: document.getElementById('btn-export-wishlist'),
       btnExportSim: document.getElementById('btn-export-sim'),
 
       // Export / Import Spreadsheets
@@ -1051,17 +1049,7 @@ class OnePieceApp {
     // Exportar - Lista de Deseos (Wishlist) & Tiendas
     if (this.dom.btnExportWishlist) {
       this.dom.btnExportWishlist.addEventListener('click', () => {
-        this.exportCardmarketWants();
-      });
-    }
-    if (this.dom.btnExportCardmarket) {
-      this.dom.btnExportCardmarket.addEventListener('click', () => {
-        this.exportCardmarketWants();
-      });
-    }
-    if (this.dom.btnExportCardtrader) {
-      this.dom.btnExportCardtrader.addEventListener('click', () => {
-        this.exportCardTraderWishlist();
+        this.exportWishlist();
       });
     }
     if (this.dom.btnExportSim) {
@@ -3767,11 +3755,10 @@ class OnePieceApp {
     return normalizeCardId(cardId || '').split('_')[0];
   }
 
-  // Línea de la Wants List de Cardmarket con versión (V.n) y expansión inglesa exactas cuando
-  // se conocen (prices-data.js); si no, Cardmarket acepta cualquier versión de ese código.
-  // La expansión solo se entiende detrás de "(V.n)": sin versión, Cardmarket la toma como parte
-  // del nombre y rechaza la línea ("Nefeltari Vivi OP13-012 Carrying on his Will")
-  cardmarketWantLine(card, qty) {
+  // Línea de wishlist: "1x Nombre CÓDIGO" (vale en Cardmarket y CardTrader). En las cartas con
+  // varias versiones en su expansión (prices-data.js) se añade "(V.n) Expansión" para que
+  // Cardmarket pida esa versión exacta y no cualquiera con el mismo código
+  wishlistLine(card, qty) {
     const entry = (window.ONE_PIECE_PRICES_DB || {})[normalizeCardId(card.id)];
     const expansion = entry && entry.v && (window.ONE_PIECE_MKM_EXPANSIONS || {})[entry.exp];
     const suffix = expansion ? ` (V.${entry.v}) ${expansion}` : '';
@@ -3785,55 +3772,14 @@ class OnePieceApp {
       return;
     }
 
-    // Formato Wishlist Universal: [Quantity]x [Card Name] [Collector Number]
-    const lines = this.mergeExportCards(cards).map(({ card, qty }) =>
-      `${qty}x ${(card.name || '').trim()} ${this.baseCardCode(card.id)}`);
+    const lines = this.mergeExportCards(cards).map(({ card, qty }) => this.wishlistLine(card, qty));
 
     const text = lines.join('\n');
     const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);
     this.copyAndPreviewExport(
       text,
       `Wishlist - ${name}`,
-      `Formato directo para lista de deseos (${totalCopies} cartas de "${name}"). ¡Ya está copiado en tu portapapeles!`
-    );
-  }
-
-  exportCardmarketWants() {
-    const { name, cards } = this.getSelectedExportCards();
-    if (cards.length === 0) {
-      this.showToast(`No tienes cartas en "${name}" para exportar`);
-      return;
-    }
-
-    // Formato Cardmarket Wants (help.cardmarket.com): "2x Roronoa Zoro OP01-025 (V.2) Romance Dawn"
-    const lines = this.mergeExportCards(cards).map(({ card, qty }) => this.cardmarketWantLine(card, qty));
-
-    const text = lines.join('\n');
-    const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);
-    this.copyAndPreviewExport(
-      text,
-      `Cardmarket Wants - ${name}`,
-      `Formato directo para la Wants List de Cardmarket (${totalCopies} cartas de "${name}"). ¡Ya está en tu portapapeles!`
-    );
-  }
-
-  exportCardTraderWishlist() {
-    const { name, cards } = this.getSelectedExportCards();
-    if (cards.length === 0) {
-      this.showToast(`No tienes cartas en "${name}" para exportar`);
-      return;
-    }
-
-    // Formato CardTrader: [Quantity]x [Card Name] [Collector Number]
-    const lines = this.mergeExportCards(cards).map(({ card, qty }) =>
-      `${qty}x ${(card.name || '').trim()} ${this.baseCardCode(card.id)}`);
-
-    const text = lines.join('\n');
-    const totalCopies = cards.reduce((sum, c) => sum + (c.count || 0), 0);
-    this.copyAndPreviewExport(
-      text,
-      `CardTrader Wishlist - ${name}`,
-      `Formato directo para importar a CardTrader Wishlist (${totalCopies} cartas de "${name}"). ¡Ya está en tu portapapeles!`
+      `Lista de deseos para Cardmarket o CardTrader (${totalCopies} cartas de "${name}"). ¡Ya está copiado en tu portapapeles!`
     );
   }
 
