@@ -46,7 +46,9 @@ class OnePieceApp {
     this.activeQtyCard = null;
 
     // Ordenación de Álbum y Poster
-    this.albumSortOrder = 'color';
+    this.albumSortOrder = localStorage.getItem('op_album_sort_order') || 'color';
+    this.albumCustomOrders = this.loadAlbumCustomOrders(); // clave carpeta -> [ids]
+    this.albumBaseCards = [];
     this.currentImageSortOrder = 'color';
     this.moveFolderMode = 'move';
 
@@ -237,7 +239,14 @@ class OnePieceApp {
     const merged = new Map();
     cards.forEach(c => {
       if (!c || !c.id) return;
-      const id = normalizeCardId(c.id);
+      let id = normalizeCardId(c.id);
+      // Repara ids de importaciones antiguas que incluían la cantidad: "2XOP13-067" -> "OP13-067" x2
+      const qtyPrefixed = id.match(/^(\d{1,3})X((?:OP|ST|EB|PRB)\d{2}-\d{3}.*)$/);
+      if (qtyPrefixed) {
+        id = qtyPrefixed[2];
+        c = { ...c, count: (c.count || 1) * parseInt(qtyPrefixed[1]) };
+        Object.assign(c, findOrGenerateCard(id), { count: c.count, folderId: c.folderId, addedAt: c.addedAt });
+      }
       const key = `${id}|${c.folderId || 'default'}`;
       const existing = merged.get(key);
       if (existing) {
@@ -773,11 +782,16 @@ class OnePieceApp {
 
     // Selector de Ordenación de Álbum
     if (this.dom.albumSortSelect) {
+      this.dom.albumSortSelect.value = this.albumSortOrder;
       this.dom.albumSortSelect.addEventListener('change', (e) => {
         this.albumSortOrder = e.target.value;
+        localStorage.setItem('op_album_sort_order', this.albumSortOrder);
         this.renderAlbum();
       });
     }
+
+    // Arrastrar cartas del álbum para crear un orden personalizado
+    this.initAlbumDragSort();
 
     // Selector de Ordenación en Modal de Imagen
     if (this.dom.imageSortSelect) {
@@ -1836,13 +1850,14 @@ class OnePieceApp {
   }
 
   // Añade varias cartas de golpe ([{ card, qty }]) con un solo guardado / escritura en Firestore
-  async addCardsToTargetFolder(items, targetFolderId) {
+  async addCardsToTargetFolder(items, targetFolderId, { silent = false } = {}) {
     const folderId = targetFolderId || 'default';
-    const isShared = this.sharedFolderIds.includes(folderId) || this.sharedFoldersMap.has(folderId);
+    const isShared = this.isSharedFolderId(folderId);
     const folder = isShared ? (this.sharedFoldersMap.get(folderId) || { id: folderId, cards: [] }) : null;
     const target = isShared ? (folder.cards = folder.cards || []) : this.collection;
     const addedAt = new Date().toLocaleDateString();
     let total = 0;
+    let newCount = 0;
 
     items.forEach(({ card, qty }) => {
       const existing = target.find(c => c.id === card.id && (isShared || c.folderId === folderId));
@@ -1850,8 +1865,10 @@ class OnePieceApp {
         existing.count += qty;
       } else if (isShared) {
         target.unshift({ ...card, count: qty, addedBy: this.currentUser ? (this.currentUser.displayName || 'Amigo') : 'Amigo', addedAt });
+        newCount++;
       } else {
         target.unshift({ ...card, count: qty, folderId, addedAt });
+        newCount++;
       }
       total += qty;
     });
@@ -1864,7 +1881,9 @@ class OnePieceApp {
     this.renderFolderTabs();
     this.renderAlbum();
     this.updateSetGridCardBadges();
-    this.showToast(`✅ +${total} cartas añadidas${isShared ? ` a "${folder.name || 'Compartida'}"` : ''}`);
+    if (!silent) {
+      this.showToast(`✅ +${total} cartas añadidas${isShared ? ` a "${folder.name || 'Compartida'}"` : ''}`);
+    }
 
     if (isShared && window.FIREBASE_DB) {
       try {
@@ -1876,6 +1895,19 @@ class OnePieceApp {
         console.error("Error al añadir cartas a la carpeta compartida en Firestore:", err);
       }
     }
+    return { total, newCount };
+  }
+
+  isSharedFolderId(folderId) {
+    return this.sharedFolderIds.includes(folderId) || this.sharedFoldersMap.has(folderId);
+  }
+
+  // Muestra en el álbum la carpeta (personal o compartida) indicada
+  openFolderInAlbum(folderId) {
+    const scope = this.isSharedFolderId(folderId) ? 'shared' : 'personal';
+    if (this.folderScope !== scope) this.setFolderScope(scope);
+    this.selectFolder(folderId);
+    this.switchTab('album');
   }
 
   async addCardToSharedFolder(folderId, card, qty) {
@@ -1984,6 +2016,10 @@ class OnePieceApp {
 
   renderAlbum() {
     if (!this.dom.albumGrid) return;
+    if (this.albumDragActive) {
+      this.albumRenderPending = true;
+      return;
+    }
     this.dom.albumGrid.className = `cards-grid view-mode-${this.albumViewMode} size-${this.albumCardSize}`;
 
     // Obtener cartas base según el scope activo
@@ -2045,9 +2081,8 @@ class OnePieceApp {
     });
 
     // Ordenar cartas (por defecto estilo Mazo Oficial: Líderes -> Color -> Costes -> Eventos)
-    if (typeof sortCardsDeckStyle === 'function') {
-      filtered = sortCardsDeckStyle(filtered, this.albumSortOrder || 'color');
-    }
+    this.albumBaseCards = rawCards;
+    filtered = this.sortAlbumCards(filtered);
 
     this.dom.albumGrid.innerHTML = '';
 
@@ -2241,6 +2276,302 @@ class OnePieceApp {
     this.updateActiveFolderBanner();
   }
 
+  // =========================================================================
+  // ORDEN PERSONALIZADO (ARRASTRAR Y SOLTAR)
+  // =========================================================================
+
+  loadAlbumCustomOrders() {
+    try {
+      return JSON.parse(localStorage.getItem('op_album_custom_orders_v1') || '{}') || {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  saveAlbumCustomOrders() {
+    localStorage.setItem('op_album_custom_orders_v1', JSON.stringify(this.albumCustomOrders));
+  }
+
+  // Cada carpeta (personal o compartida) guarda su propio orden personalizado
+  getAlbumOrderKey() {
+    return `${this.folderScope}:${this.activeFolderId || 'default'}`;
+  }
+
+  sortAlbumCards(cards) {
+    if (this.albumSortOrder !== 'custom') {
+      return typeof sortCardsDeckStyle === 'function'
+        ? sortCardsDeckStyle(cards, this.albumSortOrder || 'color')
+        : [...cards];
+    }
+    // Las cartas sin posición guardada (p. ej. recién añadidas) van al final en orden por color
+    const fallback = typeof sortCardsDeckStyle === 'function' ? sortCardsDeckStyle(cards, 'color') : [...cards];
+    const order = this.albumCustomOrders[this.getAlbumOrderKey()] || [];
+    const pos = new Map(order.map((id, i) => [id, i]));
+    const fallbackPos = new Map(fallback.map((c, i) => [c.id, i]));
+    return fallback.sort((a, b) => {
+      const pa = pos.has(a.id) ? pos.get(a.id) : order.length + fallbackPos.get(a.id);
+      const pb = pos.has(b.id) ? pos.get(b.id) : order.length + fallbackPos.get(b.id);
+      return pa - pb;
+    });
+  }
+
+  // Guarda el nuevo orden visible. Si hay filtros activos, las cartas visibles
+  // se recolocan en los huecos que ya ocupaban dentro del orden completo.
+  commitAlbumCustomOrder(visibleIds) {
+    const fullIds = this.sortAlbumCards(this.albumBaseCards).map(c => c.id);
+    const visibleSet = new Set(visibleIds);
+    let next = 0;
+    const merged = fullIds.map(id => (visibleSet.has(id) ? visibleIds[next++] : id));
+
+    this.albumCustomOrders[this.getAlbumOrderKey()] = merged;
+    this.saveAlbumCustomOrders();
+
+    this.albumSortOrder = 'custom';
+    localStorage.setItem('op_album_sort_order', 'custom');
+    if (this.dom.albumSortSelect) this.dom.albumSortSelect.value = 'custom';
+    this.renderAlbum();
+  }
+
+  initAlbumDragSort() {
+    const grid = this.dom.albumGrid;
+    if (!grid) return;
+
+    const ITEM_SELECTOR = '.card-item, .card-list-item';
+    const NO_DRAG_SELECTOR = 'button, .step-count, input, select, a';
+    const LONG_PRESS_MS = 300;    // táctil: mantener pulsado para empezar a arrastrar
+    const TOUCH_TOLERANCE = 10;   // táctil: si el dedo se mueve más antes de tiempo, es scroll
+    const MOUSE_THRESHOLD = 5;    // ratón: distancia mínima para empezar a arrastrar
+    const EDGE = 80;              // zona del borde que activa el autoscroll
+
+    let pending = null;   // pulsación iniciada que aún no es arrastre
+    let drag = null;      // arrastre activo
+    let suppressClickUntil = 0;
+    let rafId = null;
+
+    const itemIds = () => Array.from(grid.querySelectorAll(ITEM_SELECTOR)).map(n => n.dataset.id);
+
+    // Evitar el arrastre nativo de imágenes / enlaces
+    grid.addEventListener('dragstart', (e) => e.preventDefault());
+
+    const clearPending = () => {
+      if (!pending) return;
+      clearTimeout(pending.timer);
+      pending.el.classList.remove('album-drag-press');
+      pending = null;
+    };
+
+    const startDrag = (x, y) => {
+      const el = pending.el;
+      const touch = pending.touch;
+      clearPending();
+
+      const rect = el.getBoundingClientRect();
+      const ghost = el.cloneNode(true);
+      ghost.classList.add('album-drag-ghost');
+      ghost.style.width = `${rect.width}px`;
+      ghost.style.height = `${rect.height}px`;
+      document.body.appendChild(ghost);
+
+      el.classList.add('album-drag-source');
+      grid.classList.add('album-dragging');
+      document.body.classList.add('album-drag-active');
+      this.albumDragActive = true;
+
+      // Quitar cualquier selección de texto que haya podido iniciar el navegador
+      const sel = window.getSelection && window.getSelection();
+      if (sel && sel.removeAllRanges) sel.removeAllRanges();
+      if (touch && navigator.vibrate) navigator.vibrate(12);
+
+      drag = {
+        el,
+        ghost,
+        touch,
+        offsetX: x - rect.left,
+        offsetY: y - rect.top,
+        x,
+        y,
+        startOrder: itemIds(),
+        needsUpdate: true
+      };
+      rafId = requestAnimationFrame(frame);
+    };
+
+    // Recoloca la carta bajo el dedo / cursor
+    const reorderAt = (x, y) => {
+      const under = document.elementFromPoint(x, y);
+      const target = under ? under.closest(ITEM_SELECTOR) : null;
+      if (!target || target === drag.el || target.parentElement !== grid) return;
+
+      // Si el destino está después del origen, insertar detrás; si no, delante
+      const items = Array.from(grid.children);
+      if (items.indexOf(target) > items.indexOf(drag.el)) {
+        target.after(drag.el);
+      } else {
+        target.before(drag.el);
+      }
+    };
+
+    // Un único bucle por fotograma: mover la carta fantasma, autoscroll y reordenar
+    const frame = () => {
+      if (!drag) return;
+      const { x, y } = drag;
+      const h = window.innerHeight;
+      let scrolled = false;
+
+      if (y < EDGE) {
+        window.scrollBy(0, -Math.ceil(((EDGE - y) / EDGE) * 18));
+        scrolled = true;
+      } else if (y > h - EDGE) {
+        window.scrollBy(0, Math.ceil(((y - (h - EDGE)) / EDGE) * 18));
+        scrolled = true;
+      }
+
+      if (drag.needsUpdate || scrolled) {
+        drag.ghost.style.transform = `translate3d(${x - drag.offsetX}px, ${y - drag.offsetY}px, 0) rotate(2deg) scale(1.04)`;
+        reorderAt(x, y);
+        drag.needsUpdate = false;
+      }
+      rafId = requestAnimationFrame(frame);
+    };
+
+    const updatePos = (x, y) => {
+      drag.x = x;
+      drag.y = y;
+      drag.needsUpdate = true;
+    };
+
+    const endDrag = (commit) => {
+      if (!drag) return;
+      cancelAnimationFrame(rafId);
+      // Aplicar la última posición aunque no haya llegado a pintarse un fotograma
+      if (commit) reorderAt(drag.x, drag.y);
+      drag.ghost.remove();
+      drag.el.classList.remove('album-drag-source');
+      grid.classList.remove('album-dragging');
+      document.body.classList.remove('album-drag-active');
+
+      const newOrder = itemIds();
+      const changed = newOrder.join('|') !== drag.startOrder.join('|');
+      drag = null;
+      this.albumDragActive = false;
+      // El navegador puede lanzar un "click" justo después de soltar: ignorarlo
+      suppressClickUntil = Date.now() + 450;
+
+      if (commit && changed) {
+        this.commitAlbumCustomOrder(newOrder);
+      } else if (changed || this.albumRenderPending) {
+        this.renderAlbum();
+      }
+      this.albumRenderPending = false;
+    };
+
+    const canStartOn = (target) => {
+      const el = target.closest ? target.closest(ITEM_SELECTOR) : null;
+      if (!el || el.parentElement !== grid || target.closest(NO_DRAG_SELECTOR)) return null;
+      return el;
+    };
+
+    // ---------- TÁCTIL (móvil / tablet): eventos touch ----------
+    // Se usan touch events en vez de pointer events porque permiten bloquear el scroll
+    // de forma fiable en iOS y Android una vez que empieza el arrastre.
+    grid.addEventListener('touchstart', (e) => {
+      if (drag || e.touches.length !== 1) {
+        clearPending();
+        return;
+      }
+      const el = canStartOn(e.target);
+      if (!el) return;
+      const t = e.touches[0];
+      pending = { el, x: t.clientX, y: t.clientY, touch: true, timer: null };
+      el.classList.add('album-drag-press');
+      pending.timer = setTimeout(() => {
+        if (pending) startDrag(pending.x, pending.y);
+      }, LONG_PRESS_MS);
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (drag && drag.touch) {
+        if (e.cancelable) e.preventDefault(); // bloquear scroll mientras se arrastra
+        const t = e.touches[0];
+        if (t) updatePos(t.clientX, t.clientY);
+        return;
+      }
+      if (pending && pending.touch) {
+        const t = e.touches[0];
+        if (!t || Math.hypot(t.clientX - pending.x, t.clientY - pending.y) > TOUCH_TOLERANCE) {
+          clearPending(); // el usuario está haciendo scroll
+        }
+      }
+    }, { passive: false });
+
+    const onTouchEnd = (e) => {
+      if (pending && pending.touch) clearPending();
+      if (drag && drag.touch) {
+        if (e.cancelable) e.preventDefault(); // evita el click fantasma tras soltar
+        endDrag(e.type === 'touchend');
+      }
+    };
+    window.addEventListener('touchend', onTouchEnd, { passive: false });
+    window.addEventListener('touchcancel', onTouchEnd, { passive: false });
+
+    // Si la app pasa a segundo plano a mitad del arrastre, cancelar
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        clearPending();
+        endDrag(false);
+      }
+    });
+
+    // ---------- RATÓN / LÁPIZ: pointer events ----------
+    grid.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'touch' || drag || e.button !== 0) return;
+      const el = canStartOn(e.target);
+      if (!el) return;
+      e.preventDefault(); // evita seleccionar texto al arrastrar
+      pending = { el, x: e.clientX, y: e.clientY, touch: false, timer: null };
+    });
+
+    window.addEventListener('pointermove', (e) => {
+      if (e.pointerType === 'touch') return;
+      if (drag && !drag.touch) {
+        updatePos(e.clientX, e.clientY);
+        return;
+      }
+      if (pending && !pending.touch && Math.hypot(e.clientX - pending.x, e.clientY - pending.y) > MOUSE_THRESHOLD) {
+        startDrag(e.clientX, e.clientY);
+      }
+    });
+
+    window.addEventListener('pointerup', (e) => {
+      if (e.pointerType === 'touch') return;
+      if (pending && !pending.touch) clearPending();
+      if (drag && !drag.touch) endDrag(true);
+    });
+
+    window.addEventListener('pointercancel', (e) => {
+      if (e.pointerType === 'touch') return;
+      if (pending && !pending.touch) clearPending();
+      if (drag && !drag.touch) endDrag(false);
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drag) endDrag(false);
+    });
+
+    // Evitar el menú contextual de pulsación larga (Android) sobre las cartas
+    grid.addEventListener('contextmenu', (e) => {
+      if (drag || pending || e.target.closest(ITEM_SELECTOR)) e.preventDefault();
+    });
+
+    // Que soltar una carta no abra su detalle
+    grid.addEventListener('click', (e) => {
+      if (Date.now() < suppressClickUntil) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    }, true);
+  }
+
   adjustCardCount(cardId, delta) {
     if (this.folderScope === 'shared') {
       this.adjustSharedFolderCardCount(this.activeFolderId, cardId, delta);
@@ -2355,6 +2686,12 @@ class OnePieceApp {
       this.dom.btnMoveModeCopy.classList.toggle('active', mode === 'copy');
     }
     const maxCount = this.movingCard ? (this.movingCard.count || 1) : 1;
+    // Al mover no se pueden quitar más copias de las que hay; al sumar no hay ese límite
+    if (this.dom.moveFolderQtyInput) {
+      const input = this.dom.moveFolderQtyInput;
+      input.max = (mode === 'move') ? maxCount : 99;
+      if (mode === 'move' && (parseInt(input.value) || 1) > maxCount) input.value = maxCount;
+    }
     if (this.dom.moveFolderQtyTitle) {
       this.dom.moveFolderQtyTitle.textContent = (mode === 'move')
         ? '¿Cuántas copias deseas mover?:'
@@ -2488,8 +2825,8 @@ class OnePieceApp {
 
           item.addEventListener('click', () => {
             const rawQty = this.dom.moveFolderQtyInput ? parseInt(this.dom.moveFolderQtyInput.value) : maxCount;
-            const qtyToMove = Math.min(Math.max(1, isNaN(rawQty) ? 1 : rawQty), maxCount);
             const isCopy = (this.moveFolderMode === 'copy');
+            const qtyToMove = Math.min(Math.max(1, isNaN(rawQty) ? 1 : rawQty), isCopy ? 99 : maxCount);
             this.executeMoveCard(this.movingCard, qtyToMove, this.movingSourceFolderId, dest.id, isCopy);
             this.closeMoveFolderModal();
           });
@@ -2577,30 +2914,30 @@ class OnePieceApp {
 
         this.collection = this.collection.filter(c => (c.count || 0) > 0);
         this.saveCollection();
-      }
-    } else {
-      const sharedFolder = this.sharedFoldersMap.get(sourceFolderId);
-      if (!sharedFolder || !sharedFolder.cards) return;
-      const srcIdx = sharedFolder.cards.findIndex(c => c.id === card.id);
-      if (srcIdx < 0) {
-        this.showToast(`No se encontró la carta en "${srcName}"`);
-        return;
-      }
-      actualMoved = Math.min(qtyToMove, sharedFolder.cards[srcIdx].count || 1);
-      sharedFolder.cards[srcIdx].count -= actualMoved;
-      if (sharedFolder.cards[srcIdx].count <= 0) {
-        sharedFolder.cards.splice(srcIdx, 1);
-      }
-      this.sharedFoldersMap.set(sourceFolderId, sharedFolder);
-      this.saveFolders();
-      if (window.FIREBASE_DB) {
-        try {
-          await window.FIREBASE_DB.collection('shared_folders').doc(sourceFolderId).update({
-            cards: sharedFolder.cards,
-            updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-          });
-        } catch (e) {
-          console.error("Error al actualizar origen en Firestore:", e);
+      } else {
+        const sharedFolder = this.sharedFoldersMap.get(sourceFolderId);
+        if (!sharedFolder || !sharedFolder.cards) return;
+        const srcIdx = sharedFolder.cards.findIndex(c => c.id === card.id);
+        if (srcIdx < 0) {
+          this.showToast(`No se encontró la carta en "${srcName}"`);
+          return;
+        }
+        actualMoved = Math.min(qtyToMove, sharedFolder.cards[srcIdx].count || 1);
+        sharedFolder.cards[srcIdx].count -= actualMoved;
+        if (sharedFolder.cards[srcIdx].count <= 0) {
+          sharedFolder.cards.splice(srcIdx, 1);
+        }
+        this.sharedFoldersMap.set(sourceFolderId, sharedFolder);
+        this.saveFolders();
+        if (window.FIREBASE_DB) {
+          try {
+            await window.FIREBASE_DB.collection('shared_folders').doc(sourceFolderId).update({
+              cards: sharedFolder.cards,
+              updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+            });
+          } catch (e) {
+            console.error("Error al actualizar origen en Firestore:", e);
+          }
         }
       }
       if (actualMoved <= 0) return;
@@ -4054,14 +4391,18 @@ class OnePieceApp {
     const reader = new FileReader();
     reader.onload = (event) => {
       const content = event.target.result;
-      this.parseAndImportDelimitedText(content);
+      const target = this.dom.importFolderSelect ? this.dom.importFolderSelect.value : null;
+      this.parseAndImportDelimitedText(content, target);
       e.target.value = '';
     };
     reader.readAsText(file);
   }
 
-  parseAndImportDelimitedText(text) {
+  async parseAndImportDelimitedText(text, targetFolderId) {
     if (!text || !text.trim()) return;
+
+    // Carpeta destino: la elegida en el selector o, si no hay, la carpeta abierta en el álbum
+    const folderId = targetFolderId || this.activeFolderId || 'default';
 
     // Detectar si es un archivo de respaldo JSON
     const trimmed = text.trim();
@@ -4070,38 +4411,22 @@ class OnePieceApp {
         const parsed = JSON.parse(trimmed);
         const importedCards = Array.isArray(parsed) ? parsed : (Array.isArray(parsed.cards) ? parsed.cards : null);
         if (importedCards && importedCards.length > 0) {
-          let totalImportedCopies = 0;
-          let newCardsCount = 0;
-          
+          const items = [];
+          const notFound = [];
+
           importedCards.forEach(c => {
             const cardCode = c.id || c.code;
             if (!cardCode) return;
             const qty = parseInt(c.count || c.qty) || 1;
-            const cardInfo = findOrGenerateCard(cardCode);
-            if (c.name && (!cardInfo.name || cardInfo.name.startsWith("Carta "))) {
-              cardInfo.name = c.name;
+            const cardInfo = findExistingCard(cardCode);
+            if (!cardInfo) {
+              notFound.push(String(cardCode).trim());
+              return;
             }
-
-            const targetFolder = (this.folderScope === 'personal' && this.activeFolderId) ? this.activeFolderId : 'default';
-            const existingIndex = this.collection.findIndex(item => item.id === cardInfo.id && item.folderId === targetFolder);
-            if (existingIndex >= 0) {
-              this.collection[existingIndex].count += qty;
-            } else {
-              this.collection.unshift({
-                ...cardInfo,
-                count: qty,
-                folderId: targetFolder,
-                addedAt: new Date().toLocaleDateString()
-              });
-              newCardsCount++;
-            }
-            totalImportedCopies += qty;
+            items.push({ card: cardInfo, qty });
           });
 
-          this.saveCollection();
-          this.renderAlbum();
-          this.switchTab('album');
-          this.showToast(`💾 ¡Respaldo JSON importado (+${totalImportedCopies} copias)!`);
+          await this.finishImport(items, notFound, folderId, '💾 ¡Respaldo JSON importado');
           return;
         }
       } catch (err) {
@@ -4123,11 +4448,25 @@ class OnePieceApp {
       delimiter = ';';
     }
 
-    let importedCount = 0;
-    let newCardsCount = 0;
+    const items = [];
+    const notFound = [];
 
     lines.forEach((line, idx) => {
-      const cols = this.splitCSVLine(line, delimiter);
+      // Formato lista de mazo: "4xOP01-001", "4 x OP01-001", "4 OP01-001", "OP01-001 x4"
+      let lineQty = null;
+      const cols = this.splitCSVLine(line, delimiter).map(c => {
+        const pre = c.match(/^(\d{1,3})\s*[x×]\s*(\S.*)$/i) || c.match(/^(\d{1,3}) +(\S.*)$/);
+        const post = !pre && c.match(/^(.*\S)\s*[x×]\s*(\d{1,3})$/i);
+        if (pre && this.cleanCardCode(pre[2])) {
+          lineQty = parseInt(pre[1]);
+          return pre[2];
+        }
+        if (post && this.cleanCardCode(post[1])) {
+          lineQty = parseInt(post[2]);
+          return post[1];
+        }
+        return c;
+      });
       if (cols.length === 0) return;
 
       const firstCol = cols[0].trim();
@@ -4152,40 +4491,61 @@ class OnePieceApp {
 
       if (!cardCode || cardCode.length < 4) return;
 
-      for (let c of cols) {
-        const num = parseInt(c.trim());
-        if (!isNaN(num) && num > 0 && num < 1000 && c.trim() !== cardCode && !c.includes('-')) {
-          qty = num;
-          break;
-        }
-      }
-
-      const cardInfo = findOrGenerateCard(cardCode);
-      if (cols.length >= 2 && cols[1] && cols[1].trim() && !this.cleanCardCode(cols[1])) {
-        if (!cardInfo.name || cardInfo.name.startsWith("Carta ")) {
-          cardInfo.name = cols[1].trim();
-        }
-      }
-
-      const existingIndex = this.collection.findIndex(c => c.id === cardInfo.id && c.folderId === 'default');
-      if (existingIndex >= 0) {
-        this.collection[existingIndex].count += qty;
+      if (lineQty > 0) {
+        qty = lineQty;
       } else {
-        this.collection.unshift({
-          ...cardInfo,
-          count: qty,
-          folderId: 'default',
-          addedAt: new Date().toLocaleDateString()
-        });
-        newCardsCount++;
+        for (let c of cols) {
+          const num = parseInt(c.trim());
+          if (!isNaN(num) && num > 0 && num < 1000 && c.trim() !== cardCode && !c.includes('-')) {
+            qty = num;
+            break;
+          }
+        }
       }
-      importedCount += qty;
+
+      const cardInfo = findExistingCard(cardCode);
+      if (!cardInfo) {
+        notFound.push(cardCode);
+        return;
+      }
+
+      items.push({ card: cardInfo, qty });
     });
 
-    this.saveCollection();
-    this.renderAlbum();
-    this.switchTab('album');
-    this.showToast(`✅ ¡Importadas +${importedCount} copias (${newCardsCount} nuevas cartas)!`);
+    await this.finishImport(items, notFound, folderId, '✅ ¡Importadas');
+  }
+
+  // Añade las cartas importadas a la carpeta destino (personal o compartida) y la abre en el álbum
+  async finishImport(items, notFound, folderId, successPrefix) {
+    let total = 0;
+    let newCount = 0;
+    if (items.length > 0) {
+      ({ total, newCount } = await this.addCardsToTargetFolder(items, folderId, { silent: true }));
+      this.openFolderInAlbum(folderId);
+    }
+    const folderName = this.getFolderDisplayName(folderId);
+    this.showImportResultToast(`${successPrefix} +${total} copias (${newCount} nuevas) en "${folderName}"!`, total, notFound);
+  }
+
+  getFolderDisplayName(folderId) {
+    const shared = this.sharedFoldersMap.get(folderId);
+    if (shared) return shared.name || 'Compartida';
+    const personal = this.personalFolders.find(f => f.id === folderId);
+    return personal ? personal.name : 'Álbum General';
+  }
+
+  // Resumen de importación avisando de las cartas que no existen en la base de datos
+  showImportResultToast(successMsg, importedCount, notFound) {
+    const unique = [...new Set(notFound)];
+    if (unique.length === 0) {
+      this.showToast(successMsg);
+      return;
+    }
+    const shown = unique.slice(0, 5).join(', ') + (unique.length > 5 ? ` y ${unique.length - 5} más` : '');
+    const missingMsg = unique.length === 1
+      ? `❌ Carta ${unique[0]} no encontrada`
+      : `❌ ${unique.length} cartas no encontradas: ${shown}`;
+    this.showToast(importedCount > 0 ? `${successMsg}\n${missingMsg}` : missingMsg, 6000);
   }
 
   splitCSVLine(line, delimiter) {
@@ -4436,9 +4796,10 @@ class OnePieceApp {
     }, 600);
   }
 
-  showToast(text) {
+  showToast(text, duration = 2400) {
     const el = document.createElement('div');
     el.className = 'toast-notice';
+    el.style.whiteSpace = 'pre-line';
     el.textContent = text;
     document.body.appendChild(el);
 
@@ -4446,7 +4807,7 @@ class OnePieceApp {
       el.style.opacity = '0';
       el.style.transition = 'opacity 0.3s ease';
       setTimeout(() => el.remove(), 300);
-    }, 2400);
+    }, duration);
   }
 }
 

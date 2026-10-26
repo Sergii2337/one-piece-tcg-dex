@@ -359,6 +359,27 @@ class PackOpener {
         if (e.target.id === 'pack-folder-select' && this.session) this.session.folderId = e.target.value;
       });
     }
+
+    document.addEventListener('keydown', (e) => this.handleKey(e));
+  }
+
+  // Espacio: abre el sobre, descubre la siguiente carta y, con todo descubierto, pasa al siguiente sobre
+  handleKey(e) {
+    if (e.code !== 'Space' || e.repeat || !this.session || !this.dom.overlay.classList.contains('active')) return;
+    if (e.target.closest && e.target.closest('input, select, textarea')) return;
+    const lightbox = this.app.dom && this.app.dom.lightboxModal;
+    if (lightbox && lightbox.style.display === 'flex') return;
+
+    const sealed = this.dom.stage.querySelector('[data-action="open-pack"]');
+    const nextCard = this.dom.stage.querySelector('.pack-card:not(.is-flipped)');
+    const nextStep = this.dom.actions.querySelector('[data-action="next-pack"], [data-action="summary"].btn-primary');
+    const target = sealed || nextCard || (this.dom.stage.querySelector('.pack-card') && nextStep);
+    if (!target) return;
+
+    e.preventDefault();
+    if (sealed) this.tearPack(sealed);
+    else if (nextCard) this.flipCard(nextCard);
+    else this.handleAction(nextStep.getAttribute('data-action'), nextStep);
   }
 
   handleAction(action, el) {
@@ -402,6 +423,8 @@ class PackOpener {
     this.dom.overlayTitle.textContent = `🎁 ${pack.code}${this.packName(pack) ? ' · ' + this.packName(pack) : ''}`;
     this.dom.overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    // Que el espacio no vuelva a pulsar el botón "Abrir" que se queda con el foco
+    if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
     this.renderSealed();
   }
 
@@ -431,7 +454,7 @@ class PackOpener {
 
     this.dom.stage.innerHTML = `
       <div class="pack-tile pack-tile--big" style="${this.packColors(s.pack)}" data-action="open-pack" role="button" tabindex="0"></div>
-      <p class="pack-stage-hint">Toca el sobre para abrirlo</p>
+      <p class="pack-stage-hint">Toca el sobre (o pulsa espacio) para abrirlo</p>
     `;
     this.fillPackTile(this.dom.stage.querySelector('.pack-tile'), s.pack);
 
@@ -466,14 +489,16 @@ class PackOpener {
           </div>
         `).join('')}
       </div>
-      <p class="pack-stage-hint">Toca las últimas cartas para descubrirlas</p>
+      <p class="pack-stage-hint">Toca las últimas cartas (o pulsa espacio) para descubrirlas</p>
     `;
 
     const cardEls = [...this.dom.stage.querySelectorAll('.pack-card')];
     cardEls.forEach((el, i) => this.app.setupRobustImage(el.querySelector('img'), cards[i]));
 
     // Las normales se voltean solas; las dos últimas (rara y "hit") las descubre el usuario
-    cardEls.slice(0, -2).forEach((el, i) => setTimeout(() => this.flipCard(el), 250 + i * 110));
+    cardEls.slice(0, -2).forEach((el, i) => setTimeout(() => {
+      if (!el.classList.contains('is-flipped')) this.flipCard(el);
+    }, 250 + i * 110));
 
     this.dom.actions.innerHTML = '<button type="button" class="btn-outline" data-action="flip-all">🔄 Voltear todas</button>';
   }

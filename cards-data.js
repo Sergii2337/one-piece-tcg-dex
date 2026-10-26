@@ -26970,7 +26970,7 @@ function getCardsBySet(setCodeQuery) {
   const results = [];
 
   for (const [id, card] of Object.entries(ONE_PIECE_CARDS_DB)) {
-    if (id.toUpperCase().startsWith(prefix)) {
+    if (id.toUpperCase().startsWith(prefix) && !isReprintOfExisting(id)) {
       results.push({
         ...card,
         set: card.set || `Set ${normalized}`,
@@ -27164,6 +27164,12 @@ function mergeIntoCardsDB(cards) {
 // Orden: carta base, artes alternativos (_p1, _p2...) y reimpresiones (_r1, _r2...)
 // =========================================================================
 
+// Reimpresión (_r1, _r2...) de una carta que ya existe: mismo arte que la original
+function isReprintOfExisting(cardId) {
+  const m = /^(.+)_r\d+$/i.exec(cardId || '');
+  return Boolean(m && ONE_PIECE_CARDS_DB[m[1]]);
+}
+
 function compareVersionSuffix(a, b) {
   const sa = a.includes('_') ? a.split('_')[1] : '';
   const sb = b.includes('_') ? b.split('_')[1] : '';
@@ -27241,6 +27247,11 @@ function getCardImageURLs(cardId, size = 'full') {
   const width = size === 'thumb' ? THUMB_WIDTH : null;
   const limitlessEN = LIMITLESS_CDN + '/' + setCode + '/' + cleanId + '_EN.webp';
   const limitlessJP = LIMITLESS_CDN + '/' + setCode + '/' + cleanId + '_JP.webp';
+  const bandai = weservUrl(BANDAI_CARD_IMG + '/' + cleanId + '.png', width || 600);
+
+  // Limitless no tiene las reimpresiones (_r1...): ir directos a Bandai en vez de esperar
+  // a que fallen las demás URLs (mientras tanto la carta se veía en negro)
+  if (/_r\d+$/i.test(cleanId)) return [bandai];
 
   return [
     weservUrl(limitlessEN, width),
@@ -27248,7 +27259,7 @@ function getCardImageURLs(cardId, size = 'full') {
     '/card-img/' + setCode + '/' + cleanId + '_EN.webp',
     weservUrl(limitlessJP, width),
     // Último recurso (cartas que Limitless aún no tiene, p. ej. reimpresiones _r1): Bandai vía weserv
-    weservUrl(BANDAI_CARD_IMG + '/' + cleanId + '.png', width || 600)
+    bandai
   ];
 }
 
@@ -27493,6 +27504,13 @@ function createGenericCard(cardId) {
 function findOrGenerateCard(query) {
   if (!query) return createGenericCard('OP01-001');
   const rawClean = query.trim();
+  return findExistingCard(rawClean) || createGenericCard(resolveVersionCode(rawClean) || normalizeCardId(rawClean));
+}
+
+// Igual que findOrGenerateCard pero devuelve null si la carta no está en la base de datos
+function findExistingCard(query) {
+  if (!query) return null;
+  const rawClean = query.trim();
   const clean = resolveVersionCode(rawClean) || normalizeCardId(rawClean);
 
   const realId = ONE_PIECE_CARDS_DB[clean] ? clean : findCardIdIgnoreCase(clean);
@@ -27516,7 +27534,7 @@ function findOrGenerateCard(query) {
     }
   }
 
-  return createGenericCard(clean);
+  return null;
 }
 
 function generateFallbackCardSVG(card) {
@@ -27628,6 +27646,8 @@ function searchCardsInDB(query) {
   const reqSet = parsed.set;
   const reqColor = parsed.color;
   const textTokens = parsed.textTokens;
+  // Las reimpresiones solo salen si se piden expresamente (p. ej. "op09-086 r1")
+  const wantsReprints = textTokens.some(tok => /^_?r\d+$/i.test(tok));
 
   const results = [];
   const entries = Object.entries(ONE_PIECE_CARDS_DB);
@@ -27639,6 +27659,10 @@ function searchCardsInDB(query) {
     const cardColors = cardColorRaw.toLowerCase().split('/').map(c => c.trim());
 
     if (reqSet && cardSetPrefix !== reqSet) {
+      continue;
+    }
+
+    if (!wantsReprints && isReprintOfExisting(cardId)) {
       continue;
     }
 
@@ -27972,6 +27996,7 @@ if (typeof window !== 'undefined') {
   window.getStarterDeckInfo = getStarterDeckInfo;
   window.getCardsBySet = getCardsBySet;
   window.findOrGenerateCard = findOrGenerateCard;
+  window.findExistingCard = findExistingCard;
   window.getCardImageURLs = getCardImageURLs;
   window.generateFallbackCardSVG = generateFallbackCardSVG;
   window.determineCardColor = determineCardColor;
