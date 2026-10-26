@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>One Piece TCG - Dex & Album</title>
-  <link rel="stylesheet" href="style.css?v=3.4">
+  <link rel="stylesheet" href="style.css?v=3.5">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏴‍☠️</text></svg>">
 </head>
 <body>
@@ -212,6 +212,20 @@
           </button>
         </div>
 
+        <!-- Escanear una carta con la cámara -->
+        <div class="quick-import-card-box">
+          <div class="quick-import-card-info">
+            <span class="quick-import-icon">📷</span>
+            <div class="quick-import-texts">
+              <strong>Escanear Carta con la Cámara</strong>
+              <p>Enfoca la carta y se lee su código. Eliges la versión y cuántas copias añadir.</p>
+            </div>
+          </div>
+          <button type="button" id="btn-open-card-scanner" class="btn-primary btn-scanner-import">
+            📷 Escanear Carta
+          </button>
+        </div>
+
         <!-- Selector rápido de Starter Decks -->
         <div class="st-selector-wrap">
           <label class="quick-set-label" for="starter-deck-select">📦 Seleccionar Starter Deck Oficial:</label>
@@ -358,18 +372,6 @@
           <button id="btn-next-page" class="btn-page-nav">
             Siguiente ▶
           </button>
-        </div>
-      </div>
-
-      <!-- Métodos adicionales deshabilitados / futuro -->
-      <div class="disabled-methods-section" style="margin-top: 20px;">
-        <span class="disabled-section-title">Otras formas de captura:</span>
-        <div class="disabled-card-option">
-          <div class="disabled-info">
-            <span class="disabled-title">📷 Escáner OCR en Vivo</span>
-            <span class="unavailable-tag">Próximamente</span>
-          </div>
-          <p class="disabled-desc">Reconocimiento fotográfico con la cámara del móvil para escanear lotes sin teclear.</p>
         </div>
       </div>
 
@@ -1043,6 +1045,28 @@
     <div id="pack-overlay-actions" class="pack-overlay-actions"></div>
   </div>
 
+  <!-- ========================================== -->
+  <!-- ESCÁNER DE CARTAS (CÁMARA + OCR)           -->
+  <!-- ========================================== -->
+  <div id="scan-overlay" class="scan-overlay">
+    <div class="pack-overlay-top">
+      <div class="pack-overlay-heading">
+        <span class="pack-overlay-title">📷 Escanear carta</span>
+        <span id="scan-counter" class="pack-overlay-progress"></span>
+      </div>
+      <button type="button" class="close-modal-btn" data-scan="close" title="Cerrar">✕</button>
+    </div>
+    <div id="scan-viewport" class="scan-viewport is-off">
+      <video id="scan-video" playsinline muted autoplay></video>
+      <div id="scan-guide" class="scan-guide">
+        <span class="scan-code-zone"></span>
+      </div>
+    </div>
+    <p id="scan-status" class="scan-status"></p>
+    <div id="scan-panel" class="scan-panel"></div>
+    <input type="file" id="scan-photo-input" accept="image/*" capture="environment" hidden>
+  </div>
+
   <!-- Firebase SDKs (Compatibles sin necesidad de build tools) -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
@@ -1053,7 +1077,8 @@
   <script src="cards-data.js?v=3.8"></script>
   <script src="prices-data.js?v=2.2"></script>
   <script src="packs-data.js?v=1.0"></script>
-  <script src="app.js?v=3.8"></script>
+  <script src="app.js?v=3.9"></script>
   <script src="pack-opener.js?v=1.2"></script>
+  <script src="card-scanner.js?v=1.0"></script>
 </body>
 </html>
