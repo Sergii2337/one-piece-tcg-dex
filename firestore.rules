@@ -1,0 +1,20 @@
+// Reglas de Firestore para One Piece TCG Dex.
+// Se pegan en Firebase Console -> Firestore Database -> Rules -> Publish.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Colección personal: cada usuario solo puede leer y escribir su propio documento
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Carpetas compartidas: cualquiera con sesión iniciada que tenga el enlace (el id)
+    // puede verlas, unirse y añadir cartas; solo el creador puede borrarlas
+    match /shared_folders/{folderId} {
+      allow read, update: if request.auth != null;
+      allow create: if request.auth != null && request.resource.data.ownerUid == request.auth.uid;
+      allow delete: if request.auth != null && resource.data.ownerUid == request.auth.uid;
+    }
+  }
+}

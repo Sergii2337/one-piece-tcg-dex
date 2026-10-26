@@ -26968,9 +26968,21 @@ function getCardsBySet(setCodeQuery) {
 
   const prefix = normalized + '-';
   const results = [];
+  const entries = Object.entries(ONE_PIECE_CARDS_DB);
 
-  for (const [id, card] of Object.entries(ONE_PIECE_CARDS_DB)) {
-    if (id.toUpperCase().startsWith(prefix) && !isReprintOfExisting(id)) {
+  // Starter decks: además de sus cartas exclusivas, las que trae el mazo de otros sets
+  // (reimpresiones _r1, artes _p...), que comparten el pack del mazo
+  const deckPacks = new Set();
+  if (normalized.startsWith('ST')) {
+    entries.forEach(([id, card]) => {
+      if (card && card.pack && !id.includes('_') && id.toUpperCase().startsWith(prefix)) deckPacks.add(card.pack);
+    });
+  }
+
+  for (const [id, card] of entries) {
+    const ownCard = id.toUpperCase().startsWith(prefix) && !isReprintOfExisting(id);
+    const deckCard = !ownCard && card && deckPacks.has(card.pack);
+    if (ownCard || deckCard) {
       results.push({
         ...card,
         set: card.set || `Set ${normalized}`,
@@ -26980,6 +26992,11 @@ function getCardsBySet(setCodeQuery) {
   }
 
   results.sort((a, b) => {
+    // Primero las cartas del propio set; después las del mazo que vienen de otros sets
+    const ownA = a.id.toUpperCase().startsWith(prefix);
+    const ownB = b.id.toUpperCase().startsWith(prefix);
+    if (ownA !== ownB) return ownA ? -1 : 1;
+    if (!ownA) return a.id.localeCompare(b.id);
     const partsA = a.id.split('-');
     const partsB = b.id.split('-');
     const numPartA = partsA[1] || '0';

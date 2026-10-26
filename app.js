@@ -3361,8 +3361,10 @@ class OnePieceApp {
 
   addEntireDeckToCollection(setCode) {
     const allCards = getCardsBySet(setCode);
-    // Filtrar artes alternativos para que solo se agregue el mazo base regular
-    const cards = allCards.filter(c => !c.id.includes('_'));
+    // Filtrar artes alternativos del propio set; las cartas que trae el mazo de otros sets
+    // (reimpresiones _r1, artes _p del mazo) sí forman parte del mazo
+    const ownPrefix = (normalizeSetCode(setCode) || setCode) + '-';
+    const cards = allCards.filter(c => !c.id.includes('_') || !c.id.startsWith(ownPrefix));
     if (!cards || cards.length === 0) return;
 
     const targetFolder = (this.folderScope === 'shared' && this.activeFolderId) ? this.activeFolderId : 'default';
@@ -4682,8 +4684,11 @@ class OnePieceApp {
     }
 
     const docRef = window.FIREBASE_DB.collection('users').doc(user.uid);
+    let isFirstSnapshot = true;
 
     this.firestoreUnsubUser = docRef.onSnapshot(async (doc) => {
+      const firstSnapshot = isFirstSnapshot;
+      isFirstSnapshot = false;
       if (doc.exists) {
         const data = doc.data();
         if (data) {
@@ -4702,6 +4707,19 @@ class OnePieceApp {
           }
 
           cloudCards = this.normalizeCollection(cloudCards);
+
+          // Al iniciar sesión, las cartas guardadas solo en este navegador (añadidas sin sesión)
+          // se suman a la nube en vez de desaparecer al cargar la colección de la cuenta
+          let localOnly = [];
+          if (firstSnapshot) {
+            const cloudKeys = new Set(cloudCards.map(c => `${c.id}|${c.folderId || 'default'}`));
+            const cloudFolderIds = new Set((data.personalFolders || []).map(f => f.id));
+            localOnly = this.collection
+              .filter(c => !cloudKeys.has(`${c.id}|${c.folderId || 'default'}`))
+              .map(c => (cloudFolderIds.has(c.folderId) ? c : { ...c, folderId: 'default' }));
+            if (localOnly.length) cloudCards = this.normalizeCollection([...cloudCards, ...localOnly]);
+          }
+
           if (JSON.stringify(cloudCards) !== JSON.stringify(this.collection)) {
             this.collection = cloudCards;
             localStorage.setItem('op_tcg_cards_v7', JSON.stringify(this.collection));
@@ -4732,6 +4750,11 @@ class OnePieceApp {
             this.renderAlbum();
             this.populateExportFolderSelect();
           }
+
+          if (localOnly.length) {
+            this.scheduleCloudSync();
+            this.showToast(`☁️ ${localOnly.length} cartas de este navegador añadidas a tu cuenta`);
+          }
         }
       } else {
         // Primera vez del usuario en la nube:
@@ -4761,6 +4784,12 @@ class OnePieceApp {
       }
     }, (error) => {
       console.error("Error en sincronización de usuario:", error);
+      if (this.dom.cloudSyncStatus) {
+        this.dom.cloudSyncStatus.textContent = '🔴 Error Sync';
+      }
+      if (error.code === 'permission-denied') {
+        this.showToast('⚠️ La nube ha denegado el acceso (revisa las reglas de Firestore)', 6000);
+      }
     });
   }
 
