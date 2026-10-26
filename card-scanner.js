@@ -12,9 +12,12 @@ const CODE_ZONE = { x: 0.45, y: 0.85, w: 0.55, h: 0.15 };
 // Preprocesados que se van alternando en cada fotograma: [invertir, canal, binarizar]
 // lum = gris normal; g = verde (texto dorado sobre morado); b = azul (texto dorado sobre fondo rosa/blanco)
 // Los binarizados son para las cartas foil / full art (secretas), con el código sobre el dibujo
+// bg = cuánto se aleja cada píxel del color de fondo: separa el texto aunque tenga el mismo brillo
+// que el fondo (blanco o dorado sobre amarillo); b invertido también ayuda ahí (el amarillo no tiene azul)
 const FRAME_VARIANTS = [
   [true, 'lum', false], [true, 'g', false], [false, 'lum', false], [false, 'b', false],
-  [true, 'lum', true], [false, 'lum', true]
+  [true, 'lum', true], [true, 'bg', false], [false, 'lum', true], [true, 'b', false],
+  [true, 'bg', true]
 ];
 const READ_WINDOW_MS = 8000;
 
@@ -56,6 +59,22 @@ function otsuThreshold(hist, total) {
     }
   }
   return threshold;
+}
+
+// Color de fondo del recorte: la mediana de cada canal (el texto ocupa mucho menos que el fondo)
+function dominantColor(d) {
+  const hists = [new Uint32Array(256), new Uint32Array(256), new Uint32Array(256)];
+  for (let i = 0; i < d.length; i += 4) {
+    hists[0][d[i]]++;
+    hists[1][d[i + 1]]++;
+    hists[2][d[i + 2]]++;
+  }
+  const half = d.length / 8;
+  return hists.map(h => {
+    let acc = 0;
+    for (let v = 0; v < 256; v++) if ((acc += h[v]) >= half) return v;
+    return 255;
+  });
 }
 
 function loadScript(src) {
@@ -325,9 +344,12 @@ class CardScanner {
 
     const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const d = img.data;
+    const bg = channel === 'bg' ? dominantColor(d) : null;
     const hist = new Uint32Array(256);
     for (let i = 0; i < d.length; i += 4) {
-      const g = Math.round(channel === 'g' ? d[i + 1] : channel === 'b' ? d[i + 2] : d[i] * 0.299 + d[i + 1] * 0.587 + d[i + 2] * 0.114);
+      const g = Math.round(bg
+        ? Math.min(255, Math.hypot(d[i] - bg[0], d[i + 1] - bg[1], d[i + 2] - bg[2]))
+        : channel === 'g' ? d[i + 1] : channel === 'b' ? d[i + 2] : d[i] * 0.299 + d[i + 1] * 0.587 + d[i + 2] * 0.114);
       d[i] = g;
       hist[g]++;
     }
