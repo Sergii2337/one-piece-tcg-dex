@@ -3768,12 +3768,14 @@ class OnePieceApp {
   }
 
   // Línea de la Wants List de Cardmarket con versión (V.n) y expansión inglesa exactas cuando
-  // se conocen (prices-data.js); si no, Cardmarket acepta cualquier versión de ese código
+  // se conocen (prices-data.js); si no, Cardmarket acepta cualquier versión de ese código.
+  // La expansión solo se entiende detrás de "(V.n)": sin versión, Cardmarket la toma como parte
+  // del nombre y rechaza la línea ("Nefeltari Vivi OP13-012 Carrying on his Will")
   cardmarketWantLine(card, qty) {
     const entry = (window.ONE_PIECE_PRICES_DB || {})[normalizeCardId(card.id)];
-    const expansion = entry && (window.ONE_PIECE_MKM_EXPANSIONS || {})[entry.exp];
-    const version = entry && entry.v ? ` (V.${entry.v})` : '';
-    return `${qty}x ${(card.name || '').trim()} ${this.baseCardCode(card.id)}${version}${expansion ? ' ' + expansion : ''}`;
+    const expansion = entry && entry.v && (window.ONE_PIECE_MKM_EXPANSIONS || {})[entry.exp];
+    const suffix = expansion ? ` (V.${entry.v}) ${expansion}` : '';
+    return `${qty}x ${(card.name || '').trim()} ${this.baseCardCode(card.id)}${suffix}`;
   }
 
   exportWishlist() {
