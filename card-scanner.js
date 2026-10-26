@@ -51,6 +51,9 @@ class CardScanner {
     this.timer = null;
     this.recentReads = [];  // [{ id, at, variant }] para exigir dos lecturas iguales
     this.frameCount = 0;
+    this.attempts = 0;
+    this.debug = false;
+    this.lastText = '';
     this.addedCount = 0;
     this.result = null;     // { versions, selectedId, qty }
     this.folderId = 'default';
@@ -64,6 +67,8 @@ class CardScanner {
       status: document.getElementById('scan-status'),
       counter: document.getElementById('scan-counter'),
       panel: document.getElementById('scan-panel'),
+      debug: document.getElementById('scan-debug'),
+      zoom: document.getElementById('scan-zoom'),
       photoInput: document.getElementById('scan-photo-input')
     };
     if (!this.dom.overlay) return;
@@ -109,6 +114,7 @@ class CardScanner {
   handleAction(action, el) {
     switch (action) {
       case 'close': this.close(); break;
+      case 'debug': this.toggleDebug(); break;
       case 'photo': this.dom.photoInput.click(); break;
       case 'retry-camera': this.startCamera(); break;
       case 'manual': this.showManualEntry(); break;
@@ -129,6 +135,7 @@ class CardScanner {
   async open() {
     this.state = 'scanning';
     this.addedCount = 0;
+    this.attempts = 0;
     this.recentReads = [];
     this.folderId = (this.app.folderScope === 'shared' && this.app.activeFolderId) ? this.app.activeFolderId : 'default';
     this.dom.overlay.classList.add('active');
@@ -160,12 +167,15 @@ class CardScanner {
     try {
       this.stream = await navigator.mediaDevices.getUserMedia({
         audio: false,
-        video: { facingMode: { ideal: 'environment' }, width: { ideal: 1920 }, height: { ideal: 1080 } }
+        // La máxima resolución posible: el marco es pequeño para que la carta quede a una distancia
+        // a la que la cámara enfoca, así que el código ocupa pocos píxeles
+        video: { facingMode: { ideal: 'environment' }, width: { ideal: 3840 }, height: { ideal: 2160 } }
       });
       if (this.state === 'closed') return this.stopCamera();
       this.dom.video.srcObject = this.stream;
       await this.dom.video.play().catch(() => {});
       this.dom.viewport.classList.remove('is-off');
+      this.setupCameraControls();
       this.startLoop();
     } catch (err) {
       console.warn('[Escáner] Cámara no disponible:', err);
@@ -174,6 +184,30 @@ class CardScanner {
         ? 'No hay permiso para usar la cámara. Actívalo en los ajustes del navegador.'
         : 'No se pudo abrir la cámara.');
     }
+  }
+
+  // Enfoque continuo y zoom, si el navegador los permite (Chrome en Android sí; Safari no siempre).
+  // Con zoom la carta puede estar más lejos, donde la cámara enfoca bien
+  setupCameraControls() {
+    const track = this.stream && this.stream.getVideoTracks()[0];
+    const caps = track && track.getCapabilities ? track.getCapabilities() : {};
+    if (caps.focusMode && caps.focusMode.includes('continuous')) {
+      track.applyConstraints({ advanced: [{ focusMode: 'continuous' }] }).catch(() => {});
+    }
+
+    const zoom = this.dom.zoom;
+    if (!zoom) return;
+    const hasZoom = caps.zoom && caps.zoom.max > caps.zoom.min;
+    zoom.hidden = !hasZoom;
+    if (!hasZoom) return;
+    const settings = track.getSettings ? track.getSettings() : {};
+    zoom.min = caps.zoom.min;
+    zoom.max = Math.min(caps.zoom.max, 4);
+    zoom.step = caps.zoom.step || 0.1;
+    zoom.value = settings.zoom || caps.zoom.min;
+    zoom.oninput = () => {
+      track.applyConstraints({ advanced: [{ zoom: parseFloat(zoom.value) }] }).catch(() => {});
+    };
   }
 
   stopCamera() {
@@ -211,7 +245,7 @@ class CardScanner {
       // 11 = texto disperso: el código está suelto entre otros textos y símbolos
       await worker.setParameters({ tessedit_pageseg_mode: '11' });
       this.worker = worker;
-      if (this.state === 'scanning' && this.stream) this.setStatus('🔍 Encuadra la carta dentro del marco');
+      if (this.state === 'scanning' && this.stream) this.setStatus('🔍 Encuadra la carta en el marco, a un palmo de la cámara');
       return worker;
     })();
     this.workerPromise.catch(() => { this.workerPromise = null; });
@@ -221,7 +255,7 @@ class CardScanner {
   startLoop() {
     this.stopLoop();
     if (this.state !== 'scanning') return;
-    if (this.worker) this.setStatus('🔍 Encuadra la carta dentro del marco');
+    if (this.worker) this.setStatus('🔍 Encuadra la carta en el marco, a un palmo de la cámara');
     this.timer = setInterval(() => this.scanFrame(), SCAN_INTERVAL_MS);
   }
 
@@ -282,7 +316,24 @@ class CardScanner {
 
   async recognize(canvas) {
     const { data } = await this.worker.recognize(canvas);
+    this.lastText = data.text;
     return extractCardCodes(data.text).filter(id => ONE_PIECE_CARDS_DB[id]);
+  }
+
+  // Modo diagnóstico: muestra el recorte que se manda al lector y el texto que devuelve
+  toggleDebug() {
+    this.debug = !this.debug;
+    this.dom.debug.hidden = !this.debug;
+    if (this.debug) this.dom.debug.innerHTML = '<p>Esperando la primera lectura...</p>';
+  }
+
+  renderDebug(info) {
+    if (!this.debug) return;
+    this.dom.debug.innerHTML = `
+      <img src="${this.canvas.toDataURL('image/jpeg', 0.7)}" alt="Recorte">
+      <p>${escapeHtml(info)}</p>
+      <p>Texto: «${escapeHtml((this.lastText || '').replace(/\s+/g, ' ').trim()) || '(nada)'}»</p>
+    `;
   }
 
   async scanFrame() {
@@ -300,20 +351,27 @@ class CardScanner {
       // Alterna preprocesados: cada carta se lee mejor con uno (fondo oscuro, claro, texto dorado...)
       const variant = this.frameCount++ % FRAME_VARIANTS.length;
       const [invert, channel] = FRAME_VARIANTS[variant];
+      const started = performance.now();
       const ids = await this.recognize(this.prepareCanvas(video, sx, sy, sw, sh, 1200, invert, channel));
-      if (this.state !== 'scanning' || !ids.length) return;
+      this.attempts++;
+      this.renderDebug(`Vídeo ${video.videoWidth}x${video.videoHeight} · recorte ${Math.round(sw)}x${Math.round(sh)} px · ` +
+        `${FRAME_VARIANTS[variant].join('/')} · ${Math.round(performance.now() - started)} ms · intento ${this.attempts}`);
+      if (this.state !== 'scanning') return;
+      if (!ids.length) {
+        if (!this.recentReads.length) this.setStatus(`🔍 Buscando el código... (${this.attempts} intentos)`);
+        return;
+      }
 
-      // Lectura segura: el mismo código con dos preprocesados distintos en los últimos segundos
-      // (un mismo preprocesado puede equivocarse siempre igual, un 6 que lee como 0, con la carta quieta).
-      // Lectura dudosa: solo un preprocesado la lee (texto dorado sobre dibujo), pero 3 veces y sin
-      // ninguna otra lectura que la contradiga: se muestra avisando de que hay que comprobarla
+      // Lectura segura: el mismo código con dos preprocesados distintos en los últimos segundos.
+      // Lectura dudosa: el mismo preprocesado dos veces (puede equivocarse siempre igual, un 6 que
+      // lee como 0, con la carta quieta): se muestra avisando de que hay que comprobarla
       const id = ids[0];
       const now = Date.now();
       this.recentReads = this.recentReads.filter(r => now - r.at < READ_WINDOW_MS);
       this.recentReads.push({ id, at: now, variant });
       const sameId = this.recentReads.filter(r => r.id === id);
       const confirmed = sameId.some(r => r.variant !== variant);
-      const doubtful = !confirmed && sameId.length >= 3 && this.recentReads.every(r => r.id === id);
+      const doubtful = !confirmed && sameId.length >= 2;
       if (confirmed || doubtful) {
         this.recentReads = [];
         this.showResult(id, { doubtful });

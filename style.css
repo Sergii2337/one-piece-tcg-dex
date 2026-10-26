@@ -4301,7 +4301,8 @@ body.album-drag-active * {
   position: absolute;
   top: 50%;
   left: 50%;
-  height: min(86%, calc((100vw - 48px) * 88 / 63));
+  /* Pequeño a propósito: con la carta llenando la pantalla queda tan cerca que la cámara no enfoca */
+  height: min(58%, calc((100vw - 48px) * 88 / 63));
   aspect-ratio: 63 / 88;
   transform: translate(-50%, -50%);
   border: 2px solid rgba(255, 255, 255, 0.85);
@@ -4497,4 +4498,42 @@ body.album-drag-active * {
 .scan-qty-preset.is-active {
   border-color: var(--accent-gold);
   color: var(--accent-gold);
+}
+
+.scan-top-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+/* Modo diagnóstico del escáner: recorte enviado al lector y texto leído */
+.scan-debug {
+  padding: 8px 16px;
+  background: #000;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  word-break: break-word;
+}
+
+.scan-debug img {
+  display: block;
+  width: 100%;
+  max-height: 90px;
+  object-fit: contain;
+  background: #fff;
+  margin-bottom: 4px;
+}
+
+.scan-debug p {
+  margin: 2px 0;
+}
+
+/* Zoom de la cámara (solo si el navegador lo permite) */
+.scan-zoom {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  width: min(70%, 320px);
+  transform: translateX(-50%);
+  accent-color: var(--accent-gold);
 }

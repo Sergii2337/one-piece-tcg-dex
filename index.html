@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>One Piece TCG - Dex & Album</title>
-  <link rel="stylesheet" href="style.css?v=3.5">
+  <link rel="stylesheet" href="style.css?v=3.7">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏴‍☠️</text></svg>">
 </head>
 <body>
@@ -1054,14 +1054,19 @@
         <span class="pack-overlay-title">📷 Escanear carta</span>
         <span id="scan-counter" class="pack-overlay-progress"></span>
       </div>
-      <button type="button" class="close-modal-btn" data-scan="close" title="Cerrar">✕</button>
+      <div class="scan-top-buttons">
+        <button type="button" class="close-modal-btn" data-scan="debug" title="Ver qué está leyendo">🐞</button>
+        <button type="button" class="close-modal-btn" data-scan="close" title="Cerrar">✕</button>
+      </div>
     </div>
     <div id="scan-viewport" class="scan-viewport is-off">
       <video id="scan-video" playsinline muted autoplay></video>
       <div id="scan-guide" class="scan-guide">
         <span class="scan-code-zone"></span>
       </div>
+      <input type="range" id="scan-zoom" class="scan-zoom" aria-label="Zoom" hidden>
     </div>
+    <div id="scan-debug" class="scan-debug" hidden></div>
     <p id="scan-status" class="scan-status"></p>
     <div id="scan-panel" class="scan-panel"></div>
     <input type="file" id="scan-photo-input" accept="image/*" capture="environment" hidden>
@@ -1079,6 +1084,6 @@
   <script src="packs-data.js?v=1.0"></script>
   <script src="app.js?v=3.9"></script>
   <script src="pack-opener.js?v=1.2"></script>
-  <script src="card-scanner.js?v=1.0"></script>
+  <script src="card-scanner.js?v=1.2"></script>
 </body>
 </html>
