@@ -76,55 +76,17 @@ class OnePieceApp {
     this.renderAlbum();
     this.populateExportFolderSelect();
     this.updateHeaderStats();
-    this.loadLivePrices();
   }
 
   // =========================================================================
-  // PRECIOS CARDMARKET (guía diaria vía proxy de Netlify, con respaldo en prices-data.js)
+  // PRECIOS CARDMARKET (prices-data.js, actualizado a diario por GitHub Actions)
   // =========================================================================
-
-  async loadLivePrices() {
-    const STORAGE_KEY = 'op_mkm_live_prices_v2'; // v2: solo productos de la versión inglesa
-    const MAX_AGE_MS = 12 * 60 * 60 * 1000;
-    const snapshot = window.ONE_PIECE_PRICES_DB || {};
-
-    try {
-      const cached = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-      if (cached && cached.prices) {
-        this.livePrices = cached;
-        if (Date.now() - cached.fetchedAt < MAX_AGE_MS) return;
-      }
-    } catch (e) { /* caché corrupta: se vuelve a descargar */ }
-
-    try {
-      const res = await fetch('/mkm-prices/price_guide_18.json', { cache: 'no-cache' });
-      if (!res.ok) return;
-      const guide = await res.json();
-
-      // Solo guardamos los productos que corresponden a cartas de la app (~200 KB en vez de 2,7 MB)
-      const wanted = new Set(Object.values(snapshot).map(p => p.mkmId));
-      const prices = {};
-      (guide.priceGuides || []).forEach(p => {
-        if (wanted.has(p.idProduct)) prices[p.idProduct] = [p.trend, p.low, p.avg7];
-      });
-
-      this.livePrices = { fetchedAt: Date.now(), createdAt: guide.createdAt, prices };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.livePrices));
-    } catch (e) {
-      // Sin proxy (p. ej. servidor local) o sin conexión: se usan los precios de prices-data.js
-      console.info('[Precios] Usando precios guardados en prices-data.js');
-    }
-  }
 
   getCardPrice(cardId) {
     const snapshot = window.ONE_PIECE_PRICES_DB || {};
     const entry = snapshot[normalizeCardId(cardId)];
     if (!entry) return null;
 
-    const live = this.livePrices && this.livePrices.prices[entry.mkmId];
-    if (live) {
-      return { trend: live[0], low: live[1], avg7: live[2], date: this.livePrices.createdAt };
-    }
     const meta = window.ONE_PIECE_PRICES_META || {};
     return { trend: entry.mkm, low: entry.low, avg7: entry.avg7, date: meta.priceGuideDate };
   }

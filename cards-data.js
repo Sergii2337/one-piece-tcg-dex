@@ -27273,7 +27273,6 @@ function getCardImageURLs(cardId, size = 'full') {
   return [
     weservUrl(limitlessEN, width),
     'https://' + limitlessEN,
-    '/card-img/' + setCode + '/' + cleanId + '_EN.webp',
     weservUrl(limitlessJP, width),
     // Último recurso (cartas que Limitless aún no tiene, p. ej. reimpresiones _r1): Bandai vía weserv
     bandai

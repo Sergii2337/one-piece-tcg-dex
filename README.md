@@ -52,11 +52,12 @@ one-piece-tcg-dex/
 ├── cards-data.js       # Catálogo, búsqueda y sincronización de cartas
 ├── prices-data.js      # Precios Cardmarket por carta y versión (generado)
 ├── firebase-config.js  # Login con Google y sincronización en la nube
-├── netlify.toml        # Proxy de imágenes /card-img/ para Netlify
 ├── manifest.json       # Configuración para instalación como PWA
 ├── README.md           # Documentación técnica del proyecto
 ├── LICENSE             # Términos de licencia MIT y aviso legal
 ├── .gitignore          # Reglas de exclusión para control de versiones
+├── .github/workflows/
+│   └── update-prices.yml # Actualiza prices-data.js cada día
 └── tools/
     └── update_prices.py  # Regenera prices-data.js desde Cardmarket
 ```
@@ -85,9 +86,7 @@ Una vez iniciado el servidor, abra su navegador en `http://localhost:8080`.
 
 ## Despliegue en Producción
 
-El proyecto es totalmente estático y puede desplegarse en cualquier servicio de alojamiento estático:
-* **GitHub Pages**: En la configuración del repositorio (*Settings > Pages*), seleccionar la rama `main` y la carpeta raíz (`/`).
-* **Vercel / Netlify / Cloudflare Pages**: Vincular el repositorio sin comando de build adicional.
+El proyecto es totalmente estático y se publica en **GitHub Pages**: en la configuración del repositorio (*Settings > Pages*), rama `main` y carpeta raíz (`/`).
 
 ---
 
