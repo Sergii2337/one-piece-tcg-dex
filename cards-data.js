@@ -27613,8 +27613,9 @@ const COLOR_SYNONYMS_MAP = {
   'yellow': 'Yellow', 'amarillo': 'Yellow', 'amarilla': 'Yellow', 'amarillos': 'Yellow', 'amarillas': 'Yellow'
 };
 
+// Varios colores en la búsqueda ("blue black") = cartas de cualquiera de ellos (azules, negras o azul/negras)
 function parseSearchQuery(query) {
-  if (!query || typeof query !== 'string') return { set: null, color: null, textTokens: [] };
+  if (!query || typeof query !== 'string') return { set: null, colors: [], textTokens: [] };
 
   // Unificar prefijos de set separados por espacio (ej. "op 17" -> "OP17", "st 01" -> "ST01", "eb 01" -> "EB01")
   const normalizedQuery = query.trim().replace(/\b(op|st|eb|prb)\s*0*([1-9][0-9]?)\b/gi, (match, prefix, num) => {
@@ -27626,7 +27627,7 @@ function parseSearchQuery(query) {
   const tokens = cleanQ.split(/\s+/).filter(Boolean);
 
   let detectedSet = null;
-  let detectedColor = null;
+  const detectedColors = [];
   const textTokens = [];
 
   for (let i = 0; i < tokens.length; i++) {
@@ -27636,14 +27637,14 @@ function parseSearchQuery(query) {
       detectedSet = setCandidate;
       continue;
     }
-    if (COLOR_SYNONYMS_MAP[t] && !detectedColor) {
-      detectedColor = COLOR_SYNONYMS_MAP[t];
+    if (COLOR_SYNONYMS_MAP[t]) {
+      if (!detectedColors.includes(COLOR_SYNONYMS_MAP[t])) detectedColors.push(COLOR_SYNONYMS_MAP[t]);
       continue;
     }
     textTokens.push(t);
   }
 
-  return { set: detectedSet, color: detectedColor, textTokens: textTokens };
+  return { set: detectedSet, colors: detectedColors, textTokens: textTokens };
 }
 
 function searchCardsInDB(query) {
@@ -27660,7 +27661,7 @@ function searchCardsInDB(query) {
 
   const parsed = parseSearchQuery(rawQ);
   const reqSet = parsed.set;
-  const reqColor = parsed.color;
+  const reqColors = parsed.colors.map(c => c.toLowerCase());
   const textTokens = parsed.textTokens;
   // Las reimpresiones solo salen si se piden expresamente (p. ej. "op09-086 r1")
   const wantsReprints = textTokens.some(tok => /^_?r\d+$/i.test(tok));
@@ -27682,7 +27683,7 @@ function searchCardsInDB(query) {
       continue;
     }
 
-    if (reqColor && !cardColors.includes(reqColor.toLowerCase())) {
+    if (reqColors.length > 0 && !reqColors.some(c => cardColors.includes(c))) {
       continue;
     }
 
@@ -27740,7 +27741,7 @@ function searchCardsInDB(query) {
       if (!matchesAll) continue;
     }
 
-    if (!reqSet && !reqColor && textTokens.length === 0) {
+    if (!reqSet && reqColors.length === 0 && textTokens.length === 0) {
       continue;
     }
 

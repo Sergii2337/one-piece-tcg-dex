@@ -2008,10 +2008,21 @@ class OnePieceApp {
       this.dom.albumSetBanner.style.display = 'none';
     }
 
+    // Los colores de la búsqueda ("blue black", "rojo verde") filtran por cualquiera de ellos;
+    // el resto del texto se busca como siempre
+    const searchColors = this.searchQuery ? parseSearchQuery(this.searchQuery).colors.map(c => c.toLowerCase()) : [];
+    const textQuery = searchColors.length > 0
+      ? this.searchQuery.split(/\s+/).filter(w => !COLOR_SYNONYMS_MAP[w]).join(' ')
+      : this.searchQuery;
+
     // Filtrar por búsqueda y color
     let filtered = rawCards.filter(card => {
-      if (this.searchQuery) {
-        const q = this.searchQuery;
+      if (searchColors.length > 0) {
+        const cardColors = (card.color || '').toLowerCase().split('/').map(c => c.trim());
+        if (!searchColors.some(c => cardColors.includes(c))) return false;
+      }
+      if (textQuery) {
+        const q = textQuery;
         const matchName = (card.name || '').toLowerCase().includes(q);
         const matchCode = (card.id || '').toLowerCase().includes(q);
         const matchTraits = (card.traits || '').toLowerCase().includes(q);
