@@ -1,7 +1,7 @@
 // Nombre oficial y portada (versión inglesa) de cada sobre, por pack_id.
 // Generado automáticamente con tools/update_packs.py — no editar a mano.
 
-const ONE_PIECE_PACKS_META = {"source": "https://en.onepiece-cardgame.com/products/", "generatedAt": "2026-11-12T13:54:25"};
+const ONE_PIECE_PACKS_META = {"source": "https://en.onepiece-cardgame.com/products/", "generatedAt": "2026-11-13T13:17:54"};
 
 const ONE_PIECE_PACKS = {
   "569101": {"name": "ROMANCE DAWN", "label": "OP-01", "cover": "https://en.onepiece-cardgame.com/renewal/images/products/boosters/op01/img_item01.webp"},
@@ -21,6 +21,7 @@ const ONE_PIECE_PACKS = {
   "569115": {"name": "ADVENTURE ON KAMI’S ISLAND", "label": "OP15-EB04", "cover": "https://en.onepiece-cardgame.com/onepiececg/bccard/en/product/2026/03/13/pHM37mp7tOcGG81w/img_item04.webp"},
   "569116": {"name": "THE TIME OF BATTLE", "label": "OP-16", "cover": "https://en.onepiece-cardgame.com/onepiececg/bccard/en/products/2026/03/26/olc1E9Gg9WXeLP6V/img_item01.webp"},
   "569117": {"name": "THE WORLD’S STRONGEST WARRIORS", "label": "OP-17", "cover": "https://en.onepiece-cardgame.com/onepiececg/bccard/en/product/2026/07/10/UZto2ePj0hiv3KkV/img_item01.webp"},
+  "569118": {"name": "THE DOMINANCE OF GOD", "label": "OP-18", "cover": "https://en.onepiece-cardgame.com/onepiececg/bccard/en/products/2026/09/18/rGCJ1ZUyi5qrA7zL/img_item01.webp"},
   "569201": {"name": "MEMORIAL COLLECTION", "label": "EB-01", "cover": "https://en.onepiece-cardgame.com/renewal/images/products/boosters/eb01/img_item01.webp"},
   "569202": {"name": "Anime 25th Collection", "label": "EB-02", "cover": "https://en.onepiece-cardgame.com/renewal/images/products/boosters/eb02/img_item01.webp"},
   "569203": {"name": "ONE PIECE HEROINES EDITION", "label": "EB-03", "cover": "https://en.onepiece-cardgame.com/renewal/images/products/boosters/eb03/img_item01.webp"},
