@@ -1,7 +1,7 @@
 // Precios de Cardmarket por carta (incluidas versiones alternativas).
 // Generado automáticamente con tools/update_prices.py — no editar a mano.
 
-const ONE_PIECE_PRICES_META = {"source": "Cardmarket Price Guide (One Piece)", "priceGuideDate": "2026-11-13T02:44:21+0100", "generatedAt": "2026-11-13T13:17:50"};
+const ONE_PIECE_PRICES_META = {"source": "Cardmarket Price Guide (One Piece)", "priceGuideDate": "2026-11-13T02:44:21+0100", "generatedAt": "2026-11-14T12:23:07"};
 
 const ONE_PIECE_MKM_EXPANSIONS = {"5229": "Romance Dawn", "5230": "Promos", "5237": "Starter Deck: Straw Hat Crew", "5238": "Starter Deck: Worst Generation", "5239": "Starter Deck: The Seven Warlords of the Sea", "5240": "Starter Deck: Animal Kingdom Pirates", "5244": "One Piece Products", "5255": "Starter Deck: ONE PIECE FILM edition", "5262": "Special Tournament Promos", "5263": "Paramount War", "5265": "Starter Deck: Absolute Justice", "5267": "Premium Bandai Products", "5300": "Promos: Paramount War", "5302": "Reprints", "5303": "Unnumbered Promos", "5312": "Judge Promos", "5364": "Pillars of Strength", "5365": "Kingdoms of Intrigue", "5366": "Starter Deck: Monkey.D.Luffy", "5367": "Starter Deck: Yamato", "5377": "Starter Deck: Big Mom Pirates", "5380": "Ultra Deck: The Three Captains", "5413": "Promos: Pillars of Strength", "5426": "Awakening of the New Era", "5427": "Starter Deck: Uta", "5486": "Promos: Kingdoms of Intrigue", "5524": "Wings of the Captain", "5565": "Promos: Awakening of the New Era", "5585": "Memorial Collection", "5586": "500 Years into the Future", "5593": "Starter Deck: Zoro & Sanji", "5595": "Ultra Deck: The Three Brothers", "5610": "Two Legends", "5611": "Starter Deck: 3D2Y", "5622": "Promos: Wings of the Captain", "5624": "Romance Dawn (Pre-Errata)", "5747": "Starter Deck: Edward.Newgate", "5748": "Starter Deck: Green Uta", "5749": "Starter Deck: Donquixote Doflamingo", "5750": "Starter Deck: Purple Monkey.D.Luffy", "5751": "Starter Deck: Smoker", "5752": "Starter Deck: Charlotte Katakuri", "5755": "Emperors in the New World", "5803": "Promos: 500 Years into the Future", "5805": "The Best", "5896": "Promos: Two Legends", "5974": "Royal Blood", "5979": "Promos: Emperors in the New World", "5998": "Starter Deck: EX Gear 5", "6028": "Anime 25th Collection", "6033": "A Fist of Divine Speed", "6090": "Promos: Royal Blood", "6147": "Starter Deck: Green Yellow Yamato", "6148": "Starter Deck: Black Marshall.D.Teach", "6149": "Starter Deck: Purple Black Monkey.D.Luffy", "6150": "Starter Deck: Blue Buggy", "6151": "Starter Deck: Green Jewelry Bonney", "6152": "Starter Deck: Red Shanks", "6160": "Promos: A Fist of Divine Speed", "6186": "Legacy of the Master", "6187": "Carrying on his Will", "6242": "The Best Vol.2", "6264": "Promos: Legacy of the Master", "6270": "Starter Deck: EX Ace & Newgate", "6338": "Learn Together Deck Set 01", "6372": "Promos: Carrying on his Will", "6432": "The Azure Sea's Seven", "6444": "Starter Deck: Egghead", "6446": "Promos: The Azure Sea's Seven", "6449": "Heroines Edition", "6456": "Adventure on Kami’s Island", "6457": "The Time of Battle", "6492": "The World’s Strongest Warriors", "6498": "Mini Promo Cards", "6501": "Demo Decks", "6552": "Promos: Adventure on Kami’s Island", "6562": "Heroines Edition Vol.2", "6608": "Starter Deck: EX Luffy & Ace", "6609": "Promos: The Time of Battle", "6645": "Starter Deck: Yellow Eustass \"Captain\" Kid", "6646": "Starter Deck: Red/Black Sabo", "6647": "Starter Deck: Purple Charlotte Katakuri", "6648": "Starter Deck: Blue Kuzan", "6649": "Starter Deck: Green Roronoa Zoro", "6650": "Starter Deck: Red Monkey.D.Luffy", "6677": "Store Tournament Promos", "6684": "Winner Cards", "6707": "Promos: The World’s Strongest Warriors", "6770": "Set Sail Deck Set"};
 
@@ -3785,6 +3785,32 @@ const ONE_PIECE_PRICES_DB = {
   "OP17-118_p2": {"mkmId": 904147, "exp": 6492, "v": 3, "mkm": 3825.72, "low": 3500, "avg7": 6235},
   "OP17-119": {"mkmId": 904148, "exp": 6492, "v": 1, "mkm": 11.18, "low": 9, "avg7": 11.93},
   "OP17-119_p1": {"mkmId": 904149, "exp": 6492, "v": 2, "mkm": 26.7, "low": 25, "avg7": 29.44},
+  "OP18-001": {"mkmId": 923665, "exp": 6772, "v": 1, "mkm": null, "low": null, "avg7": null},
+  "OP18-002": {"mkmId": 923667, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-003": {"mkmId": 923669, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-004": {"mkmId": 923670, "exp": 6772, "v": 1, "mkm": null, "low": null, "avg7": null},
+  "OP18-005": {"mkmId": 923672, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-006": {"mkmId": 923673, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-007": {"mkmId": 923674, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-008": {"mkmId": 923675, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-009": {"mkmId": 923676, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-010": {"mkmId": 923677, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-011": {"mkmId": 923678, "exp": 6772, "v": 1, "mkm": null, "low": null, "avg7": null},
+  "OP18-012": {"mkmId": 923680, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-013": {"mkmId": 923681, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-014": {"mkmId": 923682, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-015": {"mkmId": 923683, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-016": {"mkmId": 923684, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-017": {"mkmId": 923685, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-018": {"mkmId": 923686, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-019": {"mkmId": 923687, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-020": {"mkmId": 923688, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-021": {"mkmId": 923689, "exp": 6772, "v": 1, "mkm": null, "low": null, "avg7": null},
+  "OP18-022": {"mkmId": 923691, "exp": 6772, "v": 1, "mkm": null, "low": null, "avg7": null},
+  "OP18-023": {"mkmId": 923693, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-024": {"mkmId": 923694, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-025": {"mkmId": 923695, "exp": 6772, "mkm": null, "low": null, "avg7": null},
+  "OP18-026": {"mkmId": 923696, "exp": 6772, "mkm": null, "low": null, "avg7": null},
   "P-001": {"mkmId": 717506, "exp": 5262, "v": 1, "mkm": 2411.03, "low": 2050, "avg7": 1765.83},
   "P-001_p1": {"mkmId": 766636, "exp": 5262, "v": 2, "mkm": 54.15, "low": 39, "avg7": 55.17},
   "P-001_p2": {"mkmId": 766637, "exp": 5262, "v": 3, "mkm": 1064.37, "low": 600, "avg7": 928.43},
