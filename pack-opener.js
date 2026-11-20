@@ -317,7 +317,7 @@ class PackOpener {
       </div>
       <div class="packs-action-buttons">
         <button type="button" class="btn-primary" data-open="1">🎁 Abrir 1 sobre</button>
-        <button type="button" class="btn-primary" data-open="10">🎁 Abrir 10 sobres</button>
+        <button type="button" class="btn-primary" data-open="6">🎁 Abrir 6 sobres</button>
       </div>
       <details class="pack-odds">
         <summary>ℹ️ Probabilidades aproximadas</summary>
