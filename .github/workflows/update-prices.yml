@@ -1,11 +1,11 @@
-# Regenera cada día prices-data.js (guía de precios de Cardmarket, versión inglesa) y
+# Regenera varias veces al día prices-data.js (guía de precios de Cardmarket, versión inglesa) y
 # packs-data.js (nombre y portada oficial de cada sobre). Así una expansión recién salida
 # tiene precios y sobre sin ejecutar nada a mano.
 name: Actualizar precios y sobres
 
 on:
   schedule:
-    - cron: '30 5 * * *' # diario, después de que Cardmarket publique la guía (~02:45 CET)
+    - cron: '30 */6 * * *' # cada 6 horas (00:30, 06:30, 12:30 y 18:30 UTC)
   workflow_dispatch: # botón "Run workflow" en la pestaña Actions
 
 permissions:
